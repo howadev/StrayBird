@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "891736021B76740A003E082F"
+               BlueprintIdentifier = "891736331B7676A0003E082F"
                BuildableName = "chasingbird.app"
                BlueprintName = "chasingbird"
                ReferencedContainer = "container:chasingbird.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8917361B1B76740A003E082F"
+               BlueprintIdentifier = "8917364C1B7676A0003E082F"
                BuildableName = "chasingbirdTests.xctest"
                BlueprintName = "chasingbirdTests"
                ReferencedContainer = "container:chasingbird.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "891736021B76740A003E082F"
+            BlueprintIdentifier = "891736331B7676A0003E082F"
             BuildableName = "chasingbird.app"
             BlueprintName = "chasingbird"
             ReferencedContainer = "container:chasingbird.xcodeproj">
@@ -65,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "891736021B76740A003E082F"
+            BlueprintIdentifier = "891736331B7676A0003E082F"
             BuildableName = "chasingbird.app"
             BlueprintName = "chasingbird"
             ReferencedContainer = "container:chasingbird.xcodeproj">
@@ -84,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "891736021B76740A003E082F"
+            BlueprintIdentifier = "891736331B7676A0003E082F"
             BuildableName = "chasingbird.app"
             BlueprintName = "chasingbird"
             ReferencedContainer = "container:chasingbird.xcodeproj">

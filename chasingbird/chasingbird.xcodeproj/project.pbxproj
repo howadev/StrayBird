@@ -7,50 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		891736081B76740A003E082F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736071B76740A003E082F /* main.m */; };
-		8917360B1B76740A003E082F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917360A1B76740A003E082F /* AppDelegate.m */; };
-		8917360E1B76740A003E082F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917360D1B76740A003E082F /* ViewController.m */; };
-		891736111B76740A003E082F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8917360F1B76740A003E082F /* Main.storyboard */; };
-		891736131B76740A003E082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891736121B76740A003E082F /* Assets.xcassets */; };
-		891736161B76740A003E082F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736141B76740A003E082F /* LaunchScreen.storyboard */; };
-		891736211B76740A003E082F /* chasingbirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736201B76740A003E082F /* chasingbirdTests.m */; };
+		891736391B7676A0003E082F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736381B7676A0003E082F /* main.m */; };
+		8917363C1B7676A0003E082F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363B1B7676A0003E082F /* AppDelegate.m */; };
+		8917363F1B7676A0003E082F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363E1B7676A0003E082F /* ViewController.m */; };
+		891736421B7676A0003E082F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736401B7676A0003E082F /* Main.storyboard */; };
+		891736441B7676A0003E082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891736431B7676A0003E082F /* Assets.xcassets */; };
+		891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736451B7676A0003E082F /* LaunchScreen.storyboard */; };
+		891736521B7676A0003E082F /* chasingbirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736511B7676A0003E082F /* chasingbirdTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8917361D1B76740A003E082F /* PBXContainerItemProxy */ = {
+		8917364E1B7676A0003E082F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 891735FB1B76740A003E082F /* Project object */;
+			containerPortal = 8917362C1B7676A0003E082F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 891736021B76740A003E082F;
+			remoteGlobalIDString = 891736331B7676A0003E082F;
 			remoteInfo = chasingbird;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		891736031B76740A003E082F /* chasingbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		891736071B76740A003E082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		891736091B76740A003E082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8917360A1B76740A003E082F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8917360C1B76740A003E082F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8917360D1B76740A003E082F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		891736101B76740A003E082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		891736121B76740A003E082F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		891736151B76740A003E082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		891736171B76740A003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8917361C1B76740A003E082F /* chasingbirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chasingbirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		891736201B76740A003E082F /* chasingbirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chasingbirdTests.m; sourceTree = "<group>"; };
-		891736221B76740A003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		891736341B7676A0003E082F /* chasingbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		891736381B7676A0003E082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8917363A1B7676A0003E082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8917363B1B7676A0003E082F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8917363D1B7676A0003E082F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8917363E1B7676A0003E082F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		891736411B7676A0003E082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		891736431B7676A0003E082F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		891736461B7676A0003E082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		891736481B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8917364D1B7676A0003E082F /* chasingbirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chasingbirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		891736511B7676A0003E082F /* chasingbirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chasingbirdTests.m; sourceTree = "<group>"; };
+		891736531B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		891736001B76740A003E082F /* Frameworks */ = {
+		891736311B7676A0003E082F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		891736191B76740A003E082F /* Frameworks */ = {
+		8917364A1B7676A0003E082F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,53 +60,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		891735FA1B76740A003E082F = {
+		8917362B1B7676A0003E082F = {
 			isa = PBXGroup;
 			children = (
-				891736051B76740A003E082F /* chasingbird */,
-				8917361F1B76740A003E082F /* chasingbirdTests */,
-				891736041B76740A003E082F /* Products */,
+				891736361B7676A0003E082F /* chasingbird */,
+				891736501B7676A0003E082F /* chasingbirdTests */,
+				891736351B7676A0003E082F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		891736041B76740A003E082F /* Products */ = {
+		891736351B7676A0003E082F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				891736031B76740A003E082F /* chasingbird.app */,
-				8917361C1B76740A003E082F /* chasingbirdTests.xctest */,
+				891736341B7676A0003E082F /* chasingbird.app */,
+				8917364D1B7676A0003E082F /* chasingbirdTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		891736051B76740A003E082F /* chasingbird */ = {
+		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
-				891736091B76740A003E082F /* AppDelegate.h */,
-				8917360A1B76740A003E082F /* AppDelegate.m */,
-				8917360C1B76740A003E082F /* ViewController.h */,
-				8917360D1B76740A003E082F /* ViewController.m */,
-				8917360F1B76740A003E082F /* Main.storyboard */,
-				891736121B76740A003E082F /* Assets.xcassets */,
-				891736141B76740A003E082F /* LaunchScreen.storyboard */,
-				891736171B76740A003E082F /* Info.plist */,
-				891736061B76740A003E082F /* Supporting Files */,
+				8917363A1B7676A0003E082F /* AppDelegate.h */,
+				8917363B1B7676A0003E082F /* AppDelegate.m */,
+				8917363D1B7676A0003E082F /* ViewController.h */,
+				8917363E1B7676A0003E082F /* ViewController.m */,
+				891736401B7676A0003E082F /* Main.storyboard */,
+				891736431B7676A0003E082F /* Assets.xcassets */,
+				891736451B7676A0003E082F /* LaunchScreen.storyboard */,
+				891736481B7676A0003E082F /* Info.plist */,
+				891736371B7676A0003E082F /* Supporting Files */,
 			);
 			path = chasingbird;
 			sourceTree = "<group>";
 		};
-		891736061B76740A003E082F /* Supporting Files */ = {
+		891736371B7676A0003E082F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				891736071B76740A003E082F /* main.m */,
+				891736381B7676A0003E082F /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8917361F1B76740A003E082F /* chasingbirdTests */ = {
+		891736501B7676A0003E082F /* chasingbirdTests */ = {
 			isa = PBXGroup;
 			children = (
-				891736201B76740A003E082F /* chasingbirdTests.m */,
-				891736221B76740A003E082F /* Info.plist */,
+				891736511B7676A0003E082F /* chasingbirdTests.m */,
+				891736531B7676A0003E082F /* Info.plist */,
 			);
 			path = chasingbirdTests;
 			sourceTree = "<group>";
@@ -114,13 +114,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		891736021B76740A003E082F /* chasingbird */ = {
+		891736331B7676A0003E082F /* chasingbird */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 891736251B76740A003E082F /* Build configuration list for PBXNativeTarget "chasingbird" */;
+			buildConfigurationList = 891736561B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbird" */;
 			buildPhases = (
-				891735FF1B76740A003E082F /* Sources */,
-				891736001B76740A003E082F /* Frameworks */,
-				891736011B76740A003E082F /* Resources */,
+				891736301B7676A0003E082F /* Sources */,
+				891736311B7676A0003E082F /* Frameworks */,
+				891736321B7676A0003E082F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -128,46 +128,47 @@
 			);
 			name = chasingbird;
 			productName = chasingbird;
-			productReference = 891736031B76740A003E082F /* chasingbird.app */;
+			productReference = 891736341B7676A0003E082F /* chasingbird.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8917361B1B76740A003E082F /* chasingbirdTests */ = {
+		8917364C1B7676A0003E082F /* chasingbirdTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 891736281B76740A003E082F /* Build configuration list for PBXNativeTarget "chasingbirdTests" */;
+			buildConfigurationList = 891736591B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbirdTests" */;
 			buildPhases = (
-				891736181B76740A003E082F /* Sources */,
-				891736191B76740A003E082F /* Frameworks */,
-				8917361A1B76740A003E082F /* Resources */,
+				891736491B7676A0003E082F /* Sources */,
+				8917364A1B7676A0003E082F /* Frameworks */,
+				8917364B1B7676A0003E082F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8917361E1B76740A003E082F /* PBXTargetDependency */,
+				8917364F1B7676A0003E082F /* PBXTargetDependency */,
 			);
 			name = chasingbirdTests;
 			productName = chasingbirdTests;
-			productReference = 8917361C1B76740A003E082F /* chasingbirdTests.xctest */;
+			productReference = 8917364D1B7676A0003E082F /* chasingbirdTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		891735FB1B76740A003E082F /* Project object */ = {
+		8917362C1B7676A0003E082F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = howalee;
 				TargetAttributes = {
-					891736021B76740A003E082F = {
+					891736331B7676A0003E082F = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 7B976PU7W8;
 					};
-					8917361B1B76740A003E082F = {
+					8917364C1B7676A0003E082F = {
 						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 891736021B76740A003E082F;
+						TestTargetID = 891736331B7676A0003E082F;
 					};
 				};
 			};
-			buildConfigurationList = 891735FE1B76740A003E082F /* Build configuration list for PBXProject "chasingbird" */;
+			buildConfigurationList = 8917362F1B7676A0003E082F /* Build configuration list for PBXProject "chasingbird" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -175,29 +176,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 891735FA1B76740A003E082F;
-			productRefGroup = 891736041B76740A003E082F /* Products */;
+			mainGroup = 8917362B1B7676A0003E082F;
+			productRefGroup = 891736351B7676A0003E082F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				891736021B76740A003E082F /* chasingbird */,
-				8917361B1B76740A003E082F /* chasingbirdTests */,
+				891736331B7676A0003E082F /* chasingbird */,
+				8917364C1B7676A0003E082F /* chasingbirdTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		891736011B76740A003E082F /* Resources */ = {
+		891736321B7676A0003E082F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				891736161B76740A003E082F /* LaunchScreen.storyboard in Resources */,
-				891736131B76740A003E082F /* Assets.xcassets in Resources */,
-				891736111B76740A003E082F /* Main.storyboard in Resources */,
+				891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */,
+				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
+				891736421B7676A0003E082F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8917361A1B76740A003E082F /* Resources */ = {
+		8917364B1B7676A0003E082F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -207,47 +208,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		891735FF1B76740A003E082F /* Sources */ = {
+		891736301B7676A0003E082F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8917360E1B76740A003E082F /* ViewController.m in Sources */,
-				8917360B1B76740A003E082F /* AppDelegate.m in Sources */,
-				891736081B76740A003E082F /* main.m in Sources */,
+				8917363F1B7676A0003E082F /* ViewController.m in Sources */,
+				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
+				891736391B7676A0003E082F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		891736181B76740A003E082F /* Sources */ = {
+		891736491B7676A0003E082F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				891736211B76740A003E082F /* chasingbirdTests.m in Sources */,
+				891736521B7676A0003E082F /* chasingbirdTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8917361E1B76740A003E082F /* PBXTargetDependency */ = {
+		8917364F1B7676A0003E082F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 891736021B76740A003E082F /* chasingbird */;
-			targetProxy = 8917361D1B76740A003E082F /* PBXContainerItemProxy */;
+			target = 891736331B7676A0003E082F /* chasingbird */;
+			targetProxy = 8917364E1B7676A0003E082F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8917360F1B76740A003E082F /* Main.storyboard */ = {
+		891736401B7676A0003E082F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				891736101B76740A003E082F /* Base */,
+				891736411B7676A0003E082F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		891736141B76740A003E082F /* LaunchScreen.storyboard */ = {
+		891736451B7676A0003E082F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				891736151B76740A003E082F /* Base */,
+				891736461B7676A0003E082F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -255,7 +256,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		891736231B76740A003E082F /* Debug */ = {
+		891736541B7676A0003E082F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -299,7 +300,7 @@
 			};
 			name = Debug;
 		};
-		891736241B76740A003E082F /* Release */ = {
+		891736551B7676A0003E082F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -337,10 +338,11 @@
 			};
 			name = Release;
 		};
-		891736261B76740A003E082F /* Debug */ = {
+		891736571B7676A0003E082F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
@@ -348,10 +350,11 @@
 			};
 			name = Debug;
 		};
-		891736271B76740A003E082F /* Release */ = {
+		891736581B7676A0003E082F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
@@ -359,7 +362,7 @@
 			};
 			name = Release;
 		};
-		891736291B76740A003E082F /* Debug */ = {
+		8917365A1B7676A0003E082F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -371,7 +374,7 @@
 			};
 			name = Debug;
 		};
-		8917362A1B76740A003E082F /* Release */ = {
+		8917365B1B7676A0003E082F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -386,32 +389,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		891735FE1B76740A003E082F /* Build configuration list for PBXProject "chasingbird" */ = {
+		8917362F1B7676A0003E082F /* Build configuration list for PBXProject "chasingbird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				891736231B76740A003E082F /* Debug */,
-				891736241B76740A003E082F /* Release */,
+				891736541B7676A0003E082F /* Debug */,
+				891736551B7676A0003E082F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		891736251B76740A003E082F /* Build configuration list for PBXNativeTarget "chasingbird" */ = {
+		891736561B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				891736261B76740A003E082F /* Debug */,
-				891736271B76740A003E082F /* Release */,
+				891736571B7676A0003E082F /* Debug */,
+				891736581B7676A0003E082F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		891736281B76740A003E082F /* Build configuration list for PBXNativeTarget "chasingbirdTests" */ = {
+		891736591B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbirdTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				891736291B76740A003E082F /* Debug */,
-				8917362A1B76740A003E082F /* Release */,
+				8917365A1B7676A0003E082F /* Debug */,
+				8917365B1B7676A0003E082F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 891735FB1B76740A003E082F /* Project object */;
+	rootObject = 8917362C1B7676A0003E082F /* Project object */;
 }
