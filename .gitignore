@@ -1,6 +1,5 @@
 # Xcode
 #
-contributors.txt
 build/
 *.pbxuser
 !default.pbxuser
@@ -18,9 +17,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 *.DS_Store
-_NibConstants.?
-Foko/AviarySDK/*
-Foko/OpenTok.framework
 
 tmp
 # CocoaPods
