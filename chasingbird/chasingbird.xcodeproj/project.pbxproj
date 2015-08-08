@@ -405,6 +405,7 @@
 				891736581B7676A0003E082F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		891736591B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbirdTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				8917365B1B7676A0003E082F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
