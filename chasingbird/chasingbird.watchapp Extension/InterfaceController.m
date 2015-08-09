@@ -45,13 +45,13 @@
     
     self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
     self.heartRateUnit = [HKUnit unitFromString:@"count/min"];
+    
+    self.healthStore = [HKHealthStore new];
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-    
-    self.alertLabel.text = @"Chasing bird";
     
     if ([HKHealthStore isHealthDataAvailable] == NO) {
         self.alertLabel.text = @"Data not available";
@@ -65,13 +65,18 @@
         return;
     }
     
-    NSSet *dataTypes = [[NSSet alloc] initWithArray:@[quantiyType]];
-    self.healthStore = [HKHealthStore new];
-    [self.healthStore requestAuthorizationToShareTypes:nil readTypes:dataTypes completion:^(BOOL success, NSError * _Nullable error) {
-        if (success == NO) {
-            self.alertLabel.text = @"Fail to request authorization";
-        }
-    }];
+    __unused HKAuthorizationStatus status = [self.healthStore authorizationStatusForType:quantiyType];
+    
+    if ([self.healthStore authorizationStatusForType:quantiyType] != HKAuthorizationStatusSharingAuthorized) {
+        
+        NSSet *dataTypes = [[NSSet alloc] initWithArray:@[quantiyType]];
+        
+        [self.healthStore requestAuthorizationToShareTypes:nil readTypes:dataTypes completion:^(BOOL success, NSError * _Nullable error) {
+            if (success == NO) {
+                self.alertLabel.text = @"Fail to request authorization";
+            }
+        }];
+    }
 }
 
 - (void)didDeactivate {
