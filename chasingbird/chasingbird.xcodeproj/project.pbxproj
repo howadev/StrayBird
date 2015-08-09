@@ -14,6 +14,16 @@
 		891736441B7676A0003E082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891736431B7676A0003E082F /* Assets.xcassets */; };
 		891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736451B7676A0003E082F /* LaunchScreen.storyboard */; };
 		891736521B7676A0003E082F /* chasingbirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736511B7676A0003E082F /* chasingbirdTests.m */; };
+		8968F2841B7779C6000A6018 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2821B7779C6000A6018 /* Interface.storyboard */; };
+		8968F2861B7779C6000A6018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2851B7779C6000A6018 /* Assets.xcassets */; };
+		8968F28D1B7779C6000A6018 /* chasingbird.watchapp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8968F2951B7779C6000A6018 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8968F2941B7779C6000A6018 /* InterfaceController.m */; };
+		8968F2981B7779C6000A6018 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8968F2971B7779C6000A6018 /* ExtensionDelegate.m */; };
+		8968F29B1B7779C6000A6018 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8968F29A1B7779C6000A6018 /* NotificationController.m */; };
+		8968F29E1B7779C6000A6018 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8968F29D1B7779C6000A6018 /* GlanceController.m */; };
+		8968F2A11B7779C6000A6018 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8968F2A01B7779C6000A6018 /* ComplicationController.m */; };
+		8968F2A31B7779C6000A6018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2A21B7779C6000A6018 /* Assets.xcassets */; };
+		8968F2A71B7779C6000A6018 /* chasingbird.watchapp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +34,46 @@
 			remoteGlobalIDString = 891736331B7676A0003E082F;
 			remoteInfo = chasingbird;
 		};
+		8968F28E1B7779C6000A6018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8917362C1B7676A0003E082F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8968F28B1B7779C6000A6018;
+			remoteInfo = "chasingbird.watchapp Extension";
+		};
+		8968F2A51B7779C6000A6018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8917362C1B7676A0003E082F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8968F27F1B7779C6000A6018;
+			remoteInfo = chasingbird.watchapp;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8968F2AD1B7779C7000A6018 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8968F28D1B7779C6000A6018 /* chasingbird.watchapp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8968F2AF1B7779C7000A6018 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8968F2A71B7779C6000A6018 /* chasingbird.watchapp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		891736341B7676A0003E082F /* chasingbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +89,24 @@
 		8917364D1B7676A0003E082F /* chasingbirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chasingbirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891736511B7676A0003E082F /* chasingbirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chasingbirdTests.m; sourceTree = "<group>"; };
 		891736531B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.watchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8968F2831B7779C6000A6018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		8968F2851B7779C6000A6018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8968F2871B7779C6000A6018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "chasingbird.watchapp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8968F2921B7779C6000A6018 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8968F2931B7779C6000A6018 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		8968F2941B7779C6000A6018 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		8968F2961B7779C6000A6018 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		8968F2971B7779C6000A6018 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		8968F2991B7779C6000A6018 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		8968F29A1B7779C6000A6018 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		8968F29C1B7779C6000A6018 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		8968F29D1B7779C6000A6018 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		8968F29F1B7779C6000A6018 /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
+		8968F2A01B7779C6000A6018 /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		8968F2A21B7779C6000A6018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8968F2A41B7779C6000A6018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +124,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8968F2891B7779C6000A6018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +139,8 @@
 			children = (
 				891736361B7676A0003E082F /* chasingbird */,
 				891736501B7676A0003E082F /* chasingbirdTests */,
+				8968F2811B7779C6000A6018 /* chasingbird.watchapp */,
+				8968F2901B7779C6000A6018 /* chasingbird.watchapp Extension */,
 				891736351B7676A0003E082F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +150,8 @@
 			children = (
 				891736341B7676A0003E082F /* chasingbird.app */,
 				8917364D1B7676A0003E082F /* chasingbirdTests.xctest */,
+				8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */,
+				8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,6 +189,44 @@
 			path = chasingbirdTests;
 			sourceTree = "<group>";
 		};
+		8968F2811B7779C6000A6018 /* chasingbird.watchapp */ = {
+			isa = PBXGroup;
+			children = (
+				8968F2821B7779C6000A6018 /* Interface.storyboard */,
+				8968F2851B7779C6000A6018 /* Assets.xcassets */,
+				8968F2871B7779C6000A6018 /* Info.plist */,
+			);
+			path = chasingbird.watchapp;
+			sourceTree = "<group>";
+		};
+		8968F2901B7779C6000A6018 /* chasingbird.watchapp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8968F2931B7779C6000A6018 /* InterfaceController.h */,
+				8968F2941B7779C6000A6018 /* InterfaceController.m */,
+				8968F2961B7779C6000A6018 /* ExtensionDelegate.h */,
+				8968F2971B7779C6000A6018 /* ExtensionDelegate.m */,
+				8968F2991B7779C6000A6018 /* NotificationController.h */,
+				8968F29A1B7779C6000A6018 /* NotificationController.m */,
+				8968F29C1B7779C6000A6018 /* GlanceController.h */,
+				8968F29D1B7779C6000A6018 /* GlanceController.m */,
+				8968F29F1B7779C6000A6018 /* ComplicationController.h */,
+				8968F2A01B7779C6000A6018 /* ComplicationController.m */,
+				8968F2A21B7779C6000A6018 /* Assets.xcassets */,
+				8968F2A41B7779C6000A6018 /* Info.plist */,
+				8968F2911B7779C6000A6018 /* Supporting Files */,
+			);
+			path = "chasingbird.watchapp Extension";
+			sourceTree = "<group>";
+		};
+		8968F2911B7779C6000A6018 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8968F2921B7779C6000A6018 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,10 +237,12 @@
 				891736301B7676A0003E082F /* Sources */,
 				891736311B7676A0003E082F /* Frameworks */,
 				891736321B7676A0003E082F /* Resources */,
+				8968F2AF1B7779C7000A6018 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8968F2A61B7779C6000A6018 /* PBXTargetDependency */,
 			);
 			name = chasingbird;
 			productName = chasingbird;
@@ -149,6 +267,40 @@
 			productReference = 8917364D1B7676A0003E082F /* chasingbirdTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8968F27F1B7779C6000A6018 /* chasingbird.watchapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8968F2AE1B7779C7000A6018 /* Build configuration list for PBXNativeTarget "chasingbird.watchapp" */;
+			buildPhases = (
+				8968F27E1B7779C6000A6018 /* Resources */,
+				8968F2AD1B7779C7000A6018 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8968F28F1B7779C6000A6018 /* PBXTargetDependency */,
+			);
+			name = chasingbird.watchapp;
+			productName = chasingbird.watchapp;
+			productReference = 8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8968F28B1B7779C6000A6018 /* chasingbird.watchapp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8968F2AC1B7779C7000A6018 /* Build configuration list for PBXNativeTarget "chasingbird.watchapp Extension" */;
+			buildPhases = (
+				8968F2881B7779C6000A6018 /* Sources */,
+				8968F2891B7779C6000A6018 /* Frameworks */,
+				8968F28A1B7779C6000A6018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "chasingbird.watchapp Extension";
+			productName = "chasingbird.watchapp Extension";
+			productReference = 8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +317,13 @@
 					8917364C1B7676A0003E082F = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 891736331B7676A0003E082F;
+					};
+					8968F27F1B7779C6000A6018 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 7B976PU7W8;
+					};
+					8968F28B1B7779C6000A6018 = {
+						CreatedOnToolsVersion = 7.0;
 					};
 				};
 			};
@@ -183,6 +342,8 @@
 			targets = (
 				891736331B7676A0003E082F /* chasingbird */,
 				8917364C1B7676A0003E082F /* chasingbirdTests */,
+				8968F27F1B7779C6000A6018 /* chasingbird.watchapp */,
+				8968F28B1B7779C6000A6018 /* chasingbird.watchapp Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +363,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8968F27E1B7779C6000A6018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8968F2861B7779C6000A6018 /* Assets.xcassets in Resources */,
+				8968F2841B7779C6000A6018 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8968F28A1B7779C6000A6018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8968F2A31B7779C6000A6018 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +404,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8968F2881B7779C6000A6018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8968F2981B7779C6000A6018 /* ExtensionDelegate.m in Sources */,
+				8968F2951B7779C6000A6018 /* InterfaceController.m in Sources */,
+				8968F29B1B7779C6000A6018 /* NotificationController.m in Sources */,
+				8968F29E1B7779C6000A6018 /* GlanceController.m in Sources */,
+				8968F2A11B7779C6000A6018 /* ComplicationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -233,6 +423,16 @@
 			isa = PBXTargetDependency;
 			target = 891736331B7676A0003E082F /* chasingbird */;
 			targetProxy = 8917364E1B7676A0003E082F /* PBXContainerItemProxy */;
+		};
+		8968F28F1B7779C6000A6018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8968F28B1B7779C6000A6018 /* chasingbird.watchapp Extension */;
+			targetProxy = 8968F28E1B7779C6000A6018 /* PBXContainerItemProxy */;
+		};
+		8968F2A61B7779C6000A6018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8968F27F1B7779C6000A6018 /* chasingbird.watchapp */;
+			targetProxy = 8968F2A51B7779C6000A6018 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -251,6 +451,14 @@
 				891736461B7676A0003E082F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8968F2821B7779C6000A6018 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8968F2831B7779C6000A6018 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -386,6 +594,68 @@
 			};
 			name = Release;
 		};
+		8968F2A81B7779C7000A6018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = chasingbird_watchapp_Extension;
+				INFOPLIST_FILE = chasingbird.watchapp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		8968F2A91B7779C7000A6018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = chasingbird_watchapp_Extension;
+				INFOPLIST_FILE = chasingbird.watchapp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		8968F2AA1B7779C7000A6018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "chasingbird.watchapp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		8968F2AB1B7779C7000A6018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "chasingbird.watchapp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,6 +685,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8968F2AC1B7779C7000A6018 /* Build configuration list for PBXNativeTarget "chasingbird.watchapp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8968F2AA1B7779C7000A6018 /* Debug */,
+				8968F2AB1B7779C7000A6018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8968F2AE1B7779C7000A6018 /* Build configuration list for PBXNativeTarget "chasingbird.watchapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8968F2A81B7779C7000A6018 /* Debug */,
+				8968F2A91B7779C7000A6018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
