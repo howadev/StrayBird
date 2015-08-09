@@ -10,10 +10,22 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label alignment="center" text="Label" id="EYX-Xc-feO"/>
+                        <label alignment="center" text="alert" numberOfLines="0" id="EYX-Xc-feO"/>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Start" id="Tdr-1K-Ad2">
+                            <connections>
+                                <action selector="startButtonDidTap" destination="AgC-eL-Hgc" id="byN-h2-MLj"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="center" title="End" id="dyA-zE-ZAL">
+                            <connections>
+                                <action selector="endButtonDidTap" destination="AgC-eL-Hgc" id="30T-VX-J0t"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="alertLabel" destination="EYX-Xc-feO" id="8Eo-nd-I35"/>
+                        <outlet property="endButton" destination="dyA-zE-ZAL" id="tGE-ze-q8P"/>
+                        <outlet property="startButton" destination="Tdr-1K-Ad2" id="tA5-mI-Tfv"/>
                     </connections>
                 </controller>
             </objects>
