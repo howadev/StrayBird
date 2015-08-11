@@ -17,7 +17,7 @@
 @property (nonatomic, retain) HKWorkoutSession *workoutSession;
 @property (nonatomic, retain) HKHealthStore *healthStore;
 @property (nonatomic, retain) HKQueryAnchor *anchor;
-@property (nonatomic, retain) HKUnit *heartRateUnit;
+@property (nonatomic, retain) HKUnit *workoutUnit;
 @end
 
 
@@ -44,7 +44,7 @@
     self.workoutSession.delegate = self;
     
     self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
-    self.heartRateUnit = [HKUnit unitFromString:@"count/min"];
+    self.workoutUnit = [HKUnit unitFromString:@"m"];
     
     self.healthStore = [HKHealthStore new];
 }
@@ -58,25 +58,20 @@
         return;
     }
     
-    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
     
     if (quantiyType == nil) {
         self.alertLabel.text = @"Quanity type not available";
         return;
     }
     
-    __unused HKAuthorizationStatus status = [self.healthStore authorizationStatusForType:quantiyType];
+    NSSet *dataTypes = [[NSSet alloc] initWithArray:@[quantiyType]];
     
-    if ([self.healthStore authorizationStatusForType:quantiyType] != HKAuthorizationStatusSharingAuthorized) {
-        
-        NSSet *dataTypes = [[NSSet alloc] initWithArray:@[quantiyType]];
-        
-        [self.healthStore requestAuthorizationToShareTypes:nil readTypes:dataTypes completion:^(BOOL success, NSError * _Nullable error) {
-            if (success == NO) {
-                self.alertLabel.text = @"Fail to request authorization";
-            }
-        }];
-    }
+    [self.healthStore requestAuthorizationToShareTypes:nil readTypes:dataTypes completion:^(BOOL success, NSError * _Nullable error) {
+        if (success == NO) {
+            self.alertLabel.text = @"Fail to request authorization";
+        }
+    }];
 }
 
 - (void)didDeactivate {
@@ -86,11 +81,11 @@
 
 #pragma Workout Data
 
-- (void)updateHeartRateWithSamples:(NSArray*)samples
+- (void)updateWorkoutRateWithSamples:(NSArray*)samples
 {
     HKQuantitySample *sample = [samples firstObject];
     if (sample) {
-        NSString *valueString = [NSString stringWithFormat:@"%f", [sample.quantity doubleValueForUnit:self.heartRateUnit]];
+        NSString *valueString = [NSString stringWithFormat:@"%f", [sample.quantity doubleValueForUnit:self.workoutUnit]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.alertLabel.text = valueString;
@@ -98,38 +93,38 @@
     }
 }
 
-- (HKQuery*)createHeartRateStreamingQueryOnDate:(NSDate*)date
+- (HKQuery*)createWorkoutStreamingQueryOnDate:(NSDate*)date
 {
-    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
     
     if (quantiyType == nil) {
         self.alertLabel.text = @"Quanity type not available";
         return nil;
     }
     
-    HKAnchoredObjectQuery *heartRateQuery = [[HKAnchoredObjectQuery alloc] initWithType:quantiyType predicate:nil anchor:self.anchor limit:HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
+    HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:quantiyType predicate:nil anchor:self.anchor limit:HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
         if (newAnchor) {
             self.anchor = newAnchor;
-            [self updateHeartRateWithSamples:sampleObjects];
+            [self updateWorkoutRateWithSamples:sampleObjects];
         }
     }];
     
-    if (heartRateQuery == nil) {
-        self.alertLabel.text = @"Heart rate query not available";
+    if (query == nil) {
+        self.alertLabel.text = @"Query not available";
         return nil;
     }
     
-    heartRateQuery.updateHandler = ^(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * __nullable addedObjects, NSArray<HKDeletedObject *> * __nullable deletedObjects, HKQueryAnchor * __nullable newAnchor, NSError * __nullable error) {
+    query.updateHandler = ^(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * __nullable addedObjects, NSArray<HKDeletedObject *> * __nullable deletedObjects, HKQueryAnchor * __nullable newAnchor, NSError * __nullable error) {
         self.anchor = newAnchor;
-        [self updateHeartRateWithSamples:addedObjects];
+        [self updateWorkoutRateWithSamples:addedObjects];
     };
     
-    return heartRateQuery;
+    return query;
 }
 
 - (void)workoutDidStartOnDate:(NSDate*)date
 {
-    HKQuery *query = [self createHeartRateStreamingQueryOnDate:date];
+    HKQuery *query = [self createWorkoutStreamingQueryOnDate:date];
     if (query) {
         [self.healthStore executeQuery:query];
     } else {
@@ -139,7 +134,7 @@
 
 - (void)workoutDidEndOnDate:(NSDate*)date
 {
-    HKQuery *query = [self createHeartRateStreamingQueryOnDate:date];
+    HKQuery *query = [self createWorkoutStreamingQueryOnDate:date];
     if (query) {
         [self.healthStore stopQuery:query];
         self.alertLabel.text = @"Stop Running";
@@ -155,22 +150,24 @@
              fromState:(HKWorkoutSessionState)fromState
                   date:(NSDate *)date
 {
-    switch (toState) {
-        case HKWorkoutSessionStateRunning:
-            [self workoutDidStartOnDate:date];
-            break;
-        case HKWorkoutSessionStateEnded:
-            [self workoutDidEndOnDate:date];
-            break;
-        default:
-            
-            break;
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch (toState) {
+            case HKWorkoutSessionStateRunning:
+                [self workoutDidStartOnDate:date];
+                break;
+            case HKWorkoutSessionStateEnded:
+                [self workoutDidEndOnDate:date];
+                break;
+            default:
+                break;
+        }
+    });
 }
 
 - (void)workoutSession:(HKWorkoutSession *)workoutSession didFailWithError:(NSError *)error
 {
-    self.alertLabel.text = @"Workout session fail";
+    //self.alertLabel.text = @"Workout session fail";
+    NSLog(@"%@", error);
 }
 
 @end
