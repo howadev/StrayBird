@@ -18,10 +18,14 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
 };
 
 @interface CBDemoViewController ()
+@property (nonatomic, retain) NSTimer *timer;
+@property (nonatomic, retain) CBTimerView *timerView;
 @property (nonatomic, retain) HKHealthStore *healthStore;
 @end
 
-@implementation CBDemoViewController
+@implementation CBDemoViewController {
+    NSUInteger seconds;
+}
 
 #pragma mark - View Life Cycle
 
@@ -37,6 +41,13 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -46,7 +57,41 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
     [refreshControl addTarget:self action:@selector(refreshStatistics) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
+    self.timerView = [CBTimerView new];
+    self.timerView.startButton.enabled = YES;
+    self.timerView.stopButton.enabled = NO;
+    [self.timerView.startButton addTarget:self action:@selector(startTimer) forControlEvents:UIControlEventTouchUpInside];
+    [self.timerView.stopButton addTarget:self action:@selector(stopTimer) forControlEvents:UIControlEventTouchUpInside];
     self.healthStore = [[HKHealthStore alloc] init];
+    
+    
+}
+
+- (void)startTimer {
+    
+    self.timerView.startButton.enabled = NO;
+    self.timerView.stopButton.enabled = YES;
+    
+    seconds = 0;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self
+                                                selector:@selector(refreshTimeLabel:)
+                                                userInfo:nil repeats:YES];
+}
+
+- (void)stopTimer {
+    
+    self.timerView.startButton.enabled = YES;
+    self.timerView.stopButton.enabled = NO;
+    
+    seconds = 0;
+    [self.timerView setTimerLabelWithSeconds:seconds];
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+-(void)refreshTimeLabel:(id)sender
+{
+    [self.timerView setTimerLabelWithSeconds:seconds++];
 }
 
 #pragma mark - Reading HealthKit Data
@@ -102,8 +147,7 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     NSAssert(section == 0, @"Should only have one section");
-    CBTimerView *timerView = [CBTimerView new];
-    return timerView;
+    return self.timerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

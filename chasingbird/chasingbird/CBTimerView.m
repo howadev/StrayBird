@@ -24,9 +24,9 @@
         
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.stopButton setTitle:@"Stop" forState:UIControlStateNormal];
-        self.timerLabel.text = @"00:00:00";
         self.timerLabel.textAlignment = NSTextAlignmentCenter;
         self.timerLabel.backgroundColor = [UIColor whiteColor];
+        self.timerLabel.text = @"0 S";
         
         for (UIView *view in @[self.startButton, self.stopButton, self.timerLabel]) {
             view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -52,6 +52,10 @@
     }
     
     return self;
+}
+
+- (void)setTimerLabelWithSeconds:(NSUInteger)seconds {
+    self.timerLabel.text = [NSString stringWithFormat:@"%ld S", seconds];
 }
 
 @end
