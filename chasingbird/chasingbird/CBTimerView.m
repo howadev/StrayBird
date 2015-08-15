@@ -25,7 +25,8 @@
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.stopButton setTitle:@"Stop" forState:UIControlStateNormal];
         self.timerLabel.text = @"00:00:00";
-        self.timerLabel.textAlignment = NSTextAlignmentRight;
+        self.timerLabel.textAlignment = NSTextAlignmentCenter;
+        self.timerLabel.backgroundColor = [UIColor whiteColor];
         
         for (UIView *view in @[self.startButton, self.stopButton, self.timerLabel]) {
             view.translatesAutoresizingMaskIntoConstraints = NO;
