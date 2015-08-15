@@ -10,6 +10,13 @@
 #import "CBTimerView.h"
 @import HealthKit;
 
+typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
+    CBWorkoutModeSteps = 0,
+    CBWorkoutModeWalkingRunningDistance,
+    CBWorkoutModeBikingDistance,
+    CBWorkoutModeEnergy
+};
+
 @interface CBDemoViewController ()
 @property (nonatomic, retain) HKHealthStore *healthStore;
 @end
@@ -42,11 +49,6 @@
     self.healthStore = [[HKHealthStore alloc] init];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Reading HealthKit Data
 
 - (void)refreshStatistics {
@@ -61,28 +63,31 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSAssert(indexPath.section == 0, @"Should only have one section");
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     switch (indexPath.row) {
-        case 0: {
+        case CBWorkoutModeSteps: {
             cell.textLabel.text = @"Steps:";
             cell.detailTextLabel.text = @"0";
             break;
         }
-        case 1: {
+        case CBWorkoutModeWalkingRunningDistance: {
             cell.textLabel.text = @"Walking+Running Distance:";
             cell.detailTextLabel.text = @"1";
             break;
         }
-        case 2: {
+        case CBWorkoutModeBikingDistance: {
             cell.textLabel.text = @"Biking Distance:";
             cell.detailTextLabel.text = @"2";
             break;
         }
-        case 3: {
+        case CBWorkoutModeEnergy: {
             cell.textLabel.text = @"Energy:";
             cell.detailTextLabel.text = @"3";
             break;
@@ -96,6 +101,7 @@
 #pragma mark - UITableViewDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSAssert(section == 0, @"Should only have one section");
     CBTimerView *timerView = [CBTimerView new];
     return timerView;
 }
