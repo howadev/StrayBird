@@ -1,19 +1,19 @@
 //
-//  ViewController.m
+//  CBDemoViewController.m
 //  chasingbird
 //
 //  Created by Howard on 2015-08-08.
 //  Copyright © 2015 howalee. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CBDemoViewController.h"
 @import HealthKit;
 
-@interface ViewController ()
+@interface CBDemoViewController ()
 @property (nonatomic, retain) HKHealthStore *healthStore;
 @end
 
-@implementation ViewController
+@implementation CBDemoViewController
 
 #pragma mark - View Life Cycle
 
@@ -91,5 +91,11 @@
     }
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    
+//}
 
 @end

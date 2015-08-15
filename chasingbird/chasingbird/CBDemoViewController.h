@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CBDemoViewController.h
 //  chasingbird
 //
 //  Created by Howard on 2015-08-08.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface CBDemoViewController : UITableViewController
 
 
 @end

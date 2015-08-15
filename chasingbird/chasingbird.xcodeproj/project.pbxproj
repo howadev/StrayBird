@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891458DA1B7FCEAB00ECF6D9 /* CBTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891458D91B7FCEAB00ECF6D9 /* CBTimerView.xib */; };
 		891736391B7676A0003E082F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736381B7676A0003E082F /* main.m */; };
 		8917363C1B7676A0003E082F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363B1B7676A0003E082F /* AppDelegate.m */; };
-		8917363F1B7676A0003E082F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363E1B7676A0003E082F /* ViewController.m */; };
+		8917363F1B7676A0003E082F /* CBDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363E1B7676A0003E082F /* CBDemoViewController.m */; };
 		891736441B7676A0003E082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891736431B7676A0003E082F /* Assets.xcassets */; };
 		891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736451B7676A0003E082F /* LaunchScreen.storyboard */; };
 		891736521B7676A0003E082F /* chasingbirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736511B7676A0003E082F /* chasingbirdTests.m */; };
@@ -76,12 +77,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		891458D91B7FCEAB00ECF6D9 /* CBTimerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBTimerView.xib; sourceTree = "<group>"; };
 		891736341B7676A0003E082F /* chasingbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891736381B7676A0003E082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8917363A1B7676A0003E082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8917363B1B7676A0003E082F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8917363D1B7676A0003E082F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8917363E1B7676A0003E082F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8917363D1B7676A0003E082F /* CBDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBDemoViewController.h; sourceTree = "<group>"; };
+		8917363E1B7676A0003E082F /* CBDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBDemoViewController.m; sourceTree = "<group>"; };
 		891736431B7676A0003E082F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		891736461B7676A0003E082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		891736481B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,10 +168,11 @@
 				8968F2B01B7789A4000A6018 /* chasingbird.entitlements */,
 				8917363A1B7676A0003E082F /* AppDelegate.h */,
 				8917363B1B7676A0003E082F /* AppDelegate.m */,
-				8917363D1B7676A0003E082F /* ViewController.h */,
-				8917363E1B7676A0003E082F /* ViewController.m */,
+				8917363D1B7676A0003E082F /* CBDemoViewController.h */,
+				8917363E1B7676A0003E082F /* CBDemoViewController.m */,
 				891736431B7676A0003E082F /* Assets.xcassets */,
 				891736451B7676A0003E082F /* LaunchScreen.storyboard */,
+				891458D91B7FCEAB00ECF6D9 /* CBTimerView.xib */,
 				891736481B7676A0003E082F /* Info.plist */,
 				891736371B7676A0003E082F /* Supporting Files */,
 			);
@@ -371,6 +374,7 @@
 			files = (
 				891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */,
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
+				891458DA1B7FCEAB00ECF6D9 /* CBTimerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8917363F1B7676A0003E082F /* ViewController.m in Sources */,
+				8917363F1B7676A0003E082F /* CBDemoViewController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				891736391B7676A0003E082F /* main.m in Sources */,
 			);
