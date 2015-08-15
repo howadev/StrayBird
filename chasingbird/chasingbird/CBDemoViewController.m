@@ -7,6 +7,7 @@
 //
 
 #import "CBDemoViewController.h"
+#import "CBTimerView.h"
 @import HealthKit;
 
 @interface CBDemoViewController ()
@@ -94,8 +95,13 @@
 
 #pragma mark - UITableViewDelegate
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CBTimerView *timerView = [CBTimerView new];
+    return timerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50;
+}
 
 @end
