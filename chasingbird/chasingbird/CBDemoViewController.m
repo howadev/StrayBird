@@ -8,19 +8,12 @@
 
 #import "CBDemoViewController.h"
 #import "CBTimerView.h"
-@import HealthKit;
-
-typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
-    CBWorkoutModeSteps = 0,
-    CBWorkoutModeWalkingRunningDistance,
-    CBWorkoutModeBikingDistance,
-    CBWorkoutModeEnergy
-};
+#import "CBWorkoutController.h"
 
 @interface CBDemoViewController ()
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) CBTimerView *timerView;
-@property (nonatomic, retain) HKHealthStore *healthStore;
+@property (nonatomic, retain) CBWorkoutController *workoutController;
 @end
 
 @implementation CBDemoViewController {
@@ -62,8 +55,8 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
     self.timerView.stopButton.enabled = NO;
     [self.timerView.startButton addTarget:self action:@selector(startTimer) forControlEvents:UIControlEventTouchUpInside];
     [self.timerView.stopButton addTarget:self action:@selector(stopTimer) forControlEvents:UIControlEventTouchUpInside];
-    self.healthStore = [[HKHealthStore alloc] init];
     
+    self.workoutController = [CBWorkoutController new];
     
 }
 
@@ -76,6 +69,8 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self
                                                 selector:@selector(refreshTimeLabel:)
                                                 userInfo:nil repeats:YES];
+    
+    [self.workoutController fetchWorkoutDataInMode:CBWorkoutModeWalkingRunningDistance startingAt:[NSDate date]];
 }
 
 - (void)stopTimer {
@@ -87,6 +82,8 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
     [self.timerView setTimerLabelWithSeconds:seconds];
     [self.timer invalidate];
     self.timer = nil;
+    
+    [self.workoutController stopFetchingWorkoutData];
 }
 
 -(void)refreshTimeLabel:(id)sender
