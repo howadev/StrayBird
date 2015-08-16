@@ -16,7 +16,12 @@ typedef NS_ENUM(NSUInteger, CBWorkoutMode) {
     CBWorkoutModeEnergy
 };
 
+@protocol CBWorkoutControllerDelegate <NSObject>
+- (void)workoutControllerDidGetValue:(double)value inMode:(CBWorkoutMode)mode;
+@end
+
 @interface CBWorkoutController : NSObject
+@property (nonatomic, weak) id <CBWorkoutControllerDelegate> delegate;
 @property (nonatomic, retain) HKHealthStore *healthStore;
 
 - (void)fetchWorkoutDataInMode:(CBWorkoutMode)mode startingAt:(NSDate*)date;

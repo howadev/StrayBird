@@ -10,7 +10,7 @@
 #import "CBTimerView.h"
 #import "CBWorkoutController.h"
 
-@interface CBDemoViewController ()
+@interface CBDemoViewController () <CBWorkoutControllerDelegate>
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) CBTimerView *timerView;
 @property (nonatomic, retain) CBWorkoutController *workoutController;
@@ -18,6 +18,7 @@
 
 @implementation CBDemoViewController {
     NSUInteger seconds;
+    double walkingRuningDistance;
 }
 
 #pragma mark - View Life Cycle
@@ -57,7 +58,9 @@
     [self.timerView.stopButton addTarget:self action:@selector(stopTimer) forControlEvents:UIControlEventTouchUpInside];
     
     self.workoutController = [CBWorkoutController new];
+    self.workoutController.delegate = self;
     
+    walkingRuningDistance = 0.0;
 }
 
 - (void)startTimer {
@@ -91,6 +94,13 @@
     [self.timerView setTimerLabelWithSeconds:seconds++];
 }
 
+#pragma mark - CBWorkoutControllerDelegate
+
+- (void)workoutControllerDidGetValue:(double)value inMode:(CBWorkoutMode)mode {
+    walkingRuningDistance = value;
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:CBWorkoutModeWalkingRunningDistance inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 #pragma mark - Reading HealthKit Data
 
 - (void)refreshStatistics {
@@ -121,7 +131,7 @@
         }
         case CBWorkoutModeWalkingRunningDistance: {
             cell.textLabel.text = @"Walking+Running Distance:";
-            cell.detailTextLabel.text = @"1";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", walkingRuningDistance];
             break;
         }
         case CBWorkoutModeBikingDistance: {
