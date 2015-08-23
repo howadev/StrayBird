@@ -16,6 +16,9 @@
 		891736441B7676A0003E082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891736431B7676A0003E082F /* Assets.xcassets */; };
 		891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736451B7676A0003E082F /* LaunchScreen.storyboard */; };
 		891736521B7676A0003E082F /* chasingbirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736511B7676A0003E082F /* chasingbirdTests.m */; };
+		89659BEA1B895D6D004072CE /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89659BE91B895D6D004072CE /* GameKit.framework */; };
+		89659BEC1B895FBF004072CE /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89659BEB1B895FBF004072CE /* SpriteKit.framework */; };
+		89659BEF1B8962B6004072CE /* CBGameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89659BEE1B8962B6004072CE /* CBGameKitHelper.m */; };
 		8968F2841B7779C6000A6018 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2821B7779C6000A6018 /* Interface.storyboard */; };
 		8968F2861B7779C6000A6018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2851B7779C6000A6018 /* Assets.xcassets */; };
 		8968F28D1B7779C6000A6018 /* chasingbird.watchapp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -97,6 +100,10 @@
 		8917364D1B7676A0003E082F /* chasingbirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chasingbirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891736511B7676A0003E082F /* chasingbirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chasingbirdTests.m; sourceTree = "<group>"; };
 		891736531B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89659BE91B895D6D004072CE /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		89659BEB1B895FBF004072CE /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		89659BED1B8962B6004072CE /* CBGameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGameKitHelper.h; sourceTree = "<group>"; };
+		89659BEE1B8962B6004072CE /* CBGameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGameKitHelper.m; sourceTree = "<group>"; };
 		8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.watchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8968F2831B7779C6000A6018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		8968F2851B7779C6000A6018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +132,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89659BEC1B895FBF004072CE /* SpriteKit.framework in Frameworks */,
 				8968F2B21B7789A4000A6018 /* HealthKit.framework in Frameworks */,
+				89659BEA1B895D6D004072CE /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +171,8 @@
 			children = (
 				891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */,
 				891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */,
+				89659BED1B8962B6004072CE /* CBGameKitHelper.h */,
+				89659BEE1B8962B6004072CE /* CBGameKitHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -169,6 +180,8 @@
 		8917362B1B7676A0003E082F = {
 			isa = PBXGroup;
 			children = (
+				89659BEB1B895FBF004072CE /* SpriteKit.framework */,
+				89659BE91B895D6D004072CE /* GameKit.framework */,
 				8968F2B11B7789A4000A6018 /* HealthKit.framework */,
 				891736361B7676A0003E082F /* chasingbird */,
 				891736501B7676A0003E082F /* chasingbirdTests */,
@@ -350,6 +363,9 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 7B976PU7W8;
 						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
@@ -438,6 +454,7 @@
 			files = (
 				8917363F1B7676A0003E082F /* CBDemoViewController.m in Sources */,
 				891458E01B7FD0BA00ECF6D9 /* CBTimerView.m in Sources */,
+				89659BEF1B8962B6004072CE /* CBGameKitHelper.m in Sources */,
 				891458E71B7FF3AC00ECF6D9 /* CBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */,

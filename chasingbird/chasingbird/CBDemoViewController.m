@@ -9,6 +9,7 @@
 #import "CBDemoViewController.h"
 #import "CBTimerView.h"
 #import "CBWorkoutController.h"
+#import "CBGameKitHelper.h"
 
 @interface CBDemoViewController () <CBWorkoutControllerDelegate>
 @property (nonatomic, retain) NSTimer *timer;
@@ -29,10 +30,16 @@
     [self refreshStatistics];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshStatistics) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
+    
+    [[CBGameKitHelper sharedGameKitHelper]
+     authenticateLocalPlayer];
+
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -62,6 +69,14 @@
     
     walkingRuningDistance = 0.0;
 }
+
+- (void)showAuthenticationViewController
+{
+    CBGameKitHelper *gameKitHelper = [CBGameKitHelper sharedGameKitHelper];
+    
+    [self presentViewController:gameKitHelper.authenticationViewController animated:YES completion:nil];
+}
+
 
 - (void)startTimer {
     
