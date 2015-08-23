@@ -82,7 +82,7 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
 }
 
 - (void)reportScore:(NSInteger)score {
-    if (_enableGameCenter && _leaderboardIdentifier) {
+    if (_enableGameCenter && [_leaderboardIdentifier isEqual:@"score_board"]) {
         GKScore *_score = [[GKScore alloc] initWithLeaderboardIdentifier:_leaderboardIdentifier];
         _score.value = score;
         
@@ -91,9 +91,34 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
                 NSLog(@"%@", [error localizedDescription]);
             } else {
                 NSLog(@"reprot score successfully: %@", _score);
+                if (score >= 5) {
+                    [self updateAchievements];
+                }
             }
         }];
+        
+        
     }
+}
+
+-(void)updateAchievements{
+
+    GKAchievement *scoreAchievement = [[GKAchievement alloc] initWithIdentifier:@"finish_five_times"];
+    scoreAchievement.percentComplete = 100.0;
+    
+    [GKAchievement reportAchievements:@[scoreAchievement] withCompletionHandler:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }];
+}
+
+-(void)resetAchievements{
+    [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }];
 }
 
 @end

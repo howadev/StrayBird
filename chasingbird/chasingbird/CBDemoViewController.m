@@ -97,7 +97,7 @@
 }
 
 - (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 # pragma mark - Timer
