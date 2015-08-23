@@ -117,6 +117,8 @@
 
 - (void)stopTimer {
     
+    [[CBGameKitHelper sharedGameKitHelper] reportScore:seconds];
+    
     self.timerView.startButton.enabled = YES;
     self.timerView.stopButton.enabled = NO;
     
@@ -131,7 +133,6 @@
 -(void)refreshTimeLabel:(id)sender
 {
     [self.timerView setTimerLabelWithSeconds:seconds++];
-    [[CBGameKitHelper sharedGameKitHelper] reportScore:seconds];
 }
 
 #pragma mark - CBWorkoutControllerDelegate

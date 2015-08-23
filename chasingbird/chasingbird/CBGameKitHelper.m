@@ -89,6 +89,8 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
         [GKScore reportScores:@[_score] withCompletionHandler:^(NSError *error) {
             if (error != nil) {
                 NSLog(@"%@", [error localizedDescription]);
+            } else {
+                NSLog(@"reprot score successfully: %@", _score);
             }
         }];
     }
