@@ -46,6 +46,16 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
             [self setAuthenticationViewController:viewController];
         } else if([GKLocalPlayer localPlayer].isAuthenticated) {
             _enableGameCenter = YES;
+            
+            [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
+                
+                if (error != nil) {
+                    NSLog(@"%@", [error localizedDescription]);
+                }
+                else{
+                    _leaderboardIdentifier = leaderboardIdentifier;
+                }
+            }];
         } else {
             _enableGameCenter = NO;
         }
@@ -68,6 +78,19 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
     if (_lastError) {
         NSLog(@"GameKitHelper ERROR: %@",
               [[_lastError userInfo] description]);
+    }
+}
+
+- (void)reportScore:(NSInteger)score {
+    if (_enableGameCenter && _leaderboardIdentifier) {
+        GKScore *_score = [[GKScore alloc] initWithLeaderboardIdentifier:_leaderboardIdentifier];
+        _score.value = score;
+        
+        [GKScore reportScores:@[_score] withCompletionHandler:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"%@", [error localizedDescription]);
+            }
+        }];
     }
 }
 

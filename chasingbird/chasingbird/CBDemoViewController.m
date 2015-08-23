@@ -11,7 +11,7 @@
 #import "CBWorkoutController.h"
 #import "CBGameKitHelper.h"
 
-@interface CBDemoViewController () <CBWorkoutControllerDelegate>
+@interface CBDemoViewController () <CBWorkoutControllerDelegate, GKGameCenterControllerDelegate>
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) CBTimerView *timerView;
 @property (nonatomic, retain) CBWorkoutController *workoutController;
@@ -68,7 +68,11 @@
     self.workoutController.delegate = self;
     
     walkingRuningDistance = 0.0;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showLeaderboardAndAchievements:)];
 }
+
+# pragma mark - Game Kit
 
 - (void)showAuthenticationViewController
 {
@@ -77,6 +81,26 @@
     [self presentViewController:gameKitHelper.authenticationViewController animated:YES completion:nil];
 }
 
+-(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard{
+    GKGameCenterViewController *gcViewController = [[GKGameCenterViewController alloc] init];
+    
+    gcViewController.gameCenterDelegate = self;
+    
+    if (shouldShowLeaderboard) {
+        gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
+        gcViewController.leaderboardIdentifier = [CBGameKitHelper sharedGameKitHelper].leaderboardIdentifier;
+    } else{
+        gcViewController.viewState = GKGameCenterViewControllerStateAchievements;
+    }
+    
+    [self presentViewController:gcViewController animated:YES completion:nil];
+}
+
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+# pragma mark - Timer
 
 - (void)startTimer {
     
@@ -107,6 +131,7 @@
 -(void)refreshTimeLabel:(id)sender
 {
     [self.timerView setTimerLabelWithSeconds:seconds++];
+    [[CBGameKitHelper sharedGameKitHelper] reportScore:seconds];
 }
 
 #pragma mark - CBWorkoutControllerDelegate
