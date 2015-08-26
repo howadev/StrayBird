@@ -6,10 +6,10 @@
 //  Copyright © 2015 howalee. All rights reserved.
 //
 
-#import "CBTimerView.h"
+#import "CHBTimerView.h"
 #import "UIView+AutoLayoutHelpers.h"
 
-@implementation CBTimerView
+@implementation CHBTimerView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

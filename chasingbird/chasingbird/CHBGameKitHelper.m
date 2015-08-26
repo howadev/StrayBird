@@ -6,11 +6,11 @@
 //  Copyright © 2015 howalee. All rights reserved.
 //
 
-#import "CBGameKitHelper.h"
+#import "CHBGameKitHelper.h"
 
 NSString *const PresentAuthenticationViewController = @"present_authentication_view_controller";
 
-@implementation CBGameKitHelper {
+@implementation CHBGameKitHelper {
     BOOL _enableGameCenter;
 }
 
@@ -25,10 +25,10 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
 
 + (instancetype)sharedGameKitHelper
 {
-    static CBGameKitHelper *sharedGameKitHelper;
+    static CHBGameKitHelper *sharedGameKitHelper;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedGameKitHelper = [[CBGameKitHelper alloc] init];
+        sharedGameKitHelper = [[CHBGameKitHelper alloc] init];
     });
     return sharedGameKitHelper;
 }

@@ -6,13 +6,13 @@
 //  Copyright © 2015 howalee. All rights reserved.
 //
 
-#import "CBWorkoutController.h"
+#import "CHBWorkoutController.h"
 
-@interface CBWorkoutController ()
+@interface CHBWorkoutController ()
 @property (nonatomic, retain) HKObserverQuery *observerQuery;
 @end
 
-@implementation CBWorkoutController
+@implementation CHBWorkoutController
 
 - (instancetype)init {
     self = [super init];
@@ -24,9 +24,9 @@
 
 #pragma mark - observer query
 
-- (void)fetchWorkoutDataInMode:(CBWorkoutMode)mode startingAt:(NSDate*)date {
+- (void)fetchWorkoutDataInMode:(CHBWorkoutMode)mode startingAt:(NSDate*)date {
     
-    NSAssert(mode == CBWorkoutModeWalkingRunningDistance, @"Only support walking+running distance mode for now");
+    NSAssert(mode == CHBWorkoutModeWalkingRunningDistance, @"Only support walking+running distance mode for now");
     
     HKSampleType *sampleType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
     
@@ -60,7 +60,7 @@
 
 #pragma mark - statistics query
 
-- (void)_fetchWorkoutDataInMode:(CBWorkoutMode)mode startingAt:(NSDate*)date {
+- (void)_fetchWorkoutDataInMode:(CHBWorkoutMode)mode startingAt:(NSDate*)date {
    
     NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:date endDate:[NSDate date] options:HKQueryOptionStrictStartDate];
     

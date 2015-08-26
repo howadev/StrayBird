@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CBDemoViewController : UITableViewController
+@interface CHBDemoViewController : UITableViewController
 
 
 @end

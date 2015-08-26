@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CBTimerView : UIView
+@interface CHBTimerView : UIView
 @property (nonatomic, retain) UIButton *startButton;
 @property (nonatomic, retain) UIButton *stopButton;
 @property (nonatomic, retain) UILabel *timerLabel;

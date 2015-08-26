@@ -11,7 +11,7 @@
 
 extern NSString *const PresentAuthenticationViewController;
 
-@interface CBGameKitHelper : NSObject
+@interface CHBGameKitHelper : NSObject
 @property (nonatomic, readonly) UIViewController *authenticationViewController;
 @property (nonatomic, readonly) NSError *lastError;
 @property (nonatomic, retain) NSString *leaderboardIdentifier;

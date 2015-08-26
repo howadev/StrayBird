@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		891458E01B7FD0BA00ECF6D9 /* CBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CBTimerView.m */; };
+		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
-		891458E71B7FF3AC00ECF6D9 /* CBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CBWorkoutController.m */; };
+		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
 		891736391B7676A0003E082F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736381B7676A0003E082F /* main.m */; };
 		8917363C1B7676A0003E082F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363B1B7676A0003E082F /* AppDelegate.m */; };
-		8917363F1B7676A0003E082F /* CBDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363E1B7676A0003E082F /* CBDemoViewController.m */; };
+		8917363F1B7676A0003E082F /* CHBDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363E1B7676A0003E082F /* CHBDemoViewController.m */; };
 		891736441B7676A0003E082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891736431B7676A0003E082F /* Assets.xcassets */; };
 		891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736451B7676A0003E082F /* LaunchScreen.storyboard */; };
 		891736521B7676A0003E082F /* chasingbirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736511B7676A0003E082F /* chasingbirdTests.m */; };
 		89659BEA1B895D6D004072CE /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89659BE91B895D6D004072CE /* GameKit.framework */; };
 		89659BEC1B895FBF004072CE /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89659BEB1B895FBF004072CE /* SpriteKit.framework */; };
-		89659BEF1B8962B6004072CE /* CBGameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89659BEE1B8962B6004072CE /* CBGameKitHelper.m */; };
+		89659BEF1B8962B6004072CE /* CHBGameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89659BEE1B8962B6004072CE /* CHBGameKitHelper.m */; };
 		8968F2841B7779C6000A6018 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2821B7779C6000A6018 /* Interface.storyboard */; };
 		8968F2861B7779C6000A6018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2851B7779C6000A6018 /* Assets.xcassets */; };
 		8968F28D1B7779C6000A6018 /* chasingbird.watchapp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -82,18 +82,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		891458DE1B7FD0BA00ECF6D9 /* CBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimerView.h; sourceTree = "<group>"; };
-		891458DF1B7FD0BA00ECF6D9 /* CBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimerView.m; sourceTree = "<group>"; };
+		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
+		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
 		891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayoutHelpers.m"; sourceTree = "<group>"; };
-		891458E51B7FF3AC00ECF6D9 /* CBWorkoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWorkoutController.h; sourceTree = "<group>"; };
-		891458E61B7FF3AC00ECF6D9 /* CBWorkoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBWorkoutController.m; sourceTree = "<group>"; };
+		891458E51B7FF3AC00ECF6D9 /* CHBWorkoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBWorkoutController.h; sourceTree = "<group>"; };
+		891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBWorkoutController.m; sourceTree = "<group>"; };
 		891736341B7676A0003E082F /* chasingbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891736381B7676A0003E082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8917363A1B7676A0003E082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8917363B1B7676A0003E082F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8917363D1B7676A0003E082F /* CBDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBDemoViewController.h; sourceTree = "<group>"; };
-		8917363E1B7676A0003E082F /* CBDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBDemoViewController.m; sourceTree = "<group>"; };
+		8917363D1B7676A0003E082F /* CHBDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHBDemoViewController.h; sourceTree = "<group>"; };
+		8917363E1B7676A0003E082F /* CHBDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHBDemoViewController.m; sourceTree = "<group>"; };
 		891736431B7676A0003E082F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		891736461B7676A0003E082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		891736481B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,8 +102,8 @@
 		891736531B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89659BE91B895D6D004072CE /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		89659BEB1B895FBF004072CE /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		89659BED1B8962B6004072CE /* CBGameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGameKitHelper.h; sourceTree = "<group>"; };
-		89659BEE1B8962B6004072CE /* CBGameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGameKitHelper.m; sourceTree = "<group>"; };
+		89659BED1B8962B6004072CE /* CHBGameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBGameKitHelper.h; sourceTree = "<group>"; };
+		89659BEE1B8962B6004072CE /* CHBGameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBGameKitHelper.m; sourceTree = "<group>"; };
 		8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.watchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8968F2831B7779C6000A6018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		8968F2851B7779C6000A6018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,10 +158,10 @@
 		891458DD1B7FD05F00ECF6D9 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				8917363D1B7676A0003E082F /* CBDemoViewController.h */,
-				8917363E1B7676A0003E082F /* CBDemoViewController.m */,
-				891458DE1B7FD0BA00ECF6D9 /* CBTimerView.h */,
-				891458DF1B7FD0BA00ECF6D9 /* CBTimerView.m */,
+				8917363D1B7676A0003E082F /* CHBDemoViewController.h */,
+				8917363E1B7676A0003E082F /* CHBDemoViewController.m */,
+				891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */,
+				891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -171,8 +171,8 @@
 			children = (
 				891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */,
 				891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */,
-				89659BED1B8962B6004072CE /* CBGameKitHelper.h */,
-				89659BEE1B8962B6004072CE /* CBGameKitHelper.m */,
+				89659BED1B8962B6004072CE /* CHBGameKitHelper.h */,
+				89659BEE1B8962B6004072CE /* CHBGameKitHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -209,8 +209,8 @@
 				891458DD1B7FD05F00ECF6D9 /* Demo */,
 				8968F2B01B7789A4000A6018 /* chasingbird.entitlements */,
 				8917363A1B7676A0003E082F /* AppDelegate.h */,
-				891458E51B7FF3AC00ECF6D9 /* CBWorkoutController.h */,
-				891458E61B7FF3AC00ECF6D9 /* CBWorkoutController.m */,
+				891458E51B7FF3AC00ECF6D9 /* CHBWorkoutController.h */,
+				891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */,
 				8917363B1B7676A0003E082F /* AppDelegate.m */,
 				891736431B7676A0003E082F /* Assets.xcassets */,
 				891736451B7676A0003E082F /* LaunchScreen.storyboard */,
@@ -452,10 +452,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8917363F1B7676A0003E082F /* CBDemoViewController.m in Sources */,
-				891458E01B7FD0BA00ECF6D9 /* CBTimerView.m in Sources */,
-				89659BEF1B8962B6004072CE /* CBGameKitHelper.m in Sources */,
-				891458E71B7FF3AC00ECF6D9 /* CBWorkoutController.m in Sources */,
+				8917363F1B7676A0003E082F /* CHBDemoViewController.m in Sources */,
+				891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */,
+				89659BEF1B8962B6004072CE /* CHBGameKitHelper.m in Sources */,
+				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */,
 				891736391B7676A0003E082F /* main.m in Sources */,

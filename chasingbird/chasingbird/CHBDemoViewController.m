@@ -6,18 +6,18 @@
 //  Copyright © 2015 howalee. All rights reserved.
 //
 
-#import "CBDemoViewController.h"
-#import "CBTimerView.h"
-#import "CBWorkoutController.h"
-#import "CBGameKitHelper.h"
+#import "CHBDemoViewController.h"
+#import "CHBTimerView.h"
+#import "CHBWorkoutController.h"
+#import "CHBGameKitHelper.h"
 
-@interface CBDemoViewController () <CBWorkoutControllerDelegate, GKGameCenterControllerDelegate>
+@interface CHBDemoViewController () <CHBWorkoutControllerDelegate, GKGameCenterControllerDelegate>
 @property (nonatomic, retain) NSTimer *timer;
-@property (nonatomic, retain) CBTimerView *timerView;
-@property (nonatomic, retain) CBWorkoutController *workoutController;
+@property (nonatomic, retain) CHBTimerView *timerView;
+@property (nonatomic, retain) CHBWorkoutController *workoutController;
 @end
 
-@implementation CBDemoViewController {
+@implementation CHBDemoViewController {
     NSUInteger seconds;
     double walkingRuningDistance;
 }
@@ -33,7 +33,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
     
-    [[CBGameKitHelper sharedGameKitHelper]
+    [[CHBGameKitHelper sharedGameKitHelper]
      authenticateLocalPlayer];
 
 }
@@ -58,13 +58,13 @@
     [refreshControl addTarget:self action:@selector(refreshStatistics) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
-    self.timerView = [CBTimerView new];
+    self.timerView = [CHBTimerView new];
     self.timerView.startButton.enabled = YES;
     self.timerView.stopButton.enabled = NO;
     [self.timerView.startButton addTarget:self action:@selector(startTimer) forControlEvents:UIControlEventTouchUpInside];
     [self.timerView.stopButton addTarget:self action:@selector(stopTimer) forControlEvents:UIControlEventTouchUpInside];
     
-    self.workoutController = [CBWorkoutController new];
+    self.workoutController = [CHBWorkoutController new];
     self.workoutController.delegate = self;
     
     walkingRuningDistance = 0.0;
@@ -76,7 +76,7 @@
 
 - (void)showAuthenticationViewController
 {
-    CBGameKitHelper *gameKitHelper = [CBGameKitHelper sharedGameKitHelper];
+    CHBGameKitHelper *gameKitHelper = [CHBGameKitHelper sharedGameKitHelper];
     
     [self presentViewController:gameKitHelper.authenticationViewController animated:YES completion:nil];
 }
@@ -88,7 +88,7 @@
     
     if (shouldShowLeaderboard) {
         gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
-        gcViewController.leaderboardIdentifier = [CBGameKitHelper sharedGameKitHelper].leaderboardIdentifier;
+        gcViewController.leaderboardIdentifier = [CHBGameKitHelper sharedGameKitHelper].leaderboardIdentifier;
     } else{
         gcViewController.viewState = GKGameCenterViewControllerStateAchievements;
     }
@@ -112,12 +112,12 @@
                                                 selector:@selector(refreshTimeLabel:)
                                                 userInfo:nil repeats:YES];
     
-    [self.workoutController fetchWorkoutDataInMode:CBWorkoutModeWalkingRunningDistance startingAt:[NSDate date]];
+    [self.workoutController fetchWorkoutDataInMode:CHBWorkoutModeWalkingRunningDistance startingAt:[NSDate date]];
 }
 
 - (void)stopTimer {
     
-    [[CBGameKitHelper sharedGameKitHelper] reportScore:seconds];
+    [[CHBGameKitHelper sharedGameKitHelper] reportScore:seconds];
     
     self.timerView.startButton.enabled = YES;
     self.timerView.stopButton.enabled = NO;
@@ -137,9 +137,9 @@
 
 #pragma mark - CBWorkoutControllerDelegate
 
-- (void)workoutControllerDidGetValue:(double)value inMode:(CBWorkoutMode)mode {
+- (void)workoutControllerDidGetValue:(double)value inMode:(CHBWorkoutMode)mode {
     walkingRuningDistance = value;
-    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:CBWorkoutModeWalkingRunningDistance inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:CHBWorkoutModeWalkingRunningDistance inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Reading HealthKit Data
@@ -165,22 +165,22 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     switch (indexPath.row) {
-        case CBWorkoutModeSteps: {
+        case CHBWorkoutModeSteps: {
             cell.textLabel.text = @"Steps:";
             cell.detailTextLabel.text = @"0";
             break;
         }
-        case CBWorkoutModeWalkingRunningDistance: {
+        case CHBWorkoutModeWalkingRunningDistance: {
             cell.textLabel.text = @"Walking+Running Distance:";
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", walkingRuningDistance];
             break;
         }
-        case CBWorkoutModeBikingDistance: {
+        case CHBWorkoutModeBikingDistance: {
             cell.textLabel.text = @"Biking Distance:";
             cell.detailTextLabel.text = @"2";
             break;
         }
-        case CBWorkoutModeEnergy: {
+        case CHBWorkoutModeEnergy: {
             cell.textLabel.text = @"Energy:";
             cell.detailTextLabel.text = @"3";
             break;
