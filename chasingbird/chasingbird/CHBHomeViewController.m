@@ -7,8 +7,11 @@
 //
 
 #import "CHBHomeViewController.h"
+#import "CHBMapViewController.h"
 
 @interface CHBHomeViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *singlePlayerView;
+@property (weak, nonatomic) IBOutlet UIImageView *multiPlayerView;
 
 @end
 
@@ -16,23 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singlePlayerViewDidTap:)];
+    singleTapGesture.numberOfTapsRequired = 1;
+    [self.singlePlayerView addGestureRecognizer:singleTapGesture];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)singlePlayerViewDidTap:(id)sender {
+    CHBMapViewController *vc = [CHBMapViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

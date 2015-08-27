@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBHomeViewController">
             <connections>
+                <outlet property="multiPlayerView" destination="x8W-R3-aNG" id="fex-A6-g3j"/>
+                <outlet property="singlePlayerView" destination="J0K-Po-2AR" id="dX2-tr-cTS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

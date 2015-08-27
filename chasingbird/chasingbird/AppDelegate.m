@@ -27,6 +27,10 @@
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     
+    [navController.navigationBar setBackgroundImage:[UIImage new]
+                        forBarMetrics:UIBarMetricsDefault];
+    navController.navigationBar.tintColor = [UIColor blackColor];
+    
     return YES;
 }
 
