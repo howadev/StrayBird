@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         self.translatesAutoresizingMaskIntoConstraints = NO;
+        self.contentMode = UIViewContentModeScaleAspectFit;
     }
     return self;
 }

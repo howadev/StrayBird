@@ -35,6 +35,7 @@
 		8968F2A31B7779C6000A6018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2A21B7779C6000A6018 /* Assets.xcassets */; };
 		8968F2A71B7779C6000A6018 /* chasingbird.watchapp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */; };
 		8968F2B21B7789A4000A6018 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8968F2B11B7789A4000A6018 /* HealthKit.framework */; };
+		89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +94,7 @@
 		891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayoutHelpers.m"; sourceTree = "<group>"; };
 		891458E51B7FF3AC00ECF6D9 /* CHBWorkoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBWorkoutController.h; sourceTree = "<group>"; };
 		891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBWorkoutController.m; sourceTree = "<group>"; };
-		891736341B7676A0003E082F /* chasingbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chasingbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		891736341B7676A0003E082F /* Stray Bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stray Bird.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		891736381B7676A0003E082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8917363A1B7676A0003E082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8917363B1B7676A0003E082F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,6 +140,8 @@
 		8968F2B01B7789A4000A6018 /* chasingbird.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = chasingbird.entitlements; sourceTree = "<group>"; };
 		8968F2B11B7789A4000A6018 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8968F2B51B7789C8000A6018 /* chasingbird.watchapp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "chasingbird.watchapp Extension.entitlements"; sourceTree = "<group>"; };
+		89E8528B1B8EAB4500942893 /* CHBMapLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBMapLevelView.h; sourceTree = "<group>"; };
+		89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBMapLevelView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +211,7 @@
 		891736351B7676A0003E082F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				891736341B7676A0003E082F /* chasingbird.app */,
+				891736341B7676A0003E082F /* Stray Bird.app */,
 				8917364D1B7676A0003E082F /* chasingbirdTests.xctest */,
 				8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */,
 				8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */,
@@ -278,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				896251811B8E8FF500295961 /* CHBImageView.h */,
+				89E8528B1B8EAB4500942893 /* CHBMapLevelView.h */,
+				89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */,
 				896251821B8E8FF500295961 /* CHBImageView.m */,
 			);
 			name = CustomView;
@@ -350,7 +355,7 @@
 			);
 			name = chasingbird;
 			productName = chasingbird;
-			productReference = 891736341B7676A0003E082F /* chasingbird.app */;
+			productReference = 891736341B7676A0003E082F /* Stray Bird.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8917364C1B7676A0003E082F /* chasingbirdTests */ = {
@@ -514,6 +519,7 @@
 				8962517C1B8E899A00295961 /* CHBViewController.m in Sources */,
 				89659BEF1B8962B6004072CE /* CHBGameKitHelper.m in Sources */,
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
+				89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */,
 				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
@@ -674,7 +680,7 @@
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Stray Bird";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -689,7 +695,7 @@
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Stray Bird";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
