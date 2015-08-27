@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CHBDemoViewController.h"
+#import "CHBHomeViewController.h"
 @import HealthKit;
 
 @interface AppDelegate ()
@@ -20,7 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    CHBDemoViewController *vc = [CHBDemoViewController new];
+    //CHBDemoViewController *vc = [CHBDemoViewController new];
+    CHBHomeViewController *vc = [CHBHomeViewController new];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];

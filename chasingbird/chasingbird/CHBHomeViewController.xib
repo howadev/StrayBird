@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A263e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBHomeViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_background" translatesAutoresizingMaskIntoConstraints="NO" id="RWj-i3-gK2">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_title" translatesAutoresizingMaskIntoConstraints="NO" id="3m4-kn-7tN">
+                    <rect key="frame" x="180" y="100" width="240" height="240"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="3m4-kn-7tN" secondAttribute="height" multiplier="1:1" id="ePH-Aj-QWc"/>
+                    </constraints>
+                </imageView>
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_single" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-Po-2AR">
+                    <rect key="frame" x="180" y="360" width="240" height="57"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="J0K-Po-2AR" secondAttribute="height" multiplier="260:61" id="XKq-GS-79j"/>
+                    </constraints>
+                </imageView>
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_multi" translatesAutoresizingMaskIntoConstraints="NO" id="x8W-R3-aNG">
+                    <rect key="frame" x="180" y="437" width="240" height="56"/>
+                    <animations/>
+                </imageView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="x8W-R3-aNG" firstAttribute="top" secondItem="J0K-Po-2AR" secondAttribute="bottom" constant="20" id="8J1-VU-MaQ"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerY" secondItem="RWj-i3-gK2" secondAttribute="centerY" id="CFu-3r-sk5"/>
+                <constraint firstItem="x8W-R3-aNG" firstAttribute="height" secondItem="J0K-Po-2AR" secondAttribute="height" id="DXA-r2-4xB"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="width" secondItem="3m4-kn-7tN" secondAttribute="width" id="FPv-jT-VsG"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="OpB-le-rWs"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="bottom" secondItem="3m4-kn-7tN" secondAttribute="bottom" constant="281" id="QpV-sb-1TY"/>
+                <constraint firstItem="3m4-kn-7tN" firstAttribute="width" secondItem="RWj-i3-gK2" secondAttribute="width" multiplier="2:5" id="Tzl-rx-ipE"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="top" secondItem="3m4-kn-7tN" secondAttribute="top" constant="-100" id="YMs-u0-kIA"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="top" secondItem="3m4-kn-7tN" secondAttribute="bottom" constant="20" id="gWH-iS-ckf"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="iMN-5w-pL2"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="izG-vi-uxF"/>
+                <constraint firstItem="3m4-kn-7tN" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="luh-Yc-YRi"/>
+                <constraint firstItem="x8W-R3-aNG" firstAttribute="width" secondItem="J0K-Po-2AR" secondAttribute="width" id="qKH-iZ-dTu"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="qfH-O6-Brj"/>
+                <constraint firstItem="x8W-R3-aNG" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="weq-ve-pew"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xGf-kf-mNH"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="QpV-sb-1TY"/>
+                    <exclude reference="CFu-3r-sk5"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="main-menu_background" width="1242" height="2208"/>
+        <image name="main-menu_btn_multi" width="599" height="126"/>
+        <image name="main-menu_btn_single" width="599" height="126"/>
+        <image name="main-menu_title" width="654" height="752"/>
+    </resources>
+</document>
