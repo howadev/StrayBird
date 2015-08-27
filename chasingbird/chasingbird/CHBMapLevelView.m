@@ -36,10 +36,15 @@
     [self pinItemFillAll:self.levelView];
     [self pinItemFillHorizontally:self.starsView];
     [self pinItem:self.levelView attribute:NSLayoutAttributeBottom to:self.starsView withOffset:8.0 andScale:1.0];
-    //[self pinItem:self.levelView attribute:NSLayoutAttributeHeight to:self.starsView withOffset:0.0 andScale:4.0];
+    [self pinItem:self.levelView attribute:NSLayoutAttributeHeight to:self.starsView withOffset:0.0 andScale:4.0];
+    
+//    self.backgroundColor = [UIColor redColor];
+//    self.levelView.backgroundColor = [UIColor greenColor];
+//    self.starsView.backgroundColor = [UIColor blueColor];
 }
 
 - (void)setStarMode:(CHBMapLevelViewsStarMode)starMode {
+    _starMode = starMode;
     switch (starMode) {
         case CHBMapLevelViewStarModeInactive:
             self.starsView.image = [UIImage imageNamed:@"single_landing_stars_locked"];
@@ -59,7 +64,10 @@
     }
 }
 
+// NOTE: for now, must set star mode before setting level mode
+
 - (void)setLevelMode:(CHBMapLevelViewLevelMode)levelMode {
+    _levelMode = levelMode;
     switch (levelMode) {
         case CHBMapLevelViewLevelModeFirst:
             if (self.starMode == CHBMapLevelViewStarModeInactive) {

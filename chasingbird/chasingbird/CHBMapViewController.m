@@ -27,12 +27,31 @@
     [self.view addSubview:backgroundView];
     
     self.firstLevelView = [CHBMapLevelView new];
-    self.firstLevelView.levelMode = CHBMapLevelViewLevelModeFirst;
     self.firstLevelView.starMode = CHBMapLevelViewStarModeThree;
-    
+    self.firstLevelView.levelMode = CHBMapLevelViewLevelModeFirst;
     [self.view addSubview:self.firstLevelView];
-    [self.view pinItemCenterHorizontally:self.view to:self.firstLevelView];
-    [self.view pinItemCenterVertically:self.view to:self.firstLevelView];
+    
+    self.secondLevelView = [CHBMapLevelView new];
+    self.secondLevelView.starMode = CHBMapLevelViewStarModeNone;
+    self.secondLevelView.levelMode = CHBMapLevelViewLevelModeSecond;
+    [self.view addSubview:self.secondLevelView];
+    
+    self.thirdLevelView = [CHBMapLevelView new];
+    self.thirdLevelView.starMode = CHBMapLevelViewStarModeInactive;
+    self.thirdLevelView.levelMode = CHBMapLevelViewLevelModeThird;
+    [self.view addSubview:self.thirdLevelView];
+    
+    [self.view pinItem:self.view attribute:NSLayoutAttributeRight to:self.firstLevelView withOffset:30.0 andScale:1.0];
+    [self.view pinItem:self.view attribute:NSLayoutAttributeBottom to:self.firstLevelView withOffset:80.0 andScale:1.0];
+    [self.view setSizeConstraintsForItem:self.firstLevelView size:CGSizeMake(80, 80)];
+    
+    [self.view pinItem:self.view attribute:NSLayoutAttributeLeft to:self.secondLevelView withOffset:-70.0 andScale:1.0];
+    [self.view pinItemCenterVertically:self.view to:self.secondLevelView];
+    [self.view setSizeConstraintsForItem:self.secondLevelView size:CGSizeMake(80, 80)];
+    
+    [self.view pinItem:self.view attribute:NSLayoutAttributeRight to:self.thirdLevelView withOffset:80.0 andScale:1.0];
+    [self.view pinItem:self.view attribute:NSLayoutAttributeTop to:self.thirdLevelView withOffset:-140.0 andScale:1.0];
+    [self.view setSizeConstraintsForItem:self.thirdLevelView size:CGSizeMake(80, 80)];
 }
 
 @end
