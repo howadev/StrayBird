@@ -143,6 +143,7 @@
 		8968F2B01B7789A4000A6018 /* chasingbird.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = chasingbird.entitlements; sourceTree = "<group>"; };
 		8968F2B11B7789A4000A6018 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8968F2B51B7789C8000A6018 /* chasingbird.watchapp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "chasingbird.watchapp Extension.entitlements"; sourceTree = "<group>"; };
+		8985C2181B92378F00FDA0B0 /* CHBTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTypes.h; sourceTree = "<group>"; };
 		89E8528B1B8EAB4500942893 /* CHBMapLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBMapLevelView.h; sourceTree = "<group>"; };
 		89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBMapLevelView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,9 +200,12 @@
 			isa = PBXGroup;
 			children = (
 				891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */,
+				8985C2181B92378F00FDA0B0 /* CHBTypes.h */,
 				891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */,
 				89659BED1B8962B6004072CE /* CHBGameKitHelper.h */,
 				89659BEE1B8962B6004072CE /* CHBGameKitHelper.m */,
+				891458E51B7FF3AC00ECF6D9 /* CHBWorkoutController.h */,
+				891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -243,8 +247,6 @@
 				891458DD1B7FD05F00ECF6D9 /* Demo */,
 				8968F2B01B7789A4000A6018 /* chasingbird.entitlements */,
 				8917363A1B7676A0003E082F /* AppDelegate.h */,
-				891458E51B7FF3AC00ECF6D9 /* CHBWorkoutController.h */,
-				891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */,
 				8917363B1B7676A0003E082F /* AppDelegate.m */,
 				891736431B7676A0003E082F /* Assets.xcassets */,
 				891736451B7676A0003E082F /* LaunchScreen.storyboard */,

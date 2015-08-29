@@ -10,6 +10,7 @@
 #import "CHBImageView.h"
 #import "CHBMapLevelView.h"
 #import "UIView+AutoLayoutHelpers.h"
+#import "CHBExerciseModeViewController.h"
 
 @interface CHBMapViewController ()
 @property (nonatomic, retain) CHBMapLevelView *firstLevelView;
@@ -41,6 +42,14 @@
     self.thirdLevelView.levelMode = CHBMapLevelViewLevelModeThird;
     [self.view addSubview:self.thirdLevelView];
     
+    [self.firstLevelView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(firstLevelViewDidTap:)]];
+    [self.secondLevelView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(secondLevelViewDidTap:)]];
+    [self.thirdLevelView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thirdLevelViewDidTap:)]];
+    
+    [self setupConstraints];
+}
+
+- (void)setupConstraints {
     [self.view pinItem:self.view attribute:NSLayoutAttributeRight to:self.firstLevelView withOffset:30.0 andScale:1.0];
     [self.view pinItem:self.view attribute:NSLayoutAttributeBottom to:self.firstLevelView withOffset:80.0 andScale:1.0];
     [self.view setSizeConstraintsForItem:self.firstLevelView size:CGSizeMake(80, 80)];
@@ -52,6 +61,21 @@
     [self.view pinItem:self.view attribute:NSLayoutAttributeRight to:self.thirdLevelView withOffset:80.0 andScale:1.0];
     [self.view pinItem:self.view attribute:NSLayoutAttributeTop to:self.thirdLevelView withOffset:-140.0 andScale:1.0];
     [self.view setSizeConstraintsForItem:self.thirdLevelView size:CGSizeMake(80, 80)];
+}
+
+#pragma mark - UI Actions
+
+- (void)firstLevelViewDidTap:(id)sender {
+    CHBExerciseModeViewController *vc = [CHBExerciseModeViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)secondLevelViewDidTap:(id)sender {
+    
+}
+
+- (void)thirdLevelViewDidTap:(id)sender {
+    
 }
 
 @end

@@ -7,20 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSInteger, CHBMapLevelViewsStarMode) {
-    CHBMapLevelViewStarModeInactive = -1,
-    CHBMapLevelViewStarModeNone,
-    CHBMapLevelViewStarModeOne,
-    CHBMapLevelViewStarModeTwo,
-    CHBMapLevelViewStarModeThree,
-};
-
-typedef NS_ENUM(NSInteger, CHBMapLevelViewLevelMode) {
-    CHBMapLevelViewLevelModeFirst = 1,
-    CHBMapLevelViewLevelModeSecond,
-    CHBMapLevelViewLevelModeThird,
-};
+#import "CHBTypes.h"
 
 @interface CHBMapLevelView : UIView
 @property (nonatomic, assign) CHBMapLevelViewsStarMode starMode;

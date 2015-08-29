@@ -7,14 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHBTypes.h"
 @import HealthKit;
-
-typedef NS_ENUM(NSUInteger, CHBWorkoutMode) {
-    CHBWorkoutModeSteps = 0,
-    CHBWorkoutModeWalkingRunningDistance,
-    CHBWorkoutModeBikingDistance,
-    CHBWorkoutModeEnergy
-};
 
 @protocol CHBWorkoutControllerDelegate <NSObject>
 - (void)workoutControllerDidGetValue:(double)value inMode:(CHBWorkoutMode)mode;
