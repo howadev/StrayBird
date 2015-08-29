@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8911BB651B8FBD6100402F93 /* CHBExerciseModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8911BB641B8FBD6100402F93 /* CHBExerciseModeViewController.m */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -36,6 +35,8 @@
 		8968F2A31B7779C6000A6018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8968F2A21B7779C6000A6018 /* Assets.xcassets */; };
 		8968F2A71B7779C6000A6018 /* chasingbird.watchapp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */; };
 		8968F2B21B7789A4000A6018 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8968F2B11B7789A4000A6018 /* HealthKit.framework */; };
+		8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985C21B1B923AA300FDA0B0 /* CHBStartViewController.m */; };
+		8985C21E1B923AA300FDA0B0 /* CHBStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8985C21C1B923AA300FDA0B0 /* CHBStartViewController.xib */; };
 		89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */; };
 /* End PBXBuildFile section */
 
@@ -89,8 +90,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8911BB631B8FBD6100402F93 /* CHBExerciseModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBExerciseModeViewController.h; sourceTree = "<group>"; };
-		8911BB641B8FBD6100402F93 /* CHBExerciseModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBExerciseModeViewController.m; sourceTree = "<group>"; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
@@ -144,6 +143,9 @@
 		8968F2B11B7789A4000A6018 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8968F2B51B7789C8000A6018 /* chasingbird.watchapp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "chasingbird.watchapp Extension.entitlements"; sourceTree = "<group>"; };
 		8985C2181B92378F00FDA0B0 /* CHBTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTypes.h; sourceTree = "<group>"; };
+		8985C21A1B923AA300FDA0B0 /* CHBStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBStartViewController.h; sourceTree = "<group>"; };
+		8985C21B1B923AA300FDA0B0 /* CHBStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBStartViewController.m; sourceTree = "<group>"; };
+		8985C21C1B923AA300FDA0B0 /* CHBStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBStartViewController.xib; sourceTree = "<group>"; };
 		89E8528B1B8EAB4500942893 /* CHBMapLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBMapLevelView.h; sourceTree = "<group>"; };
 		89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBMapLevelView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,13 +178,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8911BB621B8FBCDA00402F93 /* ExercisModeView */ = {
+		8911BB621B8FBCDA00402F93 /* StartView */ = {
 			isa = PBXGroup;
 			children = (
-				8911BB631B8FBD6100402F93 /* CHBExerciseModeViewController.h */,
-				8911BB641B8FBD6100402F93 /* CHBExerciseModeViewController.m */,
+				8985C21A1B923AA300FDA0B0 /* CHBStartViewController.h */,
+				8985C21B1B923AA300FDA0B0 /* CHBStartViewController.m */,
+				8985C21C1B923AA300FDA0B0 /* CHBStartViewController.xib */,
 			);
-			name = ExercisModeView;
+			name = StartView;
 			sourceTree = "<group>";
 		};
 		891458DD1B7FD05F00ECF6D9 /* Demo */ = {
@@ -238,7 +241,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
-				8911BB621B8FBCDA00402F93 /* ExercisModeView */,
+				8911BB621B8FBCDA00402F93 /* StartView */,
 				896251891B8E99F900295961 /* MapView */,
 				896251801B8E8FDD00295961 /* CustomView */,
 				896251791B8E898A00295961 /* CustomVC */,
@@ -492,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */,
+				8985C21E1B923AA300FDA0B0 /* CHBStartViewController.xib in Resources */,
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
 				896251881B8E928400295961 /* CHBHomeViewController.xib in Resources */,
 			);
@@ -533,8 +537,8 @@
 				891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */,
 				8962517C1B8E899A00295961 /* CHBViewController.m in Sources */,
 				89659BEF1B8962B6004072CE /* CHBGameKitHelper.m in Sources */,
+				8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */,
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
-				8911BB651B8FBD6100402F93 /* CHBExerciseModeViewController.m in Sources */,
 				89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */,
 				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
