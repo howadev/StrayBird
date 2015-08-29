@@ -7,6 +7,7 @@
 //
 
 #import "CHBStartViewController.h"
+#import "CHBGameViewController.h"
 
 @interface CHBStartViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *skippingView;
@@ -21,7 +22,8 @@
 }
 
 - (void)skippingViewDidTap:(id)sender {
-    NSLog(@"Start Game");
+    CHBGameViewController *vc = [CHBGameViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

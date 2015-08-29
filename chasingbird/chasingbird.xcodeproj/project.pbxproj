@@ -37,6 +37,9 @@
 		8968F2B21B7789A4000A6018 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8968F2B11B7789A4000A6018 /* HealthKit.framework */; };
 		8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985C21B1B923AA300FDA0B0 /* CHBStartViewController.m */; };
 		8985C21E1B923AA300FDA0B0 /* CHBStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8985C21C1B923AA300FDA0B0 /* CHBStartViewController.xib */; };
+		8985C2211B924ADD00FDA0B0 /* CHBGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985C2201B924ADD00FDA0B0 /* CHBGameViewController.m */; };
+		8985C2251B924B1000FDA0B0 /* CHBGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985C2241B924B1000FDA0B0 /* CHBGameScene.m */; };
+		8985C2271B924EAE00FDA0B0 /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8985C2261B924EAE00FDA0B0 /* GameAssets.xcassets */; };
 		89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +149,11 @@
 		8985C21A1B923AA300FDA0B0 /* CHBStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBStartViewController.h; sourceTree = "<group>"; };
 		8985C21B1B923AA300FDA0B0 /* CHBStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBStartViewController.m; sourceTree = "<group>"; };
 		8985C21C1B923AA300FDA0B0 /* CHBStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBStartViewController.xib; sourceTree = "<group>"; };
+		8985C21F1B924ADD00FDA0B0 /* CHBGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBGameViewController.h; sourceTree = "<group>"; };
+		8985C2201B924ADD00FDA0B0 /* CHBGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBGameViewController.m; sourceTree = "<group>"; };
+		8985C2231B924B1000FDA0B0 /* CHBGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBGameScene.h; sourceTree = "<group>"; };
+		8985C2241B924B1000FDA0B0 /* CHBGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBGameScene.m; sourceTree = "<group>"; };
+		8985C2261B924EAE00FDA0B0 /* GameAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GameAssets.xcassets; sourceTree = "<group>"; };
 		89E8528B1B8EAB4500942893 /* CHBMapLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBMapLevelView.h; sourceTree = "<group>"; };
 		89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBMapLevelView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +249,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
+				8985C2221B924AE500FDA0B0 /* GameView */,
 				8911BB621B8FBCDA00402F93 /* StartView */,
 				896251891B8E99F900295961 /* MapView */,
 				896251801B8E8FDD00295961 /* CustomView */,
@@ -252,6 +261,7 @@
 				8917363A1B7676A0003E082F /* AppDelegate.h */,
 				8917363B1B7676A0003E082F /* AppDelegate.m */,
 				891736431B7676A0003E082F /* Assets.xcassets */,
+				8985C2261B924EAE00FDA0B0 /* GameAssets.xcassets */,
 				891736451B7676A0003E082F /* LaunchScreen.storyboard */,
 				891736481B7676A0003E082F /* Info.plist */,
 				891736371B7676A0003E082F /* Supporting Files */,
@@ -352,6 +362,17 @@
 				8968F2921B7779C6000A6018 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8985C2221B924AE500FDA0B0 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				8985C2231B924B1000FDA0B0 /* CHBGameScene.h */,
+				8985C2241B924B1000FDA0B0 /* CHBGameScene.m */,
+				8985C21F1B924ADD00FDA0B0 /* CHBGameViewController.h */,
+				8985C2201B924ADD00FDA0B0 /* CHBGameViewController.m */,
+			);
+			name = GameView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,6 +519,7 @@
 				8985C21E1B923AA300FDA0B0 /* CHBStartViewController.xib in Resources */,
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
 				896251881B8E928400295961 /* CHBHomeViewController.xib in Resources */,
+				8985C2271B924EAE00FDA0B0 /* GameAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +562,8 @@
 				8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */,
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
 				89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */,
+				8985C2211B924ADD00FDA0B0 /* CHBGameViewController.m in Sources */,
+				8985C2251B924B1000FDA0B0 /* CHBGameScene.m in Sources */,
 				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
