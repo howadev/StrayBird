@@ -16,8 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    self.skippingView.userInteractionEnabled = YES;
+    [self.skippingView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(skippingViewDidTap:)]];
+}
+
+- (void)skippingViewDidTap:(id)sender {
+    NSLog(@"Start Game");
 }
 
 @end
