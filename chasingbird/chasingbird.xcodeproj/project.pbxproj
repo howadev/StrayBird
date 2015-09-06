@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4B99D11B9C714C00FED471 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4B99D01B9C714C00FED471 /* HealthKit.framework */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -93,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F4B99D01B9C714C00FED471 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4B99D11B9C714C00FED471 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +227,7 @@
 		8917362B1B7676A0003E082F = {
 			isa = PBXGroup;
 			children = (
+				7F4B99D01B9C714C00FED471 /* HealthKit.framework */,
 				89659BEB1B895FBF004072CE /* SpriteKit.framework */,
 				89659BE91B895D6D004072CE /* GameKit.framework */,
 				8968F2B11B7789A4000A6018 /* HealthKit.framework */,
