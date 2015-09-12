@@ -16,7 +16,6 @@
 		8917363F1B7676A0003E082F /* CHBDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8917363E1B7676A0003E082F /* CHBDemoViewController.m */; };
 		891736441B7676A0003E082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891736431B7676A0003E082F /* Assets.xcassets */; };
 		891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891736451B7676A0003E082F /* LaunchScreen.storyboard */; };
-		891736521B7676A0003E082F /* chasingbirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891736511B7676A0003E082F /* chasingbirdTests.m */; };
 		8962517C1B8E899A00295961 /* CHBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8962517B1B8E899A00295961 /* CHBViewController.m */; };
 		896251831B8E8FF500295961 /* CHBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 896251821B8E8FF500295961 /* CHBImageView.m */; };
 		896251871B8E928400295961 /* CHBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 896251851B8E928400295961 /* CHBHomeViewController.m */; };
@@ -45,13 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8917364E1B7676A0003E082F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8917362C1B7676A0003E082F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 891736331B7676A0003E082F;
-			remoteInfo = chasingbird;
-		};
 		8968F28E1B7779C6000A6018 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8917362C1B7676A0003E082F /* Project object */;
@@ -110,7 +102,6 @@
 		891736431B7676A0003E082F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		891736461B7676A0003E082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		891736481B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8917364D1B7676A0003E082F /* chasingbirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chasingbirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891736511B7676A0003E082F /* chasingbirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chasingbirdTests.m; sourceTree = "<group>"; };
 		891736531B7676A0003E082F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8962517A1B8E899A00295961 /* CHBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBViewController.h; sourceTree = "<group>"; };
@@ -168,13 +159,6 @@
 				89659BEC1B895FBF004072CE /* SpriteKit.framework in Frameworks */,
 				8968F2B21B7789A4000A6018 /* HealthKit.framework in Frameworks */,
 				89659BEA1B895D6D004072CE /* GameKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8917364A1B7676A0003E082F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				891736341B7676A0003E082F /* Stray Bird.app */,
-				8917364D1B7676A0003E082F /* chasingbirdTests.xctest */,
 				8968F2801B7779C6000A6018 /* chasingbird.watchapp.app */,
 				8968F28C1B7779C6000A6018 /* chasingbird.watchapp Extension.appex */,
 			);
@@ -401,24 +384,6 @@
 			productReference = 891736341B7676A0003E082F /* Stray Bird.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8917364C1B7676A0003E082F /* chasingbirdTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 891736591B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbirdTests" */;
-			buildPhases = (
-				891736491B7676A0003E082F /* Sources */,
-				8917364A1B7676A0003E082F /* Frameworks */,
-				8917364B1B7676A0003E082F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8917364F1B7676A0003E082F /* PBXTargetDependency */,
-			);
-			name = chasingbirdTests;
-			productName = chasingbirdTests;
-			productReference = 8917364D1B7676A0003E082F /* chasingbirdTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		8968F27F1B7779C6000A6018 /* chasingbird.watchapp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8968F2AE1B7779C7000A6018 /* Build configuration list for PBXNativeTarget "chasingbird.watchapp" */;
@@ -474,10 +439,6 @@
 							};
 						};
 					};
-					8917364C1B7676A0003E082F = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 891736331B7676A0003E082F;
-					};
 					8968F27F1B7779C6000A6018 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 7B976PU7W8;
@@ -507,7 +468,6 @@
 			projectRoot = "";
 			targets = (
 				891736331B7676A0003E082F /* chasingbird */,
-				8917364C1B7676A0003E082F /* chasingbirdTests */,
 				8968F27F1B7779C6000A6018 /* chasingbird.watchapp */,
 				8968F28B1B7779C6000A6018 /* chasingbird.watchapp Extension */,
 			);
@@ -524,13 +484,6 @@
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
 				896251881B8E928400295961 /* CHBHomeViewController.xib in Resources */,
 				8985C2271B924EAE00FDA0B0 /* GameAssets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8917364B1B7676A0003E082F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,14 +529,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		891736491B7676A0003E082F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				891736521B7676A0003E082F /* chasingbirdTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8968F2881B7779C6000A6018 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,11 +544,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8917364F1B7676A0003E082F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 891736331B7676A0003E082F /* chasingbird */;
-			targetProxy = 8917364E1B7676A0003E082F /* PBXContainerItemProxy */;
-		};
 		8968F28F1B7779C6000A6018 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8968F28B1B7779C6000A6018 /* chasingbird.watchapp Extension */;
@@ -748,30 +688,6 @@
 			};
 			name = Release;
 		};
-		8917365A1B7676A0003E082F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = chasingbirdTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbirdTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chasingbird.app/chasingbird";
-			};
-			name = Debug;
-		};
-		8917365B1B7676A0003E082F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = chasingbirdTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbirdTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chasingbird.app/chasingbird";
-			};
-			name = Release;
-		};
 		8968F2A81B7779C7000A6018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -859,15 +775,6 @@
 			buildConfigurations = (
 				891736571B7676A0003E082F /* Debug */,
 				891736581B7676A0003E082F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		891736591B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbirdTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8917365A1B7676A0003E082F /* Debug */,
-				8917365B1B7676A0003E082F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
