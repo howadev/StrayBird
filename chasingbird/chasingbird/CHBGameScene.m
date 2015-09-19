@@ -9,7 +9,7 @@
 #import "CHBGameScene.h"
 
 @interface CHBGameScene ()
-
+@property (nonatomic, assign) CGRect playableRect;
 @end
 
 @implementation CHBGameScene
@@ -23,25 +23,31 @@
 }
 
 - (void)initialize {
-    SKTexture *backgroundTexture = [SKTexture textureWithImageNamed:@"level1_layer1_ocean"];
-    backgroundTexture.filteringMode = SKTextureFilteringNearest;
     
-    SKAction* moveSprite = [SKAction moveByX:0 y:-backgroundTexture.size.height duration:1.0];
-    SKAction* resetSprite = [SKAction moveByX:0 y:backgroundTexture.size.height duration:0];
-    SKAction* moveSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSprite, resetSprite]]];
+    CGFloat maxAspectRatio = 16.0 / 9.0;
+    CGFloat maxAspectRatioWidth = self.size.height / maxAspectRatio;
+    self.playableRect = CGRectMake((self.size.width-maxAspectRatioWidth)/2.0, 0, maxAspectRatioWidth, self.size.height);
     
-    SKSpriteNode* backgroundSprite = [SKSpriteNode spriteNodeWithTexture:backgroundTexture];
-    backgroundSprite.zPosition = -10;
-    backgroundSprite.position = self.view.center;
-    [backgroundSprite runAction:moveSpriteForever];
+    SKSpriteNode* backgroundSprite = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
+    backgroundSprite.size = self.size;
+    backgroundSprite.position = CGPointMake(self.size.width/2, self.size.height/2);
     [self addChild:backgroundSprite];
     
-    SKSpriteNode* backgroundSprite2 = [SKSpriteNode spriteNodeWithTexture:backgroundTexture];
-    backgroundSprite2.yScale = -1.0;
-    backgroundSprite2.zPosition = -10;
-    backgroundSprite2.position = CGPointMake(self.view.center.x, self.view.center.y+backgroundTexture.size.height);
-    [backgroundSprite2 runAction:moveSpriteForever];
+    [backgroundSprite runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height duration:2.0],
+                                                                                   [SKAction moveByX:0 y:self.size.height*2 duration:0],
+                                                                                   [SKAction moveByX:0 y:-self.size.height duration:2.0],
+                                                                                   ]]]];
+    
+    SKSpriteNode* backgroundSprite2 = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
+    backgroundSprite2.yScale = -1;
+    backgroundSprite2.size = self.size;
+    backgroundSprite2.position = CGPointMake(self.size.width/2, self.size.height*1.5);
     [self addChild:backgroundSprite2];
+
+    [backgroundSprite2 runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height duration:2.0],
+                                                                                   [SKAction moveByX:0 y:-self.size.height duration:2.0],
+                                                                                   [SKAction moveByX:0 y:self.size.height*2 duration:0],
+                                                                                   ]]]];
 }
 
 @end

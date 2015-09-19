@@ -26,8 +26,8 @@
     [self.view addSubview:skView];
     
     // Create and configure the scene.
-    CHBGameScene *scene = [CHBGameScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    CHBGameScene *scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.
     [skView presentScene:scene];
