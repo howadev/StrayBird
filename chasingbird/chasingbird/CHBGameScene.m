@@ -8,6 +8,7 @@
 
 #import "CHBGameScene.h"
 #import "CHBHelpers.h"
+#import "CHBBirdInfoNode.h"
 
 @interface CHBGameScene ()
 @property (nonatomic, retain) SKNode *backgroundLayer;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) SKNode *birdLayer;
 @property (nonatomic, retain) SKSpriteNode *birdNode;
 @property (nonatomic, retain) SKAction *birdAnimation;
+@property (nonatomic, retain) CHBBirdInfoNode *infoNode;
 
 @property (nonatomic, retain) SKNode *flockLayer;
 @end
@@ -113,6 +115,14 @@
     }
     self.birdAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     [self.birdNode runAction:[SKAction repeatActionForever:self.birdAnimation]];
+    
+    CGFloat preferredWidth = self.size.width/2 - self.birdNode.size.width/2;
+    self.infoNode = [[CHBBirdInfoNode alloc] initWithPreferredWidth:preferredWidth];
+    self.infoNode.position = CGPointMake(preferredWidth/2, self.birdNode.position.y);
+    [self.birdLayer addChild:self.infoNode];
+}
+
+- (void)_setupInfoNode {
     
 }
 

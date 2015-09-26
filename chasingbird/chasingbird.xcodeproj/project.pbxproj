@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; settings = {ASSET_TAGS = (); }; };
+		6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */; settings = {ASSET_TAGS = (); }; };
 		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; settings = {ASSET_TAGS = (); }; };
 		7F4B99D11B9C714C00FED471 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4B99D01B9C714C00FED471 /* HealthKit.framework */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
@@ -87,6 +89,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		646608671BB70BDF00E61BFD /* CHBLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLabelNode.h; sourceTree = "<group>"; };
+		646608681BB70BDF00E61BFD /* CHBLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLabelNode.m; sourceTree = "<group>"; };
+		6466086A1BB7117A00E61BFD /* CHBBirdInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBBirdInfoNode.h; sourceTree = "<group>"; };
+		6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBBirdInfoNode.m; sourceTree = "<group>"; };
 		649C15DA1BAD8A9700420ED2 /* CHBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBHelpers.h; sourceTree = "<group>"; };
 		649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBHelpers.m; sourceTree = "<group>"; };
 		7F4B99D01B9C714C00FED471 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -301,6 +307,10 @@
 			isa = PBXGroup;
 			children = (
 				896251811B8E8FF500295961 /* CHBImageView.h */,
+				646608671BB70BDF00E61BFD /* CHBLabelNode.h */,
+				646608681BB70BDF00E61BFD /* CHBLabelNode.m */,
+				6466086A1BB7117A00E61BFD /* CHBBirdInfoNode.h */,
+				6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */,
 				89E8528B1B8EAB4500942893 /* CHBMapLevelView.h */,
 				89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */,
 				896251821B8E8FF500295961 /* CHBImageView.m */,
@@ -519,8 +529,10 @@
 				8917363F1B7676A0003E082F /* CHBDemoViewController.m in Sources */,
 				896251831B8E8FF500295961 /* CHBImageView.m in Sources */,
 				891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */,
+				646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */,
 				8962517C1B8E899A00295961 /* CHBViewController.m in Sources */,
 				89659BEF1B8962B6004072CE /* CHBGameKitHelper.m in Sources */,
+				6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */,
 				8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */,
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
 				649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */,
