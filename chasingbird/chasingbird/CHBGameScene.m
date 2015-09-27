@@ -33,12 +33,13 @@ static const CGFloat minimumBirdSpeed = 0.5;
 
 @property (nonatomic, retain) SKNode *cloudLayer;
 
+@property (nonatomic, retain) SKNode *flockLayer;
+@property (nonatomic, retain) SKAction *flockAnimation;
+
 @property (nonatomic, retain) SKNode *birdLayer;
 @property (nonatomic, retain) SKSpriteNode *birdNode;
 @property (nonatomic, retain) SKAction *birdAnimation;
 @property (nonatomic, retain) CHBBirdInfoNode *infoNode;
-
-@property (nonatomic, retain) SKNode *flockLayer;
 
 @property (nonatomic, retain) SKNode *hudLayer;
 @end
@@ -65,6 +66,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self setupBackgroundNode];
     //[self setupAtmosphereLayer];
     [self setupCloudLayer];
+    [self populateFlock];
     [self setupBirdNode];
 }
 
@@ -80,6 +82,10 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.cloudLayer = [SKNode new];
     self.cloudLayer.zPosition = 80;
     [self addChild:self.cloudLayer];
+    
+    self.flockLayer = [SKNode new];
+    self.flockLayer.zPosition = 95;
+    [self addChild:self.flockLayer];
     
     self.birdLayer = [SKNode new];
     self.birdLayer.zPosition = 100;
@@ -150,6 +156,40 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [node runAction:cloudAction];
 }
 
+- (void)populateFlock {
+    NSMutableArray *textures = [@[] mutableCopy];
+    for (int i = 1; i <= 10; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"sprite_level1-3_layer4_flock%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+        [textures addObject:texture];
+    }
+    
+    self.flockAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+    
+    for (int i = 0; i < 7; i++) {
+        SKSpriteNode *birdNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer4_flock1"];
+        
+        CGFloat gap = (self.size.width - birdNode.size.width*7)/6;
+        CGFloat y = 0;
+        if (abs(i-3) == 0) {
+            y = self.size.height*10/12;
+        } else if (abs(i-3) == 1) {
+            y = self.size.height*9/12;
+        } else if (abs(i-3) == 2) {
+            y = self.size.height*8/12;
+        } else if (abs(i-3) == 3) {
+            y = self.size.height*7/12;
+        }
+        birdNode.position = CGPointMake(birdNode.size.width/2+gap*i+birdNode.size.width*i, y);
+        [self.flockLayer addChild:birdNode];
+        if (i%2 == 0) {
+            [birdNode runAction:[SKAction repeatActionForever:self.flockAnimation]];
+        } else {
+            [birdNode runAction:[SKAction repeatActionForever:self.flockAnimation.reversedAction]];
+        }
+    }
+}
+
 - (void)setupBirdNode {
     self.birdNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer4_bird1"];
     self.birdNode.position = CGPointMake(self.size.width/2, self.size.height/4);
@@ -191,6 +231,9 @@ static const CGFloat minimumBirdSpeed = 0.5;
     
     if (self.distanceMoved > self.distanceFromFlockOverall) {
         NSLog(@"Flock is here");
+        if (self.flockAnimation == nil) {
+            //[self populateFlock];
+        }
     }
     
     if (self.distanceMoved > self.distanceLeftOverall) {
