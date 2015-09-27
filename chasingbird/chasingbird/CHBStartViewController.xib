@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A263e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBStartViewController">
@@ -20,36 +20,36 @@
                     <animations/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pYc-wL-Z8u">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="8" y="60" width="584" height="480"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heading_level1" translatesAutoresizingMaskIntoConstraints="NO" id="zii-6q-pHA">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="111"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heading_level1" translatesAutoresizingMaskIntoConstraints="NO" id="zii-6q-pHA">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="51"/>
                             <animations/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_level1" translatesAutoresizingMaskIntoConstraints="NO" id="mND-S2-Lx8">
-                            <rect key="frame" x="0.0" y="111" width="600" height="0.0"/>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_level1" translatesAutoresizingMaskIntoConstraints="NO" id="mND-S2-Lx8">
+                            <rect key="frame" x="0.0" y="87" width="584" height="159"/>
                             <animations/>
                         </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-mh-uLm">
-                            <rect key="frame" x="0.0" y="111" width="600" height="363"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-mh-uLm">
+                            <rect key="frame" x="0.0" y="281" width="584" height="121"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cycling_active" translatesAutoresizingMaskIntoConstraints="NO" id="f4W-8M-b4g">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="363"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling_active" translatesAutoresizingMaskIntoConstraints="NO" id="f4W-8M-b4g">
+                                    <rect key="frame" x="0.0" y="0.0" width="195" height="121"/>
                                     <animations/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="running_active" translatesAutoresizingMaskIntoConstraints="NO" id="OO5-ma-fsy">
-                                    <rect key="frame" x="200" y="0.0" width="200" height="363"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="running_active" translatesAutoresizingMaskIntoConstraints="NO" id="OO5-ma-fsy">
+                                    <rect key="frame" x="195" y="0.0" width="194" height="121"/>
                                     <animations/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="skipping_active" translatesAutoresizingMaskIntoConstraints="NO" id="fua-Uu-IF2">
-                                    <rect key="frame" x="400" y="0.0" width="200" height="363"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skipping_active" translatesAutoresizingMaskIntoConstraints="NO" id="fua-Uu-IF2">
+                                    <rect key="frame" x="389" y="0.0" width="195" height="121"/>
                                     <animations/>
                                 </imageView>
                             </subviews>
                             <animations/>
                         </stackView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_play_active" translatesAutoresizingMaskIntoConstraints="NO" id="cFe-U3-yVQ">
-                            <rect key="frame" x="0.0" y="474" width="600" height="126"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_play_active" translatesAutoresizingMaskIntoConstraints="NO" id="cFe-U3-yVQ">
+                            <rect key="frame" x="0.0" y="438" width="584" height="42"/>
                             <animations/>
                         </imageView>
                     </subviews>
@@ -59,24 +59,36 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="pYc-wL-Z8u" secondAttribute="bottom" constant="60" id="0sU-PP-G9C"/>
                 <constraint firstItem="pYc-wL-Z8u" firstAttribute="centerX" secondItem="VxY-qz-6Jt" secondAttribute="centerX" id="46p-fP-wmK"/>
                 <constraint firstItem="VxY-qz-6Jt" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="4Mp-I4-p8g"/>
                 <constraint firstItem="VxY-qz-6Jt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="6FX-26-2gd"/>
+                <constraint firstItem="pYc-wL-Z8u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="MbQ-eJ-LOa"/>
                 <constraint firstItem="pYc-wL-Z8u" firstAttribute="height" secondItem="VxY-qz-6Jt" secondAttribute="height" id="T5a-fv-YdK"/>
+                <constraint firstAttribute="trailing" secondItem="pYc-wL-Z8u" secondAttribute="trailing" constant="8" id="c2I-Fb-Ov4"/>
                 <constraint firstItem="VxY-qz-6Jt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eCy-PY-zC1"/>
                 <constraint firstItem="pYc-wL-Z8u" firstAttribute="width" secondItem="VxY-qz-6Jt" secondAttribute="width" id="fr5-3h-Qsz"/>
                 <constraint firstItem="pYc-wL-Z8u" firstAttribute="centerY" secondItem="VxY-qz-6Jt" secondAttribute="centerY" id="hS8-MX-lc4"/>
+                <constraint firstItem="pYc-wL-Z8u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="oU2-hK-3Jm"/>
                 <constraint firstItem="VxY-qz-6Jt" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="xNa-De-EjZ"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="46p-fP-wmK"/>
+                    <exclude reference="T5a-fv-YdK"/>
+                    <exclude reference="fr5-3h-Qsz"/>
+                    <exclude reference="hS8-MX-lc4"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
-        <image name="btn_play_active" width="533" height="126"/>
-        <image name="cycling_active" width="318" height="363"/>
-        <image name="heading_level1" width="729" height="154"/>
-        <image name="main_background" width="1242" height="2208"/>
-        <image name="running_active" width="318" height="363"/>
-        <image name="skipping_active" width="318" height="363"/>
-        <image name="title_level1" width="1170" height="479"/>
+        <image name="btn_play_active" width="177" height="42"/>
+        <image name="cycling_active" width="106" height="121"/>
+        <image name="heading_level1" width="243" height="51"/>
+        <image name="main_background" width="414" height="736"/>
+        <image name="running_active" width="106" height="121"/>
+        <image name="skipping_active" width="106" height="121"/>
+        <image name="title_level1" width="390" height="159"/>
     </resources>
 </document>
