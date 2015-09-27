@@ -117,7 +117,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     
     SKSpriteNode *rockNode = [[SKSpriteNode alloc] initWithTexture:textures[arc4random()%5]];
     rockNode.position = CGPointMake([CHBHelpers randomWithMin:0 max:self.size.width], self.size.height+rockNode.size.height/2);
-    [rockNode runAction:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-rockNode.size.height/2 duration:2.0],
+    [rockNode runAction:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-rockNode.size.height duration:2.0],
                                              [SKAction removeFromParent]]]];
     [self.backgroundLayer addChild:rockNode];
 }
