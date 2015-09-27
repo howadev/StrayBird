@@ -31,6 +31,7 @@
     
     [navController.navigationBar setBackgroundImage:[UIImage new]
                         forBarMetrics:UIBarMetricsDefault];
+    navController.navigationBar.shadowImage = [UIImage new];
     navController.navigationBar.tintColor = [UIColor blackColor];
     
     return YES;
