@@ -190,12 +190,14 @@ static const CGFloat minimumBirdSpeed = 0.5;
         } else if (abs(i-3) == 3) {
             y = self.size.height*7/12;
         }
-        birdNode.position = CGPointMake(birdNode.size.width/2+gap*i+birdNode.size.width*i, y);
+        birdNode.position = CGPointMake(birdNode.size.width/2+gap*i+birdNode.size.width*i, self.size.height+birdNode.size.height/2);
         [self.flockLayer addChild:birdNode];
         if (i%2 == 0) {
-            [birdNode runAction:[SKAction repeatActionForever:self.flockAnimation]];
+            [birdNode runAction:[SKAction sequence:@[[SKAction moveToY:y duration:2],
+                                                     [SKAction repeatActionForever:self.flockAnimation]]]];
         } else {
-            [birdNode runAction:[SKAction repeatActionForever:self.flockAnimation.reversedAction]];
+            [birdNode runAction:[SKAction sequence:@[[SKAction moveToY:y duration:2],
+                                                     [SKAction repeatActionForever:self.flockAnimation.reversedAction]]]];
         }
     }
 }
