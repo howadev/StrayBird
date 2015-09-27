@@ -130,15 +130,19 @@ static const CGFloat minimumBirdSpeed = 0.5;
 
 - (void)setupCloudLayer {
     
-    SKAction *moveAction = [SKAction moveByX:50 y:0 duration:5];
-    SKAction *cloudAction = [SKAction repeatActionForever:[SKAction sequence:@[moveAction, moveAction.reversedAction]]];
-    for (int i = 1; i <= 3; i++) {
-        NSString *imageName = [NSString stringWithFormat:@"level1-2_layer6_cloud%d", i];
-        SKSpriteNode *node = [[SKSpriteNode alloc] initWithImageNamed:imageName];
-        node.position = CGPointMake([CHBHelpers randomWithMin:0 max:self.size.width], [CHBHelpers randomWithMin:self.size.height*(i-1)/3 max:self.size.height*i/3]);
-        [self.cloudLayer addChild:node];
-        [node runAction:cloudAction];
-    }
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateCloud];}],
+                                                                       [SKAction waitForDuration:1.5]]]]];
+}
+
+- (void)populateCloud {
+    NSString *imageName = [NSString stringWithFormat:@"level1-2_layer6_cloud%d", (arc4random()%3+1)];
+    SKSpriteNode *node = [[SKSpriteNode alloc] initWithImageNamed:imageName];
+    node.position = CGPointMake(-node.size.width/2, [CHBHelpers randomWithMin:0 max:self.size.height]);
+    [self.cloudLayer addChild:node];
+    
+    SKAction *moveAction = [SKAction moveByX:self.size.width+node.size.width y:0 duration:5];
+    SKAction *cloudAction = [SKAction repeatActionForever:[SKAction sequence:@[moveAction, [SKAction removeFromParent]]]];
+    [node runAction:cloudAction];
 }
 
 - (void)setupBirdNode {
