@@ -71,8 +71,8 @@
     
     self.speedLabel.text = @"0 M/S";
     self.caloriesLabel.text = @"0 KCAL";
-    self.distanceFromFlockLabel.text = @"0 MI";
-    self.distanceLeftLabel.text = @"0 MI";
+    self.distanceFromFlockLabel.text = @"0 M";
+    self.distanceLeftLabel.text = @"0 M";
     
     for (CHBLabelNode *node in @[self.speedPlaceholder, self.caloriesPlaceholder, self.distanceFromFlockPlaceholder, self.distanceLeftPlaceholder]) {
         node.fontColor = [SKColor orangeColor];

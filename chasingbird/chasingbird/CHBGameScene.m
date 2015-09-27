@@ -14,6 +14,8 @@
 static const CGFloat minimumBirdSpeed = 0.5;
 
 @interface CHBGameScene ()
+@property (nonatomic, assign) CGFloat burnCalories;
+
 @property (nonatomic, assign) CGFloat distanceMoved;
 @property (nonatomic, assign) CGFloat distanceFromFlockOverall;
 @property (nonatomic, assign) CGFloat distanceLeftOverall;
@@ -260,20 +262,33 @@ static const CGFloat minimumBirdSpeed = 0.5;
         NSLog(@"Flock is here");
         if (self.flockAnimation == nil) {
             [self populateFlock];
+            self.distanceMoved = self.distanceFromFlockOverall;
+            self.infoNode.distanceFromFlockLabel.text = @"0 M";
         }
+    } else {
+        self.infoNode.distanceFromFlockLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceFromFlockOverall-self.distanceMoved];
     }
     
     if (self.distanceMoved > self.distanceLeftOverall) {
         NSLog(@"Goal!");
-        self.distanceMoved = 0;
-        [self populateCheckPointLayer];
+        if (self.checkPointAnimation == nil) {
+            [self populateCheckPointLayer];
+            [self.infoNode setHidden:YES];
+        }
+    } else {
+        self.infoNode.distanceLeftLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceLeftOverall-self.distanceMoved];
+        
+        self.burnCalories += 0.01;
+        self.infoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.burnCalories];
     }
 }
 
 #pragma mark - touch event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.birdSpeed = self.birdSpeed + 0.1;
+    if (self.birdSpeed < 3) {
+        self.birdSpeed = self.birdSpeed + 0.1;
+    }
 }
 
 - (void)speedDown:(id)sender {
