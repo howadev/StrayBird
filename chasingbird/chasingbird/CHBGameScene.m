@@ -14,11 +14,16 @@
 static const CGFloat minimumBirdSpeed = 0.5;
 
 @interface CHBGameScene ()
+@property (nonatomic, assign) NSTimeInterval lastUpdateTime;
+@property (nonatomic, assign) NSTimeInterval dt;
+
 @property (nonatomic, retain) NSTimer *touchTimer;
 @property (nonatomic, assign) CGFloat birdSpeed;
 
 @property (nonatomic, retain) SKNode *backgroundLayer;
-@property (nonatomic, retain) SKNode *hudLayer;
+
+@property (nonatomic, retain) SKNode *rockLayer;
+@property (nonatomic, assign) CGFloat populateRockSpeed;
 
 @property (nonatomic, retain) SKNode *atmosphereLayer;
 
@@ -30,6 +35,8 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, retain) CHBBirdInfoNode *infoNode;
 
 @property (nonatomic, retain) SKNode *flockLayer;
+
+@property (nonatomic, retain) SKNode *hudLayer;
 @end
 
 @implementation CHBGameScene
@@ -45,6 +52,10 @@ static const CGFloat minimumBirdSpeed = 0.5;
 }
 
 - (void)initialize {
+    self.lastUpdateTime = 0;
+    self.dt = 0;
+    self.populateRockSpeed = 0.0001;
+    
     [self setupLayer];
     [self setupBackgroundNode];
     //[self setupAtmosphereLayer];
@@ -89,6 +100,26 @@ static const CGFloat minimumBirdSpeed = 0.5;
                                                                                     [SKAction moveByX:0 y:-self.size.height duration:2.0],
                                                                                     [SKAction moveByX:0 y:self.size.height*2 duration:0],
                                                                                     ]]]];
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
+                                                                       [SKAction waitForDuration:1.5]]]]];
+}
+
+- (void)populateRock {
+    static NSMutableArray *textures = nil;
+    if (textures == nil) {
+        textures = [@[] mutableCopy];
+        for (int i = 1; i <= 5; i++) {
+            NSString *imageName = [NSString stringWithFormat:@"level1_layer2_rock%d", i];
+            SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+            [textures addObject:texture];
+        }
+    }
+    
+    SKSpriteNode *rockNode = [[SKSpriteNode alloc] initWithTexture:textures[arc4random()%5]];
+    rockNode.position = CGPointMake([CHBHelpers randomWithMin:0 max:self.size.width], self.size.height+rockNode.size.height/2);
+    [rockNode runAction:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-rockNode.size.height/2 duration:2.0],
+                                             [SKAction removeFromParent]]]];
+    [self.backgroundLayer addChild:rockNode];
 }
 
 - (void)setupAtmosphereLayer {
@@ -130,12 +161,23 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self.birdLayer addChild:self.infoNode];
 }
 
-#pragma mark - View Cycle
+#pragma mark - view Cycle
 
 - (void)didMoveToView:(SKView *)view {
     self.birdSpeed = minimumBirdSpeed;
     self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(speedDown:) userInfo:nil repeats:YES];
 }
+
+#pragma mark - update event
+
+//- (void)update:(NSTimeInterval)currentTime {
+//    if (self.lastUpdateTime > 0) {
+//        self.dt = currentTime - self.lastUpdateTime;
+//    } else {
+//        self.dt = 0;
+//    }
+//    self.lastUpdateTime = currentTime;
+//}
 
 #pragma mark - touch event
 
