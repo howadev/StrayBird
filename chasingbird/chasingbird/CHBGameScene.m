@@ -9,8 +9,14 @@
 #import "CHBGameScene.h"
 #import "CHBHelpers.h"
 #import "CHBBirdInfoNode.h"
+#import "CHBLabelNode.h"
+
+static const CGFloat minimumBirdSpeed = 0.5;
 
 @interface CHBGameScene ()
+@property (nonatomic, retain) NSTimer *touchTimer;
+@property (nonatomic, assign) CGFloat birdSpeed;
+
 @property (nonatomic, retain) SKNode *backgroundLayer;
 @property (nonatomic, retain) SKNode *hudLayer;
 
@@ -27,6 +33,8 @@
 @end
 
 @implementation CHBGameScene
+
+#pragma mark - initialize
 
 - (instancetype)initWithSize:(CGSize)size {
     self = [super initWithSize:size];
@@ -75,7 +83,7 @@
     SKSpriteNode* backgroundSprite2 = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
     backgroundSprite2.yScale = -1;
     backgroundSprite2.position = CGPointMake(self.size.width/2, self.size.height*1.5);
-    [self addChild:backgroundSprite2];
+    [self.backgroundLayer addChild:backgroundSprite2];
     
     [backgroundSprite2 runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height duration:2.0],
                                                                                     [SKAction moveByX:0 y:-self.size.height duration:2.0],
@@ -116,14 +124,36 @@
     self.birdAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     [self.birdNode runAction:[SKAction repeatActionForever:self.birdAnimation]];
     
-    CGFloat preferredWidth = self.size.width/2 - self.birdNode.size.width/2;
-    self.infoNode = [[CHBBirdInfoNode alloc] initWithPreferredWidth:preferredWidth];
-    self.infoNode.position = CGPointMake(preferredWidth/2, self.birdNode.position.y);
+    //CGFloat preferredWidth = self.size.width/2 - self.birdNode.size.width/2;
+    self.infoNode = [CHBBirdInfoNode new];
+    self.infoNode.position = CGPointMake(0, self.birdNode.position.y);
     [self.birdLayer addChild:self.infoNode];
 }
 
-- (void)_setupInfoNode {
+#pragma mark - View Cycle
+
+- (void)didMoveToView:(SKView *)view {
+    self.birdSpeed = minimumBirdSpeed;
+    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(speedDown:) userInfo:nil repeats:YES];
+}
+
+#pragma mark - touch event
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.birdSpeed = self.birdSpeed + 0.1;
+}
+
+- (void)speedDown:(id)sender {
+    if (self.birdSpeed > minimumBirdSpeed) {
+        self.birdSpeed = self.birdSpeed - 0.1;
+    }
+}
+
+- (void)setBirdSpeed:(CGFloat)birdSpeed {
+    _birdSpeed = birdSpeed;
     
+    self.backgroundLayer.speed = birdSpeed;
+    self.infoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", birdSpeed*100];
 }
 
 @end
