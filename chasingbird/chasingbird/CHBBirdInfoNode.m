@@ -61,7 +61,7 @@
             node.preferredWidth = preferredWidth;
         }
         node.fontSize = 15;
-        node.fontName = @"Arial";
+        node.fontName = @"cn_bold";
     }
     
     self.speedPlaceholder.text = @"SPEED";

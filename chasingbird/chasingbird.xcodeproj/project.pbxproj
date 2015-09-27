@@ -95,6 +95,7 @@
 		6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBBirdInfoNode.m; sourceTree = "<group>"; };
 		649C15DA1BAD8A9700420ED2 /* CHBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBHelpers.h; sourceTree = "<group>"; };
 		649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBHelpers.m; sourceTree = "<group>"; };
+		64B6DD4A1BB8632A00DB754D /* cn_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cn_bold.ttf; sourceTree = "<group>"; };
 		7F4B99D01B9C714C00FED471 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
@@ -261,6 +262,7 @@
 				891736431B7676A0003E082F /* Assets.xcassets */,
 				8985C2261B924EAE00FDA0B0 /* GameAssets.xcassets */,
 				891736451B7676A0003E082F /* LaunchScreen.storyboard */,
+				64B6DD4A1BB8632A00DB754D /* cn_bold.ttf */,
 				891736481B7676A0003E082F /* Info.plist */,
 				891736371B7676A0003E082F /* Supporting Files */,
 			);
