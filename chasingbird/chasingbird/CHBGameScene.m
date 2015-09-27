@@ -41,6 +41,9 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, retain) SKAction *birdAnimation;
 @property (nonatomic, retain) CHBBirdInfoNode *infoNode;
 
+@property (nonatomic, retain) SKNode *checkPointLayer;
+@property (nonatomic, retain) SKAction *checkPointAnimation;
+
 @property (nonatomic, retain) SKNode *hudLayer;
 @end
 
@@ -66,8 +69,9 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self setupBackgroundNode];
     //[self setupAtmosphereLayer];
     [self setupCloudLayer];
-    [self populateFlock];
+    //[self populateFlock];
     [self setupBirdNode];
+    //[self populateCheckPointLayer];
 }
 
 - (void)setupLayer {
@@ -90,6 +94,10 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.birdLayer = [SKNode new];
     self.birdLayer.zPosition = 100;
     [self addChild:self.birdLayer];
+    
+    self.checkPointLayer = [SKNode new];
+    self.checkPointLayer.zPosition = 110;
+    [self addChild:self.checkPointLayer];
 }
 
 - (void)setupBackgroundNode {
@@ -210,6 +218,25 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self.birdLayer addChild:self.infoNode];
 }
 
+- (void)populateCheckPointLayer {
+    NSMutableArray *textures = [@[] mutableCopy];
+    for (int i = 1; i <= 8; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"sprite_level1-3_layer5_checkpoint%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+        [textures addObject:texture];
+    }
+    
+    self.checkPointAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+    
+    SKSpriteNode *checkPointNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer5_checkpoint1"];
+    checkPointNode.position = CGPointMake(self.size.width/2, self.size.height+checkPointNode.size.height/2);
+    [self.checkPointLayer addChild:checkPointNode];
+    [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:12.0],
+                                                                     [SKAction removeFromParent]]],
+                                                [SKAction repeatActionForever:self.checkPointAnimation]]]];
+}
+
+
 #pragma mark - view Cycle
 
 - (void)didMoveToView:(SKView *)view {
@@ -232,13 +259,14 @@ static const CGFloat minimumBirdSpeed = 0.5;
     if (self.distanceMoved > self.distanceFromFlockOverall) {
         NSLog(@"Flock is here");
         if (self.flockAnimation == nil) {
-            //[self populateFlock];
+            [self populateFlock];
         }
     }
     
     if (self.distanceMoved > self.distanceLeftOverall) {
         NSLog(@"Goal!");
         self.distanceMoved = 0;
+        [self populateCheckPointLayer];
     }
 }
 
