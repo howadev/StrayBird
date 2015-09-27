@@ -14,6 +14,10 @@
 static const CGFloat minimumBirdSpeed = 0.5;
 
 @interface CHBGameScene ()
+@property (nonatomic, assign) CGFloat distanceMoved;
+@property (nonatomic, assign) CGFloat distanceFromFlockOverall;
+@property (nonatomic, assign) CGFloat distanceLeftOverall;
+
 @property (nonatomic, assign) NSTimeInterval lastUpdateTime;
 @property (nonatomic, assign) NSTimeInterval dt;
 
@@ -52,6 +56,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
 }
 
 - (void)initialize {
+    self.distanceMoved = 0;
     self.lastUpdateTime = 0;
     self.dt = 0;
     self.populateRockSpeed = 0.0001;
@@ -174,14 +179,25 @@ static const CGFloat minimumBirdSpeed = 0.5;
 
 #pragma mark - update event
 
-//- (void)update:(NSTimeInterval)currentTime {
-//    if (self.lastUpdateTime > 0) {
-//        self.dt = currentTime - self.lastUpdateTime;
-//    } else {
-//        self.dt = 0;
-//    }
-//    self.lastUpdateTime = currentTime;
-//}
+- (void)update:(NSTimeInterval)currentTime {
+    if (self.lastUpdateTime > 0) {
+        self.dt = currentTime - self.lastUpdateTime;
+    } else {
+        self.dt = 0;
+    }
+    self.lastUpdateTime = currentTime;
+    
+    self.distanceMoved += self.backgroundLayer.speed*100*self.dt;
+    
+    if (self.distanceMoved > self.distanceFromFlockOverall) {
+        NSLog(@"Flock is here");
+    }
+    
+    if (self.distanceMoved > self.distanceLeftOverall) {
+        NSLog(@"Goal!");
+        self.distanceMoved = 0;
+    }
+}
 
 #pragma mark - touch event
 
@@ -200,6 +216,16 @@ static const CGFloat minimumBirdSpeed = 0.5;
     
     self.backgroundLayer.speed = birdSpeed;
     self.infoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", birdSpeed*100];
+}
+
+#pragma mark - game logic
+
+- (CGFloat)distanceFromFlockOverall {
+    return 1000;
+}
+
+- (CGFloat)distanceLeftOverall {
+    return 2000;
 }
 
 @end
