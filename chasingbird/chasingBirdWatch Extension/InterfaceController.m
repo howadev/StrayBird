@@ -45,8 +45,7 @@
     // Configure session
     
     self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
-    self.workoutUnit = [HKUnit unitFromString:@"m"];
-    
+    self.workoutUnit = [HKUnit unitFromString:@"count/min"];
     self.healthStore = [HKHealthStore new];
     
     // Configure Connectivity
@@ -63,7 +62,6 @@
 }
 
 - (void)willActivate {
-    // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     
     if ([HKHealthStore isHealthDataAvailable] == NO) {
@@ -71,7 +69,7 @@
         return;
     }
     
-    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
+    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
     
     if (quantiyType == nil) {
         self.alertLabel.text = @"Quanity type not available";
@@ -88,7 +86,6 @@
 }
 
 - (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
 
@@ -120,7 +117,7 @@
 
 - (HKQuery*)createWorkoutStreamingQueryOnDate:(NSDate*)date
 {
-    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
+    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
     
     if (quantiyType == nil) {
         self.alertLabel.text = @"Quanity type not available";
@@ -159,7 +156,7 @@
     }
 }
 
-- (void)workoutDidEndOnDate:(NSDate*)date
+- (void)workoutDidEnd
 {
     if (self.query) {
         [self.healthStore stopQuery:self.query];
@@ -184,7 +181,7 @@
                 [self.endButton setHidden:NO];
                 break;
             case HKWorkoutSessionStateEnded:
-                [self workoutDidEndOnDate:date];
+                [self workoutDidEnd];
                 [self.startButton setHidden:NO];
                 [self.endButton setHidden:YES];
                 break;
@@ -196,8 +193,7 @@
 
 - (void)workoutSession:(HKWorkoutSession *)workoutSession didFailWithError:(NSError *)error
 {
-    //self.alertLabel.text = @"Workout session fail";
-    NSLog(@"%@", error);
+    self.alertLabel.text = @"Workout session fail";
 }
 
 @end
