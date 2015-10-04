@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) HKWorkoutSession *workoutSession;
 @property (nonatomic, retain) HKHealthStore *healthStore;
+@property (nonatomic, retain) HKAnchoredObjectQuery *query;
 @property (nonatomic, retain) HKQueryAnchor *anchor;
 @property (nonatomic, retain) HKUnit *workoutUnit;
 @end
@@ -26,6 +27,8 @@
 #pragma UI Actions
 
 - (IBAction)startButtonDidTap {
+    self.workoutSession = [[HKWorkoutSession alloc] initWithActivityType:HKWorkoutActivityTypeRunning locationType:HKWorkoutSessionLocationTypeIndoor];
+    self.workoutSession.delegate = self;
     [self.healthStore startWorkoutSession:self.workoutSession];
 }
 
@@ -40,13 +43,12 @@
     
     // Configure interface objects here.
     
-    self.workoutSession = [[HKWorkoutSession alloc] initWithActivityType:HKWorkoutActivityTypeRunning locationType:HKWorkoutSessionLocationTypeIndoor];
-    self.workoutSession.delegate = self;
-    
     self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
     self.workoutUnit = [HKUnit unitFromString:@"m"];
     
     self.healthStore = [HKHealthStore new];
+    
+    [self.endButton setHidden:YES];
 }
 
 - (void)willActivate {
@@ -102,24 +104,26 @@
         return nil;
     }
     
-    HKAnchoredObjectQuery *query = [[HKAnchoredObjectQuery alloc] initWithType:quantiyType predicate:nil anchor:self.anchor limit:HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
+    __weak typeof(self) weakSelf = self;
+    
+    self.query = [[HKAnchoredObjectQuery alloc] initWithType:quantiyType predicate:nil anchor:self.anchor limit:HKObjectQueryNoLimit resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error) {
         if (newAnchor) {
-            self.anchor = newAnchor;
-            [self updateWorkoutRateWithSamples:sampleObjects];
+            weakSelf.anchor = newAnchor;
+            [weakSelf updateWorkoutRateWithSamples:sampleObjects];
         }
     }];
     
-    if (query == nil) {
+    if (self.query == nil) {
         self.alertLabel.text = @"Query not available";
         return nil;
     }
     
-    query.updateHandler = ^(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * __nullable addedObjects, NSArray<HKDeletedObject *> * __nullable deletedObjects, HKQueryAnchor * __nullable newAnchor, NSError * __nullable error) {
-        self.anchor = newAnchor;
-        [self updateWorkoutRateWithSamples:addedObjects];
+    self.query.updateHandler = ^(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * __nullable addedObjects, NSArray<HKDeletedObject *> * __nullable deletedObjects, HKQueryAnchor * __nullable newAnchor, NSError * __nullable error) {
+        weakSelf.anchor = newAnchor;
+        [weakSelf updateWorkoutRateWithSamples:addedObjects];
     };
     
-    return query;
+    return self.query;
 }
 
 - (void)workoutDidStartOnDate:(NSDate*)date
@@ -134,9 +138,8 @@
 
 - (void)workoutDidEndOnDate:(NSDate*)date
 {
-    HKQuery *query = [self createWorkoutStreamingQueryOnDate:date];
-    if (query) {
-        [self.healthStore stopQuery:query];
+    if (self.query) {
+        [self.healthStore stopQuery:self.query];
         self.alertLabel.text = @"Stop Running";
     } else {
         self.alertLabel.text = @"Cannot end query";
@@ -154,9 +157,13 @@
         switch (toState) {
             case HKWorkoutSessionStateRunning:
                 [self workoutDidStartOnDate:date];
+                [self.startButton setHidden:YES];
+                [self.endButton setHidden:NO];
                 break;
             case HKWorkoutSessionStateEnded:
                 [self workoutDidEndOnDate:date];
+                [self.startButton setHidden:NO];
+                [self.endButton setHidden:YES];
                 break;
             default:
                 break;
