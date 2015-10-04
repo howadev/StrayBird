@@ -10,8 +10,9 @@
 #import "CHBTimerView.h"
 #import "CHBWorkoutController.h"
 #import "CHBGameKitHelper.h"
+@import WatchConnectivity;
 
-@interface CHBDemoViewController () <CHBWorkoutControllerDelegate, GKGameCenterControllerDelegate>
+@interface CHBDemoViewController () <CHBWorkoutControllerDelegate, GKGameCenterControllerDelegate, WCSessionDelegate>
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) CHBTimerView *timerView;
 @property (nonatomic, retain) CHBWorkoutController *workoutController;
@@ -70,6 +71,12 @@
     walkingRuningDistance = 0.0;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showLeaderboardAndAchievements:)];
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 # pragma mark - Game Kit
@@ -138,8 +145,8 @@
 #pragma mark - CBWorkoutControllerDelegate
 
 - (void)workoutControllerDidGetValue:(double)value inMode:(CHBWorkoutMode)mode {
-    walkingRuningDistance = value;
-    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:CHBWorkoutModeWalkingRunningDistance inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    walkingRuningDistance = value;
+//    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:CHBWorkoutModeWalkingRunningDistance inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Reading HealthKit Data
@@ -147,6 +154,14 @@
 - (void)refreshStatistics {
     NSLog(@"start refresh");
     [self.refreshControl endRefreshing];
+}
+
+#pragma mark - WCSessionDelegate
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+    NSString *distance = message[@"distance"];
+    walkingRuningDistance = distance.doubleValue;
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:CHBWorkoutModeWalkingRunningDistance inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - UITableViewDataSource

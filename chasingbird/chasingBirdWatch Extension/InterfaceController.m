@@ -8,8 +8,9 @@
 
 #import "InterfaceController.h"
 @import HealthKit;
+@import WatchConnectivity;
 
-@interface InterfaceController() <HKWorkoutSessionDelegate>
+@interface InterfaceController() <HKWorkoutSessionDelegate, WCSessionDelegate>
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *alertLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *startButton;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *endButton;
@@ -41,12 +42,22 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
-    // Configure interface objects here.
+    // Configure session
     
     self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
     self.workoutUnit = [HKUnit unitFromString:@"m"];
     
     self.healthStore = [HKHealthStore new];
+    
+    // Configure Connectivity
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+    
+    // Configure UI
     
     [self.endButton setHidden:YES];
 }
@@ -92,6 +103,18 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             self.alertLabel.text = valueString;
         });
+        
+        if ([[WCSession defaultSession] isReachable]) {
+            NSDictionary *applicationDict = @{@"distance":valueString};
+            [[WCSession defaultSession] sendMessage:applicationDict
+                                       replyHandler:^(NSDictionary *replyHandler) {
+                                           
+                                       }
+                                       errorHandler:^(NSError *error) {
+                                           
+                                       }
+             ];
+        }
     }
 }
 
