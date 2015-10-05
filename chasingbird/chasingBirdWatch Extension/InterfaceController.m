@@ -102,7 +102,7 @@
         });
         
         if ([[WCSession defaultSession] isReachable]) {
-            NSDictionary *applicationDict = @{@"distance":valueString};
+            NSDictionary *applicationDict = @{@"heartrate":valueString};
             [[WCSession defaultSession] sendMessage:applicationDict
                                        replyHandler:^(NSDictionary *replyHandler) {
                                            

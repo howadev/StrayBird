@@ -10,10 +10,11 @@
 #import "CHBHelpers.h"
 #import "CHBBirdInfoNode.h"
 #import "CHBLabelNode.h"
+@import WatchConnectivity;
 
 static const CGFloat minimumBirdSpeed = 0.5;
 
-@interface CHBGameScene ()
+@interface CHBGameScene () <WCSessionDelegate>
 @property (nonatomic, assign) CGFloat burnCalories;
 
 @property (nonatomic, assign) CGFloat distanceMoved;
@@ -51,6 +52,16 @@ static const CGFloat minimumBirdSpeed = 0.5;
 
 @implementation CHBGameScene
 
+#pragma mark - WCSessionDelegate
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+    NSString *heartrate = message[@"heartrate"];
+    if (heartrate) {
+        CGFloat speed = heartrate.floatValue;
+        self.birdSpeed = speed/100;
+    }
+}
+
 #pragma mark - initialize
 
 - (instancetype)initWithSize:(CGSize)size {
@@ -74,6 +85,12 @@ static const CGFloat minimumBirdSpeed = 0.5;
     //[self populateFlock];
     [self setupBirdNode];
     //[self populateCheckPointLayer];
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 - (void)setupLayer {
@@ -273,10 +290,10 @@ static const CGFloat minimumBirdSpeed = 0.5;
     
     if (self.distanceMoved > self.distanceLeftOverall) {
         NSLog(@"Goal!");
-        if (self.checkPointAnimation == nil) {
-            [self populateCheckPointLayer];
-            [self.infoNode setHidden:YES];
-        }
+//        if (self.checkPointAnimation == nil) {
+//            [self populateCheckPointLayer];
+//            [self.infoNode setHidden:YES];
+//        }
     } else {
         self.infoNode.distanceLeftLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceLeftOverall-self.distanceMoved];
         
@@ -288,15 +305,15 @@ static const CGFloat minimumBirdSpeed = 0.5;
 #pragma mark - touch event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (self.birdSpeed < 3) {
-        self.birdSpeed = self.birdSpeed + 0.1;
-    }
+//    if (self.birdSpeed < 3) {
+//        self.birdSpeed = self.birdSpeed + 0.1;
+//    }
 }
 
 - (void)speedDown:(id)sender {
-    if (self.birdSpeed > minimumBirdSpeed) {
-        self.birdSpeed = self.birdSpeed - 0.1;
-    }
+//    if (self.birdSpeed > minimumBirdSpeed) {
+//        self.birdSpeed = self.birdSpeed - 0.1;
+//    }
 }
 
 - (void)setBirdSpeed:(CGFloat)birdSpeed {
