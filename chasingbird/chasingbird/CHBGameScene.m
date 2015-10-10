@@ -28,6 +28,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, assign) CGFloat birdSpeed;
 
 @property (nonatomic, retain) SKNode *backgroundLayer;
+@property (nonatomic, assign) CGFloat backgroundMovePointsPerSec;
 
 @property (nonatomic, retain) SKNode *rockLayer;
 @property (nonatomic, assign) CGFloat populateRockSpeed;
@@ -120,26 +121,19 @@ static const CGFloat minimumBirdSpeed = 0.5;
 }
 
 - (void)setupBackgroundNode {
-    SKSpriteNode* backgroundSprite = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
-    backgroundSprite.position = CGPointMake(self.size.width/2, self.size.height/2);
-    [self.backgroundLayer addChild:backgroundSprite];
-    
-    [backgroundSprite runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height duration:2.0],
-                                                                                   [SKAction moveByX:0 y:self.size.height*2 duration:0],
-                                                                                   [SKAction moveByX:0 y:-self.size.height duration:2.0],
-                                                                                   ]]]];
-    
+    self.backgroundMovePointsPerSec = 80.0;
+    SKSpriteNode* backgroundSprite1 = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
+    //SKSpriteNode *backgroundSprite1 = [SKSpriteNode spriteNodeWithColor:[SKColor redColor] size:self.size];
+    backgroundSprite1.name = @"background";
+    backgroundSprite1.yScale = -1;
+    backgroundSprite1.position = CGPointMake(self.size.width/2, self.size.height/2);
+    [self.backgroundLayer addChild:backgroundSprite1];
+
     SKSpriteNode* backgroundSprite2 = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
-    backgroundSprite2.yScale = -1;
+    //SKSpriteNode *backgroundSprite2 = [SKSpriteNode spriteNodeWithColor:[SKColor greenColor] size:self.size];
+    backgroundSprite2.name = @"background";
     backgroundSprite2.position = CGPointMake(self.size.width/2, self.size.height*1.5);
     [self.backgroundLayer addChild:backgroundSprite2];
-    
-    [backgroundSprite2 runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height duration:2.0],
-                                                                                    [SKAction moveByX:0 y:-self.size.height duration:2.0],
-                                                                                    [SKAction moveByX:0 y:self.size.height*2 duration:0],
-                                                                                    ]]]];
-    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
-                                                                       [SKAction waitForDuration:1.5]]]]];
 }
 
 - (void)populateRock {
@@ -154,9 +148,11 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
     
     SKSpriteNode *rockNode = [[SKSpriteNode alloc] initWithTexture:textures[arc4random()%5]];
-    rockNode.position = CGPointMake([CHBHelpers randomWithMin:0 max:self.size.width], self.size.height+rockNode.size.height/2);
-    [rockNode runAction:[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-rockNode.size.height duration:2.0],
-                                             [SKAction removeFromParent]]]];
+    rockNode.name = @"rock";
+    
+    CGPoint rockPos = [self convertPoint:CGPointMake([CHBHelpers randomWithMin:0 max:self.size.width], self.size.height+rockNode.size.height/2) toNode:self.backgroundLayer];
+    rockNode.position = rockPos;
+    
     [self.backgroundLayer addChild:rockNode];
 }
 
@@ -263,6 +259,10 @@ static const CGFloat minimumBirdSpeed = 0.5;
 - (void)didMoveToView:(SKView *)view {
     self.birdSpeed = minimumBirdSpeed;
     self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(speedDown:) userInfo:nil repeats:YES];
+    
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
+                                                                       [SKAction waitForDuration:5.0]
+                                                                       ]]]];
 }
 
 #pragma mark - update event
@@ -275,10 +275,32 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
     self.lastUpdateTime = currentTime;
     
-    self.distanceMoved += self.backgroundLayer.speed*100*self.dt;
+    // Move background
+    CGPoint backgroundVelocity = CGPointMake(0, -self.backgroundMovePointsPerSec);
+    CGPoint amountToMove = CGPointMake(backgroundVelocity.x * self.dt, backgroundVelocity.y * self.dt);
+    self.backgroundLayer.position = CGPointMake(self.backgroundLayer.position.x + amountToMove.x, self.backgroundLayer.position.y + amountToMove.y);
+    
+    [self.backgroundLayer enumerateChildNodesWithName:@"background" usingBlock:^(SKNode * _Nonnull node, BOOL * _Nonnull stop) {
+        NSAssert([node isKindOfClass:[SKSpriteNode class]], @"Need it");
+        SKSpriteNode *background = (SKSpriteNode*)node;
+        CGPoint backgroundScreenPos = [self.backgroundLayer convertPoint:background.position toNode:self];
+        if (backgroundScreenPos.y <= -self.size.height/2) {
+            background.position = CGPointMake(background.size.width/2, background.position.y + self.size.height*2);
+        }
+    }];
+    
+    [self.backgroundLayer enumerateChildNodesWithName:@"rock" usingBlock:^(SKNode * _Nonnull node, BOOL * _Nonnull stop) {
+        NSAssert([node isKindOfClass:[SKSpriteNode class]], @"Need it");
+        SKSpriteNode *rock = (SKSpriteNode*)node;
+        CGPoint rockPos = [self.backgroundLayer convertPoint:rock.position toNode:self];
+        if (rockPos.y <= -rock.size.height/2) {
+            [rock removeFromParent];
+        }
+    }];
+    
+    self.distanceMoved += self.backgroundMovePointsPerSec*self.dt;
     
     if (self.distanceMoved > self.distanceFromFlockOverall) {
-        NSLog(@"Flock is here");
         if (self.flockAnimation == nil) {
             [self populateFlock];
             self.distanceMoved = self.distanceFromFlockOverall;
@@ -289,7 +311,6 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
     
     if (self.distanceMoved > self.distanceLeftOverall) {
-        NSLog(@"Goal!");
 //        if (self.checkPointAnimation == nil) {
 //            [self populateCheckPointLayer];
 //            [self.infoNode setHidden:YES];
@@ -305,15 +326,15 @@ static const CGFloat minimumBirdSpeed = 0.5;
 #pragma mark - touch event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    if (self.birdSpeed < 3) {
-//        self.birdSpeed = self.birdSpeed + 0.1;
-//    }
+    if (self.birdSpeed < 3) {
+        self.birdSpeed = self.birdSpeed + 0.1;
+    }
 }
 
 - (void)speedDown:(id)sender {
-//    if (self.birdSpeed > minimumBirdSpeed) {
-//        self.birdSpeed = self.birdSpeed - 0.1;
-//    }
+    if (self.birdSpeed > minimumBirdSpeed) {
+        self.birdSpeed = self.birdSpeed - 0.1;
+    }
 }
 
 - (void)setBirdSpeed:(CGFloat)birdSpeed {
