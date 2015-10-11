@@ -27,6 +27,7 @@
     
     // Create and configure the scene.
     CHBGameScene *scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
+    scene.level = CHBGameLevelThird;
     scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.

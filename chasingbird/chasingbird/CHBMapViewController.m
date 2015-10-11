@@ -29,17 +29,17 @@
     
     self.firstLevelView = [CHBMapLevelView new];
     self.firstLevelView.starMode = CHBMapLevelViewStarModeThree;
-    self.firstLevelView.levelMode = CHBMapLevelViewLevelModeFirst;
+    self.firstLevelView.level = CHBGameLevelFirst;
     [self.view addSubview:self.firstLevelView];
     
     self.secondLevelView = [CHBMapLevelView new];
     self.secondLevelView.starMode = CHBMapLevelViewStarModeNone;
-    self.secondLevelView.levelMode = CHBMapLevelViewLevelModeSecond;
+    self.secondLevelView.level = CHBGameLevelSecond;
     [self.view addSubview:self.secondLevelView];
     
     self.thirdLevelView = [CHBMapLevelView new];
     self.thirdLevelView.starMode = CHBMapLevelViewStarModeInactive;
-    self.thirdLevelView.levelMode = CHBMapLevelViewLevelModeThird;
+    self.thirdLevelView.level = CHBGameLevelThird;
     [self.view addSubview:self.thirdLevelView];
     
     [self.firstLevelView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(firstLevelViewDidTap:)]];

@@ -7,7 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "CHBTypes.h"
 
 @interface CHBGameScene : SKScene
-
+@property (nonatomic, assign) CHBGameLevel level;
 @end

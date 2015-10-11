@@ -63,17 +63,9 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
 }
 
-#pragma mark - initialize
+#pragma mark - view Cycle
 
-- (instancetype)initWithSize:(CGSize)size {
-    self = [super initWithSize:size];
-    if (self) {
-        [self initialize];
-    }
-    return self;
-}
-
-- (void)initialize {
+- (void)didMoveToView:(SKView *)view {
     self.distanceMoved = 0;
     self.lastUpdateTime = 0;
     self.dt = 0;
@@ -92,6 +84,13 @@ static const CGFloat minimumBirdSpeed = 0.5;
         session.delegate = self;
         [session activateSession];
     }
+    
+    self.birdSpeed = minimumBirdSpeed;
+    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(speedDown:) userInfo:nil repeats:YES];
+    
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
+                                                                       [SKAction waitForDuration:5.0]
+                                                                       ]]]];
 }
 
 - (void)setupLayer {
@@ -122,14 +121,30 @@ static const CGFloat minimumBirdSpeed = 0.5;
 
 - (void)setupBackgroundNode {
     self.backgroundMovePointsPerSec = 80.0;
-    SKSpriteNode* backgroundSprite1 = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
+    
+    NSString *imageName = nil;
+    switch (self.level) {
+        case CHBGameLevelFirst:
+            imageName = @"level1_layer1_ocean";
+            break;
+        case CHBGameLevelSecond:
+            imageName = @"level2_layer1_ground";
+            break;
+        case CHBGameLevelThird:
+            imageName = @"level3_layer1_ocean";
+            break;
+        default:
+            NSAssert(NO, @"not existed level");
+            break;
+    }
+    SKSpriteNode* backgroundSprite1 = [[SKSpriteNode alloc] initWithImageNamed:imageName];
     //SKSpriteNode *backgroundSprite1 = [SKSpriteNode spriteNodeWithColor:[SKColor redColor] size:self.size];
     backgroundSprite1.name = @"background";
     backgroundSprite1.yScale = -1;
     backgroundSprite1.position = CGPointMake(self.size.width/2, self.size.height/2);
     [self.backgroundLayer addChild:backgroundSprite1];
 
-    SKSpriteNode* backgroundSprite2 = [[SKSpriteNode alloc] initWithImageNamed:@"level1_layer1_ocean"];
+    SKSpriteNode* backgroundSprite2 = [[SKSpriteNode alloc] initWithImageNamed:imageName];
     //SKSpriteNode *backgroundSprite2 = [SKSpriteNode spriteNodeWithColor:[SKColor greenColor] size:self.size];
     backgroundSprite2.name = @"background";
     backgroundSprite2.position = CGPointMake(self.size.width/2, self.size.height*1.5);
@@ -139,9 +154,25 @@ static const CGFloat minimumBirdSpeed = 0.5;
 - (void)populateRock {
     static NSMutableArray *textures = nil;
     if (textures == nil) {
+        NSString *_imageName = nil;
+        switch (self.level) {
+            case CHBGameLevelFirst:
+                _imageName = @"level1_layer2_rock";
+                break;
+            case CHBGameLevelSecond:
+                _imageName = @"level2_layer2_rock";
+                break;
+            case CHBGameLevelThird:
+                _imageName = @"level3_layer2_rock";
+                break;
+            default:
+                NSAssert(NO, @"not existed level");
+                break;
+        }
+        
         textures = [@[] mutableCopy];
         for (int i = 1; i <= 5; i++) {
-            NSString *imageName = [NSString stringWithFormat:@"level1_layer2_rock%d", i];
+            NSString *imageName = [NSString stringWithFormat:@"%@%d", _imageName, i];
             SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
             [textures addObject:texture];
         }
@@ -169,7 +200,21 @@ static const CGFloat minimumBirdSpeed = 0.5;
 }
 
 - (void)populateCloud {
-    NSString *imageName = [NSString stringWithFormat:@"level1-2_layer6_cloud%d", (arc4random()%3+1)];
+    NSString *_imageName = nil;
+    switch (self.level) {
+        case CHBGameLevelFirst:
+        case CHBGameLevelSecond:
+            _imageName = @"level1-2_layer6_cloud";
+            break;
+        case CHBGameLevelThird:
+            _imageName = @"level3_layer6_cloud";
+            break;
+        default:
+            NSAssert(NO, @"not existed level");
+            break;
+    }
+    
+    NSString *imageName = [NSString stringWithFormat:@"%@%d", _imageName, (arc4random()%3+1)];
     SKSpriteNode *node = [[SKSpriteNode alloc] initWithImageNamed:imageName];
     node.position = CGPointMake(-node.size.width/2, [CHBHelpers randomWithMin:0 max:self.size.height]);
     [self.cloudLayer addChild:node];
@@ -253,17 +298,6 @@ static const CGFloat minimumBirdSpeed = 0.5;
                                                 [SKAction repeatActionForever:self.checkPointAnimation]]]];
 }
 
-
-#pragma mark - view Cycle
-
-- (void)didMoveToView:(SKView *)view {
-    self.birdSpeed = minimumBirdSpeed;
-    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(speedDown:) userInfo:nil repeats:YES];
-    
-    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
-                                                                       [SKAction waitForDuration:5.0]
-                                                                       ]]]];
-}
 
 #pragma mark - update event
 

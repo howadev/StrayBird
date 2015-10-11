@@ -17,10 +17,10 @@ typedef NS_ENUM(NSInteger, CHBMapLevelViewsStarMode) {
     CHBMapLevelViewStarModeThree,
 };
 
-typedef NS_ENUM(NSInteger, CHBMapLevelViewLevelMode) {
-    CHBMapLevelViewLevelModeFirst = 1,
-    CHBMapLevelViewLevelModeSecond,
-    CHBMapLevelViewLevelModeThird,
+typedef NS_ENUM(NSInteger, CHBGameLevel) {
+    CHBGameLevelFirst = 1,
+    CHBGameLevelSecond,
+    CHBGameLevelThird,
 };
 
 typedef NS_ENUM(NSUInteger, CHBWorkoutMode) {
@@ -28,6 +28,6 @@ typedef NS_ENUM(NSUInteger, CHBWorkoutMode) {
     CHBWorkoutModeWalkingRunningDistance,
     CHBWorkoutModeBikingDistance,
     CHBWorkoutModeEnergy
-}; 
+};
 
 #endif /* CHBTypes_h */

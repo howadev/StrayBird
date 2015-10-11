@@ -11,5 +11,5 @@
 
 @interface CHBMapLevelView : UIView
 @property (nonatomic, assign) CHBMapLevelViewsStarMode starMode;
-@property (nonatomic, assign) CHBMapLevelViewLevelMode levelMode;
+@property (nonatomic, assign) CHBGameLevel level;
 @end

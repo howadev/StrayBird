@@ -66,10 +66,10 @@
 
 // NOTE: for now, must set star mode before setting level mode
 
-- (void)setLevelMode:(CHBMapLevelViewLevelMode)levelMode {
-    _levelMode = levelMode;
-    switch (levelMode) {
-        case CHBMapLevelViewLevelModeFirst:
+- (void)setLevelMode:(CHBGameLevel)level {
+    _level = level;
+    switch (level) {
+        case CHBGameLevelFirst:
             if (self.starMode == CHBMapLevelViewStarModeInactive) {
                 self.levelView.image = [UIImage imageNamed:@"single_landing_level1_locked"];
             } else if (self.starMode == CHBMapLevelViewStarModeNone) {
@@ -78,7 +78,7 @@
                 self.levelView.image = [UIImage imageNamed:@"single_landing_level1_complete"];
             }
             break;
-        case CHBMapLevelViewLevelModeSecond:
+        case CHBGameLevelSecond:
             if (self.starMode == CHBMapLevelViewStarModeInactive) {
                 self.levelView.image = [UIImage imageNamed:@"single_landing_level2_locked"];
             } else if (self.starMode == CHBMapLevelViewStarModeNone) {
@@ -87,7 +87,7 @@
                 self.levelView.image = [UIImage imageNamed:@"single_landing_level2_complete"];
             }
             break;
-        case CHBMapLevelViewLevelModeThird:
+        case CHBGameLevelThird:
             if (self.starMode == CHBMapLevelViewStarModeInactive) {
                 self.levelView.image = [UIImage imageNamed:@"single_landing_level3_locked"];
             } else if (self.starMode == CHBMapLevelViewStarModeNone) {
