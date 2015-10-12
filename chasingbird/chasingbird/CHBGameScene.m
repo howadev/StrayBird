@@ -34,6 +34,8 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, assign) CGFloat populateRockSpeed;
 
 @property (nonatomic, retain) SKNode *atmosphereLayer;
+@property (nonatomic, retain) SKSpriteNode *thunderNode;
+@property (nonatomic, retain) SKAction *thunderAnimation;
 
 @property (nonatomic, retain) SKNode *cloudLayer;
 
@@ -75,9 +77,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self setupBackgroundNode];
     //[self setupAtmosphereLayer];
     [self setupCloudLayer];
-    //[self populateFlock];
     [self setupBirdNode];
-    //[self populateCheckPointLayer];
     
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];
@@ -98,10 +98,6 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.backgroundLayer.zPosition = -1;
     [self addChild:self.backgroundLayer];
     
-    self.atmosphereLayer = [SKNode new];
-    self.atmosphereLayer.zPosition = 70;
-    [self addChild:self.atmosphereLayer];
-    
     self.cloudLayer = [SKNode new];
     self.cloudLayer.zPosition = 80;
     [self addChild:self.cloudLayer];
@@ -113,6 +109,10 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.birdLayer = [SKNode new];
     self.birdLayer.zPosition = 100;
     [self addChild:self.birdLayer];
+    
+    self.atmosphereLayer = [SKNode new];
+    self.atmosphereLayer.zPosition = 105;
+    [self addChild:self.atmosphereLayer];
     
     self.checkPointLayer = [SKNode new];
     self.checkPointLayer.zPosition = 110;
@@ -191,6 +191,24 @@ static const CGFloat minimumBirdSpeed = 0.5;
     SKSpriteNode* atmosphereSprite = [[SKSpriteNode alloc] initWithImageNamed:@"level1-2_layer3_atmosphere"];
     atmosphereSprite.position = CGPointMake(self.size.width/2, self.size.height/2);
     [self.backgroundLayer addChild:atmosphereSprite];
+}
+
+- (void)populateThunder {
+    NSMutableArray *textures = [@[] mutableCopy];
+    for (int i = 1; i <= 3; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"sprite_level3_layer3_thunder%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+        [textures addObject:texture];
+    }
+    
+    self.thunderAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+    
+    self.thunderNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level3_layer3_thunder1"];
+    self.thunderNode.position = CGPointMake(self.size.width/2, self.size.height/2);
+    [self.atmosphereLayer addChild:self.thunderNode];
+    [self.thunderNode runAction:[SKAction sequence:@[self.thunderAnimation,
+                                                     [SKAction waitForDuration:1.0],
+                                                     [SKAction removeFromParent]]]];
 }
 
 - (void)setupCloudLayer {
