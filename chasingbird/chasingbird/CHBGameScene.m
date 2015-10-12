@@ -11,6 +11,7 @@
 #import "CHBNetInfoNode.h"
 #import "CHBBirdInfoNode.h"
 #import "CHBLabelNode.h"
+#import "CHBRadarNode.h"
 @import WatchConnectivity;
 
 static const CGFloat minimumBirdSpeed = 0.5;
@@ -61,6 +62,9 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, retain) SKAction *checkPointAnimation;
 
 @property (nonatomic, retain) SKNode *hudLayer;
+@property (nonatomic, retain) SKSpriteNode *hudDashboardNode;
+@property (nonatomic, retain) SKSpriteNode *hudTimerNode;
+@property (nonatomic, retain) CHBRadarNode *hudRadarNode;
 @end
 
 @implementation CHBGameScene {
@@ -86,6 +90,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.populateRockSpeed = 0.0001;
     
     [self setupLayer];
+    [self setupHubLayer];
     [self setupBackgroundNode];
     //[self setupAtmosphereLayer];
     [self setupCloudLayer];
@@ -133,6 +138,24 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.checkPointLayer = [SKNode new];
     self.checkPointLayer.zPosition = 110;
     [self addChild:self.checkPointLayer];
+    
+    self.hudLayer = [SKNode new];
+    self.hudLayer.zPosition = 150;
+    [self addChild:self.hudLayer];
+}
+
+- (void)setupHubLayer {
+    self.hudDashboardNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_dashboard"];
+    self.hudDashboardNode.position = CGPointMake(self.size.width/2, self.hudDashboardNode.size.height/2);
+    [self.hudLayer addChild:self.hudDashboardNode];
+    
+    self.hudTimerNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_timer"];
+    self.hudTimerNode.position = CGPointMake(kCHBEdgeInset + self.hudTimerNode.size.width/2, self.hudDashboardNode.size.height);
+    [self.hudLayer addChild:self.hudTimerNode];
+    
+    self.hudRadarNode = [CHBRadarNode new];
+    self.hudRadarNode.position = CGPointMake(self.size.width - self.hudRadarNode.size.width/2, kCHBEdgeInset + self.hudRadarNode.size.height/2);
+    [self.hudLayer addChild:self.hudRadarNode];
 }
 
 - (void)setupBackgroundNode {
@@ -268,7 +291,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     
     self.flockAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 6; i++) {
         SKSpriteNode *birdNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer4_flock1"];
         
         CGFloat gap = (self.size.width - birdNode.size.width*7)/6;

@@ -16,6 +16,7 @@
 		642578641BC065C8006B430D /* chasingBirdWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 642578481BC065C8006B430D /* chasingBirdWatch.app */; };
 		6425786C1BC066CB006B430D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4B99D01B9C714C00FED471 /* HealthKit.framework */; };
 		6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */; settings = {ASSET_TAGS = (); }; };
+		6455EE451BCC27A900E32334 /* CHBRadarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE441BCC27A900E32334 /* CHBRadarNode.m */; settings = {ASSET_TAGS = (); }; };
 		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; settings = {ASSET_TAGS = (); }; };
 		6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */; settings = {ASSET_TAGS = (); }; };
 		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; settings = {ASSET_TAGS = (); }; };
@@ -101,6 +102,8 @@
 		6425786D1BC066CB006B430D /* chasingBirdWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "chasingBirdWatch Extension.entitlements"; sourceTree = "<group>"; };
 		6455EE401BCC02E300E32334 /* CHBNetInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBNetInfoNode.h; sourceTree = "<group>"; };
 		6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBNetInfoNode.m; sourceTree = "<group>"; };
+		6455EE431BCC27A900E32334 /* CHBRadarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBRadarNode.h; sourceTree = "<group>"; };
+		6455EE441BCC27A900E32334 /* CHBRadarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBRadarNode.m; sourceTree = "<group>"; };
 		646608671BB70BDF00E61BFD /* CHBLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLabelNode.h; sourceTree = "<group>"; };
 		646608681BB70BDF00E61BFD /* CHBLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLabelNode.m; sourceTree = "<group>"; };
 		6466086A1BB7117A00E61BFD /* CHBBirdInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBBirdInfoNode.h; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 			children = (
 				896251811B8E8FF500295961 /* CHBImageView.h */,
 				646608671BB70BDF00E61BFD /* CHBLabelNode.h */,
+				6455EE431BCC27A900E32334 /* CHBRadarNode.h */,
+				6455EE441BCC27A900E32334 /* CHBRadarNode.m */,
 				646608681BB70BDF00E61BFD /* CHBLabelNode.m */,
 				6466086A1BB7117A00E61BFD /* CHBBirdInfoNode.h */,
 				6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */,
@@ -523,6 +528,7 @@
 				646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */,
 				8962517C1B8E899A00295961 /* CHBViewController.m in Sources */,
 				89659BEF1B8962B6004072CE /* CHBGameKitHelper.m in Sources */,
+				6455EE451BCC27A900E32334 /* CHBRadarNode.m in Sources */,
 				6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */,
 				8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */,
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
