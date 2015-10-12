@@ -8,6 +8,7 @@
 
 #import "CHBGameScene.h"
 #import "CHBHelpers.h"
+#import "CHBNetInfoNode.h"
 #import "CHBBirdInfoNode.h"
 #import "CHBLabelNode.h"
 @import WatchConnectivity;
@@ -45,7 +46,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, retain) SKNode *birdLayer;
 @property (nonatomic, retain) SKSpriteNode *birdNode;
 @property (nonatomic, retain) SKAction *birdAnimation;
-@property (nonatomic, retain) CHBBirdInfoNode *infoNode;
+@property (nonatomic, retain) CHBBirdInfoNode *birdInfoNode;
 
 @property (nonatomic, retain) SKNode *netLayer;
 @property (nonatomic, retain) SKSpriteNode *netNode;
@@ -53,6 +54,8 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, retain) SKAction *netCollisionAnimation;
 @property (nonatomic, retain) SKAction *netBreakAnimation;
 @property (nonatomic, assign) CHBNetState currentNetState;
+
+@property (nonatomic, retain) CHBNetInfoNode *netInfoNode;
 
 @property (nonatomic, retain) SKNode *checkPointLayer;
 @property (nonatomic, retain) SKAction *checkPointAnimation;
@@ -291,6 +294,12 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
 }
 
+- (void)setupNetInfoNode {
+    self.netInfoNode = [CHBNetInfoNode new];
+    self.netInfoNode.position = CGPointMake(self.size.width, self.netNode.position.y);
+    [self.netLayer addChild:self.netInfoNode];
+}
+
 - (void)setupNetNode {
     NSMutableArray *textures = [@[] mutableCopy];
     for (int i = 1; i <= 2; i++) {
@@ -317,7 +326,10 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.netBreakAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     
     self.netNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level2_layer5_net1"];
+    self.netNode.position = CGPointMake(self.size.width/2, self.size.height+self.netNode.size.height/2);
     [self.netLayer addChild:self.netNode];
+    
+    [self setupNetInfoNode];
 }
 
 - (void)applyNetState:(CHBNetState)state {
@@ -325,10 +337,8 @@ static const CGFloat minimumBirdSpeed = 0.5;
         case CHBNetStateDrop:
             NSAssert(self.currentNetState == CHBNetStateNone, @"Invalid state transition");
             [self setupNetNode];
-            self.netNode.position = CGPointMake(self.size.width/2, self.size.height+self.netNode.size.height/2);
-            [self.netNode runAction:[SKAction group:@[[SKAction moveTo:self.birdNode.position duration:2.0],
-                                                      [SKAction repeatActionForever:self.netDropAnimation]
-                                                      ]]];
+            [self.netNode runAction:[SKAction repeatActionForever:self.netDropAnimation]];
+            [self.netLayer runAction:[SKAction moveByX:0 y:-(self.size.height - self.birdNode.position.y)-self.netNode.size.height/2 duration:2.0]];
             self.currentNetState = CHBNetStateDrop;
             break;
         case CHBNetStateCollision:
@@ -342,6 +352,8 @@ static const CGFloat minimumBirdSpeed = 0.5;
             [self.netNode removeAllActions];
             [self.netNode runAction:[SKAction sequence:@[self.netBreakAnimation,
                                                          [SKAction removeFromParent]]]];
+            [self.netInfoNode removeFromParent];
+            self.netLayer.position = CGPointZero;
             self.currentNetState = CHBNetStateBreak;
             break;
         default:
@@ -365,9 +377,9 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self.birdNode runAction:[SKAction repeatActionForever:self.birdAnimation]];
     
     //CGFloat preferredWidth = self.size.width/2 - self.birdNode.size.width/2;
-    self.infoNode = [CHBBirdInfoNode new];
-    self.infoNode.position = CGPointMake(0, self.birdNode.position.y);
-    [self.birdLayer addChild:self.infoNode];
+    self.birdInfoNode = [CHBBirdInfoNode new];
+    self.birdInfoNode.position = CGPointMake(0, self.birdNode.position.y);
+    [self.birdLayer addChild:self.birdInfoNode];
 }
 
 - (void)populateCheckPointLayer {
@@ -428,22 +440,22 @@ static const CGFloat minimumBirdSpeed = 0.5;
         if (self.flockAnimation == nil) {
             [self populateFlock];
             self.distanceMoved = self.distanceFromFlockOverall;
-            self.infoNode.distanceFromFlockLabel.text = @"0 M";
+            self.birdInfoNode.distanceFromFlockLabel.text = @"0 M";
         }
     } else {
-        self.infoNode.distanceFromFlockLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceFromFlockOverall-self.distanceMoved];
+        self.birdInfoNode.distanceFromFlockLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceFromFlockOverall-self.distanceMoved];
     }
     
     if (self.distanceMoved > self.distanceLeftOverall) {
 //        if (self.checkPointAnimation == nil) {
 //            [self populateCheckPointLayer];
-//            [self.infoNode setHidden:YES];
+//            [self.birdInfoNode setHidden:YES];
 //        }
     } else {
-        self.infoNode.distanceLeftLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceLeftOverall-self.distanceMoved];
+        self.birdInfoNode.distanceLeftLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceLeftOverall-self.distanceMoved];
         
         self.burnCalories += 0.01;
-        self.infoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.burnCalories];
+        self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.burnCalories];
     }
 }
 
@@ -477,7 +489,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     _birdSpeed = birdSpeed;
     
     self.backgroundLayer.speed = birdSpeed;
-    self.infoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", birdSpeed*100];
+    self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", birdSpeed*100];
 }
 
 #pragma mark - game logic

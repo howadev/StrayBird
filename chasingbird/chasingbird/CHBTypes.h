@@ -6,8 +6,12 @@
 //  Copyright © 2015 howalee. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #ifndef CHBTypes_h
 #define CHBTypes_h
+
+const static CGFloat kCHBEdgeInset = 8.0;
 
 typedef NS_ENUM(NSInteger, CHBMapLevelViewsStarMode) {
     CHBMapLevelViewStarModeInactive = -1,

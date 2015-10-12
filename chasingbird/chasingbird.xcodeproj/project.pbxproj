@@ -15,6 +15,7 @@
 		642578601BC065C8006B430D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6425785F1BC065C8006B430D /* Assets.xcassets */; };
 		642578641BC065C8006B430D /* chasingBirdWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 642578481BC065C8006B430D /* chasingBirdWatch.app */; };
 		6425786C1BC066CB006B430D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4B99D01B9C714C00FED471 /* HealthKit.framework */; };
+		6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */; settings = {ASSET_TAGS = (); }; };
 		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; settings = {ASSET_TAGS = (); }; };
 		6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */; settings = {ASSET_TAGS = (); }; };
 		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; settings = {ASSET_TAGS = (); }; };
@@ -98,6 +99,8 @@
 		6425785F1BC065C8006B430D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		642578611BC065C8006B430D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6425786D1BC066CB006B430D /* chasingBirdWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "chasingBirdWatch Extension.entitlements"; sourceTree = "<group>"; };
+		6455EE401BCC02E300E32334 /* CHBNetInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBNetInfoNode.h; sourceTree = "<group>"; };
+		6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBNetInfoNode.m; sourceTree = "<group>"; };
 		646608671BB70BDF00E61BFD /* CHBLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLabelNode.h; sourceTree = "<group>"; };
 		646608681BB70BDF00E61BFD /* CHBLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLabelNode.m; sourceTree = "<group>"; };
 		6466086A1BB7117A00E61BFD /* CHBBirdInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBBirdInfoNode.h; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 				646608681BB70BDF00E61BFD /* CHBLabelNode.m */,
 				6466086A1BB7117A00E61BFD /* CHBBirdInfoNode.h */,
 				6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */,
+				6455EE401BCC02E300E32334 /* CHBNetInfoNode.h */,
+				6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */,
 				89E8528B1B8EAB4500942893 /* CHBMapLevelView.h */,
 				89E8528C1B8EAB4500942893 /* CHBMapLevelView.m */,
 				896251821B8E8FF500295961 /* CHBImageView.m */,
@@ -530,6 +535,7 @@
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
 				891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */,
 				891736391B7676A0003E082F /* main.m in Sources */,
+				6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,6 +760,7 @@
 				642578671BC065C9006B430D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		642578691BC065C9006B430D /* Build configuration list for PBXNativeTarget "chasingBirdWatch" */ = {
 			isa = XCConfigurationList;
@@ -762,6 +769,7 @@
 				6425786B1BC065C9006B430D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8917362F1B7676A0003E082F /* Build configuration list for PBXProject "chasingbird" */ = {
 			isa = XCConfigurationList;
