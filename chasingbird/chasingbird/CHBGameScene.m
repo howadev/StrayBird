@@ -47,13 +47,22 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, retain) SKAction *birdAnimation;
 @property (nonatomic, retain) CHBBirdInfoNode *infoNode;
 
+@property (nonatomic, retain) SKNode *netLayer;
+@property (nonatomic, retain) SKSpriteNode *netNode;
+@property (nonatomic, retain) SKAction *netDropAnimation;
+@property (nonatomic, retain) SKAction *netCollisionAnimation;
+@property (nonatomic, retain) SKAction *netBreakAnimation;
+@property (nonatomic, assign) CHBNetState currentNetState;
+
 @property (nonatomic, retain) SKNode *checkPointLayer;
 @property (nonatomic, retain) SKAction *checkPointAnimation;
 
 @property (nonatomic, retain) SKNode *hudLayer;
 @end
 
-@implementation CHBGameScene
+@implementation CHBGameScene {
+    NSInteger testNetCount;
+}
 
 #pragma mark - WCSessionDelegate
 
@@ -102,13 +111,17 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.cloudLayer.zPosition = 80;
     [self addChild:self.cloudLayer];
     
-    self.flockLayer = [SKNode new];
-    self.flockLayer.zPosition = 95;
-    [self addChild:self.flockLayer];
-    
     self.birdLayer = [SKNode new];
-    self.birdLayer.zPosition = 100;
+    self.birdLayer.zPosition = 95;
     [self addChild:self.birdLayer];
+    
+    self.netLayer = [SKNode new];
+    self.netLayer.zPosition = 98;
+    [self addChild:self.netLayer];
+    
+    self.flockLayer = [SKNode new];
+    self.flockLayer.zPosition = 100;
+    [self addChild:self.flockLayer];
     
     self.atmosphereLayer = [SKNode new];
     self.atmosphereLayer.zPosition = 105;
@@ -278,6 +291,65 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
 }
 
+- (void)setupNetNode {
+    NSMutableArray *textures = [@[] mutableCopy];
+    for (int i = 1; i <= 2; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"sprite_level2_layer5_net%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+        [textures addObject:texture];
+    }
+    self.netDropAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+    
+    textures = [@[] mutableCopy];
+    for (int i = 3; i <= 4; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"sprite_level2_layer5_net%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+        [textures addObject:texture];
+    }
+    self.netCollisionAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+    
+    textures = [@[] mutableCopy];
+    for (int i = 5; i <= 8; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"sprite_level2_layer5_net%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+        [textures addObject:texture];
+    }
+    self.netBreakAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+    
+    self.netNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level2_layer5_net1"];
+    [self.netLayer addChild:self.netNode];
+}
+
+- (void)applyNetState:(CHBNetState)state {
+    switch (state) {
+        case CHBNetStateDrop:
+            NSAssert(self.currentNetState == CHBNetStateNone, @"Invalid state transition");
+            [self setupNetNode];
+            self.netNode.position = CGPointMake(self.size.width/2, self.size.height+self.netNode.size.height/2);
+            [self.netNode runAction:[SKAction group:@[[SKAction moveTo:self.birdNode.position duration:2.0],
+                                                      [SKAction repeatActionForever:self.netDropAnimation]
+                                                      ]]];
+            self.currentNetState = CHBNetStateDrop;
+            break;
+        case CHBNetStateCollision:
+            NSAssert(self.currentNetState == CHBNetStateDrop, @"Invalid state transition");
+            [self.netNode removeAllActions];
+            [self.netNode runAction:[SKAction repeatActionForever:self.netCollisionAnimation]];
+            self.currentNetState = CHBNetStateCollision;
+            break;
+        case CHBNetStateBreak:
+            NSAssert(self.currentNetState == CHBNetStateCollision, @"Invalid state transition");
+            [self.netNode removeAllActions];
+            [self.netNode runAction:[SKAction sequence:@[self.netBreakAnimation,
+                                                         [SKAction removeFromParent]]]];
+            self.currentNetState = CHBNetStateBreak;
+            break;
+        default:
+            NSAssert(NO, @"funny state");
+            break;
+    }
+}
+
 - (void)setupBirdNode {
     self.birdNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer4_bird1"];
     self.birdNode.position = CGPointMake(self.size.width/2, self.size.height/4);
@@ -380,6 +452,18 @@ static const CGFloat minimumBirdSpeed = 0.5;
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if (self.birdSpeed < 3) {
         self.birdSpeed = self.birdSpeed + 0.1;
+    }
+    
+    testNetCount++;
+    
+    if (testNetCount == 1) {
+        self.currentNetState = CHBNetStateNone;
+        [self applyNetState:CHBNetStateDrop];
+    } else if (testNetCount == 2) {
+        [self applyNetState:CHBNetStateCollision];
+    } else if (testNetCount == 3) {
+        [self applyNetState:CHBNetStateBreak];
+        testNetCount = 0;
     }
 }
 

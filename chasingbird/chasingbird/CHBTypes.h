@@ -30,4 +30,11 @@ typedef NS_ENUM(NSUInteger, CHBWorkoutMode) {
     CHBWorkoutModeEnergy
 };
 
+typedef NS_ENUM(NSInteger, CHBNetState) {
+    CHBNetStateNone = 1,
+    CHBNetStateDrop,
+    CHBNetStateCollision,
+    CHBNetStateBreak,
+};
+
 #endif /* CHBTypes_h */
