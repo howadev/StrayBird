@@ -38,8 +38,8 @@
 - (void)initialize {
     // Radar background
     self.radarNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_radar"];
-    [self.radarNode runAction:[SKAction repeatActionForever:[SKAction sequence:@[//[SKAction rotateByAngle:M_PI*2 duration:2.0],
-                                                                                 //[SKAction waitForDuration:2.0],
+    [self.radarNode runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction rotateByAngle:M_PI*2 duration:2.0],
+                                                                                 [SKAction waitForDuration:2.0],
                                                                                  [SKAction runBlock:^{[self updateRadar];}]]]]];
     [self addChild:self.radarNode];
     
@@ -47,15 +47,16 @@
     self.detectedLayer = [SKNode new];
     [self addChild:self.detectedLayer];
     
-//    self.flockNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_radar_flock"];
-//    self.flockNode.position = self.radarNode.position;
-//    [self.detectedLayer addChild:self.flockNode];
-//    
-//    self.birdNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_radar_player"];
-//    self.birdNode.position = self.radarNode.position;
-//    [self.detectedLayer addChild:self.birdNode];
+    self.flockNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_radar_flock"];
+    self.flockNode.position = self.radarNode.position;
+    [self.detectedLayer addChild:self.flockNode];
+    
+    self.birdNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_radar_player"];
+    self.birdNode.position = self.radarNode.position;
+    [self.detectedLayer addChild:self.birdNode];
     
     self.checkPointNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_radar_checkpoint"];
+    self.checkPointNode.anchorPoint = CGPointMake(0.3, 0);
     self.checkPointNode.position = self.radarNode.position;
     [self.detectedLayer addChild:self.checkPointNode];
     
@@ -74,16 +75,10 @@
 }
 
 - (void)updatePositionWithNode:(SKSpriteNode*)node distance:(CGFloat)distance {
-    static CGFloat radarEdge = 32.0;
+    static CGFloat radarRadius = 150.0/3;
     
-    CGFloat tmp = (distance / self.distanceOverall) * self.size.height;
-    CGFloat y = self.radarNode.position.y - self.radarNode.size.height/2 + tmp;
-    
-    if (y > self.radarNode.size.height - radarEdge) {
-        y = self.radarNode.size.height - radarEdge;
-    } else if (y < self.radarNode.position.y - self.radarNode.size.height/2 + radarEdge) {
-        y = self.radarNode.position.y - self.radarNode.size.height/2 + radarEdge;
-    }
+    CGFloat distanceInRadar = (distance / self.distanceOverall) * radarRadius*2;
+    CGFloat y = self.radarNode.position.y - radarRadius + distanceInRadar;
     
     node.position = CGPointMake(self.radarNode.position.x, y);
 }
