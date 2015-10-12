@@ -154,7 +154,8 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self.hudLayer addChild:self.hudTimerNode];
     
     self.hudRadarNode = [CHBRadarNode new];
-    self.hudRadarNode.position = CGPointMake(self.size.width - self.hudRadarNode.size.width/2, kCHBEdgeInset + self.hudRadarNode.size.height/2);
+    [self.hudRadarNode setScale:kCHBRadarScale];
+    self.hudRadarNode.position = CGPointMake(self.size.width - self.hudRadarNode.size.width/2*kCHBRadarScale, self.hudRadarNode.size.height/2*kCHBRadarScale + kCHBEdgeInset);
     [self.hudLayer addChild:self.hudRadarNode];
 }
 

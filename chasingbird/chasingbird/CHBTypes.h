@@ -12,6 +12,7 @@
 #define CHBTypes_h
 
 const static CGFloat kCHBEdgeInset = 8.0;
+const static CGFloat kCHBRadarScale = 0.8;
 
 typedef NS_ENUM(NSInteger, CHBMapLevelViewsStarMode) {
     CHBMapLevelViewStarModeInactive = -1,
