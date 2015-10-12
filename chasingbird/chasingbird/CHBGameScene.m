@@ -64,6 +64,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
 @property (nonatomic, retain) SKNode *hudLayer;
 @property (nonatomic, retain) SKSpriteNode *hudDashboardNode;
 @property (nonatomic, retain) SKSpriteNode *hudTimerNode;
+@property (nonatomic, retain) SKLabelNode *hudTimerLabelNode;
 @property (nonatomic, retain) CHBRadarNode *hudRadarNode;
 @end
 
@@ -152,6 +153,15 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.hudTimerNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_timer"];
     self.hudTimerNode.position = CGPointMake(kCHBEdgeInset + self.hudTimerNode.size.width/2, self.hudDashboardNode.size.height);
     [self.hudLayer addChild:self.hudTimerNode];
+    
+    self.hudTimerLabelNode = [SKLabelNode new];
+    self.hudTimerLabelNode.fontName = @"cn_bold";
+    self.hudTimerLabelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    self.hudTimerLabelNode.fontColor = [SKColor blackColor];
+    self.hudTimerLabelNode.fontSize = 20.0;
+    self.hudTimerLabelNode.text = @"02:00";
+    self.hudTimerLabelNode.position = CGPointMake(self.hudTimerNode.position.x, self.hudTimerNode.position.y-21.0/3*0.8);
+    [self.hudLayer addChild:self.hudTimerLabelNode];
     
     self.hudRadarNode = [CHBRadarNode new];
     [self.hudRadarNode setScale:kCHBRadarScale];
@@ -402,7 +412,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     
     //CGFloat preferredWidth = self.size.width/2 - self.birdNode.size.width/2;
     self.birdInfoNode = [CHBBirdInfoNode new];
-    self.birdInfoNode.position = CGPointMake(0, self.birdNode.position.y);
+    self.birdInfoNode.position = CGPointMake(kCHBEdgeInset, self.birdNode.position.y + self.birdNode.size.height/2);
     [self.birdLayer addChild:self.birdInfoNode];
 }
 
