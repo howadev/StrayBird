@@ -14,14 +14,18 @@
 #import "CHBRadarNode.h"
 @import WatchConnectivity;
 
-static const CGFloat minimumBirdSpeed = 0.5;
+static const CGFloat minimumBirdSpeed = 60.0;
 
 @interface CHBGameScene () <WCSessionDelegate>
 @property (nonatomic, assign) CGFloat burnCalories;
 @property (nonatomic, assign) NSUInteger timeLeft;
+@property (nonatomic, readonly) NSUInteger totalTime;
+
 @property (nonatomic, assign) CGFloat distanceMoved;
+@property (nonatomic, readonly) CGFloat distanceLeftOverall;
+
+@property (nonatomic, readonly) CGFloat flockSpeed;
 @property (nonatomic, assign) CGFloat distanceFromFlockOverall;
-@property (nonatomic, assign) CGFloat distanceLeftOverall;
 
 @property (nonatomic, assign) NSTimeInterval lastUpdateTime;
 @property (nonatomic, assign) NSTimeInterval dt;
@@ -78,7 +82,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     NSString *heartrate = message[@"heartrate"];
     if (heartrate) {
         CGFloat speed = heartrate.floatValue;
-        self.birdSpeed = speed/100;
+        self.birdSpeed = speed;
     }
 }
 
@@ -153,6 +157,17 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
 }
 
+- (NSUInteger)totalTime {
+    switch (self.level) {
+        case CHBGameLevelFirst:
+            return 20*60;
+        case CHBGameLevelSecond:
+            return 30*60;
+        case CHBGameLevelThird:
+            return 40*60;
+    }
+}
+
 - (void)setupHubLayer {
     self.hudDashboardNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_dashboard"];
     self.hudDashboardNode.position = CGPointMake(self.size.width/2, self.hudDashboardNode.size.height/2);
@@ -170,19 +185,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.hudTimerLabelNode.position = CGPointMake(self.hudTimerNode.position.x, self.hudTimerNode.position.y-21.0/3*0.8);
     [self.hudLayer addChild:self.hudTimerLabelNode];
     
-    switch (self.level) {
-        case CHBGameLevelFirst:
-            self.timeLeft = 20*60;
-            break;
-        case CHBGameLevelSecond:
-            self.timeLeft = 30*60;
-            break;
-        case CHBGameLevelThird:
-            self.timeLeft = 40*60;
-            break;
-        default:
-            break;
-    }
+    self.timeLeft = self.totalTime;
     
     self.hudRadarNode = [CHBRadarNode new];
     [self.hudRadarNode setScale:kCHBRadarScale];
@@ -508,9 +511,6 @@ static const CGFloat minimumBirdSpeed = 0.5;
 //        }
     } else {
         self.birdInfoNode.distanceLeftLabel.text = [NSString stringWithFormat:@"%.2f M", self.distanceLeftOverall-self.distanceMoved];
-        
-        self.burnCalories += 0.01;
-        self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.burnCalories];
     }
 }
 
@@ -519,6 +519,9 @@ static const CGFloat minimumBirdSpeed = 0.5;
     
     if (self.timeLeft > 0) {
         self.timeLeft--;
+        
+        self.burnCalories = (0.13 * self.birdSpeed - 7.54) * 60 / 60 / 60 * (self.totalTime - self.timeLeft);
+        self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.burnCalories];
     }
 }
 
@@ -551,8 +554,8 @@ static const CGFloat minimumBirdSpeed = 0.5;
 - (void)setBirdSpeed:(CGFloat)birdSpeed {
     _birdSpeed = birdSpeed;
     
-    self.backgroundLayer.speed = birdSpeed;
-    self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", birdSpeed*100];
+    self.backgroundMovePointsPerSec = birdSpeed;
+    self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", birdSpeed];
 }
 
 #pragma mark - game logic
@@ -569,6 +572,17 @@ static const CGFloat minimumBirdSpeed = 0.5;
             return 2500;
         case CHBGameLevelThird:
             return 3500;
+    }
+}
+
+- (CGFloat)flockSpeed {
+    switch (self.level) {
+        case CHBGameLevelFirst:
+            return 60;
+        case CHBGameLevelSecond:
+            return 80;
+        case CHBGameLevelThird:
+            return 100;
     }
 }
 
