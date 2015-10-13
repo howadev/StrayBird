@@ -18,7 +18,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
 
 @interface CHBGameScene () <WCSessionDelegate>
 @property (nonatomic, assign) CGFloat burnCalories;
-
+@property (nonatomic, assign) NSUInteger timeLeft;
 @property (nonatomic, assign) CGFloat distanceMoved;
 @property (nonatomic, assign) CGFloat distanceFromFlockOverall;
 @property (nonatomic, assign) CGFloat distanceLeftOverall;
@@ -104,7 +104,7 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
     
     self.birdSpeed = minimumBirdSpeed;
-    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(speedDown:) userInfo:nil repeats:YES];
+    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
     
     [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
                                                                        [SKAction waitForDuration:5.0]
@@ -145,6 +145,14 @@ static const CGFloat minimumBirdSpeed = 0.5;
     [self addChild:self.hudLayer];
 }
 
+- (void)setTimeLeft:(NSUInteger)timeLeft {
+    _timeLeft = timeLeft;
+    
+    if (self.hudTimerLabelNode) {
+        self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02ld:%02ld", timeLeft/60, timeLeft%60];
+    }
+}
+
 - (void)setupHubLayer {
     self.hudDashboardNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_dashboard"];
     self.hudDashboardNode.position = CGPointMake(self.size.width/2, self.hudDashboardNode.size.height/2);
@@ -159,9 +167,22 @@ static const CGFloat minimumBirdSpeed = 0.5;
     self.hudTimerLabelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     self.hudTimerLabelNode.fontColor = [SKColor blackColor];
     self.hudTimerLabelNode.fontSize = 20.0;
-    self.hudTimerLabelNode.text = @"02:00";
     self.hudTimerLabelNode.position = CGPointMake(self.hudTimerNode.position.x, self.hudTimerNode.position.y-21.0/3*0.8);
     [self.hudLayer addChild:self.hudTimerLabelNode];
+    
+    switch (self.level) {
+        case CHBGameLevelFirst:
+            self.timeLeft = 20*60;
+            break;
+        case CHBGameLevelSecond:
+            self.timeLeft = 30*60;
+            break;
+        case CHBGameLevelThird:
+            self.timeLeft = 40*60;
+            break;
+        default:
+            break;
+    }
     
     self.hudRadarNode = [CHBRadarNode new];
     [self.hudRadarNode setScale:kCHBRadarScale];
@@ -493,6 +514,14 @@ static const CGFloat minimumBirdSpeed = 0.5;
     }
 }
 
+- (void)updateEverySecond:(id)sender {
+    [self speedDown:sender];
+    
+    if (self.timeLeft > 0) {
+        self.timeLeft--;
+    }
+}
+
 #pragma mark - touch event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -533,7 +562,14 @@ static const CGFloat minimumBirdSpeed = 0.5;
 }
 
 - (CGFloat)distanceLeftOverall {
-    return 2000;
+    switch (self.level) {
+        case CHBGameLevelFirst:
+            return 1500;
+        case CHBGameLevelSecond:
+            return 2500;
+        case CHBGameLevelThird:
+            return 3500;
+    }
 }
 
 @end
