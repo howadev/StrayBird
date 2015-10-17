@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A263e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBHomeViewController">
@@ -22,57 +20,51 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_title" translatesAutoresizingMaskIntoConstraints="NO" id="3m4-kn-7tN">
-                    <rect key="frame" x="180" y="100" width="240" height="240"/>
+                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_single" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-Po-2AR">
+                    <rect key="frame" x="201" y="279" width="199" height="42"/>
                     <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="3m4-kn-7tN" secondAttribute="height" multiplier="1:1" id="ePH-Aj-QWc"/>
-                    </constraints>
                 </imageView>
-                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_single" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-Po-2AR">
-                    <rect key="frame" x="180" y="360" width="240" height="57"/>
+                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_multi" translatesAutoresizingMaskIntoConstraints="NO" id="x8W-R3-aNG">
+                    <rect key="frame" x="201" y="337" width="199" height="42"/>
                     <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="J0K-Po-2AR" secondAttribute="height" multiplier="260:61" id="XKq-GS-79j"/>
-                    </constraints>
                 </imageView>
-                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_multi" translatesAutoresizingMaskIntoConstraints="NO" id="x8W-R3-aNG">
-                    <rect key="frame" x="180" y="437" width="240" height="56"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_title" translatesAutoresizingMaskIntoConstraints="NO" id="3m4-kn-7tN">
+                    <rect key="frame" x="191" y="-3" width="218" height="250"/>
                     <animations/>
                 </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="x8W-R3-aNG" firstAttribute="top" secondItem="J0K-Po-2AR" secondAttribute="bottom" constant="20" id="8J1-VU-MaQ"/>
-                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerY" secondItem="RWj-i3-gK2" secondAttribute="centerY" id="CFu-3r-sk5"/>
-                <constraint firstItem="x8W-R3-aNG" firstAttribute="height" secondItem="J0K-Po-2AR" secondAttribute="height" id="DXA-r2-4xB"/>
-                <constraint firstItem="J0K-Po-2AR" firstAttribute="width" secondItem="3m4-kn-7tN" secondAttribute="width" id="FPv-jT-VsG"/>
-                <constraint firstItem="RWj-i3-gK2" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="OpB-le-rWs"/>
-                <constraint firstItem="RWj-i3-gK2" firstAttribute="bottom" secondItem="3m4-kn-7tN" secondAttribute="bottom" constant="281" id="QpV-sb-1TY"/>
-                <constraint firstItem="3m4-kn-7tN" firstAttribute="width" secondItem="RWj-i3-gK2" secondAttribute="width" multiplier="2:5" id="Tzl-rx-ipE"/>
-                <constraint firstItem="RWj-i3-gK2" firstAttribute="top" secondItem="3m4-kn-7tN" secondAttribute="top" constant="-100" id="YMs-u0-kIA"/>
-                <constraint firstItem="J0K-Po-2AR" firstAttribute="top" secondItem="3m4-kn-7tN" secondAttribute="bottom" constant="20" id="gWH-iS-ckf"/>
-                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="iMN-5w-pL2"/>
-                <constraint firstItem="RWj-i3-gK2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="izG-vi-uxF"/>
-                <constraint firstItem="3m4-kn-7tN" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="luh-Yc-YRi"/>
-                <constraint firstItem="x8W-R3-aNG" firstAttribute="width" secondItem="J0K-Po-2AR" secondAttribute="width" id="qKH-iZ-dTu"/>
-                <constraint firstItem="RWj-i3-gK2" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="qfH-O6-Brj"/>
-                <constraint firstItem="x8W-R3-aNG" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="weq-ve-pew"/>
-                <constraint firstItem="RWj-i3-gK2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xGf-kf-mNH"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0Hv-e5-FMU"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1Cq-lL-Qt9"/>
+                <constraint firstItem="RWj-i3-gK2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="39q-7f-6hM"/>
+                <constraint firstItem="3m4-kn-7tN" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="8ms-t0-A6x"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="KAD-Vo-Ce0"/>
+                <constraint firstItem="x8W-R3-aNG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MCl-7e-3t5"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Yar-kX-CQb"/>
+                <constraint firstItem="x8W-R3-aNG" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="b8Y-qm-19I"/>
+                <constraint firstItem="x8W-R3-aNG" firstAttribute="top" secondItem="J0K-Po-2AR" secondAttribute="bottom" constant="16" id="g0Q-iL-ciH"/>
+                <constraint firstAttribute="bottom" secondItem="RWj-i3-gK2" secondAttribute="bottom" id="gcy-Qc-uXD"/>
+                <constraint firstAttribute="trailing" secondItem="RWj-i3-gK2" secondAttribute="trailing" id="hOa-1j-SkS"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="top" secondItem="3m4-kn-7tN" secondAttribute="bottom" constant="32" id="pBU-6e-br4"/>
+                <constraint firstItem="3m4-kn-7tN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wYi-3F-rJC"/>
+                <constraint firstItem="J0K-Po-2AR" firstAttribute="centerX" secondItem="3m4-kn-7tN" secondAttribute="centerX" id="yue-sk-Ofb"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="QpV-sb-1TY"/>
-                    <exclude reference="CFu-3r-sk5"/>
+                    <exclude reference="8ms-t0-A6x"/>
+                    <exclude reference="KAD-Vo-Ce0"/>
+                    <exclude reference="yue-sk-Ofb"/>
+                    <exclude reference="b8Y-qm-19I"/>
                 </mask>
             </variation>
         </view>
     </objects>
     <resources>
-        <image name="main-menu_background" width="1242" height="2208"/>
-        <image name="main-menu_btn_multi" width="599" height="126"/>
-        <image name="main-menu_btn_single" width="599" height="126"/>
-        <image name="main-menu_title" width="654" height="752"/>
+        <image name="main-menu_background" width="414" height="736"/>
+        <image name="main-menu_btn_multi" width="199" height="42"/>
+        <image name="main-menu_btn_single" width="199" height="42"/>
+        <image name="main-menu_title" width="218" height="250"/>
     </resources>
 </document>
