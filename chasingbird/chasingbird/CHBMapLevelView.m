@@ -66,7 +66,7 @@
 
 // NOTE: for now, must set star mode before setting level mode
 
-- (void)setLevelMode:(CHBGameLevel)level {
+- (void)setLevel:(CHBGameLevel)level {
     _level = level;
     switch (level) {
         case CHBGameLevelFirst:
