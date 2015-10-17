@@ -10,7 +10,7 @@
 #import "CHBImageView.h"
 #import "CHBMapLevelView.h"
 #import "UIView+AutoLayoutHelpers.h"
-#import "CHBStartViewController.h"
+#import "CHBIntroViewController.h"
 
 @interface CHBMapViewController ()
 @property (nonatomic, retain) CHBMapLevelView *firstLevelView;
@@ -66,7 +66,7 @@
 #pragma mark - UI Actions
 
 - (void)firstLevelViewDidTap:(id)sender {
-    CHBStartViewController *vc = [CHBStartViewController new];
+    CHBIntroViewController *vc = [CHBIntroViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

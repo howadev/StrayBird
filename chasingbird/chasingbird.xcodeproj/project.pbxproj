@@ -20,6 +20,8 @@
 		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; settings = {ASSET_TAGS = (); }; };
 		6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */; settings = {ASSET_TAGS = (); }; };
 		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; settings = {ASSET_TAGS = (); }; };
+		64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B4CACF1BD2BD4700D5C5A5 /* CHBIntroViewController.m */; settings = {ASSET_TAGS = (); }; };
+		64B4CAD21BD2BD4700D5C5A5 /* CHBIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B4CAD01BD2BD4700D5C5A5 /* CHBIntroViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -110,6 +112,9 @@
 		6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBBirdInfoNode.m; sourceTree = "<group>"; };
 		649C15DA1BAD8A9700420ED2 /* CHBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBHelpers.h; sourceTree = "<group>"; };
 		649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBHelpers.m; sourceTree = "<group>"; };
+		64B4CACE1BD2BD4700D5C5A5 /* CHBIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBIntroViewController.h; sourceTree = "<group>"; };
+		64B4CACF1BD2BD4700D5C5A5 /* CHBIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBIntroViewController.m; sourceTree = "<group>"; };
+		64B4CAD01BD2BD4700D5C5A5 /* CHBIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBIntroViewController.xib; sourceTree = "<group>"; };
 		64B6DD4A1BB8632A00DB754D /* cn_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cn_bold.ttf; sourceTree = "<group>"; };
 		7F4B99D01B9C714C00FED471 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
@@ -203,6 +208,16 @@
 			path = "chasingBirdWatch Extension";
 			sourceTree = "<group>";
 		};
+		64B4CACD1BD2BD1B00D5C5A5 /* IntroView */ = {
+			isa = PBXGroup;
+			children = (
+				64B4CACE1BD2BD4700D5C5A5 /* CHBIntroViewController.h */,
+				64B4CACF1BD2BD4700D5C5A5 /* CHBIntroViewController.m */,
+				64B4CAD01BD2BD4700D5C5A5 /* CHBIntroViewController.xib */,
+			);
+			name = IntroView;
+			sourceTree = "<group>";
+		};
 		8911BB621B8FBCDA00402F93 /* StartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				8985C2221B924AE500FDA0B0 /* GameView */,
+				64B4CACD1BD2BD1B00D5C5A5 /* IntroView */,
 				8911BB621B8FBCDA00402F93 /* StartView */,
 				896251891B8E99F900295961 /* MapView */,
 				896251801B8E8FDD00295961 /* CustomView */,
@@ -499,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */,
+				64B4CAD21BD2BD4700D5C5A5 /* CHBIntroViewController.xib in Resources */,
 				8985C21E1B923AA300FDA0B0 /* CHBStartViewController.xib in Resources */,
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
 				896251881B8E928400295961 /* CHBHomeViewController.xib in Resources */,
@@ -541,6 +558,7 @@
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
 				891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */,
 				891736391B7676A0003E082F /* main.m in Sources */,
+				64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */,
 				6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
