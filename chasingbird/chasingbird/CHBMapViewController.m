@@ -54,15 +54,15 @@
 - (void)setupConstraints {
     [self.view pinItem:self.view attribute:NSLayoutAttributeRight to:self.firstLevelView withOffset:30.0 andScale:1.0];
     [self.view pinItem:self.view attribute:NSLayoutAttributeBottom to:self.firstLevelView withOffset:80.0 andScale:1.0];
-    [self.view setSizeConstraintsForItem:self.firstLevelView size:CGSizeMake(80, 80)];
+    //[self.view setSizeConstraintsForItem:self.firstLevelView size:CGSizeMake(80, 80)];
     
     [self.view pinItem:self.view attribute:NSLayoutAttributeLeft to:self.secondLevelView withOffset:-70.0 andScale:1.0];
     [self.view pinItemCenterVertically:self.view to:self.secondLevelView];
-    [self.view setSizeConstraintsForItem:self.secondLevelView size:CGSizeMake(80, 80)];
+    //[self.view setSizeConstraintsForItem:self.secondLevelView size:CGSizeMake(80, 80)];
     
     [self.view pinItem:self.view attribute:NSLayoutAttributeRight to:self.thirdLevelView withOffset:80.0 andScale:1.0];
     [self.view pinItem:self.view attribute:NSLayoutAttributeTop to:self.thirdLevelView withOffset:-140.0 andScale:1.0];
-    [self.view setSizeConstraintsForItem:self.thirdLevelView size:CGSizeMake(80, 80)];
+    //[self.view setSizeConstraintsForItem:self.thirdLevelView size:CGSizeMake(80, 80)];
 }
 
 #pragma mark - UI Actions
