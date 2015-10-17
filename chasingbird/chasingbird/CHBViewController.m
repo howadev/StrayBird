@@ -7,6 +7,7 @@
 //
 
 #import "CHBViewController.h"
+#import "UIView+AutoLayoutHelpers.h"
 
 @interface CHBViewController ()
 
@@ -16,22 +17,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupBackButton {
+    UIImage *backIcon = [UIImage imageNamed:@"btn_back"];
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setBackgroundImage:backIcon forState:UIControlStateNormal];
+    
+    [self.view addSubview:backButton];
+    [self.view pinItem:self.view attribute:NSLayoutAttributeLeft to:backButton withOffset:-16 andScale:1.0];
+    [self.view pinItem:self.view attribute:NSLayoutAttributeTop to:backButton withOffset:-16 andScale:1.0];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
 @end

@@ -47,6 +47,8 @@
     [self.thirdLevelView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thirdLevelViewDidTap:)]];
     
     [self setupConstraints];
+    
+    [self setupBackButton];
 }
 
 - (void)setupConstraints {

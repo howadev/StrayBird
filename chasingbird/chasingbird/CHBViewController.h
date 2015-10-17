@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CHBViewController : UIViewController
-
+- (void)setupBackButton;
+- (void)backAction:(id)sender;
 @end

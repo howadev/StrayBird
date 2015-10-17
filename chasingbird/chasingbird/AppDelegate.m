@@ -29,10 +29,14 @@
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     
+    [navController setNavigationBarHidden:YES animated:NO];
+    
+    /*
     [navController.navigationBar setBackgroundImage:[UIImage new]
                         forBarMetrics:UIBarMetricsDefault];
     navController.navigationBar.shadowImage = [UIImage new];
     navController.navigationBar.tintColor = [UIColor blackColor];
+    */
     
     return YES;
 }

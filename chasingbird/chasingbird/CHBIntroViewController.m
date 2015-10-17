@@ -20,6 +20,8 @@
     
     self.nextButton.userInteractionEnabled = YES;
     [self.nextButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nextButtonDidTap:)]];
+    
+    [self setupBackButton];
 }
 
 - (void)nextButtonDidTap:(id)sender {

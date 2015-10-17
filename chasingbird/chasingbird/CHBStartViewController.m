@@ -19,11 +19,17 @@
     [super viewDidLoad];
     self.skippingView.userInteractionEnabled = YES;
     [self.skippingView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(skippingViewDidTap:)]];
+    
+    [self setupBackButton];
 }
 
 - (void)skippingViewDidTap:(id)sender {
     CHBGameViewController *vc = [CHBGameViewController new];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 @end
