@@ -12,6 +12,7 @@
 #import "CHBBirdInfoNode.h"
 #import "CHBLabelNode.h"
 #import "CHBRadarNode.h"
+#import "CHBPerformance.h"
 @import WatchConnectivity;
 
 static const CGFloat minimumBirdSpeed = 60.0;
