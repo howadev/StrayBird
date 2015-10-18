@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBPauseViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_pause-popup" translatesAutoresizingMaskIntoConstraints="NO" id="wfa-iE-2Cm">
+                    <rect key="frame" x="134" y="152" width="333" height="489"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_level1" translatesAutoresizingMaskIntoConstraints="NO" id="zpP-cW-ZPC">
+                    <rect key="frame" x="105" y="83" width="390" height="159"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heading_level1" translatesAutoresizingMaskIntoConstraints="NO" id="RBm-pX-Db7">
+                    <rect key="frame" x="179" y="16" width="243" height="51"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_pause_stars_0" translatesAutoresizingMaskIntoConstraints="NO" id="xSj-IK-s5A">
+                    <rect key="frame" x="202" y="196" width="197" height="90"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERSONAL BEST:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5h-Fc-EWh">
+                    <rect key="frame" x="229" y="168" width="141.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_pause_leaves" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-qJ-8Yg">
+                    <rect key="frame" x="170" y="233" width="260" height="48"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN PROGRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-In-Fsr">
+                    <rect key="frame" x="220" y="297" width="162" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-5j-gYT">
+                    <rect key="frame" x="150" y="568" width="57" height="57"/>
+                    <state key="normal" image="btn_home"/>
+                    <connections>
+                        <action selector="homeAction:" destination="-1" eventType="touchUpInside" id="Eak-sq-LwA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWX-pU-DTL">
+                    <rect key="frame" x="394" y="568" width="57" height="57"/>
+                    <state key="normal" image="btn_resume"/>
+                    <connections>
+                        <action selector="resumeAction:" destination="-1" eventType="touchUpInside" id="tRZ-zc-2G2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhl-NR-fea">
+                    <rect key="frame" x="223" y="568" width="57" height="57"/>
+                    <state key="normal" image="btn_restart"/>
+                    <connections>
+                        <action selector="restartAction:" destination="-1" eventType="touchUpInside" id="M8d-h5-FxR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="RBm-pX-Db7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2pO-ou-Fbv"/>
+                <constraint firstItem="eMh-5j-gYT" firstAttribute="leading" secondItem="wfa-iE-2Cm" secondAttribute="leading" constant="16" id="7tw-Kh-4bH"/>
+                <constraint firstItem="qyK-In-Fsr" firstAttribute="centerX" secondItem="wfa-iE-2Cm" secondAttribute="centerX" id="AKJ-Rt-JcT"/>
+                <constraint firstItem="wfa-iE-2Cm" firstAttribute="bottom" secondItem="eMh-5j-gYT" secondAttribute="bottom" constant="16" id="HEJ-db-cEK"/>
+                <constraint firstItem="xSj-IK-s5A" firstAttribute="centerX" secondItem="wfa-iE-2Cm" secondAttribute="centerX" id="MYf-x4-JEI"/>
+                <constraint firstItem="wfa-iE-2Cm" firstAttribute="trailing" secondItem="aWX-pU-DTL" secondAttribute="trailing" constant="16" id="NB8-OF-wdX"/>
+                <constraint firstItem="zpP-cW-ZPC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NRI-1n-uew"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wfa-iE-2Cm" secondAttribute="bottom" constant="-41" id="QqQ-qY-FLK"/>
+                <constraint firstItem="RBm-pX-Db7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="TeS-SS-j4E"/>
+                <constraint firstItem="Bxh-qJ-8Yg" firstAttribute="centerX" secondItem="xSj-IK-s5A" secondAttribute="centerX" id="VBx-xl-rpS"/>
+                <constraint firstItem="Bxh-qJ-8Yg" firstAttribute="centerY" secondItem="xSj-IK-s5A" secondAttribute="centerY" constant="16" id="VE9-wj-Tc0"/>
+                <constraint firstItem="eMh-5j-gYT" firstAttribute="top" secondItem="lhl-NR-fea" secondAttribute="bottom" constant="43" id="Zib-Jc-AIc"/>
+                <constraint firstItem="qyK-In-Fsr" firstAttribute="top" secondItem="Bxh-qJ-8Yg" secondAttribute="bottom" constant="16" id="Zzf-tU-R1P"/>
+                <constraint firstItem="U5h-Fc-EWh" firstAttribute="top" secondItem="wfa-iE-2Cm" secondAttribute="top" constant="16" id="aFG-bT-43l"/>
+                <constraint firstItem="aWX-pU-DTL" firstAttribute="centerY" secondItem="eMh-5j-gYT" secondAttribute="centerY" id="eoQ-Vi-nld"/>
+                <constraint firstItem="xSj-IK-s5A" firstAttribute="top" secondItem="U5h-Fc-EWh" secondAttribute="bottom" constant="8" id="f3N-zR-Zcy"/>
+                <constraint firstItem="wfa-iE-2Cm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jHD-WM-aXL"/>
+                <constraint firstItem="zpP-cW-ZPC" firstAttribute="bottom" secondItem="wfa-iE-2Cm" secondAttribute="top" constant="90" id="kSB-az-TwL"/>
+                <constraint firstItem="lhl-NR-fea" firstAttribute="leading" secondItem="eMh-5j-gYT" secondAttribute="trailing" constant="16" id="ptl-3d-zuL"/>
+                <constraint firstItem="U5h-Fc-EWh" firstAttribute="centerX" secondItem="wfa-iE-2Cm" secondAttribute="centerX" id="suJ-0G-Vs5"/>
+                <constraint firstItem="zpP-cW-ZPC" firstAttribute="top" secondItem="RBm-pX-Db7" secondAttribute="bottom" constant="16" id="yyv-ym-Iio"/>
+                <constraint firstItem="lhl-NR-fea" firstAttribute="centerY" secondItem="eMh-5j-gYT" secondAttribute="centerY" id="zSV-Oh-nCz"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="QqQ-qY-FLK"/>
+                    <exclude reference="Zib-Jc-AIc"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_home" width="57" height="57"/>
+        <image name="btn_restart" width="57" height="57"/>
+        <image name="btn_resume" width="57" height="57"/>
+        <image name="game_single_pause-popup" width="333" height="489"/>
+        <image name="game_single_pause_leaves" width="260" height="48"/>
+        <image name="game_single_pause_stars_0" width="197" height="90"/>
+        <image name="heading_level1" width="243" height="51"/>
+        <image name="title_level1" width="390" height="159"/>
+    </resources>
+</document>
