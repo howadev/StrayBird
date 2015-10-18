@@ -10,6 +10,7 @@
 #import "CHBGameScene.h"
 #import "UIView+AutoLayoutHelpers.h"
 #import "CHBPauseViewController.h"
+#import "CHBResultViewController.h"
 @import SpriteKit;
 
 @interface CHBGameViewController ()
@@ -51,6 +52,7 @@
 }
 
 - (void)pauseAction:(id)sender {
+    //CHBResultViewController *vc = [CHBResultViewController new];
     CHBPauseViewController *vc = [CHBPauseViewController new];
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene

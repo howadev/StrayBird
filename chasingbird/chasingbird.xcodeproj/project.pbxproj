@@ -25,6 +25,8 @@
 		64D93BDC1BD3FE5B006AE5C2 /* CHBPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D93BDB1BD3FE5B006AE5C2 /* CHBPerformance.m */; settings = {ASSET_TAGS = (); }; };
 		64F262311BD401BD00C5BD68 /* CHBPauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2622F1BD401BD00C5BD68 /* CHBPauseViewController.m */; settings = {ASSET_TAGS = (); }; };
 		64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262301BD401BD00C5BD68 /* CHBPauseViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F262361BD40D8900C5BD68 /* CHBResultViewController.m */; settings = {ASSET_TAGS = (); }; };
+		64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -124,6 +126,9 @@
 		64F2622E1BD401BD00C5BD68 /* CHBPauseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPauseViewController.h; sourceTree = "<group>"; };
 		64F2622F1BD401BD00C5BD68 /* CHBPauseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPauseViewController.m; sourceTree = "<group>"; };
 		64F262301BD401BD00C5BD68 /* CHBPauseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBPauseViewController.xib; sourceTree = "<group>"; };
+		64F262351BD40D8900C5BD68 /* CHBResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBResultViewController.h; sourceTree = "<group>"; };
+		64F262361BD40D8900C5BD68 /* CHBResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBResultViewController.m; sourceTree = "<group>"; };
+		64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBResultViewController.xib; sourceTree = "<group>"; };
 		7F4B99D01B9C714C00FED471 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
@@ -245,6 +250,16 @@
 			name = PauseView;
 			sourceTree = "<group>";
 		};
+		64F262341BD40D3700C5BD68 /* ResultView */ = {
+			isa = PBXGroup;
+			children = (
+				64F262351BD40D8900C5BD68 /* CHBResultViewController.h */,
+				64F262361BD40D8900C5BD68 /* CHBResultViewController.m */,
+				64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */,
+			);
+			name = ResultView;
+			sourceTree = "<group>";
+		};
 		8911BB621B8FBCDA00402F93 /* StartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +325,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
+				64F262341BD40D3700C5BD68 /* ResultView */,
 				64F262331BD401CA00C5BD68 /* PauseView */,
 				64D93BD91BD3FE42006AE5C2 /* Model */,
 				8985C2221B924AE500FDA0B0 /* GameView */,
@@ -550,6 +566,7 @@
 				896251881B8E928400295961 /* CHBHomeViewController.xib in Resources */,
 				8985C2271B924EAE00FDA0B0 /* GameAssets.xcassets in Resources */,
 				64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */,
+				64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +601,7 @@
 				89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */,
 				8985C2211B924ADD00FDA0B0 /* CHBGameViewController.m in Sources */,
 				8985C2251B924B1000FDA0B0 /* CHBGameScene.m in Sources */,
+				64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */,
 				64D93BDC1BD3FE5B006AE5C2 /* CHBPerformance.m in Sources */,
 				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
