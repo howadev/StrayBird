@@ -80,6 +80,13 @@
 #pragma mark - view Cycle
 
 - (void)didMoveToView:(SKView *)view {
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+    
     self.lastUpdateTime = 0;
     self.dt = 0;
     self.populateRockSpeed = 0.0001;
@@ -110,21 +117,14 @@
     [self setupLayer];
     [self setupHubLayer];
     [self setupBackgroundNode];
-    //[self setupAtmosphereLayer];
     [self setupCloudLayer];
     [self setupBirdNode];
-    
-    if ([WCSession isSupported]) {
-        WCSession *session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-    }
-    
-    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
     
     [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
                                                                        [SKAction waitForDuration:5.0]
                                                                        ]]]];
+    
+    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
 }
 
 - (void)setupLayer {
@@ -445,7 +445,8 @@
     checkPointNode.position = CGPointMake(self.size.width/2, self.size.height+checkPointNode.size.height/2);
     [self.checkPointLayer addChild:checkPointNode];
     [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:12.0],
-                                                                     [SKAction removeFromParent]]],
+                                                                     [SKAction removeFromParent],
+                                                                     [SKAction runBlock:^{[self stopGame];}]]],
                                                 [SKAction repeatActionForever:self.checkPointAnimation]]]];
 }
 
@@ -532,21 +533,11 @@
     }
 }
 
-#pragma mark - game logic
+#pragma mark - Game Action
 
-- (CGFloat)distanceFromFlockOverall {
-    return 1000;
+- (void)stopGame {
+    [self.delegate gameScene:self didStopWithPerformance:self.performance];
 }
 
-- (CGFloat)distanceLeftOverall {
-    switch (self.level) {
-        case CHBGameLevelFirst:
-            return 1500;
-        case CHBGameLevelSecond:
-            return 2500;
-        case CHBGameLevelThird:
-            return 3500;
-    }
-}
 
 @end

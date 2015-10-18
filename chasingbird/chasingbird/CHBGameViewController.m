@@ -13,7 +13,7 @@
 #import "CHBResultViewController.h"
 @import SpriteKit;
 
-@interface CHBGameViewController ()
+@interface CHBGameViewController () <CHBGameSceneDelegate>
 
 @end
 
@@ -30,6 +30,7 @@
     
     // Create and configure the scene.
     CHBGameScene *scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
+    scene.delegate = self;
     scene.level = CHBGameLevelThird;
     scene.scaleMode = SKSceneScaleModeAspectFit;
     
@@ -52,8 +53,17 @@
 }
 
 - (void)pauseAction:(id)sender {
-    //CHBResultViewController *vc = [CHBResultViewController new];
     CHBPauseViewController *vc = [CHBPauseViewController new];
+    [self presentViewController:vc animated:YES completion:^{
+        // pause game scene
+    }];
+}
+
+#pragma mark - CHBGameSceneDelegate
+
+- (void)gameScene:(CHBGameScene *)scene didStopWithPerformance:(CHBPerformance *)performance {
+    // copy performance or it will dealloc
+    CHBResultViewController *vc = [CHBResultViewController new];
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene
     }];

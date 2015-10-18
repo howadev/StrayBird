@@ -11,11 +11,12 @@
 #import "CHBPerformance.h"
 
 @class CHBGameScene;
-@protocol CHBGameSceneDelegate <NSObject>
+@protocol CHBGameSceneDelegate <SKSceneDelegate>
 //- (void)gameScene:(CHBGameScene*)scene didPauseWithPerformance:(CHBPerformance*)performance;
 - (void)gameScene:(CHBGameScene*)scene didStopWithPerformance:(CHBPerformance*)performance;
 @end
 
 @interface CHBGameScene : SKScene
+@property (nonatomic, weak) id <CHBGameSceneDelegate> delegate;
 @property (nonatomic, assign) CHBGameLevel level;
 @end
