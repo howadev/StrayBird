@@ -52,8 +52,8 @@
 }
 
 - (void)pauseAction:(id)sender {
-    //CHBResultViewController *vc = [CHBResultViewController new];
-    CHBPauseViewController *vc = [CHBPauseViewController new];
+    CHBResultViewController *vc = [CHBResultViewController new];
+    //CHBPauseViewController *vc = [CHBPauseViewController new];
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene
     }];

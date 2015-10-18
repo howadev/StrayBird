@@ -40,6 +40,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_results_status-win" highlightedImage="game_single_results_status-loss" translatesAutoresizingMaskIntoConstraints="NO" id="odM-Al-hix">
                     <rect key="frame" x="176" y="298" width="247" height="26"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-Yc-7Zz" customClass="CHBPerformanceTableView">
+                    <rect key="frame" x="176.5" y="340" width="247" height="171"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP1-6Y-vwU">
                     <rect key="frame" x="212" y="231" width="176.5" height="54"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
@@ -57,17 +61,21 @@
                 <constraint firstItem="7bU-TK-4cF" firstAttribute="centerX" secondItem="fV8-ig-mhZ" secondAttribute="centerX" id="Gwc-nh-r3z"/>
                 <constraint firstItem="Poi-bm-LQr" firstAttribute="top" secondItem="7bU-TK-4cF" secondAttribute="bottom" constant="16" id="Jhh-80-g2c"/>
                 <constraint firstItem="4FA-yl-MAT" firstAttribute="top" secondItem="sN7-Qc-MYb" secondAttribute="bottom" constant="43" id="K9L-Ns-hXJ"/>
+                <constraint firstItem="ezb-Yc-7Zz" firstAttribute="centerX" secondItem="fV8-ig-mhZ" secondAttribute="centerX" id="KnF-DS-aSc"/>
                 <constraint firstItem="sN7-Qc-MYb" firstAttribute="centerY" secondItem="4FA-yl-MAT" secondAttribute="centerY" id="LRb-j3-BgK"/>
                 <constraint firstItem="sN7-Qc-MYb" firstAttribute="trailing" secondItem="ibe-ii-rOT" secondAttribute="trailing" id="LTx-t0-nyU"/>
                 <constraint firstItem="XP1-6Y-vwU" firstAttribute="centerY" secondItem="lDR-Ku-coS" secondAttribute="centerY" id="LlA-R6-i2t"/>
                 <constraint firstItem="7bU-TK-4cF" firstAttribute="top" secondItem="fV8-ig-mhZ" secondAttribute="top" constant="16" id="Mcj-IU-VdP"/>
+                <constraint firstItem="ezb-Yc-7Zz" firstAttribute="width" secondItem="odM-Al-hix" secondAttribute="width" id="OEi-rr-JWD"/>
                 <constraint firstItem="uwd-3y-cGC" firstAttribute="top" secondItem="fV8-ig-mhZ" secondAttribute="top" id="Pw6-LW-EDF"/>
                 <constraint firstItem="lDR-Ku-coS" firstAttribute="centerY" secondItem="ibe-ii-rOT" secondAttribute="centerY" constant="16" id="UNH-U2-FWv"/>
                 <constraint firstItem="odM-Al-hix" firstAttribute="centerX" secondItem="Poi-bm-LQr" secondAttribute="centerX" id="V6k-YV-ky1"/>
                 <constraint firstAttribute="trailing" secondItem="uwd-3y-cGC" secondAttribute="trailing" id="ZPX-gJ-Jzd"/>
                 <constraint firstItem="uwd-3y-cGC" firstAttribute="leading" secondItem="fV8-ig-mhZ" secondAttribute="leading" id="bU9-FA-6os"/>
+                <constraint firstItem="4FA-yl-MAT" firstAttribute="top" secondItem="ezb-Yc-7Zz" secondAttribute="bottom" constant="16" id="dQD-pP-vCO"/>
                 <constraint firstAttribute="bottom" secondItem="uwd-3y-cGC" secondAttribute="bottom" id="enD-MM-V6O"/>
                 <constraint firstItem="4FA-yl-MAT" firstAttribute="leading" secondItem="ibe-ii-rOT" secondAttribute="leading" id="fLX-zL-SFm"/>
+                <constraint firstItem="ezb-Yc-7Zz" firstAttribute="top" secondItem="odM-Al-hix" secondAttribute="bottom" constant="16" id="oJ4-l7-eGJ"/>
                 <constraint firstItem="lDR-Ku-coS" firstAttribute="centerX" secondItem="ibe-ii-rOT" secondAttribute="centerX" id="qa3-kM-PrT"/>
                 <constraint firstItem="Poi-bm-LQr" firstAttribute="bottom" secondItem="lDR-Ku-coS" secondAttribute="top" constant="8" id="s4F-fu-OzN"/>
                 <constraint firstItem="Poi-bm-LQr" firstAttribute="centerX" secondItem="fV8-ig-mhZ" secondAttribute="centerX" id="upT-DP-Fmg"/>
