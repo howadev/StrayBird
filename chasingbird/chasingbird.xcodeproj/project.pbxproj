@@ -27,6 +27,9 @@
 		64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262301BD401BD00C5BD68 /* CHBPauseViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F262361BD40D8900C5BD68 /* CHBResultViewController.m */; settings = {ASSET_TAGS = (); }; };
 		64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */; settings = {ASSET_TAGS = (); }; };
+		64F262401BD414E500C5BD68 /* CHBPerformanceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623E1BD414E500C5BD68 /* CHBPerformanceTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		64F262411BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2623F1BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -129,6 +132,11 @@
 		64F262351BD40D8900C5BD68 /* CHBResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBResultViewController.h; sourceTree = "<group>"; };
 		64F262361BD40D8900C5BD68 /* CHBResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBResultViewController.m; sourceTree = "<group>"; };
 		64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBResultViewController.xib; sourceTree = "<group>"; };
+		64F2623A1BD413A200C5BD68 /* CHBPerformanceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceTableView.h; sourceTree = "<group>"; };
+		64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPerformanceTableView.m; sourceTree = "<group>"; };
+		64F2623D1BD414E500C5BD68 /* CHBPerformanceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceTableViewCell.h; sourceTree = "<group>"; };
+		64F2623E1BD414E500C5BD68 /* CHBPerformanceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPerformanceTableViewCell.m; sourceTree = "<group>"; };
+		64F2623F1BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBPerformanceTableViewCell.xib; sourceTree = "<group>"; };
 		7F4B99D01B9C714C00FED471 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
@@ -390,6 +398,11 @@
 			isa = PBXGroup;
 			children = (
 				896251811B8E8FF500295961 /* CHBImageView.h */,
+				64F2623A1BD413A200C5BD68 /* CHBPerformanceTableView.h */,
+				64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */,
+				64F2623D1BD414E500C5BD68 /* CHBPerformanceTableViewCell.h */,
+				64F2623E1BD414E500C5BD68 /* CHBPerformanceTableViewCell.m */,
+				64F2623F1BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib */,
 				646608671BB70BDF00E61BFD /* CHBLabelNode.h */,
 				6455EE431BCC27A900E32334 /* CHBRadarNode.h */,
 				6455EE441BCC27A900E32334 /* CHBRadarNode.m */,
@@ -565,6 +578,7 @@
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
 				896251881B8E928400295961 /* CHBHomeViewController.xib in Resources */,
 				8985C2271B924EAE00FDA0B0 /* GameAssets.xcassets in Resources */,
+				64F262411BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib in Resources */,
 				64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */,
 				64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */,
 			);
@@ -596,6 +610,7 @@
 				6455EE451BCC27A900E32334 /* CHBRadarNode.m in Sources */,
 				6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */,
 				8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */,
+				64F262401BD414E500C5BD68 /* CHBPerformanceTableViewCell.m in Sources */,
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
 				649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */,
 				89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */,
@@ -610,6 +625,7 @@
 				891736391B7676A0003E082F /* main.m in Sources */,
 				64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */,
 				6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */,
+				64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
