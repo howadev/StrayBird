@@ -13,20 +13,21 @@
 #pragma mark - Constant
 @property (nonatomic, assign) NSTimeInterval totalTime;
 @property (nonatomic, assign) CGFloat totalDistance;
-@property (nonatomic, assign) CGFloat originalDistanceToFlock;
 
 #pragma mark - Variable
 @property (nonatomic, assign) CGFloat flockSpeed;
 @property (nonatomic, assign) CGFloat birdSpeed;
 @property (nonatomic, assign) CGFloat elapsedTime;
+@property (nonatomic, assign) CGFloat birdElapsedDistance;
+@property (nonatomic, assign) CGFloat flockElapsedDistance;
 
 #pragma mark - Time Stamp
 @property (nonatomic, assign) NSTimeInterval metFlockTime;
 @property (nonatomic, assign) CGFloat maximumSpeed;
 
-#pragma mark - Getter
-@property (nonatomic, readonly) CGFloat elapsedDistance;
+#pragma mark - Calculation Getter
 @property (nonatomic, readonly) CGFloat calories;
 @property (nonatomic, readonly) CGFloat averageSpeed;
+@property (nonatomic, readonly) NSTimeInterval leftTime;
 
 @end
