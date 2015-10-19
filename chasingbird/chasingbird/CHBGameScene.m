@@ -64,6 +64,7 @@
 
 @implementation CHBGameScene {
     NSInteger testNetCount;
+    BOOL testNet;
 }
 
 - (void)dealloc {
@@ -137,6 +138,10 @@
     [self setupBirdNode];
     
     self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
+    
+    if (self.level == CHBGameLevelSecond) {
+        testNet = YES;
+    }
 }
 
 - (void)setupLayer {
@@ -531,6 +536,20 @@
     self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/MIN", self.performance.birdSpeed];
     
     self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02ld:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
+    
+    if ((NSUInteger)(self.performance.elapsedTime) % 30 == 0) {
+        switch (self.level) {
+            case CHBGameLevelFirst:
+                break;
+            case CHBGameLevelSecond:
+                break;
+            case CHBGameLevelThird:
+                [self populateThunder];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 - (void)updateEverySecond:(id)sender {
@@ -543,20 +562,22 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     self.performance.birdSpeed += 10;
-    
-    /* debug net states
-    testNetCount++;
-    
-    if (testNetCount == 1) {
-        self.currentNetState = CHBNetStateNone;
-        [self applyNetState:CHBNetStateDrop];
-    } else if (testNetCount == 2) {
-        [self applyNetState:CHBNetStateCollision];
-    } else if (testNetCount == 3) {
-        [self applyNetState:CHBNetStateBreak];
-        testNetCount = 0;
+
+    if (testNet) {
+        testNetCount++;
+        
+        if (testNetCount == 1) {
+            self.currentNetState = CHBNetStateNone;
+            [self applyNetState:CHBNetStateDrop];
+        } else if (testNetCount == 2) {
+            [self applyNetState:CHBNetStateCollision];
+        } else if (testNetCount == 3) {
+            [self applyNetState:CHBNetStateBreak];
+            testNetCount = 0;
+        }
     }
-     */
+    
+    
 }
 
 #pragma mark - Game Action
