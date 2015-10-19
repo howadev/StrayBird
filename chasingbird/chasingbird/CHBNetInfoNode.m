@@ -63,7 +63,7 @@
     self.speedPlaceholder.fontColor = [SKColor orangeColor];
     [backgroundNode addChild:self.speedPlaceholder];
     
-    self.speedLabel.text = @"0 M/S";
+    self.speedLabel.text = @"0 M/MIN";
     self.speedLabel.fontColor = [SKColor whiteColor];
     [backgroundNode addChild:self.speedLabel];
 

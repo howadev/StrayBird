@@ -31,6 +31,7 @@
         self.flockDistanceLeft = 80;
         self.birdDistanceLeft = 50;
         [self initialize];
+        [self updateRadar];
     }
     return self;
 }
@@ -39,7 +40,7 @@
     // Radar background
     self.radarNode = [[SKSpriteNode alloc] initWithImageNamed:@"game_radar"];
     [self.radarNode runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction rotateByAngle:M_PI*2 duration:2.0],
-                                                                                 [SKAction waitForDuration:2.0],
+                                                                                 [SKAction waitForDuration:10.0],
                                                                                  [SKAction runBlock:^{[self updateRadar];}]]]]];
     [self addChild:self.radarNode];
     

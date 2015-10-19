@@ -42,6 +42,8 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
+    [self.startButton setHidden:YES];
+    
     // Configure session
     
     self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
@@ -57,7 +59,7 @@
     }
     
     // Configure UI
-    
+    [self.startButton setHidden:NO];
     [self.endButton setHidden:YES];
 }
 

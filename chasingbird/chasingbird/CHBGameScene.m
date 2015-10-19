@@ -504,8 +504,8 @@
         self.backgroundLayer.position = CGPointMake(self.backgroundLayer.position.x + amountToMove.x, self.backgroundLayer.position.y + amountToMove.y);
     }
     
-    self.performance.birdElapsedDistance += self.performance.birdSpeed * self.dt;
-    self.performance.flockElapsedDistance += self.performance.flockSpeed * self.dt;
+    self.performance.birdElapsedDistance += self.performance.birdSpeed * (self.dt/60.0);
+    self.performance.flockElapsedDistance += self.performance.flockSpeed * (self.dt/60.0);
     
     if (self.performance.birdElapsedDistance > self.performance.flockElapsedDistance) {
         if (self.flockAnimation == nil) {
@@ -531,7 +531,7 @@
     self.performance.elapsedTime++;
     
     self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.performance.calories];
-    self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", self.performance.birdSpeed];
+    self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/MIN", self.performance.birdSpeed];
     
     self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02ld:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
 }
