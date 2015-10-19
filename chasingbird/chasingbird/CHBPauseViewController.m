@@ -7,7 +7,6 @@
 //
 
 #import "CHBPauseViewController.h"
-#import "CHBTypes.h"
 #import "CHBGameViewController.h"
 
 @interface CHBPauseViewController ()
@@ -37,7 +36,9 @@
 
 - (IBAction)restartAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil];
+    
+    NSDictionary *dict = @{@"level":@(self.level)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil userInfo:dict];
 }
 
 - (IBAction)resumeAction:(id)sender {

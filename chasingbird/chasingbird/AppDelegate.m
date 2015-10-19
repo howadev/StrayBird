@@ -27,18 +27,24 @@
     }];
 }
 
-- (void)playGame {
-    // Will pass game level here
+- (void)playGame:(NSNotification *)notification {
     [self.navController popToRootViewControllerAnimated:NO];
+    
+    NSDictionary *dict = notification.userInfo;
+    NSNumber *levelNumer = dict[@"level"];
     CHBGameViewController *vc = [CHBGameViewController new];
+    vc.level = levelNumer.integerValue;
     [self.navController presentViewController:vc animated:YES completion:^{
         
     }];
 }
 
-- (void)restartGame {
+- (void)restartGame:(NSNotification *)notification {
     [self.navController dismissViewControllerAnimated:NO completion:^{
+        NSDictionary *dict = notification.userInfo;
+        NSNumber *levelNumer = dict[@"level"];
         CHBGameViewController *vc = [CHBGameViewController new];
+        vc.level = levelNumer.integerValue;
         [self.navController presentViewController:vc animated:YES completion:nil];
     }];
     
@@ -60,9 +66,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backToHome) name:homeNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playGame) name:playNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playGame:) name:playNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restartGame) name:restartNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restartGame:) name:restartNotification object:nil];
     
     /*
     [navController.navigationBar setBackgroundImage:[UIImage new]

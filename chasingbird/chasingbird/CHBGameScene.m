@@ -70,15 +70,15 @@
     NSLog(@"Game Scene Did Dealloc");
 }
 
-- (void)setPaused:(BOOL)paused {
-    [super setPaused:paused];
-    
-    if (paused) {
-        [self.touchTimer invalidate];
-    } else {
-        self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
-    }
-}
+//- (void)setPaused:(BOOL)paused {
+//    [super setPaused:paused];
+//    
+//    if (paused) {
+//        [self.touchTimer invalidate];
+//    } else {
+//        self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
+//    }
+//}
 
 #pragma mark - WCSessionDelegate
 
@@ -135,6 +135,8 @@
     [self setupBackgroundNode];
     [self setupCloudLayer];
     [self setupBirdNode];
+    
+    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
 }
 
 - (void)setupLayer {
@@ -524,16 +526,16 @@
     } else {
         self.birdInfoNode.distanceLeftLabel.text = [NSString stringWithFormat:@"%.2f M", self.performance.totalDistance-self.performance.birdElapsedDistance];
     }
-}
-
-- (void)updateEverySecond:(id)sender {
-    
-    self.performance.elapsedTime++;
     
     self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.performance.calories];
     self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/MIN", self.performance.birdSpeed];
     
     self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02ld:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
+}
+
+- (void)updateEverySecond:(id)sender {
+    
+    self.performance.elapsedTime++;
 }
 
 #pragma mark - touch event

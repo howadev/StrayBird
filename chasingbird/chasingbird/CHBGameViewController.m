@@ -42,7 +42,7 @@
     // Create and configure the scene.
     scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
     scene.gameDelegate = self;
-    scene.level = CHBGameLevelFirst;
+    scene.level = self.level;
     scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.
@@ -68,6 +68,7 @@
 - (void)pauseAction:(id)sender {
     self.paused = YES;
     CHBPauseViewController *vc = [CHBPauseViewController new];
+    vc.level = self.level;
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene
     }];
@@ -78,6 +79,7 @@
 - (void)gameScene:(CHBGameScene *)scene didStopWithPerformance:(CHBPerformance *)performance {
     // copy performance or it will dealloc
     CHBResultViewController *vc = [CHBResultViewController new];
+    vc.level = self.level;
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene
     }];

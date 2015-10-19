@@ -7,7 +7,6 @@
 //
 
 #import "CHBResultViewController.h"
-#import "CHBTypes.h"
 
 @interface CHBResultViewController ()
 
@@ -34,7 +33,9 @@
 
 - (IBAction)restartAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil];
+    
+    NSDictionary *dict = @{@"level":@(self.level)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil userInfo:dict];
 }
 
 @end

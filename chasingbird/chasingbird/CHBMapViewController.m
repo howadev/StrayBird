@@ -69,15 +69,20 @@
 
 - (void)firstLevelViewDidTap:(id)sender {
     CHBIntroViewController *vc = [CHBIntroViewController new];
+    vc.level = CHBGameLevelFirst;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)secondLevelViewDidTap:(id)sender {
-    
+    CHBIntroViewController *vc = [CHBIntroViewController new];
+    vc.level = CHBGameLevelSecond;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)thirdLevelViewDidTap:(id)sender {
-    
+    CHBIntroViewController *vc = [CHBIntroViewController new];
+    vc.level = CHBGameLevelThird;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

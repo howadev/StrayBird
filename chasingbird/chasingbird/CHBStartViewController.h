@@ -7,7 +7,8 @@
 //
 
 #import "CHBViewController.h"
+#import "CHBTypes.h"
 
 @interface CHBStartViewController : CHBViewController
-
+@property (nonatomic, assign) CHBGameLevel level;
 @end

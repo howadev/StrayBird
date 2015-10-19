@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBStartViewController">
             <connections>
+                <outlet property="headingView" destination="zii-6q-pHA" id="yY0-ep-tNL"/>
                 <outlet property="skippingView" destination="fua-Uu-IF2" id="gx6-Gg-9Xp"/>
+                <outlet property="titleLevelView" destination="mND-S2-Lx8" id="ywg-yR-7yD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +21,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_level1" translatesAutoresizingMaskIntoConstraints="NO" id="mND-S2-Lx8">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_level3" translatesAutoresizingMaskIntoConstraints="NO" id="mND-S2-Lx8">
                     <rect key="frame" x="105" y="115" width="390" height="159"/>
                     <animations/>
                 </imageView>
@@ -87,6 +89,6 @@
         <image name="running_normal" width="106" height="121"/>
         <image name="skipping_active" width="106" height="121"/>
         <image name="skipping_normal" width="106" height="121"/>
-        <image name="title_level1" width="390" height="159"/>
+        <image name="title_level3" width="390" height="159"/>
     </resources>
 </document>

@@ -7,7 +7,9 @@
 //
 
 #import "CHBViewController.h"
+#import "CHBTypes.h"
 
 @interface CHBGameViewController : CHBViewController
 @property (nonatomic, assign) BOOL paused;
+@property (nonatomic, assign) CHBGameLevel level;
 @end
