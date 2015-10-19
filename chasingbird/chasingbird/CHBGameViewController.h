@@ -9,5 +9,5 @@
 #import "CHBViewController.h"
 
 @interface CHBGameViewController : CHBViewController
-
+@property (nonatomic, assign) BOOL paused;
 @end

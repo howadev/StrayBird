@@ -14,34 +14,43 @@
 @import SpriteKit;
 
 @interface CHBGameViewController () <CHBGameSceneDelegate>
-
 @end
 
-@implementation CHBGameViewController
+@implementation CHBGameViewController {
+    SKView * skView;
+    CHBGameScene *scene;
+}
 
 - (void)dealloc {
     NSLog(@"CHBGameViewController Did Dealloc");
+}
+
+- (void)setPaused:(BOOL)paused {
+    skView.paused = paused;
+    scene.paused = paused;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Configure the view.
-    SKView * skView = [[SKView alloc] initWithFrame:self.view.bounds];
+    skView = [[SKView alloc] initWithFrame:self.view.bounds];
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     [self.view addSubview:skView];
     
     // Create and configure the scene.
-    CHBGameScene *scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
+    scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
     scene.gameDelegate = self;
-    scene.level = CHBGameLevelThird;
+    scene.level = CHBGameLevelFirst;
     scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.
     [skView presentScene:scene];
     
     [self setupPauseButton];
+    
+    self.paused = NO;
 }
 
 - (void)setupPauseButton {
@@ -57,6 +66,7 @@
 }
 
 - (void)pauseAction:(id)sender {
+    self.paused = YES;
     CHBPauseViewController *vc = [CHBPauseViewController new];
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene

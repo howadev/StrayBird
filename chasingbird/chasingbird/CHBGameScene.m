@@ -24,10 +24,10 @@
 @property (nonatomic, retain) NSTimer *touchTimer;
 
 @property (nonatomic, retain) SKNode *backgroundLayer;
-@property (nonatomic, assign) CGFloat backgroundMovePointsPerSec;
+@property (nonatomic, readonly) CGFloat backgroundMovePointsPerSec;
 
 @property (nonatomic, retain) SKNode *rockLayer;
-@property (nonatomic, assign) CGFloat populateRockSpeed;
+@property (nonatomic, retain) SKAction *populateRockAnimation;
 
 @property (nonatomic, retain) SKNode *atmosphereLayer;
 @property (nonatomic, retain) SKSpriteNode *thunderNode;
@@ -70,6 +70,16 @@
     NSLog(@"Game Scene Did Dealloc");
 }
 
+- (void)setPaused:(BOOL)paused {
+    [super setPaused:paused];
+    
+    if (paused) {
+        [self.touchTimer invalidate];
+    } else {
+        self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
+    }
+}
+
 #pragma mark - WCSessionDelegate
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
@@ -77,7 +87,6 @@
     if (heartrate) {
         CGFloat speed = heartrate.floatValue;
         self.performance.birdSpeed = speed;
-        self.backgroundMovePointsPerSec = speed;
     }
 }
 
@@ -91,9 +100,12 @@
         [session activateSession];
     }
     
+    if ([[WCSession defaultSession] isReachable] == NO) {
+        NSLog(@"WCSession is not reachable");
+    }
+    
     self.lastUpdateTime = 0;
     self.dt = 0;
-    self.populateRockSpeed = 0.0001;
     
     self.performance = [CHBPerformance new];
     switch (self.level) {
@@ -111,7 +123,7 @@
             break;
         case CHBGameLevelThird:
             self.performance.totalTime = 40 * 60;
-            self.performance.totalDistance = 200;
+            self.performance.totalDistance = 3500;
             self.performance.flockElapsedDistance = 800;
             self.performance.flockSpeed = 100;
             break;
@@ -123,12 +135,6 @@
     [self setupBackgroundNode];
     [self setupCloudLayer];
     [self setupBirdNode];
-    
-    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
-                                                                       [SKAction waitForDuration:5.0]
-                                                                       ]]]];
-    
-    self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
 }
 
 - (void)setupLayer {
@@ -188,8 +194,11 @@
     [self.hudLayer addChild:self.hudRadarNode];
 }
 
+- (CGFloat)backgroundMovePointsPerSec {
+    return self.performance.birdSpeed;
+}
+
 - (void)setupBackgroundNode {
-    self.backgroundMovePointsPerSec = 80.0;
     
     NSString *imageName = nil;
     switch (self.level) {
@@ -218,6 +227,11 @@
     backgroundSprite2.name = @"background";
     backgroundSprite2.position = CGPointMake(self.size.width/2, self.size.height*1.5);
     [self.backgroundLayer addChild:backgroundSprite2];
+    
+    self.populateRockAnimation = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
+                                                                                    [SKAction waitForDuration:5.0]
+                                                                                    ]]];
+    [self runAction:self.populateRockAnimation];
 }
 
 - (void)populateRock {
@@ -448,7 +462,7 @@
     SKSpriteNode *checkPointNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer5_checkpoint1"];
     checkPointNode.position = CGPointMake(self.size.width/2, self.size.height+checkPointNode.size.height/2);
     [self.checkPointLayer addChild:checkPointNode];
-    [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:2.0],
+    [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:8.0],
                                                                      [SKAction removeFromParent],
                                                                      [SKAction runBlock:^{[self stopGame];}]]],
                                                 [SKAction repeatActionForever:self.checkPointAnimation]]]];
@@ -464,11 +478,6 @@
         self.dt = 0;
     }
     self.lastUpdateTime = currentTime;
-    
-    // Move background
-    CGPoint backgroundVelocity = CGPointMake(0, -self.backgroundMovePointsPerSec);
-    CGPoint amountToMove = CGPointMake(backgroundVelocity.x * self.dt, backgroundVelocity.y * self.dt);
-    self.backgroundLayer.position = CGPointMake(self.backgroundLayer.position.x + amountToMove.x, self.backgroundLayer.position.y + amountToMove.y);
     
     [self.backgroundLayer enumerateChildNodesWithName:@"background" usingBlock:^(SKNode * _Nonnull node, BOOL * _Nonnull stop) {
         NSAssert([node isKindOfClass:[SKSpriteNode class]], @"Need it");
@@ -487,6 +496,13 @@
             [rock removeFromParent];
         }
     }];
+    
+    if (self.backgroundMovePointsPerSec > 0) {
+        // Move background
+        CGPoint backgroundVelocity = CGPointMake(0, -self.backgroundMovePointsPerSec);
+        CGPoint amountToMove = CGPointMake(backgroundVelocity.x * self.dt, backgroundVelocity.y * self.dt);
+        self.backgroundLayer.position = CGPointMake(self.backgroundLayer.position.x + amountToMove.x, self.backgroundLayer.position.y + amountToMove.y);
+    }
     
     self.performance.birdElapsedDistance += self.performance.birdSpeed * self.dt;
     self.performance.flockElapsedDistance += self.performance.flockSpeed * self.dt;
@@ -524,6 +540,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+    self.performance.birdSpeed += 10;
+    
+    /* debug net states
     testNetCount++;
     
     if (testNetCount == 1) {
@@ -535,6 +554,7 @@
         [self applyNetState:CHBNetStateBreak];
         testNetCount = 0;
     }
+     */
 }
 
 #pragma mark - Game Action

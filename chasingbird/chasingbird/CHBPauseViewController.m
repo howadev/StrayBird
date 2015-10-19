@@ -8,6 +8,7 @@
 
 #import "CHBPauseViewController.h"
 #import "CHBTypes.h"
+#import "CHBGameViewController.h"
 
 @interface CHBPauseViewController ()
 
@@ -40,9 +41,13 @@
 }
 
 - (IBAction)resumeAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        //resume game scene
-    }];
+    // TODO set paused to NO after dismission
+    if ([self.presentingViewController isKindOfClass:[CHBGameViewController class]]) {
+        CHBGameViewController *vc = (CHBGameViewController*)self.presentingViewController;
+        vc.paused = NO;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

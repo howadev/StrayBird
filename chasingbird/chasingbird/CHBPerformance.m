@@ -8,7 +8,7 @@
 
 #import "CHBPerformance.h"
 
-static const CGFloat minimumBirdSpeed = 60.0;
+__unused static const CGFloat minimumBirdSpeed = 60.0;
 
 @interface CHBPerformance ()
 
@@ -18,18 +18,19 @@ static const CGFloat minimumBirdSpeed = 60.0;
 
 #pragma mark - Variable
 
-- (CGFloat)birdSpeed {
-    if (_birdSpeed < minimumBirdSpeed) {
-        return minimumBirdSpeed;
-    } else {
-        return _birdSpeed;
-    }
-}
+//- (CGFloat)birdSpeed {
+//    if (_birdSpeed < minimumBirdSpeed) {
+//        return minimumBirdSpeed;
+//    } else {
+//        return _birdSpeed;
+//    }
+//}
 
 #pragma mark - Calculation Getter
 
 - (CGFloat)calories {
-    return (0.13 * self.birdSpeed - 7.54) * 60 / 60 / 60 * self.elapsedTime;
+    CGFloat calories = (0.13 * self.birdSpeed - 7.54) * 60 / 60 / 60 * self.elapsedTime;
+    return calories > 0 ? calories : 0;
 }
 
 - (CGFloat)averageSpeed {
