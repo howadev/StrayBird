@@ -66,6 +66,10 @@
     NSInteger testNetCount;
 }
 
+- (void)dealloc {
+    NSLog(@"Game Scene Did Dealloc");
+}
+
 #pragma mark - WCSessionDelegate
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
@@ -444,7 +448,7 @@
     SKSpriteNode *checkPointNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer5_checkpoint1"];
     checkPointNode.position = CGPointMake(self.size.width/2, self.size.height+checkPointNode.size.height/2);
     [self.checkPointLayer addChild:checkPointNode];
-    [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:12.0],
+    [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:2.0],
                                                                      [SKAction removeFromParent],
                                                                      [SKAction runBlock:^{[self stopGame];}]]],
                                                 [SKAction repeatActionForever:self.checkPointAnimation]]]];
@@ -536,7 +540,7 @@
 #pragma mark - Game Action
 
 - (void)stopGame {
-    [self.delegate gameScene:self didStopWithPerformance:self.performance];
+    [self.gameDelegate gameScene:self didStopWithPerformance:self.performance];
 }
 
 

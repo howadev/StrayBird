@@ -10,26 +10,36 @@
 #import "CHBDemoViewController.h"
 #import "CHBHomeViewController.h"
 #import "CHBGameViewController.h"
+#import "CHBTypes.h"
 @import HealthKit;
 
 @interface AppDelegate ()
-
+@property (nonatomic, retain) UINavigationController *navController;
 @end
 
 @implementation AppDelegate
 
+#pragma mark - actions
+
+- (void)backToHome {
+    [self.navController popToRootViewControllerAnimated:NO];
+}
+
+#pragma mark - delgate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //CHBDemoViewController *vc = [CHBDemoViewController new];
-    //CHBHomeViewController *vc = [CHBHomeViewController new];
-    CHBGameViewController *vc = [CHBGameViewController new];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = navController;
+    CHBHomeViewController *vc = [CHBHomeViewController new];
+    //CHBGameViewController *vc = [CHBGameViewController new];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     
-    [navController setNavigationBarHidden:YES animated:NO];
+    [self.navController setNavigationBarHidden:YES animated:NO];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backToHome) name:homeNotification object:nil];
     
     /*
     [navController.navigationBar setBackgroundImage:[UIImage new]

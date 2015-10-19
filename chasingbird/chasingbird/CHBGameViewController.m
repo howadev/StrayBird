@@ -19,6 +19,10 @@
 
 @implementation CHBGameViewController
 
+- (void)dealloc {
+    NSLog(@"CHBGameViewController Did Dealloc");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,7 +34,7 @@
     
     // Create and configure the scene.
     CHBGameScene *scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
-    scene.delegate = self;
+    scene.gameDelegate = self;
     scene.level = CHBGameLevelThird;
     scene.scaleMode = SKSceneScaleModeAspectFit;
     

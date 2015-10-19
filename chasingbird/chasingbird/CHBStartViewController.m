@@ -24,12 +24,16 @@
 }
 
 - (void)skippingViewDidTap:(id)sender {
-    CHBGameViewController *vc = [CHBGameViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (IBAction)playAction:(id)sender {
+    CHBGameViewController *vc = [CHBGameViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

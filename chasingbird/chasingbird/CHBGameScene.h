@@ -17,6 +17,6 @@
 @end
 
 @interface CHBGameScene : SKScene
-@property (nonatomic, weak) id <CHBGameSceneDelegate> delegate;
+@property (nonatomic, weak) id <CHBGameSceneDelegate> gameDelegate;
 @property (nonatomic, assign) CHBGameLevel level;
 @end

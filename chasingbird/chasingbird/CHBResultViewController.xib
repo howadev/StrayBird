@@ -32,20 +32,26 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-yl-MAT">
                     <rect key="frame" x="202" y="527" width="57" height="57"/>
                     <state key="normal" image="btn_home"/>
+                    <connections>
+                        <action selector="homeAction:" destination="-1" eventType="touchUpInside" id="1xk-A5-gEH"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN7-Qc-MYb">
                     <rect key="frame" x="342" y="527" width="57" height="57"/>
                     <state key="normal" image="btn_restart"/>
+                    <connections>
+                        <action selector="restartAction:" destination="-1" eventType="touchUpInside" id="xly-zN-AC2"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_results_status-win" highlightedImage="game_single_results_status-loss" translatesAutoresizingMaskIntoConstraints="NO" id="odM-Al-hix">
                     <rect key="frame" x="176" y="298" width="247" height="26"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-Yc-7Zz" customClass="CHBPerformanceTableView">
-                    <rect key="frame" x="176.5" y="340" width="247" height="171"/>
+                    <rect key="frame" x="177" y="340" width="247" height="171"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP1-6Y-vwU">
-                    <rect key="frame" x="212" y="231" width="176.5" height="54"/>
+                    <rect key="frame" x="212" y="231" width="177" height="54"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
