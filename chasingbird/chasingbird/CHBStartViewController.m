@@ -8,6 +8,7 @@
 
 #import "CHBStartViewController.h"
 #import "CHBGameViewController.h"
+#import "CHBTypes.h"
 
 @interface CHBStartViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *skippingView;
@@ -32,8 +33,7 @@
 }
 
 - (IBAction)playAction:(id)sender {
-    CHBGameViewController *vc = [CHBGameViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:playNotification object:nil];
 }
 
 @end

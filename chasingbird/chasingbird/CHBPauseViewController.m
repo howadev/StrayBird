@@ -7,6 +7,7 @@
 //
 
 #import "CHBPauseViewController.h"
+#import "CHBTypes.h"
 
 @interface CHBPauseViewController ()
 
@@ -29,9 +30,13 @@
 #pragma mark - Actions
 
 - (IBAction)homeAction:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
 }
 
 - (IBAction)restartAction:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil];
 }
 
 - (IBAction)resumeAction:(id)sender {

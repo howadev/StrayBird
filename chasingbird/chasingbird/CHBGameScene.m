@@ -111,7 +111,7 @@
             break;
         case CHBGameLevelThird:
             self.performance.totalTime = 40 * 60;
-            self.performance.totalDistance = 3500;
+            self.performance.totalDistance = 200;
             self.performance.flockElapsedDistance = 800;
             self.performance.flockSpeed = 100;
             break;

@@ -15,6 +15,8 @@ const static CGFloat kCHBEdgeInset = 8.0;
 const static CGFloat kCHBRadarScale = 0.8;
 
 static NSString *homeNotification = @"BackToHome";
+static NSString *playNotification = @"StartGame";
+static NSString *restartNotification = @"RestartGame";
 
 typedef NS_ENUM(NSInteger, CHBMapLevelViewsStarMode) {
     CHBMapLevelViewStarModeInactive = -1,

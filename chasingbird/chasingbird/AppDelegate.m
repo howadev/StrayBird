@@ -22,7 +22,26 @@
 #pragma mark - actions
 
 - (void)backToHome {
+    [self.navController dismissViewControllerAnimated:NO completion:^{
+        
+    }];
+}
+
+- (void)playGame {
+    // Will pass game level here
     [self.navController popToRootViewControllerAnimated:NO];
+    CHBGameViewController *vc = [CHBGameViewController new];
+    [self.navController presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+
+- (void)restartGame {
+    [self.navController dismissViewControllerAnimated:NO completion:^{
+        CHBGameViewController *vc = [CHBGameViewController new];
+        [self.navController presentViewController:vc animated:YES completion:nil];
+    }];
+    
 }
 
 #pragma mark - delgate
@@ -40,6 +59,10 @@
     [self.navController setNavigationBarHidden:YES animated:NO];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backToHome) name:homeNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playGame) name:playNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restartGame) name:restartNotification object:nil];
     
     /*
     [navController.navigationBar setBackgroundImage:[UIImage new]

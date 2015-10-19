@@ -33,7 +33,8 @@
 }
 
 - (IBAction)restartAction:(id)sender {
-
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil];
 }
 
 @end
