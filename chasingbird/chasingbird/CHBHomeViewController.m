@@ -8,8 +8,9 @@
 
 #import "CHBHomeViewController.h"
 #import "CHBMapViewController.h"
+#import "CHBGameKitHelper.h"
 
-@interface CHBHomeViewController ()
+@interface CHBHomeViewController () <GKGameCenterControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *singlePlayerView;
 @property (weak, nonatomic) IBOutlet UIImageView *multiPlayerView;
 
@@ -25,9 +26,44 @@
     [self.singlePlayerView addGestureRecognizer:singleTapGesture];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[CHBGameKitHelper sharedGameKitHelper]
+     authenticateLocalPlayer];
+}
+
 - (void)singlePlayerViewDidTap:(id)sender {
     CHBMapViewController *vc = [CHBMapViewController new];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+# pragma mark - Game Kit
+
+- (void)showAuthenticationViewController
+{
+    CHBGameKitHelper *gameKitHelper = [CHBGameKitHelper sharedGameKitHelper];
+    
+    [self presentViewController:gameKitHelper.authenticationViewController animated:YES completion:nil];
+}
+
+-(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard{
+    GKGameCenterViewController *gcViewController = [[GKGameCenterViewController alloc] init];
+    
+    gcViewController.gameCenterDelegate = self;
+    
+    if (shouldShowLeaderboard) {
+        gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
+        gcViewController.leaderboardIdentifier = [CHBGameKitHelper sharedGameKitHelper].leaderboardIdentifier;
+    } else{
+        gcViewController.viewState = GKGameCenterViewControllerStateAchievements;
+    }
+    
+    [self presentViewController:gcViewController animated:YES completion:nil];
+}
+
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
