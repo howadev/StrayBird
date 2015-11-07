@@ -24,10 +24,16 @@
     UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singlePlayerViewDidTap:)];
     singleTapGesture.numberOfTapsRequired = 1;
     [self.singlePlayerView addGestureRecognizer:singleTapGesture];
+    
+    UITapGestureRecognizer *multiTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(multiPlayerViewDidTap:)];
+    multiTapGesture.numberOfTapsRequired = 1;
+    [self.multiPlayerView addGestureRecognizer:multiTapGesture];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
     
     [[CHBGameKitHelper sharedGameKitHelper]
      authenticateLocalPlayer];
@@ -36,6 +42,10 @@
 - (void)singlePlayerViewDidTap:(id)sender {
     CHBMapViewController *vc = [CHBMapViewController new];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)multiPlayerViewDidTap:(id)sender {
+    [self showLeaderboardAndAchievements:YES];
 }
 
 # pragma mark - Game Kit
