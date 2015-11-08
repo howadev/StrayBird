@@ -10,6 +10,11 @@
 @import HealthKit;
 @import WatchConnectivity;
 
+typedef NS_ENUM(NSUInteger, CHBWatchMode) {
+    CHBWatchModeDistance = 0,
+    CHBWatchModeHeartRate
+};
+
 @interface InterfaceController() <HKWorkoutSessionDelegate, WCSessionDelegate>
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *alertLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *startButton;
@@ -20,6 +25,9 @@
 @property (nonatomic, retain) HKAnchoredObjectQuery *query;
 @property (nonatomic, retain) HKQueryAnchor *anchor;
 @property (nonatomic, retain) HKUnit *workoutUnit;
+@property (nonatomic, retain) NSString *quantityTypeIdentifier;
+
+@property (nonatomic, assign) CHBWatchMode watchMode;
 @end
 
 
@@ -46,9 +54,20 @@
     
     // Configure session
     
-    self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
-    self.workoutUnit = [HKUnit unitFromString:@"count/min"];
-    self.healthStore = [HKHealthStore new];
+    self.watchMode = CHBWatchModeDistance;
+    
+    switch (self.watchMode) {
+        case CHBWatchModeDistance:
+            self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
+            self.workoutUnit = [HKUnit unitFromString:@"m"];
+            self.healthStore = [HKHealthStore new];
+            break;
+        case CHBWatchModeHeartRate:
+            self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
+            self.workoutUnit = [HKUnit unitFromString:@"count/min"];
+            self.healthStore = [HKHealthStore new];
+            break;
+    }
     
     // Configure Connectivity
     
@@ -71,12 +90,16 @@
         return;
     }
     
-    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-    
-    if (quantiyType == nil) {
-        self.alertLabel.text = @"Quanity type not available";
-        return;
+    switch (self.watchMode) {
+        case CHBWatchModeDistance:
+            self.quantityTypeIdentifier = HKQuantityTypeIdentifierDistanceWalkingRunning;
+            break;
+        case CHBWatchModeHeartRate:
+            self.quantityTypeIdentifier = HKQuantityTypeIdentifierHeartRate;
+            break;
     }
+    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:self.quantityTypeIdentifier];
+    NSAssert(quantiyType, @"Quanity type not available");
     
     NSSet *dataTypes = [[NSSet alloc] initWithArray:@[quantiyType]];
     
@@ -119,7 +142,7 @@
 
 - (HKQuery*)createWorkoutStreamingQueryOnDate:(NSDate*)date
 {
-    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+    HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:self.quantityTypeIdentifier];
     
     if (quantiyType == nil) {
         self.alertLabel.text = @"Quanity type not available";
