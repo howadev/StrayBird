@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, CHBWatchMode) {
     CHBWatchModeDistance = 0,
     CHBWatchModeHeartRate,
     CHBWatchModeStepCount,
+    CHBWatchModeActiveEnergy,
 };
 
 @interface InterfaceController() <HKWorkoutSessionDelegate, WCSessionDelegate>
@@ -55,7 +56,7 @@ typedef NS_ENUM(NSUInteger, CHBWatchMode) {
     
     // Configure session
     
-    self.watchMode = CHBWatchModeStepCount;
+    self.watchMode = CHBWatchModeActiveEnergy;
     
     switch (self.watchMode) {
         case CHBWatchModeDistance:
@@ -71,6 +72,11 @@ typedef NS_ENUM(NSUInteger, CHBWatchMode) {
         case CHBWatchModeStepCount:
             self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
             self.workoutUnit = [HKUnit countUnit];
+            self.healthStore = [HKHealthStore new];
+            break;
+        case CHBWatchModeActiveEnergy:
+            self.anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
+            self.workoutUnit = [HKUnit calorieUnit];
             self.healthStore = [HKHealthStore new];
             break;
     }
@@ -105,6 +111,9 @@ typedef NS_ENUM(NSUInteger, CHBWatchMode) {
             break;
         case CHBWatchModeStepCount:
             self.quantityTypeIdentifier = HKQuantityTypeIdentifierStepCount;
+            break;
+        case CHBWatchModeActiveEnergy:
+            self.quantityTypeIdentifier = HKQuantityTypeIdentifierActiveEnergyBurned;
             break;
     }
     HKQuantityType *quantiyType = [HKQuantityType quantityTypeForIdentifier:self.quantityTypeIdentifier];
