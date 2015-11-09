@@ -17,6 +17,8 @@
 		6425786C1BC066CB006B430D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4B99D01B9C714C00FED471 /* HealthKit.framework */; };
 		643736271BF1539300A4BC64 /* CHBLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643736251BF1539300A4BC64 /* CHBLandingViewController.m */; };
 		643736281BF1539300A4BC64 /* CHBLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 643736261BF1539300A4BC64 /* CHBLandingViewController.xib */; };
+		6437362D1BF15BC600A4BC64 /* CHBAchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437362B1BF15BC600A4BC64 /* CHBAchievementsViewController.m */; };
+		6437362E1BF15BC600A4BC64 /* CHBAchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6437362C1BF15BC600A4BC64 /* CHBAchievementsViewController.xib */; };
 		6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */; };
 		6455EE451BCC27A900E32334 /* CHBRadarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE441BCC27A900E32334 /* CHBRadarNode.m */; };
 		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; };
@@ -115,6 +117,9 @@
 		643736241BF1539300A4BC64 /* CHBLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLandingViewController.h; sourceTree = "<group>"; };
 		643736251BF1539300A4BC64 /* CHBLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLandingViewController.m; sourceTree = "<group>"; };
 		643736261BF1539300A4BC64 /* CHBLandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBLandingViewController.xib; sourceTree = "<group>"; };
+		6437362A1BF15BC600A4BC64 /* CHBAchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBAchievementsViewController.h; sourceTree = "<group>"; };
+		6437362B1BF15BC600A4BC64 /* CHBAchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBAchievementsViewController.m; sourceTree = "<group>"; };
+		6437362C1BF15BC600A4BC64 /* CHBAchievementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBAchievementsViewController.xib; sourceTree = "<group>"; };
 		6455EE401BCC02E300E32334 /* CHBNetInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBNetInfoNode.h; sourceTree = "<group>"; };
 		6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBNetInfoNode.m; sourceTree = "<group>"; };
 		6455EE431BCC27A900E32334 /* CHBRadarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBRadarNode.h; sourceTree = "<group>"; };
@@ -244,6 +249,16 @@
 			name = LandingView;
 			sourceTree = "<group>";
 		};
+		643736291BF15BAD00A4BC64 /* AchievementsView */ = {
+			isa = PBXGroup;
+			children = (
+				6437362A1BF15BC600A4BC64 /* CHBAchievementsViewController.h */,
+				6437362B1BF15BC600A4BC64 /* CHBAchievementsViewController.m */,
+				6437362C1BF15BC600A4BC64 /* CHBAchievementsViewController.xib */,
+			);
+			name = AchievementsView;
+			sourceTree = "<group>";
+		};
 		64B4CACD1BD2BD1B00D5C5A5 /* IntroView */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +363,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
+				643736291BF15BAD00A4BC64 /* AchievementsView */,
 				643736231BF1534900A4BC64 /* LandingView */,
 				64F262341BD40D3700C5BD68 /* ResultView */,
 				64F262331BD401CA00C5BD68 /* PauseView */,
@@ -597,6 +613,7 @@
 				643736281BF1539300A4BC64 /* CHBLandingViewController.xib in Resources */,
 				64F262411BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib in Resources */,
 				64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */,
+				6437362E1BF15BC600A4BC64 /* CHBAchievementsViewController.xib in Resources */,
 				64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,6 +656,7 @@
 				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
+				6437362D1BF15BC600A4BC64 /* CHBAchievementsViewController.m in Sources */,
 				891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */,
 				891736391B7676A0003E082F /* main.m in Sources */,
 				64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */,
