@@ -15,21 +15,23 @@
 		642578601BC065C8006B430D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6425785F1BC065C8006B430D /* Assets.xcassets */; };
 		642578641BC065C8006B430D /* chasingBirdWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 642578481BC065C8006B430D /* chasingBirdWatch.app */; };
 		6425786C1BC066CB006B430D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4B99D01B9C714C00FED471 /* HealthKit.framework */; };
-		6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */; settings = {ASSET_TAGS = (); }; };
-		6455EE451BCC27A900E32334 /* CHBRadarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE441BCC27A900E32334 /* CHBRadarNode.m */; settings = {ASSET_TAGS = (); }; };
-		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; settings = {ASSET_TAGS = (); }; };
-		6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */; settings = {ASSET_TAGS = (); }; };
-		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; settings = {ASSET_TAGS = (); }; };
-		64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B4CACF1BD2BD4700D5C5A5 /* CHBIntroViewController.m */; settings = {ASSET_TAGS = (); }; };
-		64B4CAD21BD2BD4700D5C5A5 /* CHBIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B4CAD01BD2BD4700D5C5A5 /* CHBIntroViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		64D93BDC1BD3FE5B006AE5C2 /* CHBPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D93BDB1BD3FE5B006AE5C2 /* CHBPerformance.m */; settings = {ASSET_TAGS = (); }; };
-		64F262311BD401BD00C5BD68 /* CHBPauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2622F1BD401BD00C5BD68 /* CHBPauseViewController.m */; settings = {ASSET_TAGS = (); }; };
-		64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262301BD401BD00C5BD68 /* CHBPauseViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F262361BD40D8900C5BD68 /* CHBResultViewController.m */; settings = {ASSET_TAGS = (); }; };
-		64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */; settings = {ASSET_TAGS = (); }; };
-		64F262401BD414E500C5BD68 /* CHBPerformanceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623E1BD414E500C5BD68 /* CHBPerformanceTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		64F262411BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2623F1BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		643736271BF1539300A4BC64 /* CHBLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643736251BF1539300A4BC64 /* CHBLandingViewController.m */; };
+		643736281BF1539300A4BC64 /* CHBLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 643736261BF1539300A4BC64 /* CHBLandingViewController.xib */; };
+		6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */; };
+		6455EE451BCC27A900E32334 /* CHBRadarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE441BCC27A900E32334 /* CHBRadarNode.m */; };
+		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; };
+		6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */; };
+		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; };
+		64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B4CACF1BD2BD4700D5C5A5 /* CHBIntroViewController.m */; };
+		64B4CAD21BD2BD4700D5C5A5 /* CHBIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B4CAD01BD2BD4700D5C5A5 /* CHBIntroViewController.xib */; };
+		64D93BDC1BD3FE5B006AE5C2 /* CHBPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D93BDB1BD3FE5B006AE5C2 /* CHBPerformance.m */; };
+		64F262311BD401BD00C5BD68 /* CHBPauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2622F1BD401BD00C5BD68 /* CHBPauseViewController.m */; };
+		64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262301BD401BD00C5BD68 /* CHBPauseViewController.xib */; };
+		64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F262361BD40D8900C5BD68 /* CHBResultViewController.m */; };
+		64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */; };
+		64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */; };
+		64F262401BD414E500C5BD68 /* CHBPerformanceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623E1BD414E500C5BD68 /* CHBPerformanceTableViewCell.m */; };
+		64F262411BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2623F1BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -110,6 +112,9 @@
 		6425785F1BC065C8006B430D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		642578611BC065C8006B430D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6425786D1BC066CB006B430D /* chasingBirdWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "chasingBirdWatch Extension.entitlements"; sourceTree = "<group>"; };
+		643736241BF1539300A4BC64 /* CHBLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLandingViewController.h; sourceTree = "<group>"; };
+		643736251BF1539300A4BC64 /* CHBLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLandingViewController.m; sourceTree = "<group>"; };
+		643736261BF1539300A4BC64 /* CHBLandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBLandingViewController.xib; sourceTree = "<group>"; };
 		6455EE401BCC02E300E32334 /* CHBNetInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBNetInfoNode.h; sourceTree = "<group>"; };
 		6455EE411BCC02E300E32334 /* CHBNetInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBNetInfoNode.m; sourceTree = "<group>"; };
 		6455EE431BCC27A900E32334 /* CHBRadarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBRadarNode.h; sourceTree = "<group>"; };
@@ -229,6 +234,16 @@
 			path = "chasingBirdWatch Extension";
 			sourceTree = "<group>";
 		};
+		643736231BF1534900A4BC64 /* LandingView */ = {
+			isa = PBXGroup;
+			children = (
+				643736241BF1539300A4BC64 /* CHBLandingViewController.h */,
+				643736251BF1539300A4BC64 /* CHBLandingViewController.m */,
+				643736261BF1539300A4BC64 /* CHBLandingViewController.xib */,
+			);
+			name = LandingView;
+			sourceTree = "<group>";
+		};
 		64B4CACD1BD2BD1B00D5C5A5 /* IntroView */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +348,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
+				643736231BF1534900A4BC64 /* LandingView */,
 				64F262341BD40D3700C5BD68 /* ResultView */,
 				64F262331BD401CA00C5BD68 /* PauseView */,
 				64D93BD91BD3FE42006AE5C2 /* Model */,
@@ -578,6 +594,7 @@
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
 				896251881B8E928400295961 /* CHBHomeViewController.xib in Resources */,
 				8985C2271B924EAE00FDA0B0 /* GameAssets.xcassets in Resources */,
+				643736281BF1539300A4BC64 /* CHBLandingViewController.xib in Resources */,
 				64F262411BD414E500C5BD68 /* CHBPerformanceTableViewCell.xib in Resources */,
 				64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */,
 				64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */,
@@ -614,6 +631,7 @@
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
 				649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */,
 				89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */,
+				643736271BF1539300A4BC64 /* CHBLandingViewController.m in Sources */,
 				8985C2211B924ADD00FDA0B0 /* CHBGameViewController.m in Sources */,
 				8985C2251B924B1000FDA0B0 /* CHBGameScene.m in Sources */,
 				64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */,
