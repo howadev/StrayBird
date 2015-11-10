@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBPauseViewController">
@@ -16,33 +16,41 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_pause-popup" translatesAutoresizingMaskIntoConstraints="NO" id="wfa-iE-2Cm">
                     <rect key="frame" x="134" y="152" width="333" height="489"/>
+                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_level1" translatesAutoresizingMaskIntoConstraints="NO" id="zpP-cW-ZPC">
                     <rect key="frame" x="105" y="83" width="390" height="159"/>
+                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heading_level1" translatesAutoresizingMaskIntoConstraints="NO" id="RBm-pX-Db7">
                     <rect key="frame" x="179" y="16" width="243" height="51"/>
+                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_pause_stars_0" translatesAutoresizingMaskIntoConstraints="NO" id="xSj-IK-s5A">
                     <rect key="frame" x="202" y="196" width="197" height="90"/>
+                    <animations/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERSONAL BEST:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5h-Fc-EWh">
                     <rect key="frame" x="229" y="168" width="141.5" height="20.5"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_pause_leaves" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-qJ-8Yg">
                     <rect key="frame" x="170" y="233" width="260" height="48"/>
+                    <animations/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN PROGRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-In-Fsr">
                     <rect key="frame" x="220" y="297" width="162" height="30"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-5j-gYT">
                     <rect key="frame" x="150" y="568" width="57" height="57"/>
+                    <animations/>
                     <state key="normal" image="btn_home"/>
                     <connections>
                         <action selector="homeAction:" destination="-1" eventType="touchUpInside" id="Eak-sq-LwA"/>
@@ -50,6 +58,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhl-NR-fea">
                     <rect key="frame" x="223" y="568" width="57" height="57"/>
+                    <animations/>
                     <state key="normal" image="btn_restart"/>
                     <connections>
                         <action selector="restartAction:" destination="-1" eventType="touchUpInside" id="M8d-h5-FxR"/>
@@ -57,6 +66,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWX-pU-DTL">
                     <rect key="frame" x="394" y="568" width="57" height="57"/>
+                    <animations/>
                     <state key="normal" image="btn_resume"/>
                     <connections>
                         <action selector="resumeAction:" destination="-1" eventType="touchUpInside" id="tRZ-zc-2G2"/>
@@ -64,9 +74,11 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAm-At-Pbh" customClass="CHBPerformanceTableView">
                     <rect key="frame" x="170" y="343" width="260" height="209"/>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="RBm-pX-Db7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2pO-ou-Fbv"/>

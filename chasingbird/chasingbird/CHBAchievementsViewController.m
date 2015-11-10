@@ -7,6 +7,7 @@
 //
 
 #import "CHBAchievementsViewController.h"
+#import "CHBGameKitHelper.h"
 
 @interface CHBAchievementsViewController ()
 
@@ -17,7 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupMultiPlayersBackground];
     [self setupBackButton];
+    [self loadAchievements];
+    
+}
+
+- (void)loadAchievements
+{
+    [GKAchievement loadAchievementsWithCompletionHandler:^(NSArray *achievements, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Error in loading achievements: %@", error);
+        }
+        if (achievements != nil) {
+            // Process the array of achievements.
+        }
+    }];
 }
 
 @end

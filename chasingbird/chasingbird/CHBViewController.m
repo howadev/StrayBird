@@ -31,6 +31,21 @@
     [self.view pinItem:self.view attribute:NSLayoutAttributeTop to:backButton withOffset:-16 andScale:1.0];
 }
 
+- (void)setupSinglePlayerBackground {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"main_background"]];
+    [self.view addSubview:imageView];
+    [self.view sendSubviewToBack:imageView];
+    [self.view pinItemFillAll:imageView];
+}
+
+- (void)setupMultiPlayersBackground {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"multi_background"]];
+    imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:imageView];
+    [self.view sendSubviewToBack:imageView];
+    [self.view pinItemFillAll:imageView];
+}
+
 - (void)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

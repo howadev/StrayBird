@@ -10,5 +10,7 @@
 
 @interface CHBViewController : UIViewController
 - (void)setupBackButton;
+- (void)setupSinglePlayerBackground;
+- (void)setupMultiPlayersBackground;
 - (void)backAction:(id)sender;
 @end

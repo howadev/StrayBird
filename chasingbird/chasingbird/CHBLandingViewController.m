@@ -8,6 +8,7 @@
 
 #import "CHBLandingViewController.h"
 #import "CHBGameKitHelper.h"
+#import "CHBAchievementsViewController.h"
 
 @interface CHBLandingViewController () <GKGameCenterControllerDelegate>
 
@@ -51,7 +52,9 @@
 }
 
 - (IBAction)achievementsAction:(id)sender {
-    [self showLeaderboardAndAchievements:NO];
+    //[self showLeaderboardAndAchievements:NO];
+    CHBAchievementsViewController *vc = [CHBAchievementsViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 
 }
 
