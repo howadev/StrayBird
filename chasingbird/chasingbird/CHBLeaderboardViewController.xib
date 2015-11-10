@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBLeaderboardViewController">
+            <connections>
+                <outlet property="tableView" destination="Jc6-fZ-qr1" id="VfP-66-P37"/>
+                <outlet property="view" destination="cRe-mk-aDQ" id="wSt-1g-N5U"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cRe-mk-aDQ">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_leaderboard" translatesAutoresizingMaskIntoConstraints="NO" id="2mQ-AN-t3D">
+                    <rect key="frame" x="105" y="44" width="390" height="159"/>
+                    <animations/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jc6-fZ-qr1" customClass="CHBLeaderboardTableView">
+                    <rect key="frame" x="160" y="203" width="280" height="381"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="4Dx-im-70f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Jc6-fZ-qr1" secondAttribute="bottom" constant="16" id="GWq-Xn-cDU"/>
+                <constraint firstItem="2mQ-AN-t3D" firstAttribute="centerX" secondItem="cRe-mk-aDQ" secondAttribute="centerX" id="Mkx-KU-Swp"/>
+                <constraint firstItem="Jc6-fZ-qr1" firstAttribute="width" secondItem="2mQ-AN-t3D" secondAttribute="width" id="dmS-rX-XwJ"/>
+                <constraint firstItem="Jc6-fZ-qr1" firstAttribute="top" secondItem="2mQ-AN-t3D" secondAttribute="bottom" id="kI9-Zs-EeT"/>
+                <constraint firstItem="2mQ-AN-t3D" firstAttribute="top" secondItem="cRe-mk-aDQ" secondAttribute="top" constant="44" id="mc0-Bq-CoS"/>
+                <constraint firstItem="Jc6-fZ-qr1" firstAttribute="centerX" secondItem="cRe-mk-aDQ" secondAttribute="centerX" id="qnn-c9-TJk"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="dmS-rX-XwJ"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="219" y="427"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="title_leaderboard" width="390" height="159"/>
+    </resources>
+</document>

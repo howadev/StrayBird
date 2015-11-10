@@ -9,6 +9,7 @@
 #import "CHBLandingViewController.h"
 #import "CHBGameKitHelper.h"
 #import "CHBAchievementsViewController.h"
+#import "CHBLeaderboardViewController.h"
 
 @interface CHBLandingViewController () <GKGameCenterControllerDelegate>
 
@@ -18,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupBackButton];
 }
 
@@ -48,7 +48,9 @@
 }
 
 - (IBAction)leaderBoardAction:(id)sender {
-    [self showLeaderboardAndAchievements:YES];
+    //[self showLeaderboardAndAchievements:YES];
+    CHBLeaderboardViewController *vc = [CHBLeaderboardViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)achievementsAction:(id)sender {
