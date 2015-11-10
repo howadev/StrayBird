@@ -8,6 +8,7 @@
 
 #import "CHBAchievementsTableView.h"
 #import "CHBAchievementsTableViewCell.h"
+#import "CHBGameKitHelper.h"
 
 @interface CHBAchievementsTableView () <UITableViewDelegate, UITableViewDataSource>
 
@@ -39,11 +40,15 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return self.achievements.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CHBAchievementsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CHBAchievementsTableViewCell class]) forIndexPath:indexPath];
+    GKAchievement *achievement = self.achievements[indexPath.row];
+    cell.badgeImageView.highlighted = achievement.completed;
+    cell.identifierLabel.text = achievement.identifier;
+    cell.progressLabel.text = [NSString stringWithFormat:@"%.0f / 100", achievement.percentComplete];
     return cell;
 }
 

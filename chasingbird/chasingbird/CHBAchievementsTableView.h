@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CHBAchievementsTableView : UITableView
-
+@property (nonatomic, retain) NSArray *achievements;
 @end

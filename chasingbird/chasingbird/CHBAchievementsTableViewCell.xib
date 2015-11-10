@@ -19,7 +19,7 @@
                         <rect key="frame" x="35" y="11" width="211" height="65"/>
                         <animations/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_icon_badge_complete" highlightedImage="multi_icon_badge_incomplete" translatesAutoresizingMaskIntoConstraints="NO" id="FzK-70-VEI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_icon_badge_incomplete" highlightedImage="multi_icon_badge_complete" translatesAutoresizingMaskIntoConstraints="NO" id="FzK-70-VEI">
                         <rect key="frame" x="8" y="8" width="54" height="70"/>
                         <animations/>
                     </imageView>
@@ -73,6 +73,11 @@
             </tableViewCellContentView>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="badgeImageView" destination="FzK-70-VEI" id="tmM-Qz-dbm"/>
+                <outlet property="identifierLabel" destination="8L4-oe-4II" id="Xw3-S8-p70"/>
+                <outlet property="progressLabel" destination="FZv-xu-SgW" id="smm-Qa-pcP"/>
+            </connections>
             <point key="canvasLocation" x="214" y="239"/>
         </tableViewCell>
     </objects>

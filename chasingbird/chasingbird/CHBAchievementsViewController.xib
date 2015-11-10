@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBAchievementsViewController">
             <connections>
+                <outlet property="tableView" destination="oEa-wl-VU2" id="lvr-8C-4Z4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,11 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_achievements" translatesAutoresizingMaskIntoConstraints="NO" id="Fkc-Ew-hBU">
-                    <rect key="frame" x="105" y="16" width="390" height="159"/>
+                    <rect key="frame" x="105" y="44" width="390" height="159"/>
                     <animations/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEa-wl-VU2" customClass="CHBAchievementsTableView">
-                    <rect key="frame" x="160" y="175" width="280" height="409"/>
+                    <rect key="frame" x="160" y="203" width="280" height="381"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -31,7 +32,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="oEa-wl-VU2" firstAttribute="width" secondItem="Fkc-Ew-hBU" secondAttribute="width" id="64Z-Y5-ujv"/>
-                <constraint firstItem="Fkc-Ew-hBU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="HVr-E5-lL6"/>
+                <constraint firstItem="Fkc-Ew-hBU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="HVr-E5-lL6"/>
                 <constraint firstItem="Fkc-Ew-hBU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MFq-Lx-Kgk"/>
                 <constraint firstAttribute="bottom" secondItem="oEa-wl-VU2" secondAttribute="bottom" constant="16" id="YZs-8f-hPT"/>
                 <constraint firstItem="oEa-wl-VU2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a3n-Es-7SR"/>

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CHBAchievementsTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *identifierLabel;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *badgeImageView;
 @end

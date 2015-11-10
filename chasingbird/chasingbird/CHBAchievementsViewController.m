@@ -8,9 +8,10 @@
 
 #import "CHBAchievementsViewController.h"
 #import "CHBGameKitHelper.h"
+#import "CHBAchievementsTableView.h"
 
 @interface CHBAchievementsViewController ()
-
+@property (weak, nonatomic) IBOutlet CHBAchievementsTableView *tableView;
 @end
 
 @implementation CHBAchievementsViewController
@@ -31,7 +32,8 @@
             NSLog(@"Error in loading achievements: %@", error);
         }
         if (achievements != nil) {
-            // Process the array of achievements.
+            self.tableView.achievements = achievements;
+            [self.tableView reloadData];
         }
     }];
 }
