@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBChallengeViewController">
+            <connections>
+                <outlet property="tableView" destination="oxz-6h-hOl" id="kqU-Q1-fhZ"/>
+                <outlet property="view" destination="7lQ-Hi-rTl" id="zbb-OW-ywc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7lQ-Hi-rTl">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_inbox" translatesAutoresizingMaskIntoConstraints="NO" id="KVe-VL-e8C">
+                    <rect key="frame" x="105" y="44" width="390" height="159"/>
+                    <animations/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxz-6h-hOl" customClass="CHBChallengeTableView">
+                    <rect key="frame" x="160" y="203" width="280" height="381"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="CWd-Xz-w3C"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="oxz-6h-hOl" firstAttribute="centerX" secondItem="7lQ-Hi-rTl" secondAttribute="centerX" id="Aq7-oR-bFo"/>
+                <constraint firstItem="oxz-6h-hOl" firstAttribute="top" secondItem="KVe-VL-e8C" secondAttribute="bottom" id="J8w-9v-rce"/>
+                <constraint firstItem="oxz-6h-hOl" firstAttribute="width" secondItem="KVe-VL-e8C" secondAttribute="width" id="PGc-eq-fSV"/>
+                <constraint firstAttribute="bottom" secondItem="oxz-6h-hOl" secondAttribute="bottom" constant="16" id="TEN-VU-T89"/>
+                <constraint firstItem="KVe-VL-e8C" firstAttribute="top" secondItem="7lQ-Hi-rTl" secondAttribute="top" constant="44" id="hLA-QN-lR1"/>
+                <constraint firstItem="KVe-VL-e8C" firstAttribute="centerX" secondItem="7lQ-Hi-rTl" secondAttribute="centerX" id="qpa-1Q-7up"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="PGc-eq-fSV"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="219" y="427"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="title_inbox" width="390" height="159"/>
+    </resources>
+</document>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="CHBChallengeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0G-OS-DSl">
+                        <rect key="frame" x="30" y="8" width="321.5" height="83.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEN-jQ-XEB">
+                                <rect key="frame" x="8" y="8" width="305.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmo-qs-Man">
+                                <rect key="frame" x="136" y="36" width="49.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-hY-1bx">
+                                <rect key="frame" x="129.5" y="57" width="113" height="18"/>
+                                <animations/>
+                                <state key="normal" title="Left" backgroundImage="multi_inbox_btn_start-challenge">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJ0-So-vmC">
+                                <rect key="frame" x="258" y="57" width="55" height="18"/>
+                                <animations/>
+                                <state key="normal" title="RIGHT" backgroundImage="multi_inbox_btn_resign">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dJ0-So-vmC" firstAttribute="leading" secondItem="3Ih-hY-1bx" secondAttribute="trailing" constant="16" id="1x8-Gk-qaZ"/>
+                            <constraint firstItem="Pmo-qs-Man" firstAttribute="top" secondItem="BEN-jQ-XEB" secondAttribute="bottom" constant="8" id="FkH-Mo-hnw"/>
+                            <constraint firstAttribute="bottom" secondItem="dJ0-So-vmC" secondAttribute="bottom" constant="8" id="Ien-80-u5i"/>
+                            <constraint firstAttribute="trailing" secondItem="BEN-jQ-XEB" secondAttribute="trailing" constant="8" id="VYQ-O6-phF"/>
+                            <constraint firstItem="Pmo-qs-Man" firstAttribute="centerX" secondItem="BEN-jQ-XEB" secondAttribute="centerX" id="Z5h-Se-7JY"/>
+                            <constraint firstItem="3Ih-hY-1bx" firstAttribute="centerY" secondItem="dJ0-So-vmC" secondAttribute="centerY" id="gZB-4V-4rF"/>
+                            <constraint firstItem="BEN-jQ-XEB" firstAttribute="leading" secondItem="S0G-OS-DSl" secondAttribute="leading" constant="8" id="oIs-zE-Xan"/>
+                            <constraint firstItem="BEN-jQ-XEB" firstAttribute="top" secondItem="S0G-OS-DSl" secondAttribute="top" constant="8" id="rrZ-kc-AD1"/>
+                            <constraint firstAttribute="trailing" secondItem="dJ0-So-vmC" secondAttribute="trailing" constant="8" id="uPI-Em-if8"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_inbox_icon_player-request" highlightedImage="multi_inbox_icon_player-result" translatesAutoresizingMaskIntoConstraints="NO" id="reU-X3-9do">
+                        <rect key="frame" x="8" y="27" width="45" height="45"/>
+                        <animations/>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="S0G-OS-DSl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="1MQ-BO-0gi"/>
+                    <constraint firstItem="reU-X3-9do" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="27j-sm-76f"/>
+                    <constraint firstItem="S0G-OS-DSl" firstAttribute="leading" secondItem="reU-X3-9do" secondAttribute="centerX" id="Cg4-f4-TjV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="S0G-OS-DSl" secondAttribute="bottom" id="bHL-bJ-49T"/>
+                    <constraint firstItem="S0G-OS-DSl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fDi-ak-rK5"/>
+                    <constraint firstItem="reU-X3-9do" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="z7h-Fn-21L"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="avatarImageView" destination="reU-X3-9do" id="8WV-mR-Sp8"/>
+                <outlet property="leftButton" destination="3Ih-hY-1bx" id="nTL-Yh-Jq1"/>
+                <outlet property="nameLabel" destination="BEN-jQ-XEB" id="d13-8Q-LbG"/>
+                <outlet property="rightButton" destination="dJ0-So-vmC" id="UvP-Af-Kkl"/>
+                <outlet property="statusLabel" destination="Pmo-qs-Man" id="DJS-jc-FGj"/>
+            </connections>
+            <point key="canvasLocation" x="250" y="284.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="multi_inbox_btn_resign" width="55" height="16"/>
+        <image name="multi_inbox_btn_start-challenge" width="113" height="16"/>
+        <image name="multi_inbox_icon_player-request" width="45" height="45"/>
+        <image name="multi_inbox_icon_player-result" width="45" height="45"/>
+    </resources>
+</document>

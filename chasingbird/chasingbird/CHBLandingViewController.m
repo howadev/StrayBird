@@ -10,6 +10,7 @@
 #import "CHBGameKitHelper.h"
 #import "CHBAchievementsViewController.h"
 #import "CHBLeaderboardViewController.h"
+#import "CHBChallengeViewController.h"
 
 @interface CHBLandingViewController () <GKGameCenterControllerDelegate>
 
@@ -61,7 +62,8 @@
 }
 
 - (IBAction)inboxAction:(id)sender {
-
+    CHBChallengeViewController *vc = [CHBChallengeViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - GKGameCenterControllerDelegate
