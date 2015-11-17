@@ -37,6 +37,28 @@
 
 #pragma mark - UITableViewDelegate
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GKAchievement *achievement = self.achievements[indexPath.row];
+    
+    [[GKLocalPlayer localPlayer] loadFriendPlayersWithCompletionHandler:^(NSArray<GKPlayer *> * _Nullable friendPlayers, NSError * _Nullable error) {
+        if (error) {
+            return;
+        }
+        
+        UIViewController *vc = [achievement challengeComposeControllerWithMessage:@"Try to beat my achievement" players:friendPlayers completionHandler:^(UIViewController * _Nonnull composeController, BOOL didIssueChallenge, NSArray<NSString *> * _Nullable sentPlayerIDs) {
+            [composeController dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        }];
+        
+        [self.achievementDelegate achievementsTableViewDidGetViewController:vc];
+    }];
+    
+    
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

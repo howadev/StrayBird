@@ -10,7 +10,7 @@
 #import "CHBGameKitHelper.h"
 #import "CHBAchievementsTableView.h"
 
-@interface CHBAchievementsViewController ()
+@interface CHBAchievementsViewController () <CHBAchievementsTableViewDelegate>
 @property (weak, nonatomic) IBOutlet CHBAchievementsTableView *tableView;
 @end
 
@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.achievementDelegate = self;
     
     [self setupMultiPlayersBackground];
     [self setupBackButton];
@@ -35,6 +37,12 @@
             self.tableView.achievements = achievements;
             [self.tableView reloadData];
         }
+    }];
+}
+
+- (void)achievementsTableViewDidGetViewController:(UIViewController*)viewController {
+    [self presentViewController:viewController animated:YES completion:^{
+        
     }];
 }
 

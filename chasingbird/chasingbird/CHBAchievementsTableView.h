@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CHBAchievementsTableViewDelegate <NSObject>
+- (void)achievementsTableViewDidGetViewController:(UIViewController*)viewController;
+@end
+
 @interface CHBAchievementsTableView : UITableView
+@property (nonatomic, weak) id <CHBAchievementsTableViewDelegate> achievementDelegate;
 @property (nonatomic, retain) NSArray *achievements;
 @end
