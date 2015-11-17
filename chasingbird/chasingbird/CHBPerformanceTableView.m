@@ -15,14 +15,6 @@
 
 @implementation CHBPerformanceTableView
 
-//- (instancetype)init {
-//    self = [super init];
-//    if (self) {
-//        [self initialize];
-//    }
-//    return self;
-//}
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     

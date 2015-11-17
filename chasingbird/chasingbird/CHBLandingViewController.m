@@ -12,6 +12,7 @@
 #import "CHBLeaderboardViewController.h"
 #import "CHBChallengeViewController.h"
 #import "CHBMapViewController.h"
+#import "CHBPerformanceViewController.h"
 
 @interface CHBLandingViewController () <GKGameCenterControllerDelegate>
 
@@ -47,7 +48,8 @@
 }
 
 - (IBAction)performanceAction:(id)sender {
-    
+    CHBPerformanceViewController *vc = [CHBPerformanceViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)leaderBoardAction:(id)sender {

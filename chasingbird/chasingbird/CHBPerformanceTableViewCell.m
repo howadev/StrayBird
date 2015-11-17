@@ -2,7 +2,7 @@
 //  CHBPerformanceTableViewCell.m
 //  chasingbird
 //
-//  Created by Rock Lee on 2015-10-18.
+//  Created by Rock Lee on 2015-11-16.
 //  Copyright © 2015 howalee. All rights reserved.
 //
 
@@ -12,7 +12,6 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
