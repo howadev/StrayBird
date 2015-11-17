@@ -25,7 +25,7 @@
     self.clipsToBounds = YES;
     self.backgroundColor = [UIColor clearColor];
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.rowHeight = 30.0;
+    self.rowHeight = 50.0;
     self.scrollEnabled = NO;
     
     [self registerNib:[UINib nibWithNibName:@"CHBPerformanceTableViewCell" bundle:nil] forCellReuseIdentifier:NSStringFromClass([CHBPerformanceTableViewCell class])];

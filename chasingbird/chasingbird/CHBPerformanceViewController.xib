@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBPerformanceViewController">
             <connections>
+                <outlet property="tableView" destination="deW-Tt-fHZ" id="HDd-hc-maw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +19,23 @@
                     <rect key="frame" x="105" y="44" width="390" height="159"/>
                     <animations/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deW-Tt-fHZ" customClass="CHBPerformanceTableView">
+                    <rect key="frame" x="150" y="211" width="300" height="373"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="qMr-tQ-ggF"/>
+                    </constraints>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="deW-Tt-fHZ" firstAttribute="top" secondItem="7kt-6o-OLI" secondAttribute="bottom" constant="8" id="2yo-ML-oaQ"/>
                 <constraint firstItem="7kt-6o-OLI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D2L-vC-vo6"/>
                 <constraint firstItem="7kt-6o-OLI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="k4P-B6-9q0"/>
+                <constraint firstItem="deW-Tt-fHZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yiY-g5-axS"/>
+                <constraint firstAttribute="bottom" secondItem="deW-Tt-fHZ" secondAttribute="bottom" constant="16" id="zMH-fV-9iT"/>
             </constraints>
             <point key="canvasLocation" x="370" y="239"/>
         </view>

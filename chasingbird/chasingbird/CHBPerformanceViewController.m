@@ -7,8 +7,10 @@
 //
 
 #import "CHBPerformanceViewController.h"
+#import "CHBPerformanceTableView.h"
 
 @interface CHBPerformanceViewController ()
+@property (weak, nonatomic) IBOutlet CHBPerformanceTableView *tableView;
 
 @end
 

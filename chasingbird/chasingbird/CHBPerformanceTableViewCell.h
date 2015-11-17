@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CHBPerformanceTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *identifierLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 
 @end

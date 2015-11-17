@@ -41,6 +41,7 @@
 		64A8F5751BFAD8D400480B47 /* CHBPerformanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A8F5731BFAD8D300480B47 /* CHBPerformanceViewController.xib */; };
 		64A8F57F1BFADFD000480B47 /* CHBPerformanceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A8F57D1BFADFD000480B47 /* CHBPerformanceTableViewCell.m */; };
 		64A8F5801BFADFD000480B47 /* CHBPerformanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A8F57E1BFADFD000480B47 /* CHBPerformanceTableViewCell.xib */; };
+		64A8F5831BFAE63400480B47 /* CHBPerformanceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A8F5821BFAE63400480B47 /* CHBPerformanceHelper.m */; };
 		64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B4CACF1BD2BD4700D5C5A5 /* CHBIntroViewController.m */; };
 		64B4CAD21BD2BD4700D5C5A5 /* CHBIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B4CAD01BD2BD4700D5C5A5 /* CHBIntroViewController.xib */; };
 		64D93BDC1BD3FE5B006AE5C2 /* CHBPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D93BDB1BD3FE5B006AE5C2 /* CHBPerformance.m */; };
@@ -172,6 +173,8 @@
 		64A8F57C1BFADFD000480B47 /* CHBPerformanceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceTableViewCell.h; sourceTree = "<group>"; };
 		64A8F57D1BFADFD000480B47 /* CHBPerformanceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPerformanceTableViewCell.m; sourceTree = "<group>"; };
 		64A8F57E1BFADFD000480B47 /* CHBPerformanceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBPerformanceTableViewCell.xib; sourceTree = "<group>"; };
+		64A8F5811BFAE63400480B47 /* CHBPerformanceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceHelper.h; sourceTree = "<group>"; };
+		64A8F5821BFAE63400480B47 /* CHBPerformanceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPerformanceHelper.m; sourceTree = "<group>"; };
 		64B4CACE1BD2BD4700D5C5A5 /* CHBIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBIntroViewController.h; sourceTree = "<group>"; };
 		64B4CACF1BD2BD4700D5C5A5 /* CHBIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBIntroViewController.m; sourceTree = "<group>"; };
 		64B4CAD01BD2BD4700D5C5A5 /* CHBIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBIntroViewController.xib; sourceTree = "<group>"; };
@@ -448,6 +451,8 @@
 				891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */,
 				649C15DA1BAD8A9700420ED2 /* CHBHelpers.h */,
 				649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */,
+				64A8F5811BFAE63400480B47 /* CHBPerformanceHelper.h */,
+				64A8F5821BFAE63400480B47 /* CHBPerformanceHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -783,6 +788,7 @@
 				8985C2251B924B1000FDA0B0 /* CHBGameScene.m in Sources */,
 				64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */,
 				64D93BDC1BD3FE5B006AE5C2 /* CHBPerformance.m in Sources */,
+				64A8F5831BFAE63400480B47 /* CHBPerformanceHelper.m in Sources */,
 				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
