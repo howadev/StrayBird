@@ -26,14 +26,6 @@
                     <rect key="frame" x="0.0" y="546" width="600" height="54"/>
                     <animations/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-xN-LMf">
-                    <rect key="frame" x="164" y="279" width="271" height="42"/>
-                    <animations/>
-                    <state key="normal" image="btn_invite-friend"/>
-                    <connections>
-                        <action selector="inviteFriendsAction:" destination="-1" eventType="touchUpInside" id="ymq-wC-4fS"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ML5-y9-F9N">
                     <rect key="frame" x="16" y="523" width="61" height="61"/>
                     <animations/>
@@ -66,6 +58,17 @@
                         <action selector="inboxAction:" destination="-1" eventType="touchUpInside" id="oyv-yD-acz"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuj-qc-aWx">
+                    <rect key="frame" x="230" y="277" width="140" height="46"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <state key="normal" title="Start Game">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="startGameAction:" destination="-1" eventType="touchUpInside" id="Xd7-eh-RC0"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -74,19 +77,19 @@
                 <constraint firstAttribute="bottom" secondItem="Gjo-Oo-8Oh" secondAttribute="bottom" id="2Pd-j7-KdX"/>
                 <constraint firstAttribute="trailing" secondItem="wwI-jg-td6" secondAttribute="trailing" id="5e7-dR-s6l"/>
                 <constraint firstItem="ML5-y9-F9N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="64c-nT-AnT"/>
-                <constraint firstItem="BSW-xN-LMf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6zz-D0-gQH"/>
-                <constraint firstItem="BSW-xN-LMf" firstAttribute="centerX" secondItem="hAV-5f-lOX" secondAttribute="centerX" id="93n-0z-BFw"/>
+                <constraint firstItem="xuj-qc-aWx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7hO-b2-rUy"/>
                 <constraint firstItem="wwI-jg-td6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9AU-lk-gj6"/>
                 <constraint firstItem="xtz-wa-wam" firstAttribute="leading" secondItem="ML5-y9-F9N" secondAttribute="trailing" constant="16" id="AOx-PV-p6Z"/>
+                <constraint firstItem="hAV-5f-lOX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BUQ-cj-xWQ"/>
                 <constraint firstAttribute="bottom" secondItem="wwI-jg-td6" secondAttribute="bottom" id="C0O-un-6YI"/>
-                <constraint firstItem="BSW-xN-LMf" firstAttribute="top" secondItem="hAV-5f-lOX" secondAttribute="bottom" constant="36" id="C5g-oj-1Mn"/>
                 <constraint firstAttribute="bottom" secondItem="dyK-cV-ltf" secondAttribute="bottom" constant="16" id="DbR-NB-fGZ"/>
                 <constraint firstAttribute="trailing" secondItem="Gjo-Oo-8Oh" secondAttribute="trailing" id="GJD-6G-Yc6"/>
                 <constraint firstItem="wwI-jg-td6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Hw1-Ef-ube"/>
                 <constraint firstItem="Gjo-Oo-8Oh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JOr-ks-pms"/>
-                <constraint firstItem="BSW-xN-LMf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XaS-I2-b5b"/>
+                <constraint firstItem="xuj-qc-aWx" firstAttribute="top" secondItem="hAV-5f-lOX" secondAttribute="bottom" constant="34" id="l0U-e0-72r"/>
                 <constraint firstItem="dyK-cV-ltf" firstAttribute="leading" secondItem="xtz-wa-wam" secondAttribute="trailing" constant="16" id="l7U-8a-drN"/>
                 <constraint firstAttribute="trailing" secondItem="Kto-bj-fl9" secondAttribute="trailing" constant="16" id="nQI-wy-MMp"/>
+                <constraint firstItem="xuj-qc-aWx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oRJ-x2-bcd"/>
                 <constraint firstAttribute="bottom" secondItem="xtz-wa-wam" secondAttribute="bottom" constant="16" id="qOp-Fo-MmK"/>
                 <constraint firstAttribute="bottom" secondItem="Kto-bj-fl9" secondAttribute="bottom" constant="16" id="v4s-8r-dig"/>
             </constraints>
@@ -95,7 +98,6 @@
     <resources>
         <image name="btn_achievements" width="61" height="61"/>
         <image name="btn_inbox" width="61" height="61"/>
-        <image name="btn_invite-friend" width="271" height="42"/>
         <image name="btn_leaderboard" width="61" height="61"/>
         <image name="btn_performance" width="61" height="61"/>
         <image name="landing_dashboard" width="414" height="54"/>

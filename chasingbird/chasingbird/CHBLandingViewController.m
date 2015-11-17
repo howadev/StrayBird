@@ -11,6 +11,7 @@
 #import "CHBAchievementsViewController.h"
 #import "CHBLeaderboardViewController.h"
 #import "CHBChallengeViewController.h"
+#import "CHBMapViewController.h"
 
 @interface CHBLandingViewController () <GKGameCenterControllerDelegate>
 
@@ -40,8 +41,9 @@
 
 #pragma mark - Actions
 
-- (IBAction)inviteFriendsAction:(id)sender {
-
+- (IBAction)startGameAction:(id)sender {
+    CHBMapViewController *vc = [CHBMapViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)performanceAction:(id)sender {
