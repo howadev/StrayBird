@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GKAchievement;
 
 @protocol CHBAchievementsTableViewDelegate <NSObject>
-- (void)achievementsTableViewDidGetViewController:(UIViewController*)viewController;
+- (void)achievementsTableView:(UITableView*)tableView didSelectAchievement:(GKAchievement*)achievement;
 @end
 
 @interface CHBAchievementsTableView : UITableView

@@ -40,9 +40,23 @@
     }];
 }
 
-- (void)achievementsTableViewDidGetViewController:(UIViewController*)viewController {
-    [self presentViewController:viewController animated:YES completion:^{
+#pragma mark - CHBAchievementsTableViewDelegate
+
+- (void)achievementsTableView:(UITableView *)tableView didSelectAchievement:(GKAchievement *)achievement {
+    [[GKLocalPlayer localPlayer] loadFriendPlayersWithCompletionHandler:^(NSArray<GKPlayer *> * _Nullable friendPlayers, NSError * _Nullable error) {
+        if (error) {
+            return;
+        }
         
+        UIViewController *vc = [achievement challengeComposeControllerWithMessage:@"Try to beat my achievement" players:friendPlayers completionHandler:^(UIViewController * _Nonnull composeController, BOOL didIssueChallenge, NSArray<NSString *> * _Nullable sentPlayerIDs) {
+            [composeController dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        }];
+        
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
     }];
 }
 
