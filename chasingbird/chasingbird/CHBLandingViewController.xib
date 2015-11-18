@@ -58,15 +58,12 @@
                         <action selector="inboxAction:" destination="-1" eventType="touchUpInside" id="oyv-yD-acz"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuj-qc-aWx">
-                    <rect key="frame" x="230" y="277" width="140" height="46"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-ng-thL">
+                    <rect key="frame" x="211.5" y="279" width="177" height="42"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <state key="normal" title="Start Game">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
+                    <state key="normal" image="btn_play_active"/>
                     <connections>
-                        <action selector="startGameAction:" destination="-1" eventType="touchUpInside" id="Xd7-eh-RC0"/>
+                        <action selector="startGameAction:" destination="-1" eventType="touchUpInside" id="f27-qD-cId"/>
                     </connections>
                 </button>
             </subviews>
@@ -77,8 +74,8 @@
                 <constraint firstAttribute="bottom" secondItem="Gjo-Oo-8Oh" secondAttribute="bottom" id="2Pd-j7-KdX"/>
                 <constraint firstAttribute="trailing" secondItem="wwI-jg-td6" secondAttribute="trailing" id="5e7-dR-s6l"/>
                 <constraint firstItem="ML5-y9-F9N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="64c-nT-AnT"/>
-                <constraint firstItem="xuj-qc-aWx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7hO-b2-rUy"/>
                 <constraint firstItem="wwI-jg-td6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9AU-lk-gj6"/>
+                <constraint firstItem="Sw6-ng-thL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9JI-MX-CpJ"/>
                 <constraint firstItem="xtz-wa-wam" firstAttribute="leading" secondItem="ML5-y9-F9N" secondAttribute="trailing" constant="16" id="AOx-PV-p6Z"/>
                 <constraint firstItem="hAV-5f-lOX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BUQ-cj-xWQ"/>
                 <constraint firstAttribute="bottom" secondItem="wwI-jg-td6" secondAttribute="bottom" id="C0O-un-6YI"/>
@@ -86,12 +83,12 @@
                 <constraint firstAttribute="trailing" secondItem="Gjo-Oo-8Oh" secondAttribute="trailing" id="GJD-6G-Yc6"/>
                 <constraint firstItem="wwI-jg-td6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Hw1-Ef-ube"/>
                 <constraint firstItem="Gjo-Oo-8Oh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JOr-ks-pms"/>
-                <constraint firstItem="xuj-qc-aWx" firstAttribute="top" secondItem="hAV-5f-lOX" secondAttribute="bottom" constant="34" id="l0U-e0-72r"/>
+                <constraint firstItem="Sw6-ng-thL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Q0J-fC-WGk"/>
                 <constraint firstItem="dyK-cV-ltf" firstAttribute="leading" secondItem="xtz-wa-wam" secondAttribute="trailing" constant="16" id="l7U-8a-drN"/>
                 <constraint firstAttribute="trailing" secondItem="Kto-bj-fl9" secondAttribute="trailing" constant="16" id="nQI-wy-MMp"/>
-                <constraint firstItem="xuj-qc-aWx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oRJ-x2-bcd"/>
                 <constraint firstAttribute="bottom" secondItem="xtz-wa-wam" secondAttribute="bottom" constant="16" id="qOp-Fo-MmK"/>
                 <constraint firstAttribute="bottom" secondItem="Kto-bj-fl9" secondAttribute="bottom" constant="16" id="v4s-8r-dig"/>
+                <constraint firstItem="Sw6-ng-thL" firstAttribute="top" secondItem="hAV-5f-lOX" secondAttribute="bottom" constant="36" id="xve-1h-YKA"/>
             </constraints>
         </view>
     </objects>
@@ -100,6 +97,7 @@
         <image name="btn_inbox" width="61" height="61"/>
         <image name="btn_leaderboard" width="61" height="61"/>
         <image name="btn_performance" width="61" height="61"/>
+        <image name="btn_play_active" width="177" height="42"/>
         <image name="landing_dashboard" width="414" height="54"/>
         <image name="multi_background" width="414" height="736"/>
         <image name="multi_landing_birds" width="218" height="218"/>
