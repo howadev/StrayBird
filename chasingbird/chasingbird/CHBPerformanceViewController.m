@@ -11,7 +11,6 @@
 
 @interface CHBPerformanceViewController ()
 @property (weak, nonatomic) IBOutlet CHBPerformanceTableView *tableView;
-
 @end
 
 @implementation CHBPerformanceViewController

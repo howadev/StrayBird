@@ -8,33 +8,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="GwU-uD-pkV" customClass="CHBPerformanceTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="GwU-uD-pkV" customClass="CHBPerformanceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GwU-uD-pkV" id="d4a-Ep-BTX">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="49.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="360" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="multi_performance-item" translatesAutoresizingMaskIntoConstraints="NO" id="kjE-Wf-ETn">
-                        <rect key="frame" x="27" y="4" width="317" height="42"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_performance-item" translatesAutoresizingMaskIntoConstraints="NO" id="kjE-Wf-ETn">
+                        <rect key="frame" x="27" y="8" width="317" height="53.5"/>
                         <animations/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_icon_calories" translatesAutoresizingMaskIntoConstraints="NO" id="ZiF-33-K6a">
-                        <rect key="frame" x="8" y="5" width="39" height="39"/>
+                        <rect key="frame" x="8" y="15.5" width="39" height="39"/>
                         <animations/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identifier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK7-5V-a6d">
-                        <rect key="frame" x="257" y="6" width="79" height="24"/>
+                        <rect key="frame" x="257" y="8" width="79" height="24"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfH-le-5PC">
-                        <rect key="frame" x="298" y="25" width="38" height="18"/>
+                        <rect key="frame" x="286.5" y="37.5" width="49.5" height="24"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -44,12 +43,16 @@
                     <constraint firstItem="NK7-5V-a6d" firstAttribute="baseline" secondItem="d4a-Ep-BTX" secondAttribute="centerY" id="0iV-l9-XsA"/>
                     <constraint firstItem="kjE-Wf-ETn" firstAttribute="leading" secondItem="ZiF-33-K6a" secondAttribute="centerX" id="2sg-LF-mCe"/>
                     <constraint firstItem="kjE-Wf-ETn" firstAttribute="trailing" secondItem="NK7-5V-a6d" secondAttribute="trailing" constant="8" id="NFJ-KR-dKE"/>
+                    <constraint firstItem="NK7-5V-a6d" firstAttribute="top" secondItem="d4a-Ep-BTX" secondAttribute="top" constant="8" id="NlL-z6-2hs"/>
                     <constraint firstItem="ZiF-33-K6a" firstAttribute="centerY" secondItem="d4a-Ep-BTX" secondAttribute="centerY" id="SKc-93-lsV"/>
+                    <constraint firstAttribute="bottom" secondItem="NfH-le-5PC" secondAttribute="bottom" constant="8" id="Sio-VJ-geg"/>
                     <constraint firstItem="NfH-le-5PC" firstAttribute="bottom" secondItem="kjE-Wf-ETn" secondAttribute="bottom" id="XIb-iY-GBJ"/>
                     <constraint firstItem="NK7-5V-a6d" firstAttribute="top" secondItem="kjE-Wf-ETn" secondAttribute="top" id="d9S-4P-5v9"/>
                     <constraint firstItem="kjE-Wf-ETn" firstAttribute="centerY" secondItem="d4a-Ep-BTX" secondAttribute="centerY" id="gkz-J6-mrB"/>
                     <constraint firstItem="NfH-le-5PC" firstAttribute="top" secondItem="d4a-Ep-BTX" secondAttribute="centerY" id="lao-ew-C3M"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kjE-Wf-ETn" secondAttribute="trailing" constant="8" id="m8h-Na-197"/>
+                    <constraint firstAttribute="bottom" secondItem="kjE-Wf-ETn" secondAttribute="bottom" constant="8" id="mhr-aU-G1a"/>
+                    <constraint firstItem="kjE-Wf-ETn" firstAttribute="top" secondItem="d4a-Ep-BTX" secondAttribute="top" constant="8" id="ou3-0g-38j"/>
                     <constraint firstItem="NfH-le-5PC" firstAttribute="top" secondItem="NK7-5V-a6d" secondAttribute="bottom" constant="-6" id="rw5-XS-dMh"/>
                     <constraint firstItem="NfH-le-5PC" firstAttribute="trailing" secondItem="NK7-5V-a6d" secondAttribute="trailing" id="tNR-oc-95a"/>
                     <constraint firstItem="NK7-5V-a6d" firstAttribute="leading" secondItem="ZiF-33-K6a" secondAttribute="trailing" id="u3t-S0-TZg"/>
@@ -57,9 +60,12 @@
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="gkz-J6-mrB"/>
+                        <exclude reference="0iV-l9-XsA"/>
                         <exclude reference="d9S-4P-5v9"/>
                         <exclude reference="u3t-S0-TZg"/>
                         <exclude reference="XIb-iY-GBJ"/>
+                        <exclude reference="lao-ew-C3M"/>
                         <exclude reference="rw5-XS-dMh"/>
                     </mask>
                 </variation>

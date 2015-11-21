@@ -535,7 +535,7 @@
     self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.performance.calories];
     self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/MIN", self.performance.birdSpeed];
     
-    self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02ld:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
+    self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02lu:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
     
     if ((NSUInteger)(self.performance.elapsedTime) % 30 == 0) {
         switch (self.level) {

@@ -55,7 +55,7 @@
 }
 
 - (void)setTimerLabelWithSeconds:(NSUInteger)seconds {
-    self.timerLabel.text = [NSString stringWithFormat:@"%ld S", seconds];
+    self.timerLabel.text = [NSString stringWithFormat:@"%ld S", (unsigned long)seconds];
 }
 
 @end
