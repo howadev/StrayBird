@@ -61,13 +61,13 @@
     CHBAchievementsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CHBAchievementsTableViewCell class]) forIndexPath:indexPath];
     GKAchievementDescription *description = self.descriptions[indexPath.row];
     cell.identifierLabel.text = description.title;
-    cell.progressLabel.text = nil;
+    cell.progressLabel.text = description.unachievedDescription;
     
     if (self.achievements) {
         for (GKAchievement *achievement in self.achievements) {
             if ([achievement.identifier isEqualToString:description.identifier]) {
                 cell.badgeImageView.highlighted = achievement.completed;
-                cell.progressLabel.text = [NSString stringWithFormat:@"%.0f / 100", achievement.percentComplete];
+                cell.progressLabel.text = description.achievedDescription;
             }
         }
     }

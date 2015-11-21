@@ -30,32 +30,26 @@
                                 <rect key="frame" x="8" y="8" width="204" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_achievements-status_incomplete" highlightedImage="multi_achievements-status_complete" translatesAutoresizingMaskIntoConstraints="NO" id="N5x-LS-Xsb">
-                                <rect key="frame" x="53" y="41" width="113" height="16"/>
-                                <animations/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROGRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZv-xu-SgW">
-                                <rect key="frame" x="70" y="40" width="78.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROGRESS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZv-xu-SgW">
+                                <rect key="frame" x="8" y="39" width="204" height="18"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="FZv-xu-SgW" secondAttribute="bottom" constant="8" id="6Bw-Nx-IlN"/>
                             <constraint firstItem="8L4-oe-4II" firstAttribute="top" secondItem="cgm-sD-BAg" secondAttribute="top" constant="8" id="8iz-k5-1yA"/>
                             <constraint firstAttribute="width" constant="220" id="9Kc-jU-yPe"/>
-                            <constraint firstItem="FZv-xu-SgW" firstAttribute="centerY" secondItem="N5x-LS-Xsb" secondAttribute="centerY" id="Afu-0R-cyV"/>
-                            <constraint firstItem="FZv-xu-SgW" firstAttribute="centerX" secondItem="N5x-LS-Xsb" secondAttribute="centerX" id="YBC-fX-zJc"/>
+                            <constraint firstItem="FZv-xu-SgW" firstAttribute="leading" secondItem="cgm-sD-BAg" secondAttribute="leading" constant="8" id="WXq-p6-2Wr"/>
+                            <constraint firstAttribute="trailing" secondItem="FZv-xu-SgW" secondAttribute="trailing" constant="8" id="hZD-XQ-Ift"/>
                             <constraint firstAttribute="trailing" secondItem="8L4-oe-4II" secondAttribute="trailing" constant="8" id="hoq-pl-goT"/>
-                            <constraint firstItem="N5x-LS-Xsb" firstAttribute="centerX" secondItem="cgm-sD-BAg" secondAttribute="centerX" id="xGF-X6-cO8"/>
                             <constraint firstItem="8L4-oe-4II" firstAttribute="leading" secondItem="cgm-sD-BAg" secondAttribute="leading" constant="8" id="xMR-TR-Yf5"/>
-                            <constraint firstAttribute="bottom" secondItem="N5x-LS-Xsb" secondAttribute="bottom" constant="8" id="yNJ-wf-ldG"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -84,8 +78,6 @@
     </objects>
     <resources>
         <image name="multi_achievements-item" width="211" height="65"/>
-        <image name="multi_achievements-status_complete" width="113" height="16"/>
-        <image name="multi_achievements-status_incomplete" width="113" height="16"/>
         <image name="multi_icon_badge_complete" width="54" height="70"/>
         <image name="multi_icon_badge_incomplete" width="54" height="70"/>
     </resources>
