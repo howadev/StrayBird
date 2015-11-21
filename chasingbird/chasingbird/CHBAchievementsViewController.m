@@ -29,9 +29,19 @@
 
 - (void)loadAchievements
 {
-    [GKAchievement loadAchievementsWithCompletionHandler:^(NSArray *achievements, NSError *error) {
+    [GKAchievementDescription loadAchievementDescriptionsWithCompletionHandler:^(NSArray<GKAchievementDescription *> * _Nullable descriptions, NSError * _Nullable error) {
         if (error != nil) {
-            NSLog(@"Error in loading achievements: %@", error);
+            NSLog(@"Error in loading achievement description: %@", error);
+        }
+        if (descriptions != nil) {
+            self.tableView.descriptions = descriptions;
+            [self.tableView reloadData];
+        }
+    }];
+    
+    [GKAchievement loadAchievementsWithCompletionHandler:^(NSArray<GKAchievement *> *achievements, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Error in loading achievement: %@", error);
         }
         if (achievements != nil) {
             self.tableView.achievements = achievements;

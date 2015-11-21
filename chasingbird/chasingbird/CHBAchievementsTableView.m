@@ -23,7 +23,7 @@
 }
 
 - (void)initialize {
-    self.clipsToBounds = YES;
+    self.clipsToBounds = NO;
     self.backgroundColor = [UIColor clearColor];
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.rowHeight = 86.0;
@@ -40,23 +40,38 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    GKAchievement *achievement = self.achievements[indexPath.row];
+    GKAchievementDescription *description = self.descriptions[indexPath.row];
     
-    [self.achievementDelegate achievementsTableView:self didSelectAchievement:achievement];
+    if (self.achievements) {
+        for (GKAchievement *achievement in self.achievements) {
+            if ([achievement.identifier isEqualToString:description.identifier]) {
+                [self.achievementDelegate achievementsTableView:self didSelectAchievement:achievement];
+            }
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.achievements.count;
+    return self.descriptions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CHBAchievementsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CHBAchievementsTableViewCell class]) forIndexPath:indexPath];
-    GKAchievement *achievement = self.achievements[indexPath.row];
-    cell.badgeImageView.highlighted = achievement.completed;
-    cell.identifierLabel.text = achievement.identifier;
-    cell.progressLabel.text = [NSString stringWithFormat:@"%.0f / 100", achievement.percentComplete];
+    GKAchievementDescription *description = self.descriptions[indexPath.row];
+    cell.identifierLabel.text = description.title;
+    cell.progressLabel.text = nil;
+    
+    if (self.achievements) {
+        for (GKAchievement *achievement in self.achievements) {
+            if ([achievement.identifier isEqualToString:description.identifier]) {
+                cell.badgeImageView.highlighted = achievement.completed;
+                cell.progressLabel.text = [NSString stringWithFormat:@"%.0f / 100", achievement.percentComplete];
+            }
+        }
+    }
+    
     return cell;
 }
 

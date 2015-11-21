@@ -15,18 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEa-wl-VU2" customClass="CHBAchievementsTableView">
+                    <rect key="frame" x="32" y="187" width="536" height="397"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="nxd-sH-0kn"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="nxd-sH-0kn"/>
+                        </mask>
+                    </variation>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_achievements" translatesAutoresizingMaskIntoConstraints="NO" id="Fkc-Ew-hBU">
                     <rect key="frame" x="105" y="44" width="390" height="159"/>
                     <animations/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEa-wl-VU2" customClass="CHBAchievementsTableView">
-                    <rect key="frame" x="160" y="203" width="280" height="381"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="280" id="nxd-sH-0kn"/>
-                    </constraints>
-                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -34,9 +39,11 @@
                 <constraint firstItem="oEa-wl-VU2" firstAttribute="width" secondItem="Fkc-Ew-hBU" secondAttribute="width" id="64Z-Y5-ujv"/>
                 <constraint firstItem="Fkc-Ew-hBU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="HVr-E5-lL6"/>
                 <constraint firstItem="Fkc-Ew-hBU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MFq-Lx-Kgk"/>
+                <constraint firstItem="oEa-wl-VU2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="PBm-ja-ZuB"/>
                 <constraint firstAttribute="bottom" secondItem="oEa-wl-VU2" secondAttribute="bottom" constant="16" id="YZs-8f-hPT"/>
                 <constraint firstItem="oEa-wl-VU2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a3n-Es-7SR"/>
-                <constraint firstItem="oEa-wl-VU2" firstAttribute="top" secondItem="Fkc-Ew-hBU" secondAttribute="bottom" id="qkd-Kw-eRb"/>
+                <constraint firstItem="Fkc-Ew-hBU" firstAttribute="bottom" secondItem="oEa-wl-VU2" secondAttribute="top" constant="16" id="qkd-Kw-eRb"/>
+                <constraint firstAttribute="trailing" secondItem="oEa-wl-VU2" secondAttribute="trailing" constant="32" id="zuB-gJ-Qc3"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">

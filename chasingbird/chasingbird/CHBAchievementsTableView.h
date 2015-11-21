@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GKAchievement;
+@class GKAchievement, GKAchievementDescription;
 
 @protocol CHBAchievementsTableViewDelegate <NSObject>
 - (void)achievementsTableView:(UITableView*)tableView didSelectAchievement:(GKAchievement*)achievement;
@@ -15,5 +15,6 @@
 
 @interface CHBAchievementsTableView : UITableView
 @property (nonatomic, weak) id <CHBAchievementsTableViewDelegate> achievementDelegate;
-@property (nonatomic, retain) NSArray *achievements;
+@property (nonatomic, retain) NSArray<GKAchievementDescription*> *descriptions;
+@property (nonatomic, retain) NSArray<GKAchievement*> *achievements;
 @end

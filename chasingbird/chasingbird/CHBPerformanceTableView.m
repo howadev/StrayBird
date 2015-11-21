@@ -22,7 +22,7 @@
 }
 
 - (void)initialize {
-    self.clipsToBounds = YES;
+    self.clipsToBounds = NO;
     self.backgroundColor = [UIColor clearColor];
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.rowHeight = 50.0;
