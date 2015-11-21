@@ -11,6 +11,7 @@
 #import "CHBMapLevelView.h"
 #import "UIView+AutoLayoutHelpers.h"
 #import "CHBIntroViewController.h"
+#import "CHBPerformanceHelper.h"
 
 @interface CHBMapViewController ()
 @property (nonatomic, retain) CHBMapLevelView *firstLevelView;
@@ -28,17 +29,14 @@
     [self.view addSubview:backgroundView];
     
     self.firstLevelView = [CHBMapLevelView new];
-    self.firstLevelView.starMode = CHBMapLevelViewStarModeThree;
     self.firstLevelView.level = CHBGameLevelFirst;
     [self.view addSubview:self.firstLevelView];
     
     self.secondLevelView = [CHBMapLevelView new];
-    self.secondLevelView.starMode = CHBMapLevelViewStarModeNone;
     self.secondLevelView.level = CHBGameLevelSecond;
     [self.view addSubview:self.secondLevelView];
     
     self.thirdLevelView = [CHBMapLevelView new];
-    self.thirdLevelView.starMode = CHBMapLevelViewStarModeInactive;
     self.thirdLevelView.level = CHBGameLevelThird;
     [self.view addSubview:self.thirdLevelView];
     
@@ -68,21 +66,27 @@
 #pragma mark - UI Actions
 
 - (void)firstLevelViewDidTap:(id)sender {
-    CHBIntroViewController *vc = [CHBIntroViewController new];
-    vc.level = CHBGameLevelFirst;
-    [self.navigationController pushViewController:vc animated:YES];
+    if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelFirst]) {
+        CHBIntroViewController *vc = [CHBIntroViewController new];
+        vc.level = CHBGameLevelFirst;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)secondLevelViewDidTap:(id)sender {
-    CHBIntroViewController *vc = [CHBIntroViewController new];
-    vc.level = CHBGameLevelSecond;
-    [self.navigationController pushViewController:vc animated:YES];
+    if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelSecond]) {
+        CHBIntroViewController *vc = [CHBIntroViewController new];
+        vc.level = CHBGameLevelSecond;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)thirdLevelViewDidTap:(id)sender {
-    CHBIntroViewController *vc = [CHBIntroViewController new];
-    vc.level = CHBGameLevelThird;
-    [self.navigationController pushViewController:vc animated:YES];
+    if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelThird]) {
+        CHBIntroViewController *vc = [CHBIntroViewController new];
+        vc.level = CHBGameLevelThird;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end

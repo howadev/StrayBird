@@ -37,7 +37,7 @@
     //
 }
 
-#pragma mark - Metrics
+#pragma mark - Overall
 
 - (NSInteger)points {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"points"];
@@ -79,12 +79,96 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+#pragma mark - Maximum
+
 - (NSInteger)speed {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"speed"];
 }
 - (void)setSpeed:(NSInteger)speed {
     [[NSUserDefaults standardUserDefaults] setInteger:speed forKey:@"speed"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSInteger)firstLevelPoints {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"firstLevelPoints"];
+}
+- (void)setFirstLevelpoints:(NSInteger)firstLevelPoints {
+    [[NSUserDefaults standardUserDefaults] setInteger:firstLevelPoints forKey:@"firstLevelPoints"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSInteger)secondLevelPoints {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"secondLevelPoints"];
+}
+- (void)setSecondLevelPoints:(NSInteger)secondLevelPoints {
+    [[NSUserDefaults standardUserDefaults] setInteger:secondLevelPoints forKey:@"secondLevelPoints"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSInteger)thirdLevelPoints {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"thirdLevelPoints"];
+}
+- (void)setThirdLevelPoints:(NSInteger)thirdLevelPoints {
+    [[NSUserDefaults standardUserDefaults] setInteger:thirdLevelPoints forKey:@"thirdLevelPoints"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark - Convenience
+
+- (CHBMapLevelViewsStarMode)starModeWithGameLevel:(CHBGameLevel)level {
+    if ([self gameLevelShouldActivate:level] == NO) {
+        return CHBMapLevelViewStarModeInactive;
+    }
+    
+    NSInteger points = 0;
+    switch (level) {
+        case CHBGameLevelFirst:
+            points = [self firstLevelPoints];
+            break;
+        case CHBGameLevelSecond: {
+            points = [self secondLevelPoints];
+            break;
+        }
+        case CHBGameLevelThird:
+            points = [self thirdLevelPoints];
+            break;
+    }
+    return [self starModeWithPoints:points];
+}
+
+- (BOOL)gameLevelShouldActivate:(CHBGameLevel)level {
+    switch (level) {
+        case CHBGameLevelFirst:
+            return YES;
+        case CHBGameLevelSecond: {
+            CHBMapLevelViewsStarMode starMode = [self starModeWithGameLevel:CHBGameLevelFirst];
+            if (starMode == CHBMapLevelViewStarModeInactive || starMode == CHBMapLevelViewStarModeNone) {
+                return NO;
+            } else {
+                return YES;
+            }
+        }
+        case CHBGameLevelThird: {
+            CHBMapLevelViewsStarMode starMode = [self starModeWithGameLevel:CHBGameLevelSecond];
+            if (starMode == CHBMapLevelViewStarModeInactive || starMode == CHBMapLevelViewStarModeNone) {
+                return NO;
+            } else {
+                return YES;
+            }
+        }
+    }
+}
+
+- (CHBMapLevelViewsStarMode)starModeWithPoints:(NSInteger)points {
+    if (points < 100) {
+        return CHBMapLevelViewStarModeNone;
+    } else if (points < 200) {
+        return CHBMapLevelViewStarModeOne;
+    } else if (points < 300) {
+        return CHBMapLevelViewStarModeTwo;
+    } else {
+        return CHBMapLevelViewStarModeThree;
+    }
 }
 
 @end

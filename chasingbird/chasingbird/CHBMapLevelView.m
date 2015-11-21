@@ -9,6 +9,7 @@
 #import "CHBMapLevelView.h"
 #import "CHBImageView.h"
 #import "UIView+AutoLayoutHelpers.h"
+#import "CHBPerformanceHelper.h"
 
 @interface CHBMapLevelView ()
 @property (nonatomic, retain) CHBImageView *starsView;
@@ -68,6 +69,9 @@
 
 - (void)setLevel:(CHBGameLevel)level {
     _level = level;
+    
+    [self setStarMode:[[CHBPerformanceHelper sharedHelper] starModeWithGameLevel:level]];
+    
     switch (level) {
         case CHBGameLevelFirst:
             if (self.starMode == CHBMapLevelViewStarModeInactive) {
