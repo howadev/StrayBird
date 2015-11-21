@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64059CC21C0125900069D4DE /* CHBResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64059CC01C0125900069D4DE /* CHBResultTableViewCell.m */; };
+		64059CC31C0125900069D4DE /* CHBResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64059CC11C0125900069D4DE /* CHBResultTableViewCell.xib */; };
+		64059CC91C0125BF0069D4DE /* CHBResultTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64059CC81C0125BF0069D4DE /* CHBResultTableView.m */; };
 		640FA8DF1BF170B900D89019 /* CHBAchievementsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640FA8DD1BF170B900D89019 /* CHBAchievementsTableViewCell.m */; };
 		640FA8E01BF170B900D89019 /* CHBAchievementsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640FA8DE1BF170B900D89019 /* CHBAchievementsTableViewCell.xib */; };
 		640FA8E51BF1711400D89019 /* CHBAchievementsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 640FA8E41BF1711400D89019 /* CHBAchievementsTableView.m */; };
@@ -118,6 +121,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		64059CBF1C0125900069D4DE /* CHBResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBResultTableViewCell.h; sourceTree = "<group>"; };
+		64059CC01C0125900069D4DE /* CHBResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBResultTableViewCell.m; sourceTree = "<group>"; };
+		64059CC11C0125900069D4DE /* CHBResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBResultTableViewCell.xib; sourceTree = "<group>"; };
+		64059CC71C0125BF0069D4DE /* CHBResultTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBResultTableView.h; sourceTree = "<group>"; };
+		64059CC81C0125BF0069D4DE /* CHBResultTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBResultTableView.m; sourceTree = "<group>"; };
 		640FA8DC1BF170B900D89019 /* CHBAchievementsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBAchievementsTableViewCell.h; sourceTree = "<group>"; };
 		640FA8DD1BF170B900D89019 /* CHBAchievementsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBAchievementsTableViewCell.m; sourceTree = "<group>"; };
 		640FA8DE1BF170B900D89019 /* CHBAchievementsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBAchievementsTableViewCell.xib; sourceTree = "<group>"; };
@@ -257,6 +265,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64059CBE1C0125630069D4DE /* ResultTable */ = {
+			isa = PBXGroup;
+			children = (
+				64059CBF1C0125900069D4DE /* CHBResultTableViewCell.h */,
+				64059CC01C0125900069D4DE /* CHBResultTableViewCell.m */,
+				64059CC71C0125BF0069D4DE /* CHBResultTableView.h */,
+				64059CC81C0125BF0069D4DE /* CHBResultTableView.m */,
+				64059CC11C0125900069D4DE /* CHBResultTableViewCell.xib */,
+			);
+			name = ResultTable;
+			sourceTree = "<group>";
+		};
 		640FA8E11BF170CF00D89019 /* PerformanceTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +574,7 @@
 		896251801B8E8FDD00295961 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				64059CBE1C0125630069D4DE /* ResultTable */,
 				640FA8F51BF190BB00D89019 /* ChallengeTable */,
 				640FA8E61BF1712300D89019 /* LeaderboardTable */,
 				640FA8E21BF170DA00D89019 /* AchievementsTable */,
@@ -732,6 +753,7 @@
 				64B4CAD21BD2BD4700D5C5A5 /* CHBIntroViewController.xib in Resources */,
 				640FA8EE1BF183EA00D89019 /* CHBLeaderboardTableViewCell.xib in Resources */,
 				640FA8FD1BF1910500D89019 /* CHBChallengeTableViewCell.xib in Resources */,
+				64059CC31C0125900069D4DE /* CHBResultTableViewCell.xib in Resources */,
 				8985C21E1B923AA300FDA0B0 /* CHBStartViewController.xib in Resources */,
 				891736441B7676A0003E082F /* Assets.xcassets in Resources */,
 				64A8F5801BFADFD000480B47 /* CHBPerformanceTableViewCell.xib in Resources */,
@@ -765,10 +787,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F262311BD401BD00C5BD68 /* CHBPauseViewController.m in Sources */,
+				64059CC21C0125900069D4DE /* CHBResultTableViewCell.m in Sources */,
 				640FA8DF1BF170B900D89019 /* CHBAchievementsTableViewCell.m in Sources */,
 				8917363F1B7676A0003E082F /* CHBDemoViewController.m in Sources */,
 				640FA8FC1BF1910500D89019 /* CHBChallengeTableViewCell.m in Sources */,
 				896251831B8E8FF500295961 /* CHBImageView.m in Sources */,
+				64059CC91C0125BF0069D4DE /* CHBResultTableView.m in Sources */,
 				891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */,
 				646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */,
 				8962517C1B8E899A00295961 /* CHBViewController.m in Sources */,

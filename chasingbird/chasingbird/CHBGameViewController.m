@@ -68,6 +68,7 @@
 - (void)pauseAction:(id)sender {
     self.paused = YES;
     CHBPauseViewController *vc = [CHBPauseViewController new];
+    vc.performance = scene.performance;
     vc.level = self.level;
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene

@@ -11,7 +11,9 @@
 @interface CHBStartViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *titleLevelView;
 @property (weak, nonatomic) IBOutlet UIImageView *headingView;
-@property (weak, nonatomic) IBOutlet UIImageView *skippingView;
+@property (weak, nonatomic) IBOutlet UIButton *cyclingButton;
+@property (weak, nonatomic) IBOutlet UIButton *runningButton;
+@property (weak, nonatomic) IBOutlet UIButton *ropeSkippingButton;
 @end
 
 @implementation CHBStartViewController
@@ -46,6 +48,24 @@
 - (IBAction)playAction:(id)sender {
     NSDictionary *dict = @{@"level":@(self.level)};
     [[NSNotificationCenter defaultCenter] postNotificationName:playNotification object:nil userInfo:dict];
+}
+
+- (IBAction)cyclingAction:(id)sender {
+    self.cyclingButton.selected = YES;
+    self.runningButton.selected = NO;
+    self.ropeSkippingButton.selected = NO;
+}
+
+- (IBAction)runningAction:(id)sender {
+    self.cyclingButton.selected = NO;
+    self.runningButton.selected = YES;
+    self.ropeSkippingButton.selected = NO;
+}
+
+- (IBAction)ropeSkippingAction:(id)sender {
+    self.cyclingButton.selected = NO;
+    self.runningButton.selected = NO;
+    self.ropeSkippingButton.selected = YES;
 }
 
 @end

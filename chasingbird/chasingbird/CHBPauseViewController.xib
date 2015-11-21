@@ -6,6 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBPauseViewController">
             <connections>
+                <outlet property="headingView" destination="RBm-pX-Db7" id="I38-Qe-Stq"/>
+                <outlet property="starView" destination="xSj-IK-s5A" id="grW-BC-Hao"/>
+                <outlet property="tableView" destination="FAm-At-Pbh" id="7pp-L6-iqa"/>
+                <outlet property="titleLevelView" destination="zpP-cW-ZPC" id="aVh-cK-FdC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,7 +76,7 @@
                         <action selector="resumeAction:" destination="-1" eventType="touchUpInside" id="tRZ-zc-2G2"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAm-At-Pbh" customClass="CHBPerformanceTableView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAm-At-Pbh" customClass="CHBResultTableView">
                     <rect key="frame" x="170" y="343" width="260" height="209"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

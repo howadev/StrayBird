@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBStartViewController">
             <connections>
+                <outlet property="cyclingButton" destination="LR0-WN-zuI" id="zRF-KH-EIu"/>
                 <outlet property="headingView" destination="zii-6q-pHA" id="yY0-ep-tNL"/>
-                <outlet property="skippingView" destination="fua-Uu-IF2" id="gx6-Gg-9Xp"/>
+                <outlet property="ropeSkippingButton" destination="ru5-Kt-SvF" id="ZtS-7b-vyv"/>
+                <outlet property="runningButton" destination="guX-p6-FTg" id="B5p-ti-OXr"/>
                 <outlet property="titleLevelView" destination="mND-S2-Lx8" id="ywg-yR-7yD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,30 +24,18 @@
                     <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_level3" translatesAutoresizingMaskIntoConstraints="NO" id="mND-S2-Lx8">
-                    <rect key="frame" x="105" y="115" width="390" height="159"/>
-                    <animations/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling_normal" highlightedImage="cycling_active" translatesAutoresizingMaskIntoConstraints="NO" id="f4W-8M-b4g">
-                    <rect key="frame" x="125" y="327" width="106" height="121"/>
-                    <animations/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="running_active" highlightedImage="running_normal" translatesAutoresizingMaskIntoConstraints="NO" id="OO5-ma-fsy">
-                    <rect key="frame" x="247" y="327" width="106" height="121"/>
-                    <animations/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skipping_normal" highlightedImage="skipping_active" translatesAutoresizingMaskIntoConstraints="NO" id="fua-Uu-IF2">
-                    <rect key="frame" x="369" y="327" width="106" height="121"/>
+                    <rect key="frame" x="105" y="115.5" width="390" height="159"/>
                     <animations/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE TYPE OF EXERCISE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whp-mX-H9W">
-                    <rect key="frame" x="185" y="290" width="230" height="21"/>
+                    <rect key="frame" x="185" y="290.5" width="230" height="20.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heading_level1" translatesAutoresizingMaskIntoConstraints="NO" id="zii-6q-pHA">
-                    <rect key="frame" x="179" y="48" width="243" height="51"/>
+                    <rect key="frame" x="179" y="48.5" width="243" height="51"/>
                     <animations/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNh-F1-ZNH">
@@ -56,6 +46,33 @@
                         <action selector="playAction:" destination="-1" eventType="touchUpInside" id="TS9-YN-rGC"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR0-WN-zuI">
+                    <rect key="frame" x="125" y="327" width="106" height="121"/>
+                    <animations/>
+                    <state key="normal" image="cycling_normal"/>
+                    <state key="selected" image="cycling_active"/>
+                    <connections>
+                        <action selector="cyclingAction:" destination="-1" eventType="touchUpInside" id="Zq1-Hm-Rdg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guX-p6-FTg">
+                    <rect key="frame" x="247" y="327" width="106" height="121"/>
+                    <animations/>
+                    <state key="normal" image="running_normal"/>
+                    <state key="selected" image="running_active"/>
+                    <connections>
+                        <action selector="runningAction:" destination="-1" eventType="touchUpInside" id="tYK-yB-Vdy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-Kt-SvF">
+                    <rect key="frame" x="369" y="327" width="106" height="121"/>
+                    <animations/>
+                    <state key="normal" image="skipping_normal"/>
+                    <state key="selected" image="skipping_active"/>
+                    <connections>
+                        <action selector="ropeSkippingAction:" destination="-1" eventType="touchUpInside" id="oOR-Mh-J8W"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -64,19 +81,19 @@
                 <constraint firstItem="mND-S2-Lx8" firstAttribute="top" secondItem="zii-6q-pHA" secondAttribute="bottom" constant="16" id="6m7-vv-mMJ"/>
                 <constraint firstItem="mND-S2-Lx8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A1L-GS-hTl"/>
                 <constraint firstItem="zii-6q-pHA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ErJ-X4-9zV"/>
-                <constraint firstItem="OO5-ma-fsy" firstAttribute="top" secondItem="whp-mX-H9W" secondAttribute="bottom" constant="16" id="GbS-EC-l6B"/>
-                <constraint firstItem="f4W-8M-b4g" firstAttribute="top" secondItem="whp-mX-H9W" secondAttribute="bottom" constant="16" id="NAM-So-mjD"/>
+                <constraint firstItem="guX-p6-FTg" firstAttribute="leading" secondItem="LR0-WN-zuI" secondAttribute="trailing" constant="16" id="Fg1-Bj-Ec7"/>
+                <constraint firstItem="guX-p6-FTg" firstAttribute="centerX" secondItem="whp-mX-H9W" secondAttribute="centerX" id="MlF-g9-ldg"/>
                 <constraint firstItem="sNh-F1-ZNH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QHf-Ri-gGH"/>
-                <constraint firstItem="fua-Uu-IF2" firstAttribute="top" secondItem="whp-mX-H9W" secondAttribute="bottom" constant="16" id="SMD-7o-dGV"/>
+                <constraint firstItem="guX-p6-FTg" firstAttribute="top" secondItem="whp-mX-H9W" secondAttribute="bottom" constant="16" id="RsV-Df-lJ0"/>
                 <constraint firstAttribute="trailing" secondItem="VxY-qz-6Jt" secondAttribute="trailing" id="c0g-hC-hEZ"/>
-                <constraint firstItem="fua-Uu-IF2" firstAttribute="leading" secondItem="OO5-ma-fsy" secondAttribute="trailing" constant="16" id="crd-b3-Y16"/>
-                <constraint firstItem="OO5-ma-fsy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dkR-4J-dUv"/>
                 <constraint firstItem="VxY-qz-6Jt" firstAttribute="bottom" secondItem="sNh-F1-ZNH" secondAttribute="bottom" constant="16" id="mQc-FI-zbq"/>
-                <constraint firstItem="OO5-ma-fsy" firstAttribute="leading" secondItem="f4W-8M-b4g" secondAttribute="trailing" constant="16" id="mvP-kd-rsA"/>
+                <constraint firstItem="LR0-WN-zuI" firstAttribute="centerY" secondItem="guX-p6-FTg" secondAttribute="centerY" id="nQO-Ay-8oR"/>
                 <constraint firstAttribute="bottom" secondItem="VxY-qz-6Jt" secondAttribute="bottom" id="ndv-aV-Xn9"/>
+                <constraint firstItem="ru5-Kt-SvF" firstAttribute="leading" secondItem="guX-p6-FTg" secondAttribute="trailing" constant="16" id="nmc-e7-4bx"/>
                 <constraint firstItem="VxY-qz-6Jt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qSD-3l-M2Q"/>
                 <constraint firstItem="whp-mX-H9W" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qcO-kC-8xP"/>
                 <constraint firstItem="whp-mX-H9W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uw5-Qb-8Yi"/>
+                <constraint firstItem="ru5-Kt-SvF" firstAttribute="centerY" secondItem="guX-p6-FTg" secondAttribute="centerY" id="vJZ-KX-MbJ"/>
                 <constraint firstItem="VxY-qz-6Jt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zh2-S0-tGk"/>
             </constraints>
         </view>

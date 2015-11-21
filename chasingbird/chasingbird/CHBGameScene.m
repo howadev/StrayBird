@@ -16,7 +16,6 @@
 @import WatchConnectivity;
 
 @interface CHBGameScene () <WCSessionDelegate>
-@property (nonatomic, retain) CHBPerformance *performance;
 
 @property (nonatomic, assign) NSTimeInterval lastUpdateTime;
 @property (nonatomic, assign) NSTimeInterval dt;

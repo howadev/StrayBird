@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CHBResultTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_pause_status-item_title" translatesAutoresizingMaskIntoConstraints="NO" id="gQf-CF-iJb">
+                        <rect key="frame" x="0.0" y="8" width="177" height="27.5"/>
+                        <animations/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_pause_status-item_value" translatesAutoresizingMaskIntoConstraints="NO" id="KGq-v4-nNy">
+                        <rect key="frame" x="191" y="8" width="129" height="27.5"/>
+                        <animations/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQd-Nm-CYg" userLabel="Value">
+                        <rect key="frame" x="191" y="8" width="121" height="27.5"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identifier" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7E-bp-iC6" userLabel="Identifier">
+                        <rect key="frame" x="8" y="8" width="169" height="27.5"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="eQd-Nm-CYg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="2cq-ly-w6o"/>
+                    <constraint firstItem="i7E-bp-iC6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3RT-nP-ssa"/>
+                    <constraint firstItem="gQf-CF-iJb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="D2Q-Vw-EUd"/>
+                    <constraint firstItem="i7E-bp-iC6" firstAttribute="trailing" secondItem="gQf-CF-iJb" secondAttribute="trailing" id="IYS-Ni-iC8"/>
+                    <constraint firstItem="eQd-Nm-CYg" firstAttribute="leading" secondItem="KGq-v4-nNy" secondAttribute="leading" id="JfA-8v-fZb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="KGq-v4-nNy" secondAttribute="bottom" id="JfC-Vc-4T3"/>
+                    <constraint firstItem="gQf-CF-iJb" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.55" constant="1" id="MGq-KZ-dhf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gQf-CF-iJb" secondAttribute="bottom" id="YSi-zc-Q4b"/>
+                    <constraint firstItem="i7E-bp-iC6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="bkI-49-4fU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eQd-Nm-CYg" secondAttribute="trailing" id="hbz-we-Bpc"/>
+                    <constraint firstItem="KGq-v4-nNy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="kdw-om-Rg8"/>
+                    <constraint firstAttribute="trailing" secondItem="KGq-v4-nNy" secondAttribute="trailing" id="lY9-31-C0s"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="i7E-bp-iC6" secondAttribute="bottom" id="t4z-D9-k8V"/>
+                    <constraint firstItem="gQf-CF-iJb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vC4-p6-Bbe"/>
+                    <constraint firstItem="KGq-v4-nNy" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.4" constant="1" id="viy-MV-jtt"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eQd-Nm-CYg" secondAttribute="bottom" id="xhB-aN-auD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="identifierLabel" destination="i7E-bp-iC6" id="Fer-Pl-bg3"/>
+                <outlet property="valueLabel" destination="eQd-Nm-CYg" id="5Lw-v6-xQM"/>
+            </connections>
+            <point key="canvasLocation" x="274" y="146"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="game_pause_status-item_title" width="122" height="20"/>
+        <image name="game_pause_status-item_value" width="75" height="20"/>
+    </resources>
+</document>

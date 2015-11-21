@@ -19,4 +19,5 @@
 @interface CHBGameScene : SKScene
 @property (nonatomic, weak) id <CHBGameSceneDelegate> gameDelegate;
 @property (nonatomic, assign) CHBGameLevel level;
+@property (nonatomic, retain) CHBPerformance *performance;
 @end
