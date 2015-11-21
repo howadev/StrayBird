@@ -8,8 +8,11 @@
 
 #import "CHBIntroViewController.h"
 #import "CHBStartViewController.h"
+#import "CHBPerformanceHelper.h"
+#import "CHBTypes.h"
 
 @interface CHBIntroViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *starView;
 @property (weak, nonatomic) IBOutlet UIImageView *titleLevelView;
 @property (weak, nonatomic) IBOutlet UIImageView *headingView;
 @property (weak, nonatomic) IBOutlet UIImageView *nextButton;
@@ -34,6 +37,25 @@
             self.titleLevelView.image = [UIImage imageNamed:@"title_level3"];
             break;
         default:
+            break;
+    }
+    
+    CHBMapLevelViewsStarMode starMode = [[CHBPerformanceHelper sharedHelper] starModeWithGameLevel:self.level];
+    switch (starMode) {
+        case CHBMapLevelViewStarModeInactive:
+            NSAssert(NO, @"Should not be here");
+            break;
+        case CHBMapLevelViewStarModeNone:
+            self.starView.image = [UIImage imageNamed:@"single_start-level_stars_0"];
+            break;
+        case CHBMapLevelViewStarModeOne:
+            self.starView.image = [UIImage imageNamed:@"single_start-level_stars_1"];
+            break;
+        case CHBMapLevelViewStarModeTwo:
+            self.starView.image = [UIImage imageNamed:@"single_start-level_stars_2"];
+            break;
+        case CHBMapLevelViewStarModeThree:
+            self.starView.image = [UIImage imageNamed:@"single_start-level_stars_3"];
             break;
     }
     

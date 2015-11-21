@@ -18,8 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.skippingView.userInteractionEnabled = YES;
-    [self.skippingView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(skippingViewDidTap:)]];
     
     switch (self.level) {
         case CHBGameLevelFirst:
@@ -39,10 +37,6 @@
     }
     
     [self setupBackButton];
-}
-
-- (void)skippingViewDidTap:(id)sender {
-    
 }
 
 - (void)backAction:(id)sender {
