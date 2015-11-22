@@ -145,7 +145,7 @@ typedef NS_ENUM(NSUInteger, CHBWatchMode) {
         });
         
         if ([[WCSession defaultSession] isReachable]) {
-            NSDictionary *applicationDict = @{@"heartrate":valueString};
+            NSDictionary *applicationDict = @{@"ActiveEnergy":valueString};
             [[WCSession defaultSession] sendMessage:applicationDict
                                        replyHandler:^(NSDictionary *replyHandler) {
                                            

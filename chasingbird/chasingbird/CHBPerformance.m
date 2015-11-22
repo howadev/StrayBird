@@ -16,21 +16,40 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
 
 @implementation CHBPerformance
 
-#pragma mark - Variable
+- (instancetype)initWithLevel:(CHBGameLevel)level {
+    self = [super init];
+    if (self) {
+        switch (level) {
+            case CHBGameLevelFirst:
+                self.totalTime = 20 * 60;
+                self.totalDistance = 1500;
+                self.flockElapsedDistance = 500;
+                self.flockSpeed = 60;
+                break;
+            case CHBGameLevelSecond:
+                self.totalTime = 30 * 60;
+                self.totalDistance = 2500;
+                self.flockElapsedDistance = 800;
+                self.flockSpeed = 80;
+                break;
+            case CHBGameLevelThird:
+                self.totalTime = 40 * 60;
+                self.totalDistance = 3500;
+                self.flockElapsedDistance = 800;
+                self.flockSpeed = 100;
+                break;
+        }
+    }
+    return self;
+}
 
-//- (CGFloat)birdSpeed {
-//    if (_birdSpeed < minimumBirdSpeed) {
-//        return minimumBirdSpeed;
-//    } else {
-//        return _birdSpeed;
-//    }
-//}
-
-#pragma mark - Calculation Getter
-
-- (CGFloat)calories {
-    CGFloat calories = (0.13 * self.birdSpeed - 7.54) * 60 / 60 / 60 * self.elapsedTime;
-    return calories > 0 ? calories : 0;
+- (CGFloat)birdSpeed {
+    // 1/37.5*1000/60, CAL -> M/MIN
+    CGFloat newSpeed = _calories / 37.5 * 1000 / 60;
+    if (newSpeed > _maximumSpeed) {
+        _maximumSpeed = newSpeed;
+    }
+    return newSpeed;
 }
 
 - (CGFloat)averageSpeed {

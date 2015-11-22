@@ -83,10 +83,10 @@
 #pragma mark - WCSessionDelegate
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
-    NSString *heartrate = message[@"heartrate"];
-    if (heartrate) {
-        CGFloat speed = heartrate.floatValue;
-        self.performance.birdSpeed = speed;
+    NSString *activeEnergy = message[@"ActiveEnergy"];
+    if (activeEnergy) {
+        CGFloat calories = activeEnergy.floatValue;
+        self.performance.calories = calories;
     }
 }
 
@@ -107,28 +107,7 @@
     self.lastUpdateTime = 0;
     self.dt = 0;
     
-    self.performance = [CHBPerformance new];
-    switch (self.level) {
-        case CHBGameLevelFirst:
-            self.performance.totalTime = 20 * 60;
-            self.performance.totalDistance = 1500;
-            self.performance.flockElapsedDistance = 500;
-            self.performance.flockSpeed = 60;
-            break;
-        case CHBGameLevelSecond:
-            self.performance.totalTime = 30 * 60;
-            self.performance.totalDistance = 2500;
-            self.performance.flockElapsedDistance = 800;
-            self.performance.flockSpeed = 80;
-            break;
-        case CHBGameLevelThird:
-            self.performance.totalTime = 40 * 60;
-            self.performance.totalDistance = 3500;
-            self.performance.flockElapsedDistance = 800;
-            self.performance.flockSpeed = 100;
-            break;
-    }
-    
+    self.performance = [[CHBPerformance alloc] initWithLevel:self.level];
     
     [self setupLayer];
     [self setupHubLayer];

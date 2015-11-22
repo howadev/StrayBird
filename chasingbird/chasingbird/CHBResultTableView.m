@@ -51,8 +51,8 @@
             break;
         }
         case 1: {
-            cell.identifierLabel.text = @"FLOCK TIME";
-            NSTimeInterval value = self.performance.metFlockTime;
+            cell.identifierLabel.text = @"FLOCK SPEED";
+            NSTimeInterval value = self.performance.flockSpeed;
             cell.valueLabel.text = [NSString stringWithFormat:@"%f", value];
             break;
         }

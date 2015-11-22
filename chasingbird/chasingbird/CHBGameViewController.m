@@ -77,7 +77,6 @@
 #pragma mark - CHBGameSceneDelegate
 
 - (void)gameScene:(CHBGameScene *)scene didStopWithPerformance:(CHBPerformance *)performance {
-    // copy performance or it will dealloc
     CHBResultViewController *vc = [CHBResultViewController new];
     vc.level = self.level;
     vc.performance = scene.performance;
