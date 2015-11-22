@@ -8,7 +8,9 @@
 
 #import "CHBViewController.h"
 #import "CHBTypes.h"
+#import "CHBPerformance.h"
 
 @interface CHBResultViewController : CHBViewController
 @property (nonatomic, assign) CHBGameLevel level;
+@property (nonatomic, retain) CHBPerformance *performance;
 @end

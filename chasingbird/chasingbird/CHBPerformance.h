@@ -30,4 +30,7 @@
 @property (nonatomic, readonly) CGFloat averageSpeed;
 @property (nonatomic, readonly) NSTimeInterval leftTime;
 
+#pragma mark - Result Status
+@property (nonatomic, assign) BOOL win;
+
 @end

@@ -14,39 +14,38 @@
 @import SpriteKit;
 
 @interface CHBGameViewController () <CHBGameSceneDelegate>
+@property (nonatomic, retain) CHBGameScene *scene;
+@property (nonatomic, retain) SKView * skView;
 @end
 
-@implementation CHBGameViewController {
-    SKView * skView;
-    CHBGameScene *scene;
-}
+@implementation CHBGameViewController
 
 - (void)dealloc {
     NSLog(@"CHBGameViewController Did Dealloc");
 }
 
 - (void)setPaused:(BOOL)paused {
-    skView.paused = paused;
-    scene.paused = paused;
+    self.skView.paused = paused;
+    self.scene.paused = paused;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Configure the view.
-    skView = [[SKView alloc] initWithFrame:self.view.bounds];
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    [self.view addSubview:skView];
+    self.skView = [[SKView alloc] initWithFrame:self.view.bounds];
+    self.skView.showsFPS = YES;
+    self.skView.showsNodeCount = YES;
+    [self.view addSubview:self.skView];
     
     // Create and configure the scene.
-    scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
-    scene.gameDelegate = self;
-    scene.level = self.level;
-    scene.scaleMode = SKSceneScaleModeAspectFit;
+    self.scene = [CHBGameScene sceneWithSize:self.view.bounds.size];
+    self.scene.gameDelegate = self;
+    self.scene.level = self.level;
+    self.scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [self.skView presentScene:self.scene];
     
     [self setupPauseButton];
     
@@ -68,7 +67,7 @@
 - (void)pauseAction:(id)sender {
     self.paused = YES;
     CHBPauseViewController *vc = [CHBPauseViewController new];
-    vc.performance = scene.performance;
+    vc.performance = self.scene.performance;
     vc.level = self.level;
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene
@@ -81,6 +80,7 @@
     // copy performance or it will dealloc
     CHBResultViewController *vc = [CHBResultViewController new];
     vc.level = self.level;
+    vc.performance = scene.performance;
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene
     }];

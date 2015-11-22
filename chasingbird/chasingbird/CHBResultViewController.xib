@@ -6,6 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBResultViewController">
             <connections>
+                <outlet property="headingView" destination="7bU-TK-4cF" id="vnK-sh-lpH"/>
+                <outlet property="resultStatusView" destination="odM-Al-hix" id="3B2-jC-9VO"/>
+                <outlet property="starView" destination="ibe-ii-rOT" id="fWK-S2-vTb"/>
+                <outlet property="tableView" destination="ezb-Yc-7Zz" id="uYf-Vq-Lio"/>
+                <outlet property="titleLevelView" destination="Poi-bm-LQr" id="si9-v6-Ipe"/>
                 <outlet property="view" destination="fV8-ig-mhZ" id="bJP-tp-TvN"/>
             </connections>
         </placeholder>
@@ -50,17 +55,17 @@
                         <action selector="restartAction:" destination="-1" eventType="touchUpInside" id="xly-zN-AC2"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_results_status-win" highlightedImage="game_single_results_status-loss" translatesAutoresizingMaskIntoConstraints="NO" id="odM-Al-hix">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_single_results_status-loss" highlightedImage="game_single_results_status-win" translatesAutoresizingMaskIntoConstraints="NO" id="odM-Al-hix">
                     <rect key="frame" x="176" y="298" width="247" height="26"/>
                     <animations/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-Yc-7Zz" customClass="CHBPerformanceTableView">
-                    <rect key="frame" x="177" y="340" width="247" height="171"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-Yc-7Zz" customClass="CHBResultTableView">
+                    <rect key="frame" x="16" y="340" width="568" height="171"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP1-6Y-vwU">
-                    <rect key="frame" x="212" y="231" width="177" height="54"/>
+                    <rect key="frame" x="212" y="231" width="176.5" height="54"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,6 +76,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="XP1-6Y-vwU" firstAttribute="centerX" secondItem="Poi-bm-LQr" secondAttribute="centerX" id="18g-IO-MkY"/>
+                <constraint firstItem="ezb-Yc-7Zz" firstAttribute="leading" secondItem="fV8-ig-mhZ" secondAttribute="leading" constant="16" id="7J8-Xy-x6C"/>
                 <constraint firstItem="ibe-ii-rOT" firstAttribute="centerX" secondItem="Poi-bm-LQr" secondAttribute="centerX" id="8uO-Ij-MZ9"/>
                 <constraint firstAttribute="bottom" secondItem="4FA-yl-MAT" secondAttribute="bottom" constant="16" id="AZO-UQ-HWo"/>
                 <constraint firstItem="odM-Al-hix" firstAttribute="top" secondItem="lDR-Ku-coS" secondAttribute="bottom" constant="16" id="Cot-vA-Rse"/>
@@ -87,6 +93,7 @@
                 <constraint firstItem="uwd-3y-cGC" firstAttribute="top" secondItem="fV8-ig-mhZ" secondAttribute="top" id="Pw6-LW-EDF"/>
                 <constraint firstItem="lDR-Ku-coS" firstAttribute="centerY" secondItem="ibe-ii-rOT" secondAttribute="centerY" constant="16" id="UNH-U2-FWv"/>
                 <constraint firstItem="odM-Al-hix" firstAttribute="centerX" secondItem="Poi-bm-LQr" secondAttribute="centerX" id="V6k-YV-ky1"/>
+                <constraint firstAttribute="trailing" secondItem="ezb-Yc-7Zz" secondAttribute="trailing" constant="16" id="XRL-Bw-510"/>
                 <constraint firstAttribute="trailing" secondItem="uwd-3y-cGC" secondAttribute="trailing" id="ZPX-gJ-Jzd"/>
                 <constraint firstItem="uwd-3y-cGC" firstAttribute="leading" secondItem="fV8-ig-mhZ" secondAttribute="leading" id="bU9-FA-6os"/>
                 <constraint firstItem="4FA-yl-MAT" firstAttribute="top" secondItem="ezb-Yc-7Zz" secondAttribute="bottom" constant="16" id="dQD-pP-vCO"/>
@@ -104,6 +111,8 @@
                     <exclude reference="UNH-U2-FWv"/>
                     <exclude reference="qa3-kM-PrT"/>
                     <exclude reference="Ebw-ff-LXG"/>
+                    <exclude reference="KnF-DS-aSc"/>
+                    <exclude reference="OEi-rr-JWD"/>
                     <exclude reference="K9L-Ns-hXJ"/>
                 </mask>
             </variation>
