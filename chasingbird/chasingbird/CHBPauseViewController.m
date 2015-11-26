@@ -27,7 +27,7 @@
     self.tableView.performance = self.performance;
     [self.tableView reloadData];
     
-    switch (self.level) {
+    switch (self.performance.level) {
         case CHBGameLevelFirst:
             self.headingView.image = [UIImage imageNamed:@"heading_level1"];
             self.titleLevelView.image = [UIImage imageNamed:@"title_level1"];
@@ -44,7 +44,7 @@
             break;
     }
     
-    CHBMapLevelViewsStarMode starMode = [[CHBPerformanceHelper sharedHelper] starModeWithGameLevel:self.level];
+    CHBMapLevelViewsStarMode starMode = self.performance.starMode;
     switch (starMode) {
         case CHBMapLevelViewStarModeInactive:
             NSAssert(NO, @"Should not be here");

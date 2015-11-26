@@ -37,6 +37,41 @@
     //
 }
 
+- (void)updateWithPerformance:(CHBPerformance *)performance {
+    
+    self.points += performance.points;
+    self.calories += performance.calories;
+    self.distance += performance.birdElapsedDistance;
+    
+    if (performance.win) {
+        self.wins++;
+    } else {
+        self.losses++;
+    }
+    
+    if (performance.maximumSpeed > self.speed) {
+        self.speed = performance.maximumSpeed;
+    }
+    
+    switch (performance.level) {
+        case CHBGameLevelFirst:
+            if (performance.points > self.firstLevelPoints) {
+                self.firstLevelPoints = performance.points;
+            }
+            break;
+        case CHBGameLevelSecond:
+            if (performance.points > self.secondLevelPoints) {
+                self.secondLevelPoints = performance.points;
+            }
+            break;
+        case CHBGameLevelThird:
+            if (performance.points > self.thirdLevelPoints) {
+                self.thirdLevelPoints = performance.points;
+            }
+            break;
+    }
+}
+
 #pragma mark - Overall
 
 - (NSInteger)points {
@@ -92,7 +127,7 @@
 - (NSInteger)firstLevelPoints {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"firstLevelPoints"];
 }
-- (void)setFirstLevelpoints:(NSInteger)firstLevelPoints {
+- (void)setFirstLevelPoints:(NSInteger)firstLevelPoints {
     [[NSUserDefaults standardUserDefaults] setInteger:firstLevelPoints forKey:@"firstLevelPoints"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

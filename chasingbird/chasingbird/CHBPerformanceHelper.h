@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "CHBTypes.h"
+#import "CHBPerformance.h"
 
 @interface CHBPerformanceHelper : NSObject
 + (instancetype)sharedHelper;
+- (void)updateWithPerformance:(CHBPerformance *)performance;
 
 #pragma mark - Overall
 @property (nonatomic, assign) NSInteger points;

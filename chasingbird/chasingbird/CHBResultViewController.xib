@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBResultViewController">
             <connections>
                 <outlet property="headingView" destination="7bU-TK-4cF" id="vnK-sh-lpH"/>
+                <outlet property="pointLabel" destination="XP1-6Y-vwU" id="cEk-B7-jAo"/>
                 <outlet property="resultStatusView" destination="odM-Al-hix" id="3B2-jC-9VO"/>
                 <outlet property="starView" destination="ibe-ii-rOT" id="fWK-S2-vTb"/>
                 <outlet property="tableView" destination="ezb-Yc-7Zz" id="uYf-Vq-Lio"/>

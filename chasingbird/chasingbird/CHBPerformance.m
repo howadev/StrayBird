@@ -19,6 +19,7 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
 - (instancetype)initWithLevel:(CHBGameLevel)level {
     self = [super init];
     if (self) {
+        self.level = level;
         switch (level) {
             case CHBGameLevelFirst:
                 self.totalTime = 20 * 60;
@@ -41,6 +42,52 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
         }
     }
     return self;
+}
+
+- (NSInteger)points {
+    switch (self.starMode) {
+        case CHBMapLevelViewStarModeThree:
+            return 300;
+        case CHBMapLevelViewStarModeTwo:
+            return 200;
+        case CHBMapLevelViewStarModeOne:
+            return 100;
+        default:
+            return 0;
+    }
+}
+
+- (CHBMapLevelViewsStarMode)starMode {
+    if (!self.win) {
+        return CHBMapLevelViewStarModeNone;
+    }
+    
+    switch (self.level) {
+        case CHBGameLevelFirst:
+            if (self.metFlockTime < 7 * 60) {
+                return CHBMapLevelViewStarModeThree;
+            } else if (self.metFlockTime < 10 * 60) {
+                return CHBMapLevelViewStarModeTwo;
+            } else {
+                return CHBMapLevelViewStarModeOne;
+            }
+        case CHBGameLevelSecond:
+            if (self.metFlockTime < 12 * 60) {
+                return CHBMapLevelViewStarModeThree;
+            } else if (self.metFlockTime < 15 * 60) {
+                return CHBMapLevelViewStarModeTwo;
+            } else {
+                return CHBMapLevelViewStarModeOne;
+            }
+        case CHBGameLevelThird:
+            if (self.metFlockTime < 20 * 60) {
+                return CHBMapLevelViewStarModeThree;
+            } else if (self.metFlockTime < 25 * 60) {
+                return CHBMapLevelViewStarModeTwo;
+            } else {
+                return CHBMapLevelViewStarModeOne;
+            }
+    }
 }
 
 - (CGFloat)birdSpeed {

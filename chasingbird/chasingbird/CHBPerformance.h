@@ -12,6 +12,9 @@
 @interface CHBPerformance : NSObject
 
 - (instancetype)initWithLevel:(CHBGameLevel)level;
+@property (nonatomic, assign) CHBGameLevel level;
+@property (nonatomic, assign) NSInteger points;
+@property (nonatomic, assign) CHBMapLevelViewsStarMode starMode;
 
 #pragma mark - Constant
 @property (nonatomic, assign) NSTimeInterval totalTime;

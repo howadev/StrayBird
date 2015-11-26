@@ -494,8 +494,9 @@
     
     if (self.performance.birdElapsedDistance > self.performance.flockElapsedDistance) {
         if (self.flockAnimation == nil) {
-            [self populateFlock];
+            self.performance.metFlockTime = self.performance.elapsedTime;
             self.birdInfoNode.distanceFromFlockLabel.text = @"0 M";
+            [self populateFlock];
         }
     } else {
         self.birdInfoNode.distanceFromFlockLabel.text = [NSString stringWithFormat:@"%.2f M", self.performance.flockElapsedDistance-self.performance.birdElapsedDistance];
@@ -503,6 +504,7 @@
     
     if (self.performance.birdElapsedDistance > self.performance.totalDistance) {
         if (self.checkPointAnimation == nil) {
+            self.performance.win = YES;
             [self populateCheckPointLayer];
             [self.birdInfoNode setHidden:YES];
         }
@@ -539,7 +541,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    self.performance.calories += 50;
+    self.performance.calories += 500;
 
     if (testNet) {
         testNetCount++;

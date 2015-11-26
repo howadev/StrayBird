@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *titleLevelView;
 @property (weak, nonatomic) IBOutlet UIImageView *headingView;
 @property (weak, nonatomic) IBOutlet UIImageView *resultStatusView;
+@property (weak, nonatomic) IBOutlet UILabel *pointLabel;
 @end
 
 @implementation CHBResultViewController
@@ -23,10 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[CHBPerformanceHelper sharedHelper] updateWithPerformance:self.performance];
+    
     self.tableView.performance = self.performance;
     [self.tableView reloadData];
     
-    switch (self.level) {
+    switch (self.performance.level) {
         case CHBGameLevelFirst:
             self.headingView.image = [UIImage imageNamed:@"heading_level1"];
             self.titleLevelView.image = [UIImage imageNamed:@"title_level1"];
@@ -43,7 +46,7 @@
             break;
     }
     
-    CHBMapLevelViewsStarMode starMode = [[CHBPerformanceHelper sharedHelper] starModeWithGameLevel:self.level];
+    CHBMapLevelViewsStarMode starMode = self.performance.starMode;
     switch (starMode) {
         case CHBMapLevelViewStarModeInactive:
             NSAssert(NO, @"Should not be here");
@@ -63,6 +66,7 @@
     }
 
     self.resultStatusView.highlighted = self.performance.win;
+    self.pointLabel.text = [NSString stringWithFormat:@"%ld", self.performance.points];
 }
 
 #pragma mark - Actions
