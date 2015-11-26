@@ -13,4 +13,5 @@
 @interface CHBResultViewController : CHBViewController
 @property (nonatomic, assign) CHBGameLevel level;
 @property (nonatomic, retain) CHBPerformance *performance;
+@property (nonatomic, assign) BOOL multiplePlayers;
 @end

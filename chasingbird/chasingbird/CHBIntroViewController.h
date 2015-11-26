@@ -11,4 +11,5 @@
 
 @interface CHBIntroViewController : CHBViewController
 @property (nonatomic, assign) CHBGameLevel level;
+@property (nonatomic, assign) BOOL multiplePlayers;
 @end

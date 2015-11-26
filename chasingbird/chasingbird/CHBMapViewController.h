@@ -9,5 +9,5 @@
 #import "CHBViewController.h"
 
 @interface CHBMapViewController : CHBViewController
-
+@property (nonatomic, assign) BOOL multiplePlayers;
 @end

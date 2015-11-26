@@ -46,7 +46,8 @@
 }
 
 - (IBAction)playAction:(id)sender {
-    NSDictionary *dict = @{@"level":@(self.level)};
+    NSDictionary *dict = @{@"level":@(self.level),
+                           @"multiplePlayers":@(self.multiplePlayers)};
     [[NSNotificationCenter defaultCenter] postNotificationName:playNotification object:nil userInfo:dict];
 }
 

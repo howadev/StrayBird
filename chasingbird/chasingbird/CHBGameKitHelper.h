@@ -19,6 +19,6 @@ extern NSString *const PresentAuthenticationViewController;
 + (instancetype)sharedGameKitHelper;
 - (void)authenticateLocalPlayer;
 - (void)reportScore:(NSInteger)score;
-- (void)updateAchievements;
+- (void)reportAchievementWithIdentifier:(NSString *)identifier;
 - (void)resetAchievements;
 @end

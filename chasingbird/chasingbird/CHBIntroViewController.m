@@ -68,6 +68,7 @@
 - (void)nextButtonDidTap:(id)sender {
     CHBStartViewController *vc = [CHBStartViewController new];
     vc.level = self.level;
+    vc.multiplePlayers = self.multiplePlayers;
     [self.navigationController pushViewController:vc animated:NO];
 }
 

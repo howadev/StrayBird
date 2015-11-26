@@ -9,6 +9,7 @@
 #import "CHBResultViewController.h"
 #import "CHBResultTableView.h"
 #import "CHBPerformanceHelper.h"
+#import "CHBGameKitHelper.h"
 
 @interface CHBResultViewController ()
 @property (weak, nonatomic) IBOutlet CHBResultTableView *tableView;
@@ -67,6 +68,40 @@
 
     self.resultStatusView.highlighted = self.performance.win;
     self.pointLabel.text = [NSString stringWithFormat:@"%ld", self.performance.points];
+    
+    if (self.multiplePlayers) {
+        if (self.performance.maximumSpeed > 8 * 1000 / 60) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"NoSlowingDown1"];
+        }
+        if (self.performance.maximumSpeed > 9 * 1000 / 60) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"NoSlowingDown2"];
+        }
+        if (self.performance.maximumSpeed > 10 * 1000 /60) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"NoSlowingDown3"];
+        }
+        
+        if (self.performance.calories > 500) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"BurningItOff1"];
+        }
+        if (self.performance.calories > 1000) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"BurningItOff2"];
+        }
+        if (self.performance.calories > 2500) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"BurningItOff3"];
+        }
+        
+        if ([CHBPerformanceHelper sharedHelper].points > 5000) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"PointAficionado1"];
+        }
+        if ([CHBPerformanceHelper sharedHelper].points > 10000) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"PointAficionado2"];
+        }
+        if ([CHBPerformanceHelper sharedHelper].points > 20000) {
+            [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"PointAficionado3"];
+        }
+        
+        [[CHBGameKitHelper sharedGameKitHelper] reportScore:[CHBPerformanceHelper sharedHelper].points];
+    }
 }
 
 #pragma mark - Actions
@@ -79,7 +114,8 @@
 - (IBAction)restartAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
-    NSDictionary *dict = @{@"level":@(self.level)};
+    NSDictionary *dict = @{@"level":@(self.level),
+                           @"multiplePlayers":@(self.multiplePlayers)};
     [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil userInfo:dict];
 }
 

@@ -31,9 +31,11 @@
     [self.navController popToRootViewControllerAnimated:NO];
     
     NSDictionary *dict = notification.userInfo;
-    NSNumber *levelNumer = dict[@"level"];
+    NSNumber *levelNumber = dict[@"level"];
+    NSNumber *multiplePlayersNumber = dict[@"multiplePlayers"];
     CHBGameViewController *vc = [CHBGameViewController new];
-    vc.level = levelNumer.integerValue;
+    vc.level = levelNumber.integerValue;
+    vc.multiplePlayers = multiplePlayersNumber.boolValue;
     [self.navController presentViewController:vc animated:YES completion:^{
         
     }];
@@ -42,9 +44,11 @@
 - (void)restartGame:(NSNotification *)notification {
     [self.navController dismissViewControllerAnimated:NO completion:^{
         NSDictionary *dict = notification.userInfo;
-        NSNumber *levelNumer = dict[@"level"];
+        NSNumber *levelNumber = dict[@"level"];
+        NSNumber *multiplePlayersNumber = dict[@"multiplePlayers"];
         CHBGameViewController *vc = [CHBGameViewController new];
-        vc.level = levelNumer.integerValue;
+        vc.level = levelNumber.integerValue;
+        vc.multiplePlayers = multiplePlayersNumber.boolValue;
         [self.navController presentViewController:vc animated:YES completion:nil];
     }];
     

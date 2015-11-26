@@ -91,9 +91,6 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
                 NSLog(@"%@", [error localizedDescription]);
             } else {
                 NSLog(@"reprot score successfully: %@", _score);
-                if (score >= 5) {
-                    [self updateAchievements];
-                }
             }
         }];
         
@@ -101,9 +98,9 @@ NSString *const PresentAuthenticationViewController = @"present_authentication_v
     }
 }
 
--(void)updateAchievements{
+- (void)reportAchievementWithIdentifier:(NSString *)identifier {
 
-    GKAchievement *scoreAchievement = [[GKAchievement alloc] initWithIdentifier:@"finish_five_times"];
+    GKAchievement *scoreAchievement = [[GKAchievement alloc] initWithIdentifier:identifier];
     scoreAchievement.percentComplete = 100.0;
     
     [GKAchievement reportAchievements:@[scoreAchievement] withCompletionHandler:^(NSError *error) {

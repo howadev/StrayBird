@@ -69,6 +69,7 @@
     if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelFirst]) {
         CHBIntroViewController *vc = [CHBIntroViewController new];
         vc.level = CHBGameLevelFirst;
+        vc.multiplePlayers = self.multiplePlayers;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
@@ -77,6 +78,7 @@
     if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelSecond]) {
         CHBIntroViewController *vc = [CHBIntroViewController new];
         vc.level = CHBGameLevelSecond;
+        vc.multiplePlayers = self.multiplePlayers;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
@@ -85,6 +87,7 @@
     if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelThird]) {
         CHBIntroViewController *vc = [CHBIntroViewController new];
         vc.level = CHBGameLevelThird;
+        vc.multiplePlayers = self.multiplePlayers;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

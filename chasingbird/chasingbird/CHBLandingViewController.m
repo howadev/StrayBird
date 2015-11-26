@@ -44,6 +44,7 @@
 
 - (IBAction)startGameAction:(id)sender {
     CHBMapViewController *vc = [CHBMapViewController new];
+    vc.multiplePlayers = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

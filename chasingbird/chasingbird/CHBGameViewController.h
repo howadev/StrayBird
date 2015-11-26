@@ -12,4 +12,5 @@
 @interface CHBGameViewController : CHBViewController
 @property (nonatomic, assign) BOOL paused;
 @property (nonatomic, assign) CHBGameLevel level;
+@property (nonatomic, assign) BOOL multiplePlayers;
 @end

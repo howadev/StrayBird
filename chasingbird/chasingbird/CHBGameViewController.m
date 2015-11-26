@@ -69,6 +69,7 @@
     CHBPauseViewController *vc = [CHBPauseViewController new];
     vc.performance = self.scene.performance;
     vc.level = self.level;
+    vc.multiplePlayers = self.multiplePlayers;
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene
     }];
@@ -79,6 +80,7 @@
 - (void)gameScene:(CHBGameScene *)scene didStopWithPerformance:(CHBPerformance *)performance {
     CHBResultViewController *vc = [CHBResultViewController new];
     vc.level = self.level;
+    vc.multiplePlayers = self.multiplePlayers;
     vc.performance = scene.performance;
     [self presentViewController:vc animated:YES completion:^{
         // pause game scene

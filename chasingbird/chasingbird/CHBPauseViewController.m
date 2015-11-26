@@ -80,7 +80,8 @@
 - (IBAction)restartAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
-    NSDictionary *dict = @{@"level":@(self.level)};
+    NSDictionary *dict = @{@"level":@(self.level),
+                           @"multiplePlayers":@(self.multiplePlayers)};
     [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil userInfo:dict];
 }
 
