@@ -39,6 +39,7 @@
 		6455EE451BCC27A900E32334 /* CHBRadarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6455EE441BCC27A900E32334 /* CHBRadarNode.m */; };
 		646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 646608681BB70BDF00E61BFD /* CHBLabelNode.m */; };
 		6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */; };
+		649114B61C09F26800826EA0 /* CHBConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 649114B51C09F26800826EA0 /* CHBConf.m */; };
 		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; };
 		64A8F5741BFAD8D300480B47 /* CHBPerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A8F5721BFAD8D300480B47 /* CHBPerformanceViewController.m */; };
 		64A8F5751BFAD8D400480B47 /* CHBPerformanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A8F5731BFAD8D300480B47 /* CHBPerformanceViewController.xib */; };
@@ -173,6 +174,8 @@
 		646608681BB70BDF00E61BFD /* CHBLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLabelNode.m; sourceTree = "<group>"; };
 		6466086A1BB7117A00E61BFD /* CHBBirdInfoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBBirdInfoNode.h; sourceTree = "<group>"; };
 		6466086B1BB7117A00E61BFD /* CHBBirdInfoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBBirdInfoNode.m; sourceTree = "<group>"; };
+		649114B41C09F26800826EA0 /* CHBConf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBConf.h; sourceTree = "<group>"; };
+		649114B51C09F26800826EA0 /* CHBConf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBConf.m; sourceTree = "<group>"; };
 		649C15DA1BAD8A9700420ED2 /* CHBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBHelpers.h; sourceTree = "<group>"; };
 		649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBHelpers.m; sourceTree = "<group>"; };
 		64A8F5711BFAD8D300480B47 /* CHBPerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceViewController.h; sourceTree = "<group>"; };
@@ -462,8 +465,10 @@
 		891458E11B7FDAC400ECF6D9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */,
+				649114B41C09F26800826EA0 /* CHBConf.h */,
+				649114B51C09F26800826EA0 /* CHBConf.m */,
 				8985C2181B92378F00FDA0B0 /* CHBTypes.h */,
+				891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */,
 				891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */,
 				89659BED1B8962B6004072CE /* CHBGameKitHelper.h */,
 				89659BEE1B8962B6004072CE /* CHBGameKitHelper.m */,
@@ -825,6 +830,7 @@
 				64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */,
 				640FA8ED1BF183EA00D89019 /* CHBLeaderboardTableViewCell.m in Sources */,
 				6455EE421BCC02E300E32334 /* CHBNetInfoNode.m in Sources */,
+				649114B61C09F26800826EA0 /* CHBConf.m in Sources */,
 				64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

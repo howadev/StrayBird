@@ -45,27 +45,27 @@
     CHBResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CHBResultTableViewCell class]) forIndexPath:indexPath];
     switch (indexPath.row) {
         case 0: {
-            cell.identifierLabel.text = @"TIME DURATION";
-            NSTimeInterval value = self.performance.totalTime;
-            cell.valueLabel.text = [NSString stringWithFormat:@"%f", value];
+            cell.identifierLabel.text = @"LEFT TIME";
+            NSTimeInterval value = self.performance.leftTime;
+            cell.valueLabel.text = [NSString stringWithFormat:@"%02lu:%02ld", (NSUInteger)value/60, (NSUInteger)value%60];
             break;
         }
         case 1: {
             cell.identifierLabel.text = @"FLOCK SPEED";
             NSTimeInterval value = self.performance.flockSpeed;
-            cell.valueLabel.text = [NSString stringWithFormat:@"%f", value];
+            cell.valueLabel.text = [NSString stringWithFormat:@"%.2f M/S", value];
             break;
         }
         case 2: {
             cell.identifierLabel.text = @"MAXIMUM SPEED";
             CGFloat value = self.performance.maximumSpeed;
-            cell.valueLabel.text = [NSString stringWithFormat:@"%f", value];
+            cell.valueLabel.text = [NSString stringWithFormat:@"%.2f M/S", value];
             break;
         }
         case 3: {
             cell.identifierLabel.text = @"CALORIES";
-            CGFloat value = self.performance.calories;
-            cell.valueLabel.text = [NSString stringWithFormat:@"%f", value];
+            CGFloat value = self.performance.overallCalories;
+            cell.valueLabel.text = [NSString stringWithFormat:@"%.2f CAL", value];
             break;
         }
             

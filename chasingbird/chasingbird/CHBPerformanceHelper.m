@@ -40,7 +40,7 @@
 - (void)updateWithPerformance:(CHBPerformance *)performance {
     
     self.points += performance.points;
-    self.calories += performance.calories;
+    self.calories += performance.overallCalories;
     self.distance += performance.birdElapsedDistance;
     
     if (performance.win) {

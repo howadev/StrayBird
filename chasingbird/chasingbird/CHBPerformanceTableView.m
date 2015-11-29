@@ -72,13 +72,13 @@
         case 4: {
             cell.identifierLabel.text = @"DISTANCE";
             NSInteger value = [CHBPerformanceHelper sharedHelper].distance;
-            cell.valueLabel.text = [NSString stringWithFormat:@"%ld", value];
+            cell.valueLabel.text = [NSString stringWithFormat:@"%ld M", value];
             break;
         }
         case 5: {
             cell.identifierLabel.text = @"SPEED";
             NSInteger value = [CHBPerformanceHelper sharedHelper].speed;
-            cell.valueLabel.text = [NSString stringWithFormat:@"%ld", value];
+            cell.valueLabel.text = [NSString stringWithFormat:@"%ld M/S", value];
             break;
         }
             

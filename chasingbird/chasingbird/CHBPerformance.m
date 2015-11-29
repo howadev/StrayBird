@@ -25,19 +25,19 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
                 self.totalTime = 20 * 60;
                 self.totalDistance = 1500;
                 self.flockElapsedDistance = 500;
-                self.flockSpeed = 60;
+                self.flockSpeed = 3.6 * 1000 / 3600;
                 break;
             case CHBGameLevelSecond:
                 self.totalTime = 30 * 60;
                 self.totalDistance = 2500;
                 self.flockElapsedDistance = 800;
-                self.flockSpeed = 80;
+                self.flockSpeed = 4.8 * 1000 / 3600;
                 break;
             case CHBGameLevelThird:
                 self.totalTime = 40 * 60;
                 self.totalDistance = 3500;
                 self.flockElapsedDistance = 800;
-                self.flockSpeed = 100;
+                self.flockSpeed = 6 * 1000 / 3600;
                 break;
         }
     }
@@ -88,6 +88,11 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
                 return CHBMapLevelViewStarModeOne;
             }
     }
+}
+
+- (void)setCalories:(CGFloat)calories {
+    _calories = calories;
+    _overallCalories += calories;
 }
 
 - (CGFloat)birdSpeed {

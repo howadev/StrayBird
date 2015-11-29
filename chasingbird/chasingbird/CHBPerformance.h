@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) CGFloat maximumSpeed;
 @property (nonatomic, readonly) CGFloat averageSpeed;
 @property (nonatomic, readonly) NSTimeInterval leftTime;
+@property (nonatomic, readonly) CGFloat overallCalories;
 
 @property (nonatomic, assign) CGFloat birdSpeed;
 @property (nonatomic, assign) CGFloat birdElapsedDistance;

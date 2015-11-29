@@ -13,6 +13,7 @@
 #import "CHBLabelNode.h"
 #import "CHBRadarNode.h"
 #import "CHBPerformance.h"
+#import "CHBConf.h"
 @import WatchConnectivity;
 
 @interface CHBGameScene () <WCSessionDelegate>
@@ -180,7 +181,7 @@
 }
 
 - (CGFloat)backgroundMovePointsPerSec {
-    return self.performance.birdSpeed;
+    return self.performance.birdSpeed * 50;
 }
 
 - (void)setupBackgroundNode {
@@ -214,7 +215,7 @@
     [self.backgroundLayer addChild:backgroundSprite2];
     
     self.populateRockAnimation = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateRock];}],
-                                                                                    [SKAction waitForDuration:5.0]
+                                                                                    [SKAction waitForDuration:[CHBConf populateRockDuration]]
                                                                                     ]]];
     [self runAction:self.populateRockAnimation];
 }
@@ -275,14 +276,14 @@
     self.thunderNode.position = CGPointMake(self.size.width/2, self.size.height/2);
     [self.atmosphereLayer addChild:self.thunderNode];
     [self.thunderNode runAction:[SKAction sequence:@[self.thunderAnimation,
-                                                     [SKAction waitForDuration:1.0],
+                                                     [SKAction waitForDuration:[CHBConf populateThunderDuration]],
                                                      [SKAction removeFromParent]]]];
 }
 
 - (void)setupCloudLayer {
     
     [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{[self populateCloud];}],
-                                                                       [SKAction waitForDuration:1.5]]]]];
+                                                                       [SKAction waitForDuration:[CHBConf populateCloudDuration]]]]]];
 }
 
 - (void)populateCloud {
@@ -305,7 +306,7 @@
     node.position = CGPointMake(-node.size.width/2, [CHBHelpers randomWithMin:0 max:self.size.height]);
     [self.cloudLayer addChild:node];
     
-    SKAction *moveAction = [SKAction moveByX:self.size.width+node.size.width y:0 duration:5];
+    SKAction *moveAction = [SKAction moveByX:self.size.width+node.size.width y:0 duration:[CHBConf moveCloudDuration]];
     SKAction *cloudAction = [SKAction repeatActionForever:[SKAction sequence:@[moveAction, [SKAction removeFromParent]]]];
     [node runAction:cloudAction];
 }
@@ -390,7 +391,7 @@
             NSAssert(self.currentNetState == CHBNetStateNone, @"Invalid state transition");
             [self setupNetNode];
             [self.netNode runAction:[SKAction repeatActionForever:self.netDropAnimation]];
-            [self.netLayer runAction:[SKAction moveByX:0 y:-(self.size.height - self.birdNode.position.y)-self.netNode.size.height/2 duration:2.0]];
+            [self.netLayer runAction:[SKAction moveByX:0 y:-(self.size.height - self.birdNode.position.y)-self.netNode.size.height/2 duration:[CHBConf netDropDuration]]];
             self.currentNetState = CHBNetStateDrop;
             break;
         case CHBNetStateCollision:
@@ -447,7 +448,7 @@
     SKSpriteNode *checkPointNode = [[SKSpriteNode alloc] initWithImageNamed:@"sprite_level1-3_layer5_checkpoint1"];
     checkPointNode.position = CGPointMake(self.size.width/2, self.size.height+checkPointNode.size.height/2);
     [self.checkPointLayer addChild:checkPointNode];
-    [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:8.0],
+    [checkPointNode runAction:[SKAction group:@[[SKAction sequence:@[[SKAction moveByX:0 y:-self.size.height-checkPointNode.size.height duration:[CHBConf checkPointDropDuration]],
                                                                      [SKAction removeFromParent],
                                                                      [SKAction runBlock:^{[self stopGame];}]]],
                                                 [SKAction repeatActionForever:self.checkPointAnimation]]]];
@@ -489,8 +490,8 @@
         self.backgroundLayer.position = CGPointMake(self.backgroundLayer.position.x + amountToMove.x, self.backgroundLayer.position.y + amountToMove.y);
     }
     
-    self.performance.birdElapsedDistance += self.performance.birdSpeed * (self.dt/60.0);
-    self.performance.flockElapsedDistance += self.performance.flockSpeed * (self.dt/60.0);
+    self.performance.birdElapsedDistance += self.performance.birdSpeed * self.dt;
+    self.performance.flockElapsedDistance += self.performance.flockSpeed * self.dt;
     
     if (self.performance.birdElapsedDistance > self.performance.flockElapsedDistance) {
         if (self.flockAnimation == nil) {
@@ -512,8 +513,8 @@
         self.birdInfoNode.distanceLeftLabel.text = [NSString stringWithFormat:@"%.2f M", self.performance.totalDistance-self.performance.birdElapsedDistance];
     }
     
-    self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f KCAL", self.performance.calories];
-    self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/MIN", self.performance.birdSpeed];
+    self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f CAL", self.performance.overallCalories];
+    self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", self.performance.birdSpeed];
     
     self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02lu:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
     
@@ -541,7 +542,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    self.performance.calories += 500;
+    self.performance.calories += 10;
 
     if (testNet) {
         testNetCount++;
