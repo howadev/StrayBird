@@ -38,4 +38,25 @@
     return 8.0;
 }
 
++ (NSTimeInterval)netDropInterval {
+    return 5 * 60;
+}
+
++ (NSTimeInterval)thunderInterval {
+    return 5 * 60;
+}
+
++ (CGFloat)netSpeedWithDropNetTimes:(NSUInteger)times {
+    switch (times) {
+        case 0:
+            return 1.6;
+        case 1:
+            return 1.7;
+        case 2:
+            return 1.8;
+        default:
+            return 1.9;
+    }
+}
+
 @end

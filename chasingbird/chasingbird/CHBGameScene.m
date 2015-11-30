@@ -32,6 +32,7 @@
 @property (nonatomic, retain) SKNode *atmosphereLayer;
 @property (nonatomic, retain) SKSpriteNode *thunderNode;
 @property (nonatomic, retain) SKAction *thunderAnimation;
+@property (nonatomic, retain) NSTimer *thunderTimer;
 
 @property (nonatomic, retain) SKNode *cloudLayer;
 
@@ -49,6 +50,9 @@
 @property (nonatomic, retain) SKAction *netCollisionAnimation;
 @property (nonatomic, retain) SKAction *netBreakAnimation;
 @property (nonatomic, assign) CHBNetState currentNetState;
+@property (nonatomic, assign) NSUInteger dropNetTimes;
+@property (nonatomic, retain) NSTimer *netTimer;
+@property (nonatomic, assign) CGFloat netSpeed;
 
 @property (nonatomic, retain) CHBNetInfoNode *netInfoNode;
 
@@ -69,6 +73,10 @@
 
 - (void)dealloc {
     NSLog(@"Game Scene Did Dealloc");
+    [self.thunderTimer invalidate];
+    self.thunderTimer = nil;
+    [self.netTimer invalidate];
+    self.netTimer = nil;
 }
 
 //- (void)setPaused:(BOOL)paused {
@@ -115,11 +123,21 @@
     [self setupBackgroundNode];
     [self setupCloudLayer];
     [self setupBirdNode];
-    
+    [self setupTimer];
+}
+
+- (void)setupTimer {
     self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateEverySecond:) userInfo:nil repeats:YES];
     
-    if (self.level == CHBGameLevelSecond) {
-        testNet = YES;
+    switch (self.level) {
+        case CHBGameLevelSecond:
+            self.netTimer = [NSTimer scheduledTimerWithTimeInterval:[CHBConf netDropInterval] target:self selector:@selector(populateNet) userInfo:nil repeats:YES];
+            break;
+        case CHBGameLevelThird:
+            self.thunderTimer = [NSTimer scheduledTimerWithTimeInterval:[CHBConf thunderInterval] target:self selector:@selector(populateThunder) userInfo:nil repeats:YES];
+            break;
+        default:
+            break;
     }
 }
 
@@ -349,6 +367,7 @@
 
 - (void)setupNetInfoNode {
     self.netInfoNode = [CHBNetInfoNode new];
+    self.netInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", self.netSpeed];
     self.netInfoNode.position = CGPointMake(self.size.width, self.netNode.position.y);
     [self.netLayer addChild:self.netInfoNode];
 }
@@ -387,32 +406,54 @@
 
 - (void)applyNetState:(CHBNetState)state {
     switch (state) {
-        case CHBNetStateDrop:
+        case CHBNetStateNone:
+            break;
+        case CHBNetStateDrop: {
             NSAssert(self.currentNetState == CHBNetStateNone, @"Invalid state transition");
             [self setupNetNode];
             [self.netNode runAction:[SKAction repeatActionForever:self.netDropAnimation]];
-            [self.netLayer runAction:[SKAction moveByX:0 y:-(self.size.height - self.birdNode.position.y)-self.netNode.size.height/2 duration:[CHBConf netDropDuration]]];
-            self.currentNetState = CHBNetStateDrop;
+            [self.netLayer runAction:[SKAction sequence:@[[SKAction moveByX:0 y:-(self.size.height - self.birdNode.position.y)-self.netNode.size.height/2 duration:[CHBConf netDropDuration]],
+                                                          [SKAction runBlock:^{[self applyNetState:CHBNetStateCollision];}]
+                                                          ]]];
             break;
+        }
         case CHBNetStateCollision:
             NSAssert(self.currentNetState == CHBNetStateDrop, @"Invalid state transition");
             [self.netNode removeAllActions];
             [self.netNode runAction:[SKAction repeatActionForever:self.netCollisionAnimation]];
-            self.currentNetState = CHBNetStateCollision;
             break;
-        case CHBNetStateBreak:
+        case CHBNetStateBreak: {
             NSAssert(self.currentNetState == CHBNetStateCollision, @"Invalid state transition");
             [self.netNode removeAllActions];
             [self.netNode runAction:[SKAction sequence:@[self.netBreakAnimation,
-                                                         [SKAction removeFromParent]]]];
+                                                         [SKAction removeFromParent], [SKAction runBlock:^{[self cleanNetNode];}]]]];
             [self.netInfoNode removeFromParent];
             self.netLayer.position = CGPointZero;
-            self.currentNetState = CHBNetStateBreak;
             break;
+        }
         default:
             NSAssert(NO, @"funny state");
             break;
     }
+    self.currentNetState = state;
+}
+
+- (void)populateNet {
+    if (self.netNode) {
+        return;
+    }
+    
+    NSAssert(self.currentNetState == CHBNetStateNone, @"Must be none state before drop net");
+    
+    self.netSpeed = [CHBConf netSpeedWithDropNetTimes:self.dropNetTimes];
+    self.dropNetTimes++;
+    [self applyNetState:CHBNetStateDrop];
+}
+
+- (void)cleanNetNode {
+    self.netNode = nil;
+    self.netInfoNode = nil;
+    [self applyNetState:CHBNetStateNone];
 }
 
 - (void)setupBirdNode {
@@ -517,6 +558,13 @@
     self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", self.performance.birdSpeed];
     
     self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02lu:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
+    
+    if (self.netNode) {
+        NSAssert(self.level == CHBGameLevelSecond, @"Only have net in second level");
+        if (self.currentNetState == CHBNetStateCollision && self.performance.birdSpeed > self.netSpeed) {
+            [self applyNetState:CHBNetStateBreak];
+        }
+    }
     
     if ((NSUInteger)(self.performance.elapsedTime) % 30 == 0) {
         switch (self.level) {

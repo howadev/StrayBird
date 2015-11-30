@@ -17,4 +17,8 @@
 + (CGFloat)moveCloudDuration;
 + (CGFloat)netDropDuration;
 + (CGFloat)checkPointDropDuration;
+
++ (NSTimeInterval)netDropInterval;
++ (NSTimeInterval)thunderInterval;
++ (CGFloat)netSpeedWithDropNetTimes:(NSUInteger)times;
 @end

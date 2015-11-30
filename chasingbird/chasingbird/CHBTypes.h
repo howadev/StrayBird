@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, CHBWorkoutMode) {
 };
 
 typedef NS_ENUM(NSInteger, CHBNetState) {
-    CHBNetStateNone = 1,
+    CHBNetStateNone = 0,
     CHBNetStateDrop,
     CHBNetStateCollision,
     CHBNetStateBreak,
