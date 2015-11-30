@@ -296,6 +296,7 @@
     [self.thunderNode runAction:[SKAction sequence:@[self.thunderAnimation,
                                                      [SKAction waitForDuration:[CHBConf populateThunderDuration]],
                                                      [SKAction removeFromParent]]]];
+    self.performance.flockElapsedDistance += 50;
 }
 
 - (void)setupCloudLayer {
@@ -563,20 +564,6 @@
         NSAssert(self.level == CHBGameLevelSecond, @"Only have net in second level");
         if (self.currentNetState == CHBNetStateCollision && self.performance.birdSpeed > self.netSpeed) {
             [self applyNetState:CHBNetStateBreak];
-        }
-    }
-    
-    if ((NSUInteger)(self.performance.elapsedTime) % 30 == 0) {
-        switch (self.level) {
-            case CHBGameLevelFirst:
-                break;
-            case CHBGameLevelSecond:
-                break;
-            case CHBGameLevelThird:
-                [self populateThunder];
-                break;
-            default:
-                break;
         }
     }
 }
