@@ -30,7 +30,6 @@
 		6425785E1BC065C8006B430D /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6425785D1BC065C8006B430D /* ExtensionDelegate.m */; };
 		642578601BC065C8006B430D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6425785F1BC065C8006B430D /* Assets.xcassets */; };
 		642578641BC065C8006B430D /* chasingBirdWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 642578481BC065C8006B430D /* chasingBirdWatch.app */; };
-		6425786C1BC066CB006B430D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4B99D01B9C714C00FED471 /* HealthKit.framework */; };
 		643736271BF1539300A4BC64 /* CHBLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643736251BF1539300A4BC64 /* CHBLandingViewController.m */; };
 		643736281BF1539300A4BC64 /* CHBLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 643736261BF1539300A4BC64 /* CHBLandingViewController.xib */; };
 		6437362D1BF15BC600A4BC64 /* CHBAchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437362B1BF15BC600A4BC64 /* CHBAchievementsViewController.m */; };
@@ -54,6 +53,7 @@
 		64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F262361BD40D8900C5BD68 /* CHBResultViewController.m */; };
 		64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */; };
 		64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */; };
+		7FE3DB091C35E0B400E270B4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB081C35E0B400E270B4 /* HealthKit.framework */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -200,7 +200,7 @@
 		64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBResultViewController.xib; sourceTree = "<group>"; };
 		64F2623A1BD413A200C5BD68 /* CHBPerformanceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceTableView.h; sourceTree = "<group>"; };
 		64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPerformanceTableView.m; sourceTree = "<group>"; };
-		7F4B99D01B9C714C00FED471 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		7FE3DB081C35E0B400E270B4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6425786C1BC066CB006B430D /* HealthKit.framework in Frameworks */,
+				7FE3DB091C35E0B400E270B4 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +485,7 @@
 		8917362B1B7676A0003E082F = {
 			isa = PBXGroup;
 			children = (
-				7F4B99D01B9C714C00FED471 /* HealthKit.framework */,
+				7FE3DB081C35E0B400E270B4 /* HealthKit.framework */,
 				89659BEB1B895FBF004072CE /* SpriteKit.framework */,
 				89659BE91B895D6D004072CE /* GameKit.framework */,
 				8968F2B11B7789A4000A6018 /* HealthKit.framework */,
