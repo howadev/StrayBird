@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CHBDemoViewController.h"
 #import "CHBHomeViewController.h"
+#import "CHBDeviceViewController.h"
 #import "CHBGameViewController.h"
 #import "CHBTypes.h"
 @import HealthKit;
@@ -60,7 +61,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //CHBDemoViewController *vc = [CHBDemoViewController new];
-    CHBHomeViewController *vc = [CHBHomeViewController new];
+    //CHBHomeViewController *vc = [CHBHomeViewController new];
+    CHBDeviceViewController *vc = [CHBDeviceViewController new];
     //CHBGameViewController *vc = [CHBGameViewController new];
     self.navController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = self.navController;
