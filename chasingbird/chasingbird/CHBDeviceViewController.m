@@ -8,6 +8,7 @@
 
 #import "CHBDeviceViewController.h"
 #import "CHBLEOViewController.h"
+#import "CHBSensorTagViewController.h"
 #import "CHBDeviceHelpers.h"
 
 @interface CHBDeviceViewController ()
@@ -39,6 +40,9 @@
 }
 
 - (IBAction)didSelectSensorTag:(id)sender {
+    [CHBDeviceHelpers sharedInstance].deviceType = CHBDeviceTypeSensorTag;
+    CHBSensorTagViewController *vc = [CHBSensorTagViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

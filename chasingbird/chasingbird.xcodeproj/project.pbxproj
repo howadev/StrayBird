@@ -59,6 +59,9 @@
 		7FE3DB131C36018100E270B4 /* CHBLEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */; };
 		7FE3DB181C36028800E270B4 /* leo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB171C36028800E270B4 /* leo.framework */; };
 		7FE3DB1B1C3608D900E270B4 /* CHBDeviceHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */; };
+		7FFE95031C36B080004925F6 /* DeviceSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95021C36B080004925F6 /* DeviceSelectTableViewController.m */; };
+		7FFE95061C36B0AB004925F6 /* CHBSensorTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95051C36B0AB004925F6 /* CHBSensorTagViewController.m */; };
+		7FFE95091C36B23B004925F6 /* bluetoothHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95081C36B23B004925F6 /* bluetoothHandler.m */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -214,6 +217,12 @@
 		7FE3DB171C36028800E270B4 /* leo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = leo.framework; sourceTree = "<group>"; };
 		7FE3DB191C3608D900E270B4 /* CHBDeviceHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBDeviceHelpers.h; sourceTree = "<group>"; };
 		7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBDeviceHelpers.m; sourceTree = "<group>"; };
+		7FFE95011C36B080004925F6 /* DeviceSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSelectTableViewController.h; sourceTree = "<group>"; };
+		7FFE95021C36B080004925F6 /* DeviceSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSelectTableViewController.m; sourceTree = "<group>"; };
+		7FFE95041C36B0AB004925F6 /* CHBSensorTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBSensorTagViewController.h; sourceTree = "<group>"; };
+		7FFE95051C36B0AB004925F6 /* CHBSensorTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBSensorTagViewController.m; sourceTree = "<group>"; };
+		7FFE95071C36B23B004925F6 /* bluetoothHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bluetoothHandler.h; sourceTree = "<group>"; };
+		7FFE95081C36B23B004925F6 /* bluetoothHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bluetoothHandler.m; sourceTree = "<group>"; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
@@ -458,13 +467,27 @@
 		7FE3DB0A1C35FC8B00E270B4 /* DeviceView */ = {
 			isa = PBXGroup;
 			children = (
+				7FFE95001C36B066004925F6 /* SensorTag */,
 				7FE3DB0B1C35FCCA00E270B4 /* CHBDeviceViewController.h */,
 				7FE3DB0C1C35FCCA00E270B4 /* CHBDeviceViewController.m */,
 				7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */,
 				7FE3DB101C36018100E270B4 /* CHBLEOViewController.h */,
 				7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */,
+				7FFE95041C36B0AB004925F6 /* CHBSensorTagViewController.h */,
+				7FFE95051C36B0AB004925F6 /* CHBSensorTagViewController.m */,
 			);
 			name = DeviceView;
+			sourceTree = "<group>";
+		};
+		7FFE95001C36B066004925F6 /* SensorTag */ = {
+			isa = PBXGroup;
+			children = (
+				7FFE95071C36B23B004925F6 /* bluetoothHandler.h */,
+				7FFE95081C36B23B004925F6 /* bluetoothHandler.m */,
+				7FFE95011C36B080004925F6 /* DeviceSelectTableViewController.h */,
+				7FFE95021C36B080004925F6 /* DeviceSelectTableViewController.m */,
+			);
+			name = SensorTag;
 			sourceTree = "<group>";
 		};
 		8911BB621B8FBCDA00402F93 /* StartView */ = {
@@ -830,6 +853,7 @@
 				896251831B8E8FF500295961 /* CHBImageView.m in Sources */,
 				7FE3DB0E1C35FCCA00E270B4 /* CHBDeviceViewController.m in Sources */,
 				64059CC91C0125BF0069D4DE /* CHBResultTableView.m in Sources */,
+				7FFE95091C36B23B004925F6 /* bluetoothHandler.m in Sources */,
 				891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */,
 				646608691BB70BDF00E61BFD /* CHBLabelNode.m in Sources */,
 				7FE3DB131C36018100E270B4 /* CHBLEOViewController.m in Sources */,
@@ -839,10 +863,12 @@
 				64A8F57F1BFADFD000480B47 /* CHBPerformanceTableViewCell.m in Sources */,
 				6466086C1BB7117A00E61BFD /* CHBBirdInfoNode.m in Sources */,
 				640FA8F31BF184C600D89019 /* CHBLeaderboardViewController.m in Sources */,
+				7FFE95061C36B0AB004925F6 /* CHBSensorTagViewController.m in Sources */,
 				8985C21D1B923AA300FDA0B0 /* CHBStartViewController.m in Sources */,
 				8962518C1B8E9A6B00295961 /* CHBMapViewController.m in Sources */,
 				649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */,
 				89E8528D1B8EAB4500942893 /* CHBMapLevelView.m in Sources */,
+				7FFE95031C36B080004925F6 /* DeviceSelectTableViewController.m in Sources */,
 				643736271BF1539300A4BC64 /* CHBLandingViewController.m in Sources */,
 				64A8F5741BFAD8D300480B47 /* CHBPerformanceViewController.m in Sources */,
 				8985C2211B924ADD00FDA0B0 /* CHBGameViewController.m in Sources */,
