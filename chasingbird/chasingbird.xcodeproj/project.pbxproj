@@ -57,7 +57,7 @@
 		7FE3DB0E1C35FCCA00E270B4 /* CHBDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB0C1C35FCCA00E270B4 /* CHBDeviceViewController.m */; };
 		7FE3DB0F1C35FCCA00E270B4 /* CHBDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */; };
 		7FE3DB131C36018100E270B4 /* CHBLEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */; };
-		7FE3DB141C36018100E270B4 /* CHBLEOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3DB121C36018100E270B4 /* CHBLEOViewController.xib */; };
+		7FE3DB181C36028800E270B4 /* leo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB171C36028800E270B4 /* leo.framework */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -210,7 +210,7 @@
 		7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBDeviceViewController.xib; sourceTree = "<group>"; };
 		7FE3DB101C36018100E270B4 /* CHBLEOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLEOViewController.h; sourceTree = "<group>"; };
 		7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLEOViewController.m; sourceTree = "<group>"; };
-		7FE3DB121C36018100E270B4 /* CHBLEOViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBLEOViewController.xib; sourceTree = "<group>"; };
+		7FE3DB171C36028800E270B4 /* leo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = leo.framework; sourceTree = "<group>"; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
@@ -270,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89659BEC1B895FBF004072CE /* SpriteKit.framework in Frameworks */,
+				7FE3DB181C36028800E270B4 /* leo.framework in Frameworks */,
 				8968F2B21B7789A4000A6018 /* HealthKit.framework in Frameworks */,
 				89659BEA1B895D6D004072CE /* GameKit.framework in Frameworks */,
 			);
@@ -459,7 +460,6 @@
 				7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */,
 				7FE3DB101C36018100E270B4 /* CHBLEOViewController.h */,
 				7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */,
-				7FE3DB121C36018100E270B4 /* CHBLEOViewController.xib */,
 			);
 			name = DeviceView;
 			sourceTree = "<group>";
@@ -508,6 +508,7 @@
 		8917362B1B7676A0003E082F = {
 			isa = PBXGroup;
 			children = (
+				7FE3DB171C36028800E270B4 /* leo.framework */,
 				7FE3DB081C35E0B400E270B4 /* HealthKit.framework */,
 				89659BEB1B895FBF004072CE /* SpriteKit.framework */,
 				89659BE91B895D6D004072CE /* GameKit.framework */,
@@ -779,7 +780,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				891736471B7676A0003E082F /* LaunchScreen.storyboard in Resources */,
-				7FE3DB141C36018100E270B4 /* CHBLEOViewController.xib in Resources */,
 				64B4CAD21BD2BD4700D5C5A5 /* CHBIntroViewController.xib in Resources */,
 				640FA8EE1BF183EA00D89019 /* CHBLeaderboardTableViewCell.xib in Resources */,
 				640FA8FD1BF1910500D89019 /* CHBChallengeTableViewCell.xib in Resources */,
@@ -1051,6 +1051,10 @@
 				CODE_SIGN_ENTITLEMENTS = chasingbird/chasingbird.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
@@ -1066,6 +1070,10 @@
 				CODE_SIGN_ENTITLEMENTS = chasingbird/chasingbird.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;

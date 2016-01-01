@@ -7,6 +7,7 @@
 //
 
 #import "CHBDeviceViewController.h"
+#import "CHBLEOViewController.h"
 
 @interface CHBDeviceViewController ()
 
@@ -24,14 +25,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Actions
+
+- (IBAction)didSelectAppleWatch:(id)sender {
 }
-*/
+
+- (IBAction)didSelectLEO:(id)sender {
+    CHBLEOViewController *vc = [CHBLEOViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)didSelectSensorTag:(id)sender {
+}
 
 @end

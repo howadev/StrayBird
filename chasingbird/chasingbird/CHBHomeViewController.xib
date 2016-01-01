@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBHomeViewController">
@@ -18,22 +18,17 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_background" translatesAutoresizingMaskIntoConstraints="NO" id="RWj-i3-gK2">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <animations/>
                 </imageView>
                 <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_single" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-Po-2AR">
                     <rect key="frame" x="201" y="279" width="199" height="42"/>
-                    <animations/>
                 </imageView>
                 <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_btn_multi" translatesAutoresizingMaskIntoConstraints="NO" id="x8W-R3-aNG">
                     <rect key="frame" x="201" y="337" width="199" height="42"/>
-                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_title" translatesAutoresizingMaskIntoConstraints="NO" id="3m4-kn-7tN">
                     <rect key="frame" x="191" y="-3" width="218" height="250"/>
-                    <animations/>
                 </imageView>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="J0K-Po-2AR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0Hv-e5-FMU"/>
