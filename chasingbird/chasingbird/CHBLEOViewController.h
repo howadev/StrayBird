@@ -8,8 +8,6 @@
 
 #import "CHBViewController.h"
 #import <LEO/LEOBluetooth.h>
-#import <LEO/LEODataDelegate.h>
 
-@interface CHBLEOViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, LEOBluetoothDelegate, LEODataDelegate>
-
+@interface CHBLEOViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, LEOBluetoothDelegate>
 @end

@@ -58,6 +58,7 @@
 		7FE3DB0F1C35FCCA00E270B4 /* CHBDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */; };
 		7FE3DB131C36018100E270B4 /* CHBLEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */; };
 		7FE3DB181C36028800E270B4 /* leo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB171C36028800E270B4 /* leo.framework */; };
+		7FE3DB1B1C3608D900E270B4 /* CHBDeviceHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -211,6 +212,8 @@
 		7FE3DB101C36018100E270B4 /* CHBLEOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLEOViewController.h; sourceTree = "<group>"; };
 		7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLEOViewController.m; sourceTree = "<group>"; };
 		7FE3DB171C36028800E270B4 /* leo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = leo.framework; sourceTree = "<group>"; };
+		7FE3DB191C3608D900E270B4 /* CHBDeviceHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBDeviceHelpers.h; sourceTree = "<group>"; };
+		7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBDeviceHelpers.m; sourceTree = "<group>"; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
@@ -501,6 +504,8 @@
 				649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */,
 				64A8F5811BFAE63400480B47 /* CHBPerformanceHelper.h */,
 				64A8F5821BFAE63400480B47 /* CHBPerformanceHelper.m */,
+				7FE3DB191C3608D900E270B4 /* CHBDeviceHelpers.h */,
+				7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
 				640FA8F81BF190ED00D89019 /* CHBChallengeTableView.m in Sources */,
+				7FE3DB1B1C3608D900E270B4 /* CHBDeviceHelpers.m in Sources */,
 				6437362D1BF15BC600A4BC64 /* CHBAchievementsViewController.m in Sources */,
 				640FA8E91BF1825700D89019 /* CHBLeaderboardTableView.m in Sources */,
 				891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */,

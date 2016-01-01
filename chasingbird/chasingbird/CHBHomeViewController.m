@@ -10,6 +10,8 @@
 #import "CHBMapViewController.h"
 #import "CHBLandingViewController.h"
 #import "CHBGameKitHelper.h"
+#import "CHBDeviceHelpers.h"
+#import "CHBDeviceViewController.h"
 
 @interface CHBHomeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *singlePlayerView;
@@ -38,6 +40,12 @@
     
     [[CHBGameKitHelper sharedGameKitHelper]
      authenticateLocalPlayer];
+    
+    if (![CHBDeviceHelpers sharedInstance].connected) {
+        CHBDeviceViewController *vc = [CHBDeviceViewController new];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:NO completion:nil];
+    }
 }
 
 - (void)singlePlayerViewDidTap:(id)sender {

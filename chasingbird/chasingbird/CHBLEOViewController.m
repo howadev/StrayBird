@@ -9,6 +9,8 @@
 #import "CHBLEOViewController.h"
 #import <LEO/LEOManager.h>
 #import <LEO/LEORepetition.h>
+#import "CHBDeviceHelpers.h"
+#import "CHBHomeViewController.h"
 
 @interface CHBLEOViewController ()
 
@@ -22,6 +24,8 @@
 }
 
 - (void)viewDidLoad {
+    NSAssert([CHBDeviceHelpers sharedInstance].deviceType == CHBDeviceTypeLEO, @"Need it");
+    
     leos = [[NSMutableArray alloc] init];
     leoTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     leoTableView.delegate = self;
@@ -31,19 +35,10 @@
     
     leoManager = [LEOManager sharedInstance];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                              target:self
-                                              action:@selector(cancelButton:)];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                               initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
                                               target:self
                                               action:@selector(scanButton:)];
-}
-
-- (void)cancelButton:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)scanButton:(id)sender {
@@ -111,7 +106,7 @@
                                                      coreLocationEnabled:YES
                                                                 activity:LEOActivityWalking];
         //LEOSettings *settings = [LEOSettings defaultSettings];
-        [LEO beginStreamingDataForSettings:settings toDelegate:self];
+        [LEO beginStreamingDataForSettings:settings toDelegate:[CHBDeviceHelpers sharedInstance]];
     } else {
         NSLog(@"Setup error");
     }
@@ -119,6 +114,8 @@
 
 - (void)LEO:(LEOBluetooth *)LEO didBeginStreamingSession:(LEOStreamingSession *)session {
     streamingLEO = LEO;
+    [CHBDeviceHelpers sharedInstance].connected = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
 }
 
 - (void)LEO:(LEOBluetooth *)LEO didFailToBeginStreaming:(NSError *)error {
@@ -133,16 +130,6 @@
             NSLog(@"Unsuccessful disconnection");
         }
     }];
-}
-
-#pragma mark - LEODataDelegate
-- (void)LEO:(LEOBluetooth *)LEO didSendRepetition:(LEORepetition *)repetition {
-    NSLog(@"Did receive cadence: %tu", repetition.cadence);
-    NSLog(@"Difference from previous cadence: %tu", repetition.cadence - repetition.previousRepetition.cadence);
-}
-
-- (void)LEO:(LEOBluetooth *)LEO didUpdateActivity:(LEOActivity)activity {
-    //NSLog(@"didUpdateActivity");
 }
 
 @end

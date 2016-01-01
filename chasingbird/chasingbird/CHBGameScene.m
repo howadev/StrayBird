@@ -14,9 +14,10 @@
 #import "CHBRadarNode.h"
 #import "CHBPerformance.h"
 #import "CHBConf.h"
+#import "CHBDeviceHelpers.h"
 @import WatchConnectivity;
 
-@interface CHBGameScene () <WCSessionDelegate>
+@interface CHBGameScene () <WCSessionDelegate, CHBDeviceHelpersDelegate>
 
 @property (nonatomic, assign) NSTimeInterval lastUpdateTime;
 @property (nonatomic, assign) NSTimeInterval dt;
@@ -89,6 +90,18 @@
 //    }
 //}
 
+- (void)deviceType:(CHBDeviceType)type didReceiveValue:(CGFloat)value {
+    switch (type) {
+        case CHBDeviceTypeAppleWatch:
+            break;
+        case CHBDeviceTypeLEO:
+            self.performance.calories = value;
+            break;
+        case CHBDeviceTypeSensorTag:
+            break;
+    }
+}
+
 #pragma mark - WCSessionDelegate
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
@@ -102,6 +115,8 @@
 #pragma mark - view Cycle
 
 - (void)didMoveToView:(SKView *)view {
+    
+    [CHBDeviceHelpers sharedInstance].delegate = self;
     
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];

@@ -18,6 +18,12 @@ static NSString *homeNotification = @"BackToHome";
 static NSString *playNotification = @"StartGame";
 static NSString *restartNotification = @"RestartGame";
 
+typedef NS_ENUM(NSInteger, CHBDeviceType) {
+    CHBDeviceTypeAppleWatch = 0,
+    CHBDeviceTypeLEO,
+    CHBDeviceTypeSensorTag,
+};
+
 typedef NS_ENUM(NSInteger, CHBMapLevelViewsStarMode) {
     CHBMapLevelViewStarModeInactive = -1,
     CHBMapLevelViewStarModeNone,

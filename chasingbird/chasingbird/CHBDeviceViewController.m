@@ -8,6 +8,7 @@
 
 #import "CHBDeviceViewController.h"
 #import "CHBLEOViewController.h"
+#import "CHBDeviceHelpers.h"
 
 @interface CHBDeviceViewController ()
 
@@ -32,9 +33,9 @@
 }
 
 - (IBAction)didSelectLEO:(id)sender {
+    [CHBDeviceHelpers sharedInstance].deviceType = CHBDeviceTypeLEO;
     CHBLEOViewController *vc = [CHBLEOViewController new];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)didSelectSensorTag:(id)sender {
