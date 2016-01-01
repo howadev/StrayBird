@@ -98,6 +98,7 @@
             self.performance.calories = value;
             break;
         case CHBDeviceTypeSensorTag:
+            self.performance.calories = fabs(value) * 10;
             break;
     }
 }

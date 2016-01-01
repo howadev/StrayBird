@@ -49,6 +49,9 @@
 //                t.title.text = t.title.text;
 //                [self.displayTiles addObject:t];
 //                [self.view addSubview:t];
+                
+                self.connected = YES;
+                [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
             }
         }
     } else {
@@ -57,15 +60,16 @@
 }
 
 - (void)didReadCharacteristic:(CBCharacteristic *)characteristic {
-    
+    [service dataUpdate:characteristic];
 }
 
 - (void)didGetNotificaitonOnCharacteristic:(CBCharacteristic *)characteristic {
-    
+    [service dataUpdate:characteristic];
+    [self.delegate deviceType:CHBDeviceTypeSensorTag didReceiveValue:service.acc.z];
 }
 
 - (void)didWriteCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    
+    [service wroteValue:characteristic error:error];
 }
 
 @end

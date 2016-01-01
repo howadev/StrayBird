@@ -141,7 +141,7 @@
     self.handler.shouldReconnect = YES;
     
     [self.tableView reloadData];
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
