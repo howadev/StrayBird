@@ -55,15 +55,22 @@
  */
 
 #import "DeviceSelectTableViewController.h"
+#import "bluetoothHandler.h"
+#import "CHBDeviceHelpers.h"
 
 @interface DeviceSelectTableViewController ()
-
+@property bluetoothHandler *handler;
 @end
 
 @implementation DeviceSelectTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.handler = [bluetoothHandler sharedInstance];
+    self.handler.delegate = [CHBDeviceHelpers sharedInstance];
+    
+    [self.handler disconnectCurrentDevice];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -129,6 +136,9 @@
     [d setObject:self.currentlySelectedDeviceIdentifier.UUIDString forKey:@"selectedDevice"];
     [d synchronize];
     [self.devSelectDelegate newDeviceWasSelected:self.currentlySelectedDeviceIdentifier];
+    
+    self.handler.connectToIdentifier = self.currentlySelectedDeviceIdentifier;
+    self.handler.shouldReconnect = YES;
     
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];

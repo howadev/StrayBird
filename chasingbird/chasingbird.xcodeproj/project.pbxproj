@@ -62,6 +62,11 @@
 		7FFE95031C36B080004925F6 /* DeviceSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95021C36B080004925F6 /* DeviceSelectTableViewController.m */; };
 		7FFE95061C36B0AB004925F6 /* CHBSensorTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95051C36B0AB004925F6 /* CHBSensorTagViewController.m */; };
 		7FFE95091C36B23B004925F6 /* bluetoothHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95081C36B23B004925F6 /* bluetoothHandler.m */; };
+		7FFE950C1C36B500004925F6 /* sensorTagMovementService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE950B1C36B500004925F6 /* sensorTagMovementService.m */; };
+		7FFE950F1C36B534004925F6 /* bleGenericService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE950E1C36B534004925F6 /* bleGenericService.m */; };
+		7FFE95131C36B59D004925F6 /* displayTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95121C36B59D004925F6 /* displayTile.m */; };
+		7FFE95161C36B5A8004925F6 /* oneValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95151C36B5A8004925F6 /* oneValueCell.m */; };
+		7FFE95191C36B5CC004925F6 /* sensorFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95181C36B5CC004925F6 /* sensorFunctions.m */; };
 		891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */; };
 		891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */; };
 		891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */; };
@@ -223,6 +228,17 @@
 		7FFE95051C36B0AB004925F6 /* CHBSensorTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBSensorTagViewController.m; sourceTree = "<group>"; };
 		7FFE95071C36B23B004925F6 /* bluetoothHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bluetoothHandler.h; sourceTree = "<group>"; };
 		7FFE95081C36B23B004925F6 /* bluetoothHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bluetoothHandler.m; sourceTree = "<group>"; };
+		7FFE950A1C36B500004925F6 /* sensorTagMovementService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sensorTagMovementService.h; sourceTree = "<group>"; };
+		7FFE950B1C36B500004925F6 /* sensorTagMovementService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sensorTagMovementService.m; sourceTree = "<group>"; };
+		7FFE950D1C36B534004925F6 /* bleGenericService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bleGenericService.h; sourceTree = "<group>"; };
+		7FFE950E1C36B534004925F6 /* bleGenericService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bleGenericService.m; sourceTree = "<group>"; };
+		7FFE95111C36B59D004925F6 /* displayTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = displayTile.h; sourceTree = "<group>"; };
+		7FFE95121C36B59D004925F6 /* displayTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = displayTile.m; sourceTree = "<group>"; };
+		7FFE95141C36B5A8004925F6 /* oneValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneValueCell.h; sourceTree = "<group>"; };
+		7FFE95151C36B5A8004925F6 /* oneValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneValueCell.m; sourceTree = "<group>"; };
+		7FFE95171C36B5CC004925F6 /* sensorFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sensorFunctions.h; sourceTree = "<group>"; };
+		7FFE95181C36B5CC004925F6 /* sensorFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sensorFunctions.m; sourceTree = "<group>"; };
+		7FFE951A1C36B5EA004925F6 /* masterUUIDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = masterUUIDList.h; sourceTree = "<group>"; };
 		891458DE1B7FD0BA00ECF6D9 /* CHBTimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTimerView.h; sourceTree = "<group>"; };
 		891458DF1B7FD0BA00ECF6D9 /* CHBTimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTimerView.m; sourceTree = "<group>"; };
 		891458E21B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelpers.h"; sourceTree = "<group>"; };
@@ -482,12 +498,31 @@
 		7FFE95001C36B066004925F6 /* SensorTag */ = {
 			isa = PBXGroup;
 			children = (
+				7FFE951A1C36B5EA004925F6 /* masterUUIDList.h */,
+				7FFE95171C36B5CC004925F6 /* sensorFunctions.h */,
+				7FFE95181C36B5CC004925F6 /* sensorFunctions.m */,
+				7FFE95101C36B592004925F6 /* Display Tiles */,
+				7FFE950D1C36B534004925F6 /* bleGenericService.h */,
+				7FFE950E1C36B534004925F6 /* bleGenericService.m */,
+				7FFE950A1C36B500004925F6 /* sensorTagMovementService.h */,
+				7FFE950B1C36B500004925F6 /* sensorTagMovementService.m */,
 				7FFE95071C36B23B004925F6 /* bluetoothHandler.h */,
 				7FFE95081C36B23B004925F6 /* bluetoothHandler.m */,
 				7FFE95011C36B080004925F6 /* DeviceSelectTableViewController.h */,
 				7FFE95021C36B080004925F6 /* DeviceSelectTableViewController.m */,
 			);
 			name = SensorTag;
+			sourceTree = "<group>";
+		};
+		7FFE95101C36B592004925F6 /* Display Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				7FFE95111C36B59D004925F6 /* displayTile.h */,
+				7FFE95121C36B59D004925F6 /* displayTile.m */,
+				7FFE95141C36B5A8004925F6 /* oneValueCell.h */,
+				7FFE95151C36B5A8004925F6 /* oneValueCell.m */,
+			);
+			name = "Display Tiles";
 			sourceTree = "<group>";
 		};
 		8911BB621B8FBCDA00402F93 /* StartView */ = {
@@ -847,9 +882,12 @@
 			files = (
 				64F262311BD401BD00C5BD68 /* CHBPauseViewController.m in Sources */,
 				64059CC21C0125900069D4DE /* CHBResultTableViewCell.m in Sources */,
+				7FFE95131C36B59D004925F6 /* displayTile.m in Sources */,
+				7FFE95191C36B5CC004925F6 /* sensorFunctions.m in Sources */,
 				640FA8DF1BF170B900D89019 /* CHBAchievementsTableViewCell.m in Sources */,
 				8917363F1B7676A0003E082F /* CHBDemoViewController.m in Sources */,
 				640FA8FC1BF1910500D89019 /* CHBChallengeTableViewCell.m in Sources */,
+				7FFE950F1C36B534004925F6 /* bleGenericService.m in Sources */,
 				896251831B8E8FF500295961 /* CHBImageView.m in Sources */,
 				7FE3DB0E1C35FCCA00E270B4 /* CHBDeviceViewController.m in Sources */,
 				64059CC91C0125BF0069D4DE /* CHBResultTableView.m in Sources */,
@@ -884,7 +922,9 @@
 				7FE3DB1B1C3608D900E270B4 /* CHBDeviceHelpers.m in Sources */,
 				6437362D1BF15BC600A4BC64 /* CHBAchievementsViewController.m in Sources */,
 				640FA8E91BF1825700D89019 /* CHBLeaderboardTableView.m in Sources */,
+				7FFE950C1C36B500004925F6 /* sensorTagMovementService.m in Sources */,
 				891458E41B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m in Sources */,
+				7FFE95161C36B5A8004925F6 /* oneValueCell.m in Sources */,
 				640FA9021BF1982700D89019 /* CHBChallengeViewController.m in Sources */,
 				891736391B7676A0003E082F /* main.m in Sources */,
 				64B4CAD11BD2BD4700D5C5A5 /* CHBIntroViewController.m in Sources */,
