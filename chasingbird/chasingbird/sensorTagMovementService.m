@@ -114,7 +114,7 @@
         //NSLog(@"sensorTagMovementService: Recieved value : %@",c.value);
         oneValueCell *tile = (oneValueCell *)self.tile;
         tile.value.text = [NSString stringWithFormat:@"%@",[self calcValue:c.value]];
-        NSLog(@"%@",tile.value.text);
+        //NSLog(@"%@",tile.value.text);
         return YES;
     }
     return NO;

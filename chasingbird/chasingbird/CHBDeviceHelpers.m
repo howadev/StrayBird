@@ -11,6 +11,10 @@
 
 @implementation CHBDeviceHelpers {
     sensorTagMovementService *service;
+    
+    NSTimer *stepTimer;
+    NSUInteger steps;
+    CGFloat previousAccValue;
 }
 
 + (instancetype)sharedInstance
@@ -50,6 +54,8 @@
 //                [self.displayTiles addObject:t];
 //                [self.view addSubview:t];
                 
+                stepTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateSteps) userInfo:nil repeats:YES];
+                
                 self.connected = YES;
                 [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
             }
@@ -65,11 +71,22 @@
 
 - (void)didGetNotificaitonOnCharacteristic:(CBCharacteristic *)characteristic {
     [service dataUpdate:characteristic];
-    [self.delegate deviceType:CHBDeviceTypeSensorTag didReceiveValue:service.acc.z];
+    
+    CGFloat currentAccValue = service.acc.z;
+    if ((previousAccValue * currentAccValue) < 0) {
+        steps++;
+    }
+    previousAccValue = currentAccValue;
 }
 
 - (void)didWriteCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     [service wroteValue:characteristic error:error];
+}
+
+- (void)updateSteps {
+    [self.delegate deviceType:CHBDeviceTypeSensorTag didReceiveValue:steps];
+    NSLog(@"steps: %ld", steps);
+    steps = 0;
 }
 
 @end
