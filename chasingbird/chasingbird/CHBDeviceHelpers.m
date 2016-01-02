@@ -79,7 +79,7 @@
                 stepTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateSteps) userInfo:nil repeats:YES];
                 
                 self.connected = YES;
-                [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:deviceConnectedNotification object:nil];
             }
         }
     } else {

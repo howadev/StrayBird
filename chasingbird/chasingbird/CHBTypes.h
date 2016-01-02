@@ -17,6 +17,7 @@ const static CGFloat kCHBRadarScale = 0.8;
 static NSString *homeNotification = @"BackToHome";
 static NSString *playNotification = @"StartGame";
 static NSString *restartNotification = @"RestartGame";
+static NSString *deviceConnectedNotification = @"DeviceConnected";
 
 typedef NS_ENUM(NSInteger, CHBDeviceType) {
     CHBDeviceTypeAppleWatch = 0,

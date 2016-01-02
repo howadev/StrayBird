@@ -115,7 +115,7 @@
 - (void)LEO:(LEOBluetooth *)LEO didBeginStreamingSession:(LEOStreamingSession *)session {
     streamingLEO = LEO;
     [CHBDeviceHelpers sharedInstance].connected = YES;
-    [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:deviceConnectedNotification object:nil];
 }
 
 - (void)LEO:(LEOBluetooth *)LEO didFailToBeginStreaming:(NSError *)error {

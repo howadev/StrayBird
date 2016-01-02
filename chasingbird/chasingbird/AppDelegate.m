@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "CHBDemoViewController.h"
 #import "CHBHomeViewController.h"
-#import "CHBDeviceViewController.h"
 #import "CHBGameViewController.h"
 #import "CHBTypes.h"
 @import HealthKit;
@@ -26,6 +25,10 @@
     [self.navController dismissViewControllerAnimated:NO completion:^{
         
     }];
+}
+
+- (void)backToRootView {
+    [self.navController popToRootViewControllerAnimated:YES];
 }
 
 - (void)playGame:(NSNotification *)notification {
@@ -70,20 +73,18 @@
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     
-    [self.navController setNavigationBarHidden:YES animated:NO];
+    [self.navController.navigationBar setBackgroundImage:[UIImage new]
+                                      forBarMetrics:UIBarMetricsDefault];
+    self.navController.navigationBar.shadowImage = [UIImage new];
+    self.navController.navigationBar.tintColor = [UIColor blackColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backToHome) name:homeNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backToRootView) name:deviceConnectedNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playGame:) name:playNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restartGame:) name:restartNotification object:nil];
-    
-    /*
-    [navController.navigationBar setBackgroundImage:[UIImage new]
-                        forBarMetrics:UIBarMetricsDefault];
-    navController.navigationBar.shadowImage = [UIImage new];
-    navController.navigationBar.tintColor = [UIColor blackColor];
-    */
     
     return YES;
 }

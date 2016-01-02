@@ -54,8 +54,6 @@
 		64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */; };
 		64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */; };
 		7FE3DB091C35E0B400E270B4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB081C35E0B400E270B4 /* HealthKit.framework */; };
-		7FE3DB0E1C35FCCA00E270B4 /* CHBDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB0C1C35FCCA00E270B4 /* CHBDeviceViewController.m */; };
-		7FE3DB0F1C35FCCA00E270B4 /* CHBDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */; };
 		7FE3DB131C36018100E270B4 /* CHBLEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */; };
 		7FE3DB181C36028800E270B4 /* leo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB171C36028800E270B4 /* leo.framework */; };
 		7FE3DB1B1C3608D900E270B4 /* CHBDeviceHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */; };
@@ -214,9 +212,6 @@
 		64F2623A1BD413A200C5BD68 /* CHBPerformanceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceTableView.h; sourceTree = "<group>"; };
 		64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPerformanceTableView.m; sourceTree = "<group>"; };
 		7FE3DB081C35E0B400E270B4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		7FE3DB0B1C35FCCA00E270B4 /* CHBDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBDeviceViewController.h; sourceTree = "<group>"; };
-		7FE3DB0C1C35FCCA00E270B4 /* CHBDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBDeviceViewController.m; sourceTree = "<group>"; };
-		7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBDeviceViewController.xib; sourceTree = "<group>"; };
 		7FE3DB101C36018100E270B4 /* CHBLEOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLEOViewController.h; sourceTree = "<group>"; };
 		7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLEOViewController.m; sourceTree = "<group>"; };
 		7FE3DB171C36028800E270B4 /* leo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = leo.framework; sourceTree = "<group>"; };
@@ -484,9 +479,6 @@
 			isa = PBXGroup;
 			children = (
 				7FFE95001C36B066004925F6 /* SensorTag */,
-				7FE3DB0B1C35FCCA00E270B4 /* CHBDeviceViewController.h */,
-				7FE3DB0C1C35FCCA00E270B4 /* CHBDeviceViewController.m */,
-				7FE3DB0D1C35FCCA00E270B4 /* CHBDeviceViewController.xib */,
 				7FE3DB101C36018100E270B4 /* CHBLEOViewController.h */,
 				7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */,
 				7FFE95041C36B0AB004925F6 /* CHBSensorTagViewController.h */,
@@ -860,7 +852,6 @@
 				64A8F5751BFAD8D400480B47 /* CHBPerformanceViewController.xib in Resources */,
 				640FA9031BF1982700D89019 /* CHBChallengeViewController.xib in Resources */,
 				64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */,
-				7FE3DB0F1C35FCCA00E270B4 /* CHBDeviceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,7 +880,6 @@
 				640FA8FC1BF1910500D89019 /* CHBChallengeTableViewCell.m in Sources */,
 				7FFE950F1C36B534004925F6 /* bleGenericService.m in Sources */,
 				896251831B8E8FF500295961 /* CHBImageView.m in Sources */,
-				7FE3DB0E1C35FCCA00E270B4 /* CHBDeviceViewController.m in Sources */,
 				64059CC91C0125BF0069D4DE /* CHBResultTableView.m in Sources */,
 				7FFE95091C36B23B004925F6 /* bluetoothHandler.m in Sources */,
 				891458E01B7FD0BA00ECF6D9 /* CHBTimerView.m in Sources */,
