@@ -15,9 +15,8 @@
 #import "CHBPerformance.h"
 #import "CHBConf.h"
 #import "CHBDeviceHelpers.h"
-@import WatchConnectivity;
 
-@interface CHBGameScene () <WCSessionDelegate, CHBDeviceHelpersDelegate>
+@interface CHBGameScene () <CHBDeviceHelpersDelegate>
 
 @property (nonatomic, assign) NSTimeInterval lastUpdateTime;
 @property (nonatomic, assign) NSTimeInterval dt;
@@ -93,6 +92,7 @@
 - (void)deviceType:(CHBDeviceType)type didReceiveValue:(CGFloat)value {
     switch (type) {
         case CHBDeviceTypeAppleWatch:
+            self.performance.calories = value;
             break;
         case CHBDeviceTypeLEO:
             self.performance.calories = value;
@@ -103,31 +103,11 @@
     }
 }
 
-#pragma mark - WCSessionDelegate
-
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
-    NSString *activeEnergy = message[@"ActiveEnergy"];
-    if (activeEnergy) {
-        CGFloat calories = activeEnergy.floatValue;
-        self.performance.calories = calories;
-    }
-}
-
 #pragma mark - view Cycle
 
 - (void)didMoveToView:(SKView *)view {
     
     [CHBDeviceHelpers sharedInstance].delegate = self;
-    
-    if ([WCSession isSupported]) {
-        WCSession *session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-    }
-    
-    if ([[WCSession defaultSession] isReachable] == NO) {
-        NSLog(@"WCSession is not reachable");
-    }
     
     self.lastUpdateTime = 0;
     self.dt = 0;

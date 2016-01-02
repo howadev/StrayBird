@@ -31,6 +31,16 @@
 #pragma mark - Actions
 
 - (IBAction)didSelectAppleWatch:(id)sender {
+    [CHBDeviceHelpers sharedInstance].deviceType = CHBDeviceTypeAppleWatch;
+    BOOL connected = [[CHBDeviceHelpers sharedInstance] connectAppleWatch];
+    if (connected) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Apple Watch is not connected. Please try to open Stray Bird on Apple Watch." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 - (IBAction)didSelectLEO:(id)sender {

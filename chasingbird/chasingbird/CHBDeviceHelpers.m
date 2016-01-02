@@ -27,6 +27,34 @@
     return sharedInstance;
 }
 
+- (void)setDeviceType:(CHBDeviceType)deviceType {
+    _deviceType = deviceType;
+    
+    if (deviceType == CHBDeviceTypeAppleWatch) {
+        if ([WCSession isSupported]) {
+            WCSession *session = [WCSession defaultSession];
+            session.delegate = self;
+            [session activateSession];
+        }
+    }
+}
+
+- (BOOL)connectAppleWatch {
+    NSAssert(self.deviceType == CHBDeviceTypeAppleWatch, @"Need it");
+    self.connected = [[WCSession defaultSession] isReachable];
+    return self.connected;
+}
+
+#pragma mark - WCSessionDelegate
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+    NSString *activeEnergy = message[@"ActiveEnergy"];
+    if (activeEnergy) {
+        CGFloat calories = activeEnergy.floatValue;
+        [self.delegate deviceType:self.deviceType didReceiveValue:calories];
+    }
+}
+
 #pragma mark - LEODataDelegate
 
 - (void)LEO:(LEOBluetooth *)LEO didSendRepetition:(LEORepetition *)repetition {
@@ -47,12 +75,6 @@
             if ([sensorTagMovementService isCorrectService:s]) {
                 service = [[sensorTagMovementService alloc] initWithService:s];
                 [service configureService];
-                
-//                displayTile *t = [service getViewForPresentation];
-//                [t setFrame:self.view.frame];
-//                t.title.text = t.title.text;
-//                [self.displayTiles addObject:t];
-//                [self.view addSubview:t];
                 
                 stepTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateSteps) userInfo:nil repeats:YES];
                 
