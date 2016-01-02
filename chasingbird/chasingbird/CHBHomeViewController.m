@@ -31,6 +31,12 @@
     UITapGestureRecognizer *multiTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(multiPlayerViewDidTap:)];
     multiTapGesture.numberOfTapsRequired = 1;
     [self.multiPlayerView addGestureRecognizer:multiTapGesture];
+    
+    if (![CHBDeviceHelpers sharedInstance].connected) {
+        CHBDeviceViewController *vc = [CHBDeviceViewController new];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:NO completion:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -40,12 +46,6 @@
     
     [[CHBGameKitHelper sharedGameKitHelper]
      authenticateLocalPlayer];
-    
-    if (![CHBDeviceHelpers sharedInstance].connected) {
-        CHBDeviceViewController *vc = [CHBDeviceViewController new];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self presentViewController:nav animated:NO completion:nil];
-    }
 }
 
 - (void)singlePlayerViewDidTap:(id)sender {
