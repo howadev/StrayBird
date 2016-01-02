@@ -85,14 +85,14 @@
     self.currentlySelectedDeviceIdentifier = [[NSUUID alloc] initWithUUIDString:[d objectForKey:@"selectedDevice"]];
     NSLog(@"Loaded selectedDevice : %@",self.currentlySelectedDeviceIdentifier.UUIDString);
 
-    self.title = @"Please select BLE device";
+    self.title = @"Please select SensorTag";
 }
 
 
 -(void) viewWillAppear:(BOOL)animated {
     self.m = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
     [self.navigationController setNavigationBarHidden:NO];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonPressed)];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonPressed)];
 }
 
 - (void)didReceiveMemoryWarning {

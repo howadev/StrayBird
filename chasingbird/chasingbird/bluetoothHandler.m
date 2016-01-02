@@ -195,7 +195,7 @@
 /// peripheral it has not seen before (only once since we have not sent
 /// any flags to the scanForPeripheralsWithServices options parameter)
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
-    NSLog(@"bluetoothHandler: Found peripheral with UUID : %@ and Name : %@ (%ld dBm)",peripheral.identifier,peripheral.name,(long)[RSSI integerValue]);
+    //NSLog(@"bluetoothHandler: Found peripheral with UUID : %@ and Name : %@ (%ld dBm)",peripheral.identifier,peripheral.name,(long)[RSSI integerValue]);
     if (!self.deviceList) {
         self.deviceList = [[NSMutableArray alloc] init];
     }
