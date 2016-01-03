@@ -7,7 +7,6 @@
 //
 
 #import "CHBPerformance.h"
-#import "CHBDeviceHelpers.h"
 
 __unused static const CGFloat minimumBirdSpeed = 60.0;
 
@@ -28,19 +27,19 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
                 self.totalTime = 20 * 60;
                 self.totalDistance = 1500;
                 self.flockElapsedDistance = 500;
-                self.flockSpeed = 3.6 * 1000 / 3600;
+                self.flockSpeed = 3.6 * 1000 / 3600 / 2;
                 break;
             case CHBGameLevelSecond:
                 self.totalTime = 30 * 60;
                 self.totalDistance = 2500;
                 self.flockElapsedDistance = 800;
-                self.flockSpeed = 4.8 * 1000 / 3600;
+                self.flockSpeed = 4.8 * 1000 / 3600 / 2;
                 break;
             case CHBGameLevelThird:
                 self.totalTime = 40 * 60;
                 self.totalDistance = 3500;
                 self.flockElapsedDistance = 800;
-                self.flockSpeed = 6 * 1000 / 3600;
+                self.flockSpeed = 6 * 1000 / 3600 / 2;
                 break;
         }
     }
@@ -93,37 +92,10 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
     }
 }
 
-- (void)setCalories:(CGFloat)calories {
-    NSAssert([CHBDeviceHelpers sharedInstance].deviceType == CHBDeviceTypeAppleWatch, @"Must be Apple Watch");
-    _calories = calories;
-    _overallCalories += calories;
-}
-
-- (void)setBirdSpeed:(CGFloat)birdSpeed {
-    NSAssert([CHBDeviceHelpers sharedInstance].deviceType != CHBDeviceTypeAppleWatch, @"Must not be Apple Watch");
-    _birdSpeed = birdSpeed;
+- (void)setBirdElapsedDistance:(CGFloat)birdElapsedDistance {
+    _birdElapsedDistance = birdElapsedDistance;
     
-    _calories = _birdSpeed * 60 / 1000 * 37.5;
-    _overallCalories += _calories;
-}
-
-- (CGFloat)birdSpeed {
-    switch ([CHBDeviceHelpers sharedInstance].deviceType) {
-        case CHBDeviceTypeAppleWatch: {
-            // 1/37.5*1000/60, CAL -> M/MIN
-            CGFloat newSpeed = _calories / 37.5 * 1000 / 60;
-            if (newSpeed > _maximumSpeed) {
-                _maximumSpeed = newSpeed;
-            }
-            return newSpeed;
-        }
-        case CHBDeviceTypeLEO:
-        case CHBDeviceTypeSensorTag:
-            if (_birdSpeed > _maximumSpeed) {
-                _maximumSpeed = _birdSpeed;
-            }
-            return _birdSpeed;
-    }
+    _overallCalories = 50 * birdElapsedDistance / 1000;
 }
 
 - (CGFloat)averageSpeed {

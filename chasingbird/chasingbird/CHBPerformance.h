@@ -22,7 +22,6 @@
 
 #pragma mark - Variable
 @property (nonatomic, assign) CGFloat birdSpeed;
-@property (nonatomic, assign) CGFloat calories;
 @property (nonatomic, assign) CGFloat elapsedTime;
 
 

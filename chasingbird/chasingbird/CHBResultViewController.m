@@ -80,13 +80,13 @@
             [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"NoSlowingDown3"];
         }
         
-        if (self.performance.calories > 500) {
+        if (self.performance.overallCalories > 500) {
             [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"BurningItOff1"];
         }
-        if (self.performance.calories > 1000) {
+        if (self.performance.overallCalories > 1000) {
             [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"BurningItOff2"];
         }
-        if (self.performance.calories > 2500) {
+        if (self.performance.overallCalories > 2500) {
             [[CHBGameKitHelper sharedGameKitHelper] reportAchievementWithIdentifier:@"BurningItOff3"];
         }
         

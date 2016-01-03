@@ -92,7 +92,7 @@
 - (void)deviceType:(CHBDeviceType)type didReceiveValue:(CGFloat)value {
     switch (type) {
         case CHBDeviceTypeAppleWatch:
-            self.performance.calories = value;
+            self.performance.birdSpeed = value * 4.5 / 1000;
             break;
         case CHBDeviceTypeLEO:
             self.performance.birdSpeed = value * 0.048 / 3.6;
@@ -573,7 +573,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    self.performance.calories += 10;
+    self.performance.birdSpeed += 10;
 
     if (testNet) {
         testNetCount++;
