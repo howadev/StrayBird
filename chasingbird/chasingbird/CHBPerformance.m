@@ -7,6 +7,7 @@
 //
 
 #import "CHBPerformance.h"
+#import "CHBDeviceHelpers.h"
 
 __unused static const CGFloat minimumBirdSpeed = 60.0;
 
@@ -15,6 +16,8 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
 @end
 
 @implementation CHBPerformance
+
+@synthesize birdSpeed = _birdSpeed;
 
 - (instancetype)initWithLevel:(CHBGameLevel)level {
     self = [super init];
@@ -91,17 +94,36 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
 }
 
 - (void)setCalories:(CGFloat)calories {
+    NSAssert([CHBDeviceHelpers sharedInstance].deviceType == CHBDeviceTypeAppleWatch, @"Must be Apple Watch");
     _calories = calories;
     _overallCalories += calories;
 }
 
+- (void)setBirdSpeed:(CGFloat)birdSpeed {
+    NSAssert([CHBDeviceHelpers sharedInstance].deviceType != CHBDeviceTypeAppleWatch, @"Must not be Apple Watch");
+    _birdSpeed = birdSpeed;
+    
+    _calories = _birdSpeed * 60 / 1000 * 37.5;
+    _overallCalories += _calories;
+}
+
 - (CGFloat)birdSpeed {
-    // 1/37.5*1000/60, CAL -> M/MIN
-    CGFloat newSpeed = _calories / 37.5 * 1000 / 60;
-    if (newSpeed > _maximumSpeed) {
-        _maximumSpeed = newSpeed;
+    switch ([CHBDeviceHelpers sharedInstance].deviceType) {
+        case CHBDeviceTypeAppleWatch: {
+            // 1/37.5*1000/60, CAL -> M/MIN
+            CGFloat newSpeed = _calories / 37.5 * 1000 / 60;
+            if (newSpeed > _maximumSpeed) {
+                _maximumSpeed = newSpeed;
+            }
+            return newSpeed;
+        }
+        case CHBDeviceTypeLEO:
+        case CHBDeviceTypeSensorTag:
+            if (_birdSpeed > _maximumSpeed) {
+                _maximumSpeed = _birdSpeed;
+            }
+            return _birdSpeed;
     }
-    return newSpeed;
 }
 
 - (CGFloat)averageSpeed {

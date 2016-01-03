@@ -21,6 +21,7 @@
 @property (nonatomic, assign) CGFloat totalDistance;
 
 #pragma mark - Variable
+@property (nonatomic, assign) CGFloat birdSpeed;
 @property (nonatomic, assign) CGFloat calories;
 @property (nonatomic, assign) CGFloat elapsedTime;
 
@@ -34,7 +35,6 @@
 @property (nonatomic, readonly) NSTimeInterval leftTime;
 @property (nonatomic, readonly) CGFloat overallCalories;
 
-@property (nonatomic, assign) CGFloat birdSpeed;
 @property (nonatomic, assign) CGFloat birdElapsedDistance;
 @property (nonatomic, assign) CGFloat flockSpeed;
 @property (nonatomic, assign) CGFloat flockElapsedDistance;

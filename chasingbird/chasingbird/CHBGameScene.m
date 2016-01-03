@@ -95,10 +95,10 @@
             self.performance.calories = value;
             break;
         case CHBDeviceTypeLEO:
-            self.performance.calories = value;
+            self.performance.birdSpeed = value * 0.048 / 3.6;
             break;
         case CHBDeviceTypeSensorTag:
-            self.performance.calories = fabs(value) * 10;
+            self.performance.birdSpeed = sqrt(value * 2.88 / 3.6);
             break;
     }
 }
