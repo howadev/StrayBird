@@ -11,11 +11,13 @@
 #import "UIView+AutoLayoutHelpers.h"
 #import "CHBPauseViewController.h"
 #import "CHBResultViewController.h"
+#import "AVFoundation/AVAudioPlayer.h"
 @import SpriteKit;
 
 @interface CHBGameViewController () <CHBGameSceneDelegate>
 @property (nonatomic, retain) CHBGameScene *scene;
 @property (nonatomic, retain) SKView * skView;
+@property (nonatomic, retain) AVAudioPlayer *player;
 @end
 
 @implementation CHBGameViewController
@@ -50,6 +52,23 @@
     [self setupPauseButton];
     
     self.paused = NO;
+    
+    NSString *musicName;
+    switch (self.level) {
+        case CHBGameLevelFirst:
+            musicName = @"music_bg_level1";
+            break;
+        case CHBGameLevelSecond:
+            musicName = @"music_bg_level2";
+            break;
+        case CHBGameLevelThird:
+            musicName = @"music_bg_level3";
+            break;
+    }
+    
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:musicName ofType:@"mp3"]];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self.player play];
 }
 
 - (void)setupPauseButton {

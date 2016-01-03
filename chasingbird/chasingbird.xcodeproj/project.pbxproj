@@ -53,6 +53,10 @@
 		64F262381BD40D8900C5BD68 /* CHBResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F262361BD40D8900C5BD68 /* CHBResultViewController.m */; };
 		64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */; };
 		64F2623C1BD413A200C5BD68 /* CHBPerformanceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */; };
+		7FC8770E1C39BFD1005DA6D2 /* music_bg_level1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FC8770B1C39BFD1005DA6D2 /* music_bg_level1.mp3 */; };
+		7FC8770F1C39BFD1005DA6D2 /* music_bg_level2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FC8770C1C39BFD1005DA6D2 /* music_bg_level2.mp3 */; };
+		7FC877101C39BFD1005DA6D2 /* music_bg_level3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FC8770D1C39BFD1005DA6D2 /* music_bg_level3.mp3 */; };
+		7FC877131C39C7DE005DA6D2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC877121C39C7DE005DA6D2 /* AVFoundation.framework */; };
 		7FE3DB091C35E0B400E270B4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB081C35E0B400E270B4 /* HealthKit.framework */; };
 		7FE3DB131C36018100E270B4 /* CHBLEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */; };
 		7FE3DB181C36028800E270B4 /* leo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3DB171C36028800E270B4 /* leo.framework */; };
@@ -211,6 +215,10 @@
 		64F262371BD40D8900C5BD68 /* CHBResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBResultViewController.xib; sourceTree = "<group>"; };
 		64F2623A1BD413A200C5BD68 /* CHBPerformanceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceTableView.h; sourceTree = "<group>"; };
 		64F2623B1BD413A200C5BD68 /* CHBPerformanceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBPerformanceTableView.m; sourceTree = "<group>"; };
+		7FC8770B1C39BFD1005DA6D2 /* music_bg_level1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_bg_level1.mp3; sourceTree = "<group>"; };
+		7FC8770C1C39BFD1005DA6D2 /* music_bg_level2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_bg_level2.mp3; sourceTree = "<group>"; };
+		7FC8770D1C39BFD1005DA6D2 /* music_bg_level3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_bg_level3.mp3; sourceTree = "<group>"; };
+		7FC877121C39C7DE005DA6D2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7FE3DB081C35E0B400E270B4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7FE3DB101C36018100E270B4 /* CHBLEOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLEOViewController.h; sourceTree = "<group>"; };
 		7FE3DB111C36018100E270B4 /* CHBLEOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLEOViewController.m; sourceTree = "<group>"; };
@@ -292,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC877131C39C7DE005DA6D2 /* AVFoundation.framework in Frameworks */,
 				89659BEC1B895FBF004072CE /* SpriteKit.framework in Frameworks */,
 				7FE3DB181C36028800E270B4 /* leo.framework in Frameworks */,
 				8968F2B21B7789A4000A6018 /* HealthKit.framework in Frameworks */,
@@ -475,6 +484,16 @@
 			name = ResultView;
 			sourceTree = "<group>";
 		};
+		7FC877111C39BFD7005DA6D2 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				7FC8770B1C39BFD1005DA6D2 /* music_bg_level1.mp3 */,
+				7FC8770C1C39BFD1005DA6D2 /* music_bg_level2.mp3 */,
+				7FC8770D1C39BFD1005DA6D2 /* music_bg_level3.mp3 */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
 		7FE3DB0A1C35FC8B00E270B4 /* DeviceView */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +582,7 @@
 		8917362B1B7676A0003E082F = {
 			isa = PBXGroup;
 			children = (
+				7FC877121C39C7DE005DA6D2 /* AVFoundation.framework */,
 				7FE3DB171C36028800E270B4 /* leo.framework */,
 				7FE3DB081C35E0B400E270B4 /* HealthKit.framework */,
 				89659BEB1B895FBF004072CE /* SpriteKit.framework */,
@@ -589,6 +609,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
+				7FC877111C39BFD7005DA6D2 /* Music */,
 				7FE3DB0A1C35FC8B00E270B4 /* DeviceView */,
 				64A8F5701BFAD8BE00480B47 /* PerformanceView */,
 				640FA8FE1BF1980D00D89019 /* ChallengeView */,
@@ -848,10 +869,13 @@
 				640FA8E01BF170B900D89019 /* CHBAchievementsTableViewCell.xib in Resources */,
 				643736281BF1539300A4BC64 /* CHBLandingViewController.xib in Resources */,
 				64F262321BD401BD00C5BD68 /* CHBPauseViewController.xib in Resources */,
+				7FC8770E1C39BFD1005DA6D2 /* music_bg_level1.mp3 in Resources */,
 				6437362E1BF15BC600A4BC64 /* CHBAchievementsViewController.xib in Resources */,
 				64A8F5751BFAD8D400480B47 /* CHBPerformanceViewController.xib in Resources */,
 				640FA9031BF1982700D89019 /* CHBChallengeViewController.xib in Resources */,
 				64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */,
+				7FC877101C39BFD1005DA6D2 /* music_bg_level3.mp3 in Resources */,
+				7FC8770F1C39BFD1005DA6D2 /* music_bg_level2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
