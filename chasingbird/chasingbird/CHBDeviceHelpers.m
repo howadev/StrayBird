@@ -29,42 +29,7 @@
 
 - (void)setDeviceType:(CHBDeviceType)deviceType {
     _deviceType = deviceType;
-    
-    if (deviceType == CHBDeviceTypeAppleWatch) {
-        if ([WCSession isSupported]) {
-            WCSession *session = [WCSession defaultSession];
-            session.delegate = self;
-            [session activateSession];
-        }
-    }
-}
 
-- (BOOL)connectAppleWatch {
-    NSAssert(self.deviceType == CHBDeviceTypeAppleWatch, @"Need it");
-    self.connected = [[WCSession defaultSession] isReachable];
-    return self.connected;
-}
-
-#pragma mark - WCSessionDelegate
-
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
-    NSString *activeEnergy = message[@"ActiveEnergy"];
-    if (activeEnergy) {
-        CGFloat calories = activeEnergy.floatValue;
-        [self.delegate deviceType:self.deviceType didReceiveValue:calories];
-    }
-}
-
-#pragma mark - LEODataDelegate
-
-- (void)LEO:(LEOBluetooth *)LEO didSendRepetition:(LEORepetition *)repetition {
-    [self.delegate deviceType:self.deviceType didReceiveValue:repetition.cadence];
-    NSLog(@"Did receive cadence: %tu", repetition.cadence);
-    NSLog(@"Difference from previous cadence: %tu", repetition.cadence - repetition.previousRepetition.cadence);
-}
-
-- (void)LEO:(LEOBluetooth *)LEO didUpdateActivity:(LEOActivity)activity {
-    //NSLog(@"didUpdateActivity");
 }
 
 #pragma mark - bluetoothHandlerDelegate
