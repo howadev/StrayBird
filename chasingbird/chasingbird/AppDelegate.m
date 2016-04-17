@@ -11,7 +11,7 @@
 #import "CHBHomeViewController.h"
 #import "CHBGameViewController.h"
 #import "CHBTypes.h"
-@import HealthKit;
+@import HockeySDK;
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UINavigationController *navController;
@@ -62,6 +62,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"8a462884cfb44feaa699bbe238640793"];
+    // Do some additional configuration if needed here
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator
+     authenticateInstallation];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //CHBDemoViewController *vc = [CHBDemoViewController new];
@@ -109,13 +115,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (void)applicationShouldRequestHealthAuthorization:(UIApplication *)application {
-    HKHealthStore *healthStore = [HKHealthStore new];
-    [healthStore handleAuthorizationForExtensionWithCompletion:^(BOOL success, NSError * _Nullable error) {
-        
-    }];
 }
 
 @end
