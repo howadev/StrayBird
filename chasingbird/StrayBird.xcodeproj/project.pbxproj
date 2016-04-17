@@ -192,7 +192,7 @@
 		891458E31B7FDAE600ECF6D9 /* UIView+AutoLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayoutHelpers.m"; sourceTree = "<group>"; };
 		891458E51B7FF3AC00ECF6D9 /* CHBWorkoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBWorkoutController.h; sourceTree = "<group>"; };
 		891458E61B7FF3AC00ECF6D9 /* CHBWorkoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBWorkoutController.m; sourceTree = "<group>"; };
-		891736341B7676A0003E082F /* Stray Bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stray Bird.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		891736341B7676A0003E082F /* StrayBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrayBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891736381B7676A0003E082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8917363A1B7676A0003E082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8917363B1B7676A0003E082F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -501,7 +501,7 @@
 		891736351B7676A0003E082F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				891736341B7676A0003E082F /* Stray Bird.app */,
+				891736341B7676A0003E082F /* StrayBird.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -624,9 +624,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		891736331B7676A0003E082F /* chasingbird */ = {
+		891736331B7676A0003E082F /* StrayBird */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 891736561B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbird" */;
+			buildConfigurationList = 891736561B7676A0003E082F /* Build configuration list for PBXNativeTarget "StrayBird" */;
 			buildPhases = (
 				891736301B7676A0003E082F /* Sources */,
 				891736311B7676A0003E082F /* Frameworks */,
@@ -637,9 +637,9 @@
 			);
 			dependencies = (
 			);
-			name = chasingbird;
+			name = StrayBird;
 			productName = chasingbird;
-			productReference = 891736341B7676A0003E082F /* Stray Bird.app */;
+			productReference = 891736341B7676A0003E082F /* StrayBird.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -665,7 +665,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8917362F1B7676A0003E082F /* Build configuration list for PBXProject "chasingbird" */;
+			buildConfigurationList = 8917362F1B7676A0003E082F /* Build configuration list for PBXProject "StrayBird" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -678,7 +678,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				891736331B7676A0003E082F /* chasingbird */,
+				891736331B7676A0003E082F /* StrayBird */,
 			);
 		};
 /* End PBXProject section */
@@ -882,7 +882,7 @@
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
-				PRODUCT_NAME = "Stray Bird";
+				PRODUCT_NAME = StrayBird;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -901,7 +901,7 @@
 				INFOPLIST_FILE = chasingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
-				PRODUCT_NAME = "Stray Bird";
+				PRODUCT_NAME = StrayBird;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -909,7 +909,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8917362F1B7676A0003E082F /* Build configuration list for PBXProject "chasingbird" */ = {
+		8917362F1B7676A0003E082F /* Build configuration list for PBXProject "StrayBird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				891736541B7676A0003E082F /* Debug */,
@@ -918,7 +918,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		891736561B7676A0003E082F /* Build configuration list for PBXNativeTarget "chasingbird" */ = {
+		891736561B7676A0003E082F /* Build configuration list for PBXNativeTarget "StrayBird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				891736571B7676A0003E082F /* Debug */,
