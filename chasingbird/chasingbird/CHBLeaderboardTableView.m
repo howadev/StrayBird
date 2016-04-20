@@ -52,7 +52,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CHBLeaderboardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CHBLeaderboardTableViewCell class]) forIndexPath:indexPath];
     GKScore *score = self.scores[indexPath.row];
-    cell.rankLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row+1];
+    cell.rankLabel.text = [NSString stringWithFormat:@"%td", indexPath.row+1];
     cell.nameLabel.text = score.player.displayName;
     cell.pointLabel.text = [NSString stringWithFormat:@"%lld", score.value];
     return cell;

@@ -47,7 +47,7 @@
         case 0: {
             cell.identifierLabel.text = @"LEFT TIME";
             NSTimeInterval value = self.performance.leftTime;
-            cell.valueLabel.text = [NSString stringWithFormat:@"%02lu:%02ld", (NSUInteger)value/60, (NSUInteger)value%60];
+            cell.valueLabel.text = [NSString stringWithFormat:@"%02tu:%02tu", (NSUInteger)value/60, (NSUInteger)value%60];
             break;
         }
         case 1: {

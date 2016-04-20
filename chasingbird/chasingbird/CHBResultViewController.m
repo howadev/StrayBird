@@ -67,7 +67,7 @@
     }
 
     self.resultStatusView.highlighted = self.performance.win;
-    self.pointLabel.text = [NSString stringWithFormat:@"%ld", self.performance.points];
+    self.pointLabel.text = [NSString stringWithFormat:@"%td", self.performance.points];
     
     if (self.multiplePlayers) {
         if (self.performance.maximumSpeed > 8 * 1000 / 60) {

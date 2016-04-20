@@ -554,7 +554,7 @@
     self.birdInfoNode.caloriesLabel.text = [NSString stringWithFormat:@"%.2f CAL", self.performance.overallCalories];
     self.birdInfoNode.speedLabel.text = [NSString stringWithFormat:@"%.2f M/S", self.performance.birdSpeed];
     
-    self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02lu:%02ld", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
+    self.hudTimerLabelNode.text = [NSString stringWithFormat:@"%02tu:%02tu", (NSUInteger)self.performance.leftTime/60, (NSUInteger)self.performance.leftTime%60];
     
     if (self.netNode) {
         NSAssert(self.level == CHBGameLevelSecond, @"Only have net in second level");

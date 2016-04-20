@@ -72,7 +72,7 @@
 
 - (void)updateSteps {
     [self.delegate deviceType:CHBDeviceTypeSensorTag didReceiveValue:steps];
-    NSLog(@"steps: %ld", steps);
+    NSLog(@"steps: %tu", steps);
     steps = 0;
 }
 
