@@ -1,3 +1,4 @@
 target 'StrayBird' do
   pod 'HockeySDK'
+  pod 'GoogleAnalytics'
 end
