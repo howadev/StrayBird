@@ -13,6 +13,7 @@
 
 const static CGFloat kCHBEdgeInset = 8.0;
 const static CGFloat kCHBRadarScale = 0.8;
+const static CGFloat kCHBColorWheelScale = 0.5;
 
 static NSString *homeNotification = @"BackToHome";
 static NSString *playNotification = @"StartGame";

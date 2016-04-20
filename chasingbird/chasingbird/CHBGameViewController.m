@@ -69,6 +69,10 @@
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:musicName ofType:@"mp3"]];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.player play];
+    
+    #if TARGET_IPHONE_SIMULATOR
+    [self.player stop];
+    #endif
 }
 
 - (void)setupPauseButton {

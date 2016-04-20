@@ -12,6 +12,7 @@
 #import "CHBBirdInfoNode.h"
 #import "CHBLabelNode.h"
 #import "CHBRadarNode.h"
+#import "CHBColorWheelNode.h"
 #import "CHBPerformance.h"
 #import "CHBConf.h"
 #import "CHBDeviceHelpers.h"
@@ -64,6 +65,7 @@
 @property (nonatomic, retain) SKSpriteNode *hudTimerNode;
 @property (nonatomic, retain) SKLabelNode *hudTimerLabelNode;
 @property (nonatomic, retain) CHBRadarNode *hudRadarNode;
+@property (nonatomic, retain) CHBColorWheelNode *colorWheelNode;
 @end
 
 @implementation CHBGameScene {
@@ -192,6 +194,13 @@
     [self.hudRadarNode setScale:kCHBRadarScale];
     self.hudRadarNode.position = CGPointMake(self.size.width - self.hudRadarNode.size.width/2*kCHBRadarScale, self.hudRadarNode.size.height/2*kCHBRadarScale + kCHBEdgeInset);
     [self.hudLayer addChild:self.hudRadarNode];
+    
+    /*
+    self.colorWheelNode = [CHBColorWheelNode new];
+    [self.colorWheelNode setScale:kCHBColorWheelScale];
+    self.colorWheelNode.position = CGPointMake(self.colorWheelNode.size.width/2*kCHBColorWheelScale + kCHBEdgeInset, self.size.height - self.colorWheelNode.size.height/2*kCHBColorWheelScale - kCHBEdgeInset);
+    [self.hudLayer addChild:self.colorWheelNode];
+     */
 }
 
 - (CGFloat)backgroundMovePointsPerSec {
@@ -466,6 +475,8 @@
     }
     self.birdAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     [self.birdNode runAction:[SKAction repeatActionForever:self.birdAnimation]];
+    
+    [self.birdNode runAction:[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:0.5 duration:1]];
     
     //CGFloat preferredWidth = self.size.width/2 - self.birdNode.size.width/2;
     self.birdInfoNode = [CHBBirdInfoNode new];

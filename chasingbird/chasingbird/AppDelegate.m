@@ -71,8 +71,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //CHBDemoViewController *vc = [CHBDemoViewController new];
-    CHBHomeViewController *vc = [CHBHomeViewController new];
-    //CHBGameViewController *vc = [CHBGameViewController new];
+    
+    //CHBHomeViewController *vc = [CHBHomeViewController new];
+    
+    CHBGameViewController *vc = [CHBGameViewController new];
+    vc.level = CHBGameLevelFirst;
+    vc.multiplePlayers = false;
+    
     //CHBHomeViewController *vc = [CHBDeviceViewController new];
     
     self.navController = [[UINavigationController alloc] initWithRootViewController:vc];
