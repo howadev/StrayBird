@@ -9,8 +9,14 @@
 #import "CHBViewController.h"
 #import "CHBTypes.h"
 #import "CHBPerformance.h"
+@class CHBPauseViewController;
+
+@protocol CHBPauseViewControllerDelegate <NSObject>
+- (void)pauseViewControllerDidTapResume:(CHBPauseViewController*)vc;
+@end
 
 @interface CHBPauseViewController : CHBViewController
+@property (nonatomic, weak) id <CHBPauseViewControllerDelegate> delegate;
 @property (nonatomic, assign) CHBGameLevel level;
 @property (nonatomic, assign) BOOL multiplePlayers;
 @property (nonatomic, retain) CHBPerformance *performance;

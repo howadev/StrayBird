@@ -9,12 +9,14 @@
 #import "CHBGameViewController.h"
 #import "CHBGameScene.h"
 #import "UIView+AutoLayoutHelpers.h"
+#import "CHBColorViewController.h"
+#import "HRColorPickerView.h"
 #import "CHBPauseViewController.h"
 #import "CHBResultViewController.h"
 #import "AVFoundation/AVAudioPlayer.h"
 @import SpriteKit;
 
-@interface CHBGameViewController () <CHBGameSceneDelegate>
+@interface CHBGameViewController () <CHBGameSceneDelegate, CHBColorViewControllerDelegate, CHBPauseViewControllerDelegate>
 @property (nonatomic, retain) CHBGameScene *scene;
 @property (nonatomic, retain) SKView * skView;
 @property (nonatomic, retain) AVAudioPlayer *player;
@@ -50,6 +52,16 @@
     [self.skView presentScene:self.scene];
     
     [self setupPauseButton];
+    
+    switch (self.level) {
+        case CHBGameLevelFirst:
+        case CHBGameLevelSecond:
+            [self setupColorButton];
+            break;
+        case CHBGameLevelThird:
+        default:
+            break;
+    }
     
     self.paused = NO;
     
@@ -90,11 +102,58 @@
 - (void)pauseAction:(id)sender {
     self.paused = YES;
     CHBPauseViewController *vc = [CHBPauseViewController new];
+    vc.delegate = self;
     vc.performance = self.scene.performance;
     vc.level = self.level;
     vc.multiplePlayers = self.multiplePlayers;
-    [self presentViewController:vc animated:YES completion:^{
-        // pause game scene
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)setupColorButton {
+    UIImage *colorIcon = [UIImage imageNamed:@"color_wheel"];
+    UIButton *colorButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    colorButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [colorButton addTarget:self action:@selector(colorAction:) forControlEvents:UIControlEventTouchUpInside];
+    [colorButton setBackgroundImage:colorIcon forState:UIControlStateNormal];
+    
+    [self.view addSubview:colorButton];
+    [self.view pinItem:self.view attribute:NSLayoutAttributeLeft to:colorButton withOffset:-16 andScale:1.0];
+    [self.view pinItem:self.view attribute:NSLayoutAttributeTop to:colorButton withOffset:-16 andScale:1.0];
+}
+
+- (void)colorAction:(id)sender {
+    self.paused = YES;
+    CHBColorViewController *vc = [CHBColorViewController new];
+    vc.delegate = self;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+#pragma mark - CHBColorViewControllerDelegate
+
+- (void)colorViewControllerDidTapDone:(CHBColorViewController *)vc {
+    UIColor *color = vc.colorPickerView.color;
+    [self dismissViewControllerAnimated:YES completion:^{
+        self.paused = NO;
+        switch (self.level) {
+            case CHBGameLevelFirst:
+                [self.scene changeBirdNodeTintColor:color];
+                break;
+            case CHBGameLevelSecond:
+                [self.scene changeBackgroundNodeTintColor:color];
+                break;
+            case CHBGameLevelThird:
+                break;
+        }
+        
+    }];
+}
+
+#pragma mark - CHBPauseViewControllerDelegate
+
+- (void)pauseViewControllerDidTapResume:(CHBPauseViewController *)vc {
+    [self dismissViewControllerAnimated:YES completion:^{
+        self.paused = NO;
     }];
 }
 

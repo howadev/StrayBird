@@ -72,11 +72,13 @@
     
     //CHBDemoViewController *vc = [CHBDemoViewController new];
     
-    //CHBHomeViewController *vc = [CHBHomeViewController new];
+    CHBHomeViewController *vc = [CHBHomeViewController new];
     
+    /*
     CHBGameViewController *vc = [CHBGameViewController new];
-    vc.level = CHBGameLevelFirst;
+    vc.level = CHBGameLevelSecond;
     vc.multiplePlayers = false;
+     */
     
     //CHBHomeViewController *vc = [CHBDeviceViewController new];
     

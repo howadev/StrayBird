@@ -1,14 +1,17 @@
 PODS:
+  - Color-Picker-for-iOS (2.0.2)
   - GoogleAnalytics (3.14.0)
   - HockeySDK (3.8.6):
     - HockeySDK/AllFeaturesLib (= 3.8.6)
   - HockeySDK/AllFeaturesLib (3.8.6)
 
 DEPENDENCIES:
+  - Color-Picker-for-iOS (~> 2.0)
   - GoogleAnalytics
   - HockeySDK
 
 SPEC CHECKSUMS:
+  Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
   GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
   HockeySDK: ab68303eec6680f6b539de65d747742dd276e934
 

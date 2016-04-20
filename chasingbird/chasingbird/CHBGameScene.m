@@ -476,8 +476,6 @@
     self.birdAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     [self.birdNode runAction:[SKAction repeatActionForever:self.birdAnimation]];
     
-    [self.birdNode runAction:[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:0.5 duration:1]];
-    
     //CGFloat preferredWidth = self.size.width/2 - self.birdNode.size.width/2;
     self.birdInfoNode = [CHBBirdInfoNode new];
     self.birdInfoNode.position = CGPointMake(kCHBEdgeInset, self.birdNode.position.y + self.birdNode.size.height/2);
@@ -609,5 +607,14 @@
     [self.gameDelegate gameScene:self didStopWithPerformance:self.performance];
 }
 
+- (void)changeBirdNodeTintColor:(UIColor*)color {
+    [self.birdNode runAction:[SKAction colorizeWithColor:color colorBlendFactor:0.8 duration:1]];
+}
+
+- (void)changeBackgroundNodeTintColor:(UIColor*)color {
+    [self.backgroundLayer enumerateChildNodesWithName:@"background" usingBlock:^(SKNode * _Nonnull node, BOOL * _Nonnull stop) {
+        [node runAction:[SKAction colorizeWithColor:color colorBlendFactor:0.8 duration:1]];
+    }];
+}
 
 @end

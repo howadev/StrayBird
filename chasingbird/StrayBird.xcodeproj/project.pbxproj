@@ -11,6 +11,7 @@
 		64059CC21C0125900069D4DE /* CHBResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64059CC01C0125900069D4DE /* CHBResultTableViewCell.m */; };
 		64059CC31C0125900069D4DE /* CHBResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64059CC11C0125900069D4DE /* CHBResultTableViewCell.xib */; };
 		64059CC91C0125BF0069D4DE /* CHBResultTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64059CC81C0125BF0069D4DE /* CHBResultTableView.m */; };
+		640CC6711CC71D2200657F1A /* CHBColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640CC6701CC71D2200657F1A /* CHBColorViewController.m */; };
 		640FA8DF1BF170B900D89019 /* CHBAchievementsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640FA8DD1BF170B900D89019 /* CHBAchievementsTableViewCell.m */; };
 		640FA8E01BF170B900D89019 /* CHBAchievementsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640FA8DE1BF170B900D89019 /* CHBAchievementsTableViewCell.xib */; };
 		640FA8E51BF1711400D89019 /* CHBAchievementsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 640FA8E41BF1711400D89019 /* CHBAchievementsTableView.m */; };
@@ -105,6 +106,8 @@
 		64059CC11C0125900069D4DE /* CHBResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBResultTableViewCell.xib; sourceTree = "<group>"; };
 		64059CC71C0125BF0069D4DE /* CHBResultTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBResultTableView.h; sourceTree = "<group>"; };
 		64059CC81C0125BF0069D4DE /* CHBResultTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBResultTableView.m; sourceTree = "<group>"; };
+		640CC66F1CC71D2200657F1A /* CHBColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBColorViewController.h; sourceTree = "<group>"; };
+		640CC6701CC71D2200657F1A /* CHBColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBColorViewController.m; sourceTree = "<group>"; };
 		640FA8DC1BF170B900D89019 /* CHBAchievementsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBAchievementsTableViewCell.h; sourceTree = "<group>"; };
 		640FA8DD1BF170B900D89019 /* CHBAchievementsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBAchievementsTableViewCell.m; sourceTree = "<group>"; };
 		640FA8DE1BF170B900D89019 /* CHBAchievementsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBAchievementsTableViewCell.xib; sourceTree = "<group>"; };
@@ -262,6 +265,15 @@
 				64059CC11C0125900069D4DE /* CHBResultTableViewCell.xib */,
 			);
 			name = ResultTable;
+			sourceTree = "<group>";
+		};
+		640CC66E1CC71D0000657F1A /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				640CC66F1CC71D2200657F1A /* CHBColorViewController.h */,
+				640CC6701CC71D2200657F1A /* CHBColorViewController.m */,
+			);
+			name = ColorPicker;
 			sourceTree = "<group>";
 		};
 		640FA8E11BF170CF00D89019 /* PerformanceTable */ = {
@@ -624,6 +636,7 @@
 		8985C2221B924AE500FDA0B0 /* GameView */ = {
 			isa = PBXGroup;
 			children = (
+				640CC66E1CC71D0000657F1A /* ColorPicker */,
 				8985C2231B924B1000FDA0B0 /* CHBGameScene.h */,
 				8985C2241B924B1000FDA0B0 /* CHBGameScene.m */,
 				8985C21F1B924ADD00FDA0B0 /* CHBGameViewController.h */,
@@ -847,6 +860,7 @@
 				64D93BDC1BD3FE5B006AE5C2 /* CHBPerformance.m in Sources */,
 				648BACC31CC713CF00C1F27B /* CHBColorWheelNode.m in Sources */,
 				64A8F5831BFAE63400480B47 /* CHBPerformanceHelper.m in Sources */,
+				640CC6711CC71D2200657F1A /* CHBColorViewController.m in Sources */,
 				891458E71B7FF3AC00ECF6D9 /* CHBWorkoutController.m in Sources */,
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,

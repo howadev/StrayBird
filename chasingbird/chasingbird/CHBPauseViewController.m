@@ -86,13 +86,7 @@
 }
 
 - (IBAction)resumeAction:(id)sender {
-    // TODO set paused to NO after dismission
-    if ([self.presentingViewController isKindOfClass:[CHBGameViewController class]]) {
-        CHBGameViewController *vc = (CHBGameViewController*)self.presentingViewController;
-        vc.paused = NO;
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate pauseViewControllerDidTapResume:self];
 }
 
 @end
