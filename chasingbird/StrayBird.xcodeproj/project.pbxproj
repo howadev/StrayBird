@@ -1036,7 +1036,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howalee.chasingbird;
 				PRODUCT_NAME = StrayBird;
-				PROVISIONING_PROFILE = "6bbccbf6-b6f2-4aa3-a53d-c89d99c72297";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

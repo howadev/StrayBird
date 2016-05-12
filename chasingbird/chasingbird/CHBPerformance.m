@@ -25,7 +25,7 @@ __unused static const CGFloat minimumBirdSpeed = 60.0;
         switch (level) {
             case CHBGameLevelFirst:
                 self.totalTime = 20 * 60;
-                self.totalDistance = 1500;
+                self.totalDistance = 150;
                 self.flockElapsedDistance = 500;
                 self.flockSpeed = 3.6 * 1000 / 3600 / 2;
                 break;
