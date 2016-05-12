@@ -12,6 +12,7 @@
 #import "CHBGameViewController.h"
 #import "CHBTypes.h"
 @import HockeySDK;
+#import "GAI.h"
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UINavigationController *navController;
@@ -58,15 +59,29 @@
     
 }
 
+#pragma mark - private method
+
+- (void)setupHockeyApp {
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"8a462884cfb44feaa699bbe238640793"];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator
+     authenticateInstallation];
+}
+
+- (void)setupGoogleAnalytics {
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+}
+
 #pragma mark - delgate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"8a462884cfb44feaa699bbe238640793"];
-    // Do some additional configuration if needed here
-    [[BITHockeyManager sharedHockeyManager] startManager];
-    [[BITHockeyManager sharedHockeyManager].authenticator
-     authenticateInstallation];
+    [self setupHockeyApp];
+    [self setupGoogleAnalytics];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

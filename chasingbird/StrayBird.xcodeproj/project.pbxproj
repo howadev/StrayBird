@@ -25,6 +25,7 @@
 		640FA8FD1BF1910500D89019 /* CHBChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640FA8FB1BF1910500D89019 /* CHBChallengeTableViewCell.xib */; };
 		640FA9021BF1982700D89019 /* CHBChallengeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640FA9001BF1982700D89019 /* CHBChallengeViewController.m */; };
 		640FA9031BF1982700D89019 /* CHBChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640FA9011BF1982700D89019 /* CHBChallengeViewController.xib */; };
+		641801A21CE40E0A00F2CBA8 /* CHBTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 641801A11CE40E0A00F2CBA8 /* CHBTracker.m */; };
 		643736271BF1539300A4BC64 /* CHBLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643736251BF1539300A4BC64 /* CHBLandingViewController.m */; };
 		643736281BF1539300A4BC64 /* CHBLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 643736261BF1539300A4BC64 /* CHBLandingViewController.xib */; };
 		6437362D1BF15BC600A4BC64 /* CHBAchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437362B1BF15BC600A4BC64 /* CHBAchievementsViewController.m */; };
@@ -129,6 +130,8 @@
 		640FA8FF1BF1982700D89019 /* CHBChallengeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBChallengeViewController.h; sourceTree = "<group>"; };
 		640FA9001BF1982700D89019 /* CHBChallengeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBChallengeViewController.m; sourceTree = "<group>"; };
 		640FA9011BF1982700D89019 /* CHBChallengeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBChallengeViewController.xib; sourceTree = "<group>"; };
+		641801A01CE40E0A00F2CBA8 /* CHBTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBTracker.h; sourceTree = "<group>"; };
+		641801A11CE40E0A00F2CBA8 /* CHBTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBTracker.m; sourceTree = "<group>"; };
 		643736241BF1539300A4BC64 /* CHBLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBLandingViewController.h; sourceTree = "<group>"; };
 		643736251BF1539300A4BC64 /* CHBLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBLandingViewController.m; sourceTree = "<group>"; };
 		643736261BF1539300A4BC64 /* CHBLandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBLandingViewController.xib; sourceTree = "<group>"; };
@@ -344,6 +347,15 @@
 			name = ChallengeView;
 			sourceTree = "<group>";
 		};
+		6418019F1CE40DF400F2CBA8 /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				641801A01CE40E0A00F2CBA8 /* CHBTracker.h */,
+				641801A11CE40E0A00F2CBA8 /* CHBTracker.m */,
+			);
+			name = Tracker;
+			sourceTree = "<group>";
+		};
 		643736231BF1534900A4BC64 /* LandingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +542,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
+				6418019F1CE40DF400F2CBA8 /* Tracker */,
 				7FC877111C39BFD7005DA6D2 /* Music */,
 				7FE3DB0A1C35FC8B00E270B4 /* DeviceView */,
 				64A8F5701BFAD8BE00480B47 /* PerformanceView */,
@@ -828,6 +841,7 @@
 			files = (
 				64F262311BD401BD00C5BD68 /* CHBPauseViewController.m in Sources */,
 				64059CC21C0125900069D4DE /* CHBResultTableViewCell.m in Sources */,
+				641801A21CE40E0A00F2CBA8 /* CHBTracker.m in Sources */,
 				7FFE95131C36B59D004925F6 /* displayTile.m in Sources */,
 				7FFE95191C36B5CC004925F6 /* sensorFunctions.m in Sources */,
 				640FA8DF1BF170B900D89019 /* CHBAchievementsTableViewCell.m in Sources */,
