@@ -10,8 +10,9 @@
 #import "CHBResultTableView.h"
 #import "CHBPerformanceHelper.h"
 #import "CHBGameKitHelper.h"
+@import HockeySDK;
 
-@interface CHBResultViewController ()
+@interface CHBResultViewController () <BITFeedbackComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet CHBResultTableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *starView;
 @property (weak, nonatomic) IBOutlet UIImageView *titleLevelView;
@@ -107,8 +108,7 @@
 #pragma mark - Actions
 
 - (IBAction)homeAction:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
+    [self reportAction];
 }
 
 - (IBAction)restartAction:(id)sender {
@@ -117,6 +117,23 @@
     NSDictionary *dict = @{@"level":@(self.level),
                            @"multiplePlayers":@(self.multiplePlayers)};
     [[NSNotificationCenter defaultCenter] postNotificationName:restartNotification object:nil userInfo:dict];
+}
+
+- (void)reportAction {
+    BITFeedbackComposeViewController *feedbackCompose = [[BITHockeyManager sharedHockeyManager].feedbackManager feedbackComposeViewController];
+    feedbackCompose.delegate = self;
+    [feedbackCompose prepareWithItems:@[@"How was the app encouraged you to be active?\n- very discourage\n- mild discourage\n- no difference\n- mild encourage\n- very encourage\n\n"]];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedbackCompose];
+    navController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+#pragma mark - BITFeedbackComposeViewControllerDelegate
+
+- (void)feedbackComposeViewController:(BITFeedbackComposeViewController *)composeViewController didFinishWithResult:(BITFeedbackComposeResult)composeResult {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
 }
 
 @end
