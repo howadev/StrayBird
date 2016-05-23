@@ -6,6 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBReportViewController">
             <connections>
+                <outlet property="mildDiscourageButton" destination="GQA-Ob-aRC" id="UQe-eE-HPX"/>
+                <outlet property="mildEncourageButton" destination="BL4-bw-Uyp" id="b2D-dk-PKz"/>
+                <outlet property="noDifferenceButton" destination="SGa-Yv-yIC" id="dTp-aU-q2d"/>
+                <outlet property="questionButton" destination="z4f-XY-fEb" id="mVG-sR-uIU"/>
+                <outlet property="veryDiscourageButton" destination="toN-q8-XA3" id="B8z-QJ-4tb"/>
+                <outlet property="veryEncourageButton" destination="Va5-ku-n7a" id="f5W-Sl-7ih"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,50 +23,106 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_background" translatesAutoresizingMaskIntoConstraints="NO" id="DZx-el-gGn">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toN-q8-XA3">
-                    <rect key="frame" x="182" y="177" width="113" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toN-q8-XA3">
+                    <rect key="frame" x="139.5" y="180.5" width="320" height="35"/>
                     <state key="normal" title="Very Discourage" backgroundImage="game_pause_status-item_value">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="veryDiscourageAction:" destination="-1" eventType="touchUpInside" id="zpw-ff-QTm"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQA-Ob-aRC">
-                    <rect key="frame" x="183" y="215" width="111" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQA-Ob-aRC">
+                    <rect key="frame" x="139.5" y="231.5" width="320" height="35"/>
                     <state key="normal" title="Mild Discourage" backgroundImage="game_pause_status-item_value">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="mildDiscourageAction:" destination="-1" eventType="touchUpInside" id="ocr-el-xc5"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGa-Yv-yIC">
-                    <rect key="frame" x="193" y="253" width="91" height="30"/>
-                    <state key="normal" title="no difference" backgroundImage="game_pause_status-item_value">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGa-Yv-yIC">
+                    <rect key="frame" x="140" y="282.5" width="320" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Jru-HY-DYO"/>
+                    </constraints>
+                    <state key="normal" title="No Difference" backgroundImage="game_pause_status-item_value">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Jru-HY-DYO"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="noDifferenceAction:" destination="-1" eventType="touchUpInside" id="hcB-Zl-Unc"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BL4-bw-Uyp">
-                    <rect key="frame" x="186" y="285" width="106" height="30"/>
-                    <state key="normal" title="mild encourage" backgroundImage="game_pause_status-item_value">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BL4-bw-Uyp">
+                    <rect key="frame" x="140" y="333.5" width="320" height="35"/>
+                    <state key="normal" title="Mild Encourage" backgroundImage="game_pause_status-item_value">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="mildEncourageAction:" destination="-1" eventType="touchUpInside" id="BUf-7W-34g"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-ku-n7a">
-                    <rect key="frame" x="185" y="332" width="107" height="30"/>
-                    <state key="normal" title="very encourage" backgroundImage="game_pause_status-item_value">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-XY-fEb">
-                    <rect key="frame" x="132" y="139" width="324" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-XY-fEb">
+                    <rect key="frame" x="140" y="129.5" width="320" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="RKB-oq-Jqc"/>
+                        <constraint firstAttribute="width" constant="320" id="zf4-Gp-GEP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="How was the app encouraged you to be active?" backgroundImage="game_pause_status-item_title">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-ku-n7a">
+                    <rect key="frame" x="139.5" y="384.5" width="320" height="35"/>
+                    <state key="normal" title="Very Encourage" backgroundImage="game_pause_status-item_value">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="veryEncourageAction:" destination="-1" eventType="touchUpInside" id="WR6-bn-Ndv"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="DZx-el-gGn" secondAttribute="bottom" id="2L5-gZ-GS5"/>
+                <constraint firstItem="GQA-Ob-aRC" firstAttribute="height" secondItem="z4f-XY-fEb" secondAttribute="height" id="6c4-BP-qDI"/>
                 <constraint firstItem="DZx-el-gGn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8dq-Le-hU3"/>
+                <constraint firstItem="GQA-Ob-aRC" firstAttribute="top" secondItem="toN-q8-XA3" secondAttribute="bottom" constant="16" id="8pL-wk-vgo"/>
+                <constraint firstItem="SGa-Yv-yIC" firstAttribute="height" secondItem="z4f-XY-fEb" secondAttribute="height" id="BGG-oF-bcI"/>
+                <constraint firstItem="Va5-ku-n7a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F77-t6-fc6"/>
+                <constraint firstItem="toN-q8-XA3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H1V-A0-8fs"/>
+                <constraint firstItem="Va5-ku-n7a" firstAttribute="top" secondItem="BL4-bw-Uyp" secondAttribute="bottom" constant="16" id="IHf-qp-kIJ"/>
+                <constraint firstItem="SGa-Yv-yIC" firstAttribute="height" secondItem="GQA-Ob-aRC" secondAttribute="height" id="M8e-Cz-jKz"/>
+                <constraint firstItem="Va5-ku-n7a" firstAttribute="height" secondItem="z4f-XY-fEb" secondAttribute="height" id="Mko-uu-FIN"/>
+                <constraint firstItem="SGa-Yv-yIC" firstAttribute="top" secondItem="GQA-Ob-aRC" secondAttribute="bottom" constant="16" id="NA5-rq-4iy"/>
+                <constraint firstItem="SGa-Yv-yIC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ojb-Mc-lj7"/>
+                <constraint firstItem="toN-q8-XA3" firstAttribute="width" secondItem="z4f-XY-fEb" secondAttribute="width" id="PhB-Ve-3hY"/>
+                <constraint firstItem="GQA-Ob-aRC" firstAttribute="width" secondItem="z4f-XY-fEb" secondAttribute="width" id="SrG-ay-OVP"/>
+                <constraint firstItem="SGa-Yv-yIC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ssq-u2-otv"/>
+                <constraint firstItem="SGa-Yv-yIC" firstAttribute="width" secondItem="z4f-XY-fEb" secondAttribute="width" id="ZwV-C1-NPr"/>
+                <constraint firstItem="Va5-ku-n7a" firstAttribute="width" secondItem="z4f-XY-fEb" secondAttribute="width" id="aSj-5P-3BK"/>
+                <constraint firstItem="BL4-bw-Uyp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aeH-pW-rbb"/>
+                <constraint firstItem="BL4-bw-Uyp" firstAttribute="top" secondItem="SGa-Yv-yIC" secondAttribute="bottom" constant="16" id="bJz-RA-6O3"/>
                 <constraint firstAttribute="trailing" secondItem="DZx-el-gGn" secondAttribute="trailing" id="doL-IH-nOU"/>
+                <constraint firstItem="BL4-bw-Uyp" firstAttribute="height" secondItem="z4f-XY-fEb" secondAttribute="height" id="gaU-eO-dk7"/>
                 <constraint firstItem="DZx-el-gGn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i1x-FE-S4I"/>
+                <constraint firstItem="toN-q8-XA3" firstAttribute="height" secondItem="z4f-XY-fEb" secondAttribute="height" id="l3c-Eq-FgN"/>
+                <constraint firstItem="toN-q8-XA3" firstAttribute="top" secondItem="z4f-XY-fEb" secondAttribute="bottom" constant="16" id="lTR-ZR-52d"/>
+                <constraint firstItem="GQA-Ob-aRC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="laA-sC-X5V"/>
+                <constraint firstItem="BL4-bw-Uyp" firstAttribute="width" secondItem="z4f-XY-fEb" secondAttribute="width" id="sMs-sy-otb"/>
+                <constraint firstItem="z4f-XY-fEb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uAU-Uc-lPr"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="M8e-Cz-jKz"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
