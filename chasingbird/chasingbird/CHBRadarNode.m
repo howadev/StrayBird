@@ -66,11 +66,7 @@
 }
 
 - (void)updateRadar {
-    CGFloat radarEdge = 32.0;
-    CGFloat tmp = (self.flockDistanceLeft / self.distanceOverall) * ((self.size.width - radarEdge) / 2) / sqrt(2);
-    self.flockNode.position = CGPointMake(self.radarNode.position.x - tmp, self.radarNode.position.y + tmp);
-    
-    [self updatePositionWithNode:self.checkPointNode distance:self.distanceOverall];
+    [self updatePositionWithNode:self.checkPointNode distance:0];
     [self updatePositionWithNode:self.birdNode distance:self.birdDistanceLeft];
     [self updatePositionWithNode:self.flockNode distance:self.flockDistanceLeft];
 }

@@ -571,6 +571,16 @@
             [self applyNetState:CHBNetStateBreak];
         }
     }
+    
+    CGFloat distanceOverall = self.performance.totalDistance;
+    CGFloat birdElapsedDistance = self.performance.birdElapsedDistance;
+    CGFloat flockElapsedDistance = self.performance.flockElapsedDistance;
+    CGFloat birdDistanceLeft = distanceOverall - birdElapsedDistance;
+    CGFloat flockDistanceLeft = distanceOverall - flockElapsedDistance;
+    self.hudRadarNode.distanceOverall = distanceOverall;
+    self.hudRadarNode.birdDistanceLeft = birdDistanceLeft;
+    self.hudRadarNode.flockDistanceLeft = flockDistanceLeft;
+    [self.hudRadarNode updateRadar];
 }
 
 - (void)updateEverySecond:(id)sender {

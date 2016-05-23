@@ -13,4 +13,5 @@
 @property (nonatomic, assign) CGFloat distanceOverall;
 @property (nonatomic, assign) CGFloat birdDistanceLeft;
 @property (nonatomic, assign) CGFloat flockDistanceLeft;
+- (void)updateRadar;
 @end
