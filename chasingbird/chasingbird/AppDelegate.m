@@ -10,6 +10,7 @@
 #import "CHBDemoViewController.h"
 #import "CHBHomeViewController.h"
 #import "CHBGameViewController.h"
+#import "CHBReportViewController.h"
 #import "CHBTypes.h"
 @import HockeySDK;
 #import "GAI.h"
@@ -85,17 +86,12 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //CHBDemoViewController *vc = [CHBDemoViewController new];
+    //CHBHomeViewController *vc = [CHBHomeViewController new];
+    CHBReportViewController *vc = [CHBReportViewController new];
     
-    CHBHomeViewController *vc = [CHBHomeViewController new];
-    
-    /*
-    CHBGameViewController *vc = [CHBGameViewController new];
-    vc.level = CHBGameLevelSecond;
-    vc.multiplePlayers = false;
-     */
-    
-    //CHBHomeViewController *vc = [CHBDeviceViewController new];
+//    CHBGameViewController *vc = [CHBGameViewController new];
+//    vc.level = CHBGameLevelFirst;
+//    vc.multiplePlayers = false;
     
     self.navController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = self.navController;

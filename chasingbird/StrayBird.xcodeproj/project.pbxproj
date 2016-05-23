@@ -38,6 +38,8 @@
 		647CF4ED1CC404810038D170 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647CF4EC1CC404810038D170 /* GameKit.framework */; };
 		648BACC31CC713CF00C1F27B /* CHBColorWheelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 648BACC21CC713CF00C1F27B /* CHBColorWheelNode.m */; };
 		649114B61C09F26800826EA0 /* CHBConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 649114B51C09F26800826EA0 /* CHBConf.m */; };
+		649A1E971CF372F00073146B /* CHBReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649A1E951CF372F00073146B /* CHBReportViewController.m */; };
+		649A1E981CF372F00073146B /* CHBReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649A1E961CF372F00073146B /* CHBReportViewController.xib */; };
 		649C15DC1BAD8A9700420ED2 /* CHBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */; };
 		64A8F5741BFAD8D300480B47 /* CHBPerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A8F5721BFAD8D300480B47 /* CHBPerformanceViewController.m */; };
 		64A8F5751BFAD8D400480B47 /* CHBPerformanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A8F5731BFAD8D300480B47 /* CHBPerformanceViewController.xib */; };
@@ -154,6 +156,9 @@
 		648BACC21CC713CF00C1F27B /* CHBColorWheelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBColorWheelNode.m; sourceTree = "<group>"; };
 		649114B41C09F26800826EA0 /* CHBConf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBConf.h; sourceTree = "<group>"; };
 		649114B51C09F26800826EA0 /* CHBConf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBConf.m; sourceTree = "<group>"; };
+		649A1E941CF372F00073146B /* CHBReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBReportViewController.h; sourceTree = "<group>"; };
+		649A1E951CF372F00073146B /* CHBReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBReportViewController.m; sourceTree = "<group>"; };
+		649A1E961CF372F00073146B /* CHBReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHBReportViewController.xib; sourceTree = "<group>"; };
 		649C15DA1BAD8A9700420ED2 /* CHBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBHelpers.h; sourceTree = "<group>"; };
 		649C15DB1BAD8A9700420ED2 /* CHBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBHelpers.m; sourceTree = "<group>"; };
 		64A8F5711BFAD8D300480B47 /* CHBPerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBPerformanceViewController.h; sourceTree = "<group>"; };
@@ -380,6 +385,16 @@
 			name = AchievementsView;
 			sourceTree = "<group>";
 		};
+		649A1E931CF372D60073146B /* ReportView */ = {
+			isa = PBXGroup;
+			children = (
+				649A1E941CF372F00073146B /* CHBReportViewController.h */,
+				649A1E951CF372F00073146B /* CHBReportViewController.m */,
+				649A1E961CF372F00073146B /* CHBReportViewController.xib */,
+			);
+			name = ReportView;
+			sourceTree = "<group>";
+		};
 		64A8F5701BFAD8BE00480B47 /* PerformanceView */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +562,7 @@
 		891736361B7676A0003E082F /* chasingbird */ = {
 			isa = PBXGroup;
 			children = (
+				649A1E931CF372D60073146B /* ReportView */,
 				6418019F1CE40DF400F2CBA8 /* Tracker */,
 				7FC877111C39BFD7005DA6D2 /* Music */,
 				7FE3DB0A1C35FC8B00E270B4 /* DeviceView */,
@@ -776,6 +792,7 @@
 				640FA9031BF1982700D89019 /* CHBChallengeViewController.xib in Resources */,
 				64F262391BD40D8900C5BD68 /* CHBResultViewController.xib in Resources */,
 				7FC877101C39BFD1005DA6D2 /* music_bg_level3.mp3 in Resources */,
+				649A1E981CF372F00073146B /* CHBReportViewController.xib in Resources */,
 				7FC8770F1C39BFD1005DA6D2 /* music_bg_level2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,6 +905,7 @@
 				8917363C1B7676A0003E082F /* AppDelegate.m in Sources */,
 				896251871B8E928400295961 /* CHBHomeViewController.m in Sources */,
 				640FA8F81BF190ED00D89019 /* CHBChallengeTableView.m in Sources */,
+				649A1E971CF372F00073146B /* CHBReportViewController.m in Sources */,
 				7FE3DB1B1C3608D900E270B4 /* CHBDeviceHelpers.m in Sources */,
 				6437362D1BF15BC600A4BC64 /* CHBAchievementsViewController.m in Sources */,
 				640FA8E91BF1825700D89019 /* CHBLeaderboardTableView.m in Sources */,
