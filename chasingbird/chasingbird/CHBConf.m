@@ -61,7 +61,7 @@
 
 + (NSString *)initialGroupString
 {
-    return @"SECOND";
+    return @"FIRST";
 }
 
 + (CHBGroup)initialGroup
