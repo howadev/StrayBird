@@ -20,6 +20,12 @@ static NSString *playNotification = @"StartGame";
 static NSString *restartNotification = @"RestartGame";
 static NSString *deviceConnectedNotification = @"DeviceConnected";
 
+typedef NS_ENUM(NSInteger, CHBGroup) {
+    CHBGroupFirst = 0,
+    CHBGroupSecond,
+    CHBGroupThird
+};
+
 typedef NS_ENUM(NSInteger, CHBDeviceType) {
     CHBDeviceTypeAppleWatch = 0,
     CHBDeviceTypeLEO,

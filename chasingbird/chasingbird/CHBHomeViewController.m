@@ -12,11 +12,14 @@
 #import "CHBGameKitHelper.h"
 #import "CHBDeviceHelpers.h"
 #import "CHBSensorTagViewController.h"
+#import "CHBConf.h"
+#import "UIView+AutoLayoutHelpers.h"
 
 @interface CHBHomeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *singlePlayerView;
 @property (weak, nonatomic) IBOutlet UIImageView *multiPlayerView;
 @property (weak, nonatomic) IBOutlet UIButton *sensorTagButton;
+@property (retain, nonatomic) UILabel *versionLabel;
 @end
 
 @implementation CHBHomeViewController
@@ -31,6 +34,19 @@
     UITapGestureRecognizer *multiTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(multiPlayerViewDidTap:)];
     multiTapGesture.numberOfTapsRequired = 1;
     [self.multiPlayerView addGestureRecognizer:multiTapGesture];
+    
+    self.versionLabel = [UILabel new];
+    self.versionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.versionLabel];
+    [self.view pinItem:self.versionLabel attribute:NSLayoutAttributeLeft to:self.view];
+    [self.view pinItem:self.versionLabel attribute:NSLayoutAttributeBottom to:self.view];
+    
+    self.versionLabel.text = [CHBConf initialGroupString];
+ 
+    NSDate *firstOpenTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"FirstOpenTime"];
+    if (firstOpenTime) {
+        self.versionLabel.text = [NSString stringWithFormat:@"%@/%@", [CHBConf initialGroupString], firstOpenTime];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

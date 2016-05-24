@@ -59,16 +59,21 @@
     }
 }
 
-#pragma makr - PLIST
-
-+ (NSString*)stringValueFromBundlePlist:(NSString*)key
++ (NSString *)initialGroupString
 {
-    return [[NSBundle mainBundle] objectForInfoDictionaryKey:key];
+    return @"FIRST";
 }
 
-+ (NSString*)initialGroup
++ (CHBGroup)initialGroup
 {
-    return [self stringValueFromBundlePlist:@"CHBInitialGroup"];
+    NSString *group = [self initialGroupString];
+    if ([group isEqualToString:@"FIRST"]) {
+        return CHBGroupFirst;
+    } else if ([group isEqualToString:@"SECOND"]) {
+        return CHBGroupSecond;
+    } else {
+        return CHBGroupThird;
+    }
 }
 
 @end

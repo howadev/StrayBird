@@ -62,6 +62,18 @@
 
 #pragma mark - private method
 
+- (void)setupFirstOpenTime {
+    BOOL firstTimeOpen = ![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"];
+    if (firstTimeOpen)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"FirstOpenTime"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 - (void)setupHockeyApp {
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"8a462884cfb44feaa699bbe238640793"];
     [[BITHockeyManager sharedHockeyManager] startManager];
@@ -80,18 +92,18 @@
 #pragma mark - delgate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self setupFirstOpenTime];
     [self setupHockeyApp];
     [self setupGoogleAnalytics];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //CHBHomeViewController *vc = [CHBHomeViewController new];
+    CHBHomeViewController *vc = [CHBHomeViewController new];
     //CHBReportViewController *vc = [CHBReportViewController new];
     
-    CHBGameViewController *vc = [CHBGameViewController new];
-    vc.level = CHBGameLevelFirst;
-    vc.multiplePlayers = false;
+    //CHBGameViewController *vc = [CHBGameViewController new];
+    //vc.level = CHBGameLevelFirst;
+    //vc.multiplePlayers = false;
     
     self.navController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = self.navController;

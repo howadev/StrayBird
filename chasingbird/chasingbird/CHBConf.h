@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHBTypes.h"
 
 @interface CHBConf : NSObject
 + (CGFloat)populateRockDuration;
@@ -22,6 +23,6 @@
 + (NSTimeInterval)thunderInterval;
 + (CGFloat)netSpeedWithDropNetTimes:(NSUInteger)times;
 
-#pragma makr - PLIST
-+ (NSString*)initialGroup;
++ (NSString *)initialGroupString;
++ (CHBGroup)initialGroup;
 @end
