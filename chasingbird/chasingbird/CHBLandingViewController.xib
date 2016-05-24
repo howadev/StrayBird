@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBLandingViewController">
             <connections>
+                <outlet property="achievementsButton" destination="dyK-cV-ltf" id="flf-iX-P2r"/>
+                <outlet property="challengeInboxButton" destination="Kto-bj-fl9" id="9wy-a6-X93"/>
+                <outlet property="leaderboardButton" destination="xtz-wa-wam" id="Kmr-hR-aNu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,19 +19,15 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_background" translatesAutoresizingMaskIntoConstraints="NO" id="wwI-jg-td6">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi_landing_birds" translatesAutoresizingMaskIntoConstraints="NO" id="hAV-5f-lOX">
                     <rect key="frame" x="191" y="25" width="218" height="218"/>
-                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing_dashboard" translatesAutoresizingMaskIntoConstraints="NO" id="Gjo-Oo-8Oh">
                     <rect key="frame" x="0.0" y="546" width="600" height="54"/>
-                    <animations/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ML5-y9-F9N">
                     <rect key="frame" x="16" y="523" width="61" height="61"/>
-                    <animations/>
                     <state key="normal" image="btn_performance"/>
                     <connections>
                         <action selector="performanceAction:" destination="-1" eventType="touchUpInside" id="4Dd-au-6zi"/>
@@ -36,7 +35,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtz-wa-wam">
                     <rect key="frame" x="93" y="523" width="61" height="61"/>
-                    <animations/>
                     <state key="normal" image="btn_achievements"/>
                     <connections>
                         <action selector="leaderBoardAction:" destination="-1" eventType="touchUpInside" id="qE2-TC-V0s"/>
@@ -44,7 +42,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyK-cV-ltf">
                     <rect key="frame" x="170" y="523" width="61" height="61"/>
-                    <animations/>
                     <state key="normal" image="btn_leaderboard"/>
                     <connections>
                         <action selector="achievementsAction:" destination="-1" eventType="touchUpInside" id="4To-S0-QiH"/>
@@ -52,7 +49,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-bj-fl9">
                     <rect key="frame" x="523" y="523" width="61" height="61"/>
-                    <animations/>
                     <state key="normal" image="btn_inbox"/>
                     <connections>
                         <action selector="inboxAction:" destination="-1" eventType="touchUpInside" id="oyv-yD-acz"/>
@@ -60,14 +56,12 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-ng-thL">
                     <rect key="frame" x="211.5" y="279" width="177" height="42"/>
-                    <animations/>
                     <state key="normal" image="btn_play_active"/>
                     <connections>
                         <action selector="startGameAction:" destination="-1" eventType="touchUpInside" id="f27-qD-cId"/>
                     </connections>
                 </button>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ML5-y9-F9N" secondAttribute="bottom" constant="16" id="0n1-81-YtN"/>

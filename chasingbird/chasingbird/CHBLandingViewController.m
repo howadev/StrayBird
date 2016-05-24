@@ -13,8 +13,12 @@
 #import "CHBChallengeViewController.h"
 #import "CHBMapViewController.h"
 #import "CHBPerformanceViewController.h"
+#import "CHBConf.h"
 
 @interface CHBLandingViewController () <GKGameCenterControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *leaderboardButton;
+@property (weak, nonatomic) IBOutlet UIButton *achievementsButton;
+@property (weak, nonatomic) IBOutlet UIButton *challengeInboxButton;
 
 @end
 
@@ -23,6 +27,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupBackButton];
+    
+    switch ([CHBConf initialGroup]) {
+        case CHBGroupFirst:
+            break;
+        case CHBGroupSecond:
+            break;
+        case CHBGroupThird:
+            self.leaderboardButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 20;
+            self.achievementsButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 50;
+            self.challengeInboxButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 70;
+    }
 }
 
 -(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard{

@@ -25,4 +25,6 @@
 
 + (NSString *)initialGroupString;
 + (CHBGroup)initialGroup;
+
++ (NSInteger)daysSinceFirstOpenTime;
 @end

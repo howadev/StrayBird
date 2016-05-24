@@ -13,6 +13,7 @@
 #import "HRColorPickerView.h"
 #import "CHBPauseViewController.h"
 #import "CHBResultViewController.h"
+#import "CHBConf.h"
 #import "AVFoundation/AVAudioPlayer.h"
 @import SpriteKit;
 
@@ -119,6 +120,27 @@
     [self.view addSubview:colorButton];
     [self.view pinItem:self.view attribute:NSLayoutAttributeLeft to:colorButton withOffset:-16 andScale:1.0];
     [self.view pinItem:self.view attribute:NSLayoutAttributeTop to:colorButton withOffset:-16 andScale:1.0];
+    
+    switch ([CHBConf initialGroup]) {
+        case CHBGroupFirst:
+            colorButton.userInteractionEnabled = NO;
+            break;
+        case CHBGroupSecond:
+            colorButton.userInteractionEnabled = YES;
+            break;
+        case CHBGroupThird:
+            switch (self.level) {
+                case CHBGameLevelFirst:
+                    colorButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 10;
+                    break;
+                case CHBGameLevelSecond:
+                    colorButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 40;
+                    break;
+                case CHBGameLevelThird:
+                    colorButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 70;
+                    break;
+            }
+    }
 }
 
 - (void)colorAction:(id)sender {

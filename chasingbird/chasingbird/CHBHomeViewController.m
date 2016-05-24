@@ -47,6 +47,18 @@
     if (firstOpenTime) {
         self.versionLabel.text = [NSString stringWithFormat:@"%@/%@", [CHBConf initialGroupString], firstOpenTime];
     }
+    
+    switch ([CHBConf initialGroup]) {
+        case CHBGroupFirst:
+            self.multiPlayerView.userInteractionEnabled = NO;
+            break;
+        case CHBGroupSecond:
+            self.multiPlayerView.userInteractionEnabled = YES;
+            break;
+        case CHBGroupThird:
+            self.multiPlayerView.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 20;
+            break;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
