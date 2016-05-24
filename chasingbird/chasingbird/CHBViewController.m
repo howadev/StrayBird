@@ -8,6 +8,7 @@
 
 #import "CHBViewController.h"
 #import "UIView+AutoLayoutHelpers.h"
+#import "CHBTracker.h"
 
 @interface CHBViewController ()
 
@@ -17,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [CHBTracker createScreenWithName:NSStringFromClass(self.class)];
 }
 
 - (void)setupBackButton {

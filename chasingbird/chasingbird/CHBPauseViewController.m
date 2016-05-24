@@ -10,6 +10,7 @@
 #import "CHBGameViewController.h"
 #import "CHBResultTableView.h"
 #import "CHBPerformanceHelper.h"
+#import "CHBTracker.h"
 
 @interface CHBPauseViewController ()
 @property (weak, nonatomic) IBOutlet CHBResultTableView *tableView;
@@ -73,11 +74,13 @@
 #pragma mark - Actions
 
 - (IBAction)homeAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"PauseViewHomeButton" action:@"Tap"];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
 }
 
 - (IBAction)restartAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"PauseViewRestartButton" action:@"Tap"];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
     NSDictionary *dict = @{@"level":@(self.level),
@@ -86,6 +89,7 @@
 }
 
 - (IBAction)resumeAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"PauseResumeButton" action:@"Tap"];
     [self.delegate pauseViewControllerDidTapResume:self];
 }
 

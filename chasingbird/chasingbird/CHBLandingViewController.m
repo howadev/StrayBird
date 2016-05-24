@@ -14,6 +14,7 @@
 #import "CHBMapViewController.h"
 #import "CHBPerformanceViewController.h"
 #import "CHBConf.h"
+#import "CHBTracker.h"
 
 @interface CHBLandingViewController () <GKGameCenterControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *leaderboardButton;
@@ -58,23 +59,27 @@
 #pragma mark - Actions
 
 - (IBAction)startGameAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"MultiPlayNowButton" action:@"Tap"];
     CHBMapViewController *vc = [CHBMapViewController new];
     vc.multiplePlayers = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)performanceAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"PerformanceButton" action:@"Tap"];
     CHBPerformanceViewController *vc = [CHBPerformanceViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)leaderBoardAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"LeaderBoardButton" action:@"Tap"];
     //[self showLeaderboardAndAchievements:YES];
     CHBLeaderboardViewController *vc = [CHBLeaderboardViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)achievementsAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"AchievementsButton" action:@"Tap"];
     //[self showLeaderboardAndAchievements:NO];
     CHBAchievementsViewController *vc = [CHBAchievementsViewController new];
     [self.navigationController pushViewController:vc animated:YES];
@@ -82,6 +87,7 @@
 }
 
 - (IBAction)inboxAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"InboxButton" action:@"Tap"];
     CHBChallengeViewController *vc = [CHBChallengeViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }

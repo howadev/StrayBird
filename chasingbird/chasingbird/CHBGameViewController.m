@@ -13,6 +13,7 @@
 #import "HRColorPickerView.h"
 #import "CHBPauseViewController.h"
 #import "CHBResultViewController.h"
+#import "CHBTracker.h"
 #import "CHBConf.h"
 #import "AVFoundation/AVAudioPlayer.h"
 @import SpriteKit;
@@ -101,6 +102,7 @@
 }
 
 - (void)pauseAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"PauseButton" action:@"Tap"];
     self.paused = YES;
     CHBPauseViewController *vc = [CHBPauseViewController new];
     vc.delegate = self;
@@ -144,6 +146,7 @@
 }
 
 - (void)colorAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"ColorButton" action:@"Tap"];
     self.paused = YES;
     CHBColorViewController *vc = [CHBColorViewController new];
     vc.delegate = self;

@@ -47,7 +47,7 @@ BOOL isVerbose() {
     }
 }
 
-#pragma mark - Screens
+#pragma mark - Events
 
 + (void)createEventWithCategory:(NSString*)category action:(NSString*)action label:(NSString*)label value:(NSNumber*)value
 {
@@ -68,7 +68,7 @@ BOOL isVerbose() {
     [self createEventWithCategory:category action:action label:nil value:nil];
 }
 
-#pragma mark - Events
+#pragma mark - Screens
 
 + (void)createScreenWithName:(NSString*)name
 {

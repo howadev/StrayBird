@@ -9,6 +9,7 @@
 #import "CHBReportViewController.h"
 #import "UIView+AutoLayoutHelpers.h"
 #import "CHBTypes.h"
+#import "CHBTracker.h"
 @import HockeySDK;
 
 @interface CHBReportViewController () <BITFeedbackComposeViewControllerDelegate>
@@ -88,22 +89,27 @@
 }
 
 - (IBAction)veryDiscourageAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"VeryDiscourageButton" action:@"Tap"];
     [self didTapButton:sender];
 }
 
 - (IBAction)mildDiscourageAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"MildDiscourageButton" action:@"Tap"];
    [self didTapButton:sender];
 }
 
 - (IBAction)noDifferenceAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"NoDifferenceButton" action:@"Tap"];
     [self didTapButton:sender];
 }
 
 - (IBAction)mildEncourageAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"MildEncourageButton" action:@"Tap"];
     [self didTapButton:sender];
 }
 
 - (IBAction)veryEncourageAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"VeryEncourageButton" action:@"Tap"];
     [self didTapButton:sender];
 }
 

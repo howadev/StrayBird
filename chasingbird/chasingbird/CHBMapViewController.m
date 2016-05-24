@@ -12,6 +12,7 @@
 #import "UIView+AutoLayoutHelpers.h"
 #import "CHBIntroViewController.h"
 #import "CHBPerformanceHelper.h"
+#import "CHBTracker.h"
 
 @interface CHBMapViewController ()
 @property (nonatomic, retain) CHBMapLevelView *firstLevelView;
@@ -66,6 +67,7 @@
 #pragma mark - UI Actions
 
 - (void)firstLevelViewDidTap:(id)sender {
+    [CHBTracker createEventWithCategory:@"FirstLevelButton" action:@"Tap"];
     if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelFirst]) {
         CHBIntroViewController *vc = [CHBIntroViewController new];
         vc.level = CHBGameLevelFirst;
@@ -75,6 +77,7 @@
 }
 
 - (void)secondLevelViewDidTap:(id)sender {
+    [CHBTracker createEventWithCategory:@"SecondLevelButton" action:@"Tap"];
     if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelSecond]) {
         CHBIntroViewController *vc = [CHBIntroViewController new];
         vc.level = CHBGameLevelSecond;
@@ -84,6 +87,7 @@
 }
 
 - (void)thirdLevelViewDidTap:(id)sender {
+    [CHBTracker createEventWithCategory:@"ThirdLevelButton" action:@"Tap"];
     if ([[CHBPerformanceHelper sharedHelper] gameLevelShouldActivate:CHBGameLevelThird]) {
         CHBIntroViewController *vc = [CHBIntroViewController new];
         vc.level = CHBGameLevelThird;

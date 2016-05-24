@@ -13,7 +13,7 @@
 #import "CHBReportViewController.h"
 #import "CHBTypes.h"
 @import HockeySDK;
-#import "GAI.h"
+#import "CHBTracker.h"
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UINavigationController *navController;
@@ -82,11 +82,7 @@
 }
 
 - (void)setupGoogleAnalytics {
-    
-    // Optional: configure GAI options.
-    GAI *gai = [GAI sharedInstance];
-    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
-    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+    [CHBTracker start];
 }
 
 #pragma mark - delgate

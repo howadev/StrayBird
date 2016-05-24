@@ -11,6 +11,7 @@
 #import "CHBPerformanceHelper.h"
 #import "CHBGameKitHelper.h"
 #import "CHBReportViewController.h"
+#import "CHBTracker.h"
 
 @interface CHBResultViewController ()
 @property (weak, nonatomic) IBOutlet CHBResultTableView *tableView;
@@ -108,11 +109,13 @@
 #pragma mark - Actions
 
 - (IBAction)homeAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"ResultViewHomeButton" action:@"Tap"];
     CHBReportViewController *vc = [CHBReportViewController new];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)restartAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"ResultViewRestartButton" action:@"Tap"];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
     NSDictionary *dict = @{@"level":@(self.level),

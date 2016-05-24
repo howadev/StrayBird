@@ -14,6 +14,7 @@
 #import "CHBSensorTagViewController.h"
 #import "CHBConf.h"
 #import "UIView+AutoLayoutHelpers.h"
+#import "CHBTracker.h"
 
 @interface CHBHomeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *singlePlayerView;
@@ -83,17 +84,20 @@
 #pragma mark - Actions
 
 - (IBAction)didSelectSensorTag:(id)sender {
+    [CHBTracker createEventWithCategory:@"SensorTagButton" action:@"Tap"];
     [CHBDeviceHelpers sharedInstance].deviceType = CHBDeviceTypeSensorTag;
     CHBSensorTagViewController *vc = [CHBSensorTagViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)singlePlayerViewDidTap:(id)sender {
+    [CHBTracker createEventWithCategory:@"SinglePlayerButton" action:@"Tap"];
     CHBMapViewController *vc = [CHBMapViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)multiPlayerViewDidTap:(id)sender {
+    [CHBTracker createEventWithCategory:@"MultiPlayersButton" action:@"Tap"];
     CHBLandingViewController *vc = [CHBLandingViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }

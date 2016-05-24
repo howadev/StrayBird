@@ -10,6 +10,7 @@
 #import "CHBStartViewController.h"
 #import "CHBPerformanceHelper.h"
 #import "CHBTypes.h"
+#import "CHBTracker.h"
 
 @interface CHBIntroViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *starView;
@@ -66,6 +67,7 @@
 }
 
 - (void)nextButtonDidTap:(id)sender {
+    [CHBTracker createEventWithCategory:@"IntroViewNextButton" action:@"Tap"];
     CHBStartViewController *vc = [CHBStartViewController new];
     vc.level = self.level;
     vc.multiplePlayers = self.multiplePlayers;

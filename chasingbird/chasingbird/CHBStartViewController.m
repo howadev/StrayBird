@@ -7,6 +7,7 @@
 //
 
 #import "CHBStartViewController.h"
+#import "CHBTracker.h"
 
 @interface CHBStartViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *titleLevelView;
@@ -46,24 +47,28 @@
 }
 
 - (IBAction)playAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"PlayNowButton" action:@"Tap"];
     NSDictionary *dict = @{@"level":@(self.level),
                            @"multiplePlayers":@(self.multiplePlayers)};
     [[NSNotificationCenter defaultCenter] postNotificationName:playNotification object:nil userInfo:dict];
 }
 
 - (IBAction)cyclingAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"CyclingButton" action:@"Tap"];
     self.cyclingButton.selected = YES;
     self.runningButton.selected = NO;
     self.ropeSkippingButton.selected = NO;
 }
 
 - (IBAction)runningAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"RunningButton" action:@"Tap"];
     self.cyclingButton.selected = NO;
     self.runningButton.selected = YES;
     self.ropeSkippingButton.selected = NO;
 }
 
 - (IBAction)ropeSkippingAction:(id)sender {
+    [CHBTracker createEventWithCategory:@"RopeSkippingButton" action:@"Tap"];
     self.cyclingButton.selected = NO;
     self.runningButton.selected = NO;
     self.ropeSkippingButton.selected = YES;
