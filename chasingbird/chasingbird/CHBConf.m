@@ -59,4 +59,16 @@
     }
 }
 
+#pragma makr - PLIST
+
++ (NSString*)stringValueFromBundlePlist:(NSString*)key
+{
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:key];
+}
+
++ (NSString*)initialGroup
+{
+    return [self stringValueFromBundlePlist:@"CHBInitialGroup"];
+}
+
 @end

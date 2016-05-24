@@ -21,4 +21,7 @@
 + (NSTimeInterval)netDropInterval;
 + (NSTimeInterval)thunderInterval;
 + (CGFloat)netSpeedWithDropNetTimes:(NSUInteger)times;
+
+#pragma makr - PLIST
++ (NSString*)initialGroup;
 @end
