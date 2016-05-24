@@ -10,6 +10,7 @@
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <GoogleAnalytics/GAIFields.h>
+#import "CHBConf.h"
 
 @implementation CHBTracker
 
@@ -65,7 +66,7 @@ BOOL isVerbose() {
 
 + (void)createEventWithCategory:(NSString*)category action:(NSString*)action
 {
-    [self createEventWithCategory:category action:action label:nil value:nil];
+    [self createEventWithCategory:[NSString stringWithFormat:@"%@-%@", category, [CHBConf initialGroupString]] action:action label:nil value:nil];
 }
 
 #pragma mark - Screens
@@ -74,7 +75,7 @@ BOOL isVerbose() {
 {
     id <GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     if (tracker) {
-        [tracker set:kGAIScreenName value:name];
+        [tracker set:kGAIScreenName value:[NSString stringWithFormat:@"%@-%@", name, [CHBConf initialGroupString]]];
         [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     } else {
         NSString *errorMessage = [NSString stringWithFormat:@"%@: tracker is nil.", name];
