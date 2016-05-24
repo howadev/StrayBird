@@ -8,8 +8,10 @@
 
 #import "CHBReportViewController.h"
 #import "UIView+AutoLayoutHelpers.h"
+#import "CHBTypes.h"
+@import HockeySDK;
 
-@interface CHBReportViewController ()
+@interface CHBReportViewController () <BITFeedbackComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *questionButton;
 @property (weak, nonatomic) IBOutlet UIButton *veryDiscourageButton;
 @property (weak, nonatomic) IBOutlet UIButton *mildDiscourageButton;
@@ -69,6 +71,9 @@
         self.reportString = ((UIButton*)sender).titleLabel.text;
     }
 
+    [self reportAction];
+    
+    /*
     [UIView animateWithDuration:1.0 animations:^{
         for (UIButton *button in @[self.veryDiscourageButton, self.mildDiscourageButton, self.noDifferenceButton, self.mildEncourageButton, self.veryEncourageButton]) {
             button.alpha = 0;
@@ -79,6 +84,7 @@
         self.commentView.alpha = 1;
         [self.commentView becomeFirstResponder];
     }];
+     */
 }
 
 - (IBAction)veryDiscourageAction:(id)sender {
@@ -104,6 +110,28 @@
 - (void)sendAction:(id)sender {
     NSString *finalReport = [NSString stringWithFormat:@"%@\n%@", self.reportString, self.commentView.text];
     NSLog(@"%@", finalReport);
+    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
+    }];
+}
+
+- (void)reportAction {
+    BITFeedbackComposeViewController *feedbackCompose = [[BITHockeyManager sharedHockeyManager].feedbackManager feedbackComposeViewController];
+    feedbackCompose.delegate = self;
+    [feedbackCompose prepareWithItems:@[self.reportString]];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedbackCompose];
+    navController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+#pragma mark - BITFeedbackComposeViewControllerDelegate
+
+- (void)feedbackComposeViewController:(BITFeedbackComposeViewController *)composeViewController didFinishWithResult:(BITFeedbackComposeResult)composeResult {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:homeNotification object:nil];
+    }];
 }
 
 @end
