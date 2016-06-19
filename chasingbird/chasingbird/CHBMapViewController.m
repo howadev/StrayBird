@@ -63,8 +63,8 @@
             break;
         case CHBGroupThird:
             self.firstLevelView.alpha = 1;
-            self.secondLevelView.alpha = [CHBConf daysSinceFirstOpenTime] > 30 ? 1 : 0;
-            self.thirdLevelView.alpha = [CHBConf daysSinceFirstOpenTime] > 60 ? 1 : 0;
+            self.secondLevelView.alpha = [CHBConf daysSinceFirstOpenTime] >= 30 ? 1 : 0;
+            self.thirdLevelView.alpha = [CHBConf daysSinceFirstOpenTime] >= 60 ? 1 : 0;
             break;
     }
 }

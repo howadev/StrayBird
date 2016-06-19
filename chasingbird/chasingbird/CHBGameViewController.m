@@ -133,10 +133,10 @@
         case CHBGroupThird:
             switch (self.level) {
                 case CHBGameLevelFirst:
-                    colorButton.alpha = [CHBConf daysSinceFirstOpenTime] > 10 ? 1 : 0;
+                    colorButton.alpha = [CHBConf daysSinceFirstOpenTime] >= 10 ? 1 : 0;
                     break;
                 case CHBGameLevelSecond:
-                    colorButton.alpha = [CHBConf daysSinceFirstOpenTime] > 40 ? 1 : 0;
+                    colorButton.alpha = [CHBConf daysSinceFirstOpenTime] >= 40 ? 1 : 0;
                     break;
                 case CHBGameLevelThird:
                     break;

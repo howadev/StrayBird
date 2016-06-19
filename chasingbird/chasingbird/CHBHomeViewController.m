@@ -57,8 +57,77 @@
             self.multiPlayerView.alpha = 1;
             break;
         case CHBGroupThird:
-            self.multiPlayerView.alpha = [CHBConf daysSinceFirstOpenTime] > 20 ? 1 : 0;
+            self.multiPlayerView.alpha = [CHBConf daysSinceFirstOpenTime] >= 20 ? 1 : 0;
             break;
+    }
+    
+    if ([CHBConf initialGroup] == CHBGroupThird) {
+        NSInteger days = [CHBConf daysSinceFirstOpenTime];
+        if (days >= 10) {
+            BOOL shownTenDaysFeature = [[NSUserDefaults standardUserDefaults] boolForKey:@"shownTenDaysFeature"];
+            if (!shownTenDaysFeature) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shownTenDaysFeature"];
+                UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"New Feature" message:@"add customized bird colour choices for level 1" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }
+        
+        if (days >= 20) {
+            BOOL shownTwentyDaysFeature = [[NSUserDefaults standardUserDefaults] boolForKey:@"shownTwentyDaysFeature"];
+            if (!shownTwentyDaysFeature) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shownTwentyDaysFeature"];
+                UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"New Feature" message:@"add multiplayer leaderboard and challenge box" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }
+        
+        if (days >= 30) {
+            BOOL shownThirtyDaysFeature = [[NSUserDefaults standardUserDefaults] boolForKey:@"shownThirtyDaysFeature"];
+            if (!shownThirtyDaysFeature) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shownThirtyDaysFeature"];
+                UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"New Feature" message:@"add level 2 (with bird net)" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }
+        
+        if (days >= 40) {
+            BOOL shownFortyDaysFeature = [[NSUserDefaults standardUserDefaults] boolForKey:@"shownFortyDaysFeature"];
+            if (!shownFortyDaysFeature) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shownFortyDaysFeature"];
+                UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"New Feature" message:@"add customized background colour choices for level 2" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }
+        
+        if (days >= 50) {
+            BOOL shownFiftyDaysFeature = [[NSUserDefaults standardUserDefaults] boolForKey:@"shownFiftyDaysFeature"];
+            if (!shownFiftyDaysFeature) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shownFiftyDaysFeature"];
+                UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"New Feature" message:@"add achievements" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }
+        
+        if (days >= 60) {
+            BOOL shownSixtyDaysFeature = [[NSUserDefaults standardUserDefaults] boolForKey:@"shownSixtyDaysFeature"];
+            if (!shownSixtyDaysFeature) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shownSixtyDaysFeature"];
+                UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"New Feature" message:@"add level 3 (with thunderstorm)" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }
     }
 }
 

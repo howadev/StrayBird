@@ -35,9 +35,9 @@
         case CHBGroupSecond:
             break;
         case CHBGroupThird:
-            self.leaderboardButton.alpha = [CHBConf daysSinceFirstOpenTime] > 20 ? 1 : 0;
-            self.challengeInboxButton.alpha = [CHBConf daysSinceFirstOpenTime] > 20 ? 1 : 0;
-            self.achievementsButton.alpha = [CHBConf daysSinceFirstOpenTime] > 50 ? 1 : 0;
+            self.leaderboardButton.alpha = [CHBConf daysSinceFirstOpenTime] >= 20 ? 1 : 0;
+            self.challengeInboxButton.alpha = [CHBConf daysSinceFirstOpenTime] >= 20 ? 1 : 0;
+            self.achievementsButton.alpha = [CHBConf daysSinceFirstOpenTime] >= 50 ? 1 : 0;
     }
 }
 
