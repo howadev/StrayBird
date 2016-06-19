@@ -51,13 +51,13 @@
     
     switch ([CHBConf initialGroup]) {
         case CHBGroupFirst:
-            self.multiPlayerView.userInteractionEnabled = NO;
+            self.multiPlayerView.alpha = 0;
             break;
         case CHBGroupSecond:
-            self.multiPlayerView.userInteractionEnabled = YES;
+            self.multiPlayerView.alpha = 1;
             break;
         case CHBGroupThird:
-            self.multiPlayerView.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 20;
+            self.multiPlayerView.alpha = [CHBConf daysSinceFirstOpenTime] > 20 ? 1 : 0;
             break;
     }
 }

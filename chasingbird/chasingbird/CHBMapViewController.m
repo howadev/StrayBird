@@ -13,6 +13,7 @@
 #import "CHBIntroViewController.h"
 #import "CHBPerformanceHelper.h"
 #import "CHBTracker.h"
+#import "CHBConf.h"
 
 @interface CHBMapViewController ()
 @property (nonatomic, retain) CHBMapLevelView *firstLevelView;
@@ -48,6 +49,24 @@
     [self setupConstraints];
     
     [self setupBackButton];
+    
+    switch ([CHBConf initialGroup]) {
+        case CHBGroupFirst:
+            self.firstLevelView.alpha = 1;
+            self.secondLevelView.alpha = 0;
+            self.thirdLevelView.alpha = 0;
+            break;
+        case CHBGroupSecond:
+            self.firstLevelView.alpha = 1;
+            self.secondLevelView.alpha = 1;
+            self.thirdLevelView.alpha = 1;
+            break;
+        case CHBGroupThird:
+            self.firstLevelView.alpha = 1;
+            self.secondLevelView.alpha = [CHBConf daysSinceFirstOpenTime] > 30 ? 1 : 0;
+            self.thirdLevelView.alpha = [CHBConf daysSinceFirstOpenTime] > 60 ? 1 : 0;
+            break;
+    }
 }
 
 - (void)setupConstraints {

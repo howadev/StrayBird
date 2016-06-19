@@ -125,21 +125,20 @@
     
     switch ([CHBConf initialGroup]) {
         case CHBGroupFirst:
-            colorButton.userInteractionEnabled = NO;
+            colorButton.alpha = 0;
             break;
         case CHBGroupSecond:
-            colorButton.userInteractionEnabled = YES;
+            colorButton.alpha = 1;
             break;
         case CHBGroupThird:
             switch (self.level) {
                 case CHBGameLevelFirst:
-                    colorButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 10;
+                    colorButton.alpha = [CHBConf daysSinceFirstOpenTime] > 10 ? 1 : 0;
                     break;
                 case CHBGameLevelSecond:
-                    colorButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 40;
+                    colorButton.alpha = [CHBConf daysSinceFirstOpenTime] > 40 ? 1 : 0;
                     break;
                 case CHBGameLevelThird:
-                    colorButton.userInteractionEnabled = [CHBConf daysSinceFirstOpenTime] > 70;
                     break;
             }
     }
