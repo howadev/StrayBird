@@ -11,7 +11,7 @@
 #import "UIView+AutoLayoutHelpers.h"
 #import "CHBPauseViewController.h"
 #import "CHBResultViewController.h"
-#import "AVFoundation/AVAudioPlayer.h"
+@import AVFoundation;
 @import SpriteKit;
 
 @interface CHBGameViewController () <CHBGameSceneDelegate>
