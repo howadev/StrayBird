@@ -1,6 +1,10 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+### Snapshots ###
+
+![alt text](https://github.com/leerockdev/StrayBird/blob/master/snapshot/snapshot1.png "Home Screen")
+![alt text](https://github.com/leerockdev/StrayBird/blob/master/snapshot/snapshot2.png "Game Screen")
+![alt text](https://github.com/leerockdev/StrayBird/blob/master/snapshot/snapshot3.png "Pause Screen")
 
 ### How do I get set up? ###
 
