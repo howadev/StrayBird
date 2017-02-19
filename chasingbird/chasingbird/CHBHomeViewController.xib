@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHBHomeViewController">
             <connections>
-                <outlet property="LEOButton" destination="jgU-hL-QJ9" id="x53-fL-PLv"/>
                 <outlet property="appleWatchButton" destination="xNt-ap-F2c" id="CcZ-0F-Rjg"/>
                 <outlet property="fingerButton" destination="8ws-9D-uwX" id="Ee0-O3-Jp1"/>
                 <outlet property="multiPlayerView" destination="x8W-R3-aNG" id="fex-A6-g3j"/>
@@ -32,19 +31,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-menu_title" translatesAutoresizingMaskIntoConstraints="NO" id="3m4-kn-7tN">
                     <rect key="frame" x="191" y="-3" width="218" height="250"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgU-hL-QJ9">
-                    <rect key="frame" x="212" y="337" width="177" height="42"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="LEO" backgroundImage="button">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="didSelectLEO:" destination="-1" eventType="touchUpInside" id="lXH-tE-zZc"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hp2-xW-iZj">
-                    <rect key="frame" x="212" y="395" width="177" height="42"/>
+                    <rect key="frame" x="212" y="337" width="177" height="42"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="TI Sensortag" backgroundImage="button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,14 +53,14 @@
                         <action selector="didSelectAppleWatch:" destination="-1" eventType="touchUpInside" id="c8J-sS-M0C"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Apple Watch, LEO or TI Sensortag to track your movement. You could also use your own finger to try." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-Ju-Lc8">
-                    <rect key="frame" x="8" y="571" width="584" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Apple Watch or TI Sensortag to track your movement. You could also use your own finger to try." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-Ju-Lc8">
+                    <rect key="frame" x="8" y="558.5" width="584" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ws-9D-uwX">
-                    <rect key="frame" x="212" y="453" width="177" height="42"/>
+                    <rect key="frame" x="212" y="395" width="177" height="42"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="Finger" backgroundImage="button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,7 +77,6 @@
                 <constraint firstItem="RWj-i3-gK2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1Cq-lL-Qt9"/>
                 <constraint firstItem="8ws-9D-uwX" firstAttribute="top" secondItem="Hp2-xW-iZj" secondAttribute="bottom" constant="16" id="2np-kB-xjf"/>
                 <constraint firstItem="RWj-i3-gK2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="39q-7f-6hM"/>
-                <constraint firstItem="jgU-hL-QJ9" firstAttribute="top" secondItem="xNt-ap-F2c" secondAttribute="bottom" constant="16" id="8g7-4h-VlH"/>
                 <constraint firstItem="3m4-kn-7tN" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="8ms-t0-A6x"/>
                 <constraint firstItem="xNt-ap-F2c" firstAttribute="centerX" secondItem="J0K-Po-2AR" secondAttribute="centerX" id="FJe-NM-jsa"/>
                 <constraint firstItem="8ws-9D-uwX" firstAttribute="centerX" secondItem="Hp2-xW-iZj" secondAttribute="centerX" id="Hgw-dl-yDD"/>
@@ -98,18 +85,17 @@
                 <constraint firstAttribute="trailing" secondItem="9dH-Ju-Lc8" secondAttribute="trailing" constant="8" id="L2s-TX-8Fj"/>
                 <constraint firstItem="xNt-ap-F2c" firstAttribute="centerY" secondItem="J0K-Po-2AR" secondAttribute="centerY" id="LWe-ME-5mU"/>
                 <constraint firstItem="x8W-R3-aNG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MCl-7e-3t5"/>
-                <constraint firstItem="Hp2-xW-iZj" firstAttribute="centerX" secondItem="jgU-hL-QJ9" secondAttribute="centerX" id="Peg-gc-HOd"/>
                 <constraint firstItem="J0K-Po-2AR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Yar-kX-CQb"/>
                 <constraint firstItem="x8W-R3-aNG" firstAttribute="centerX" secondItem="RWj-i3-gK2" secondAttribute="centerX" id="b8Y-qm-19I"/>
                 <constraint firstItem="x8W-R3-aNG" firstAttribute="top" secondItem="J0K-Po-2AR" secondAttribute="bottom" constant="16" id="g0Q-iL-ciH"/>
                 <constraint firstAttribute="bottom" secondItem="RWj-i3-gK2" secondAttribute="bottom" id="gcy-Qc-uXD"/>
                 <constraint firstAttribute="trailing" secondItem="RWj-i3-gK2" secondAttribute="trailing" id="hOa-1j-SkS"/>
+                <constraint firstItem="Hp2-xW-iZj" firstAttribute="top" secondItem="xNt-ap-F2c" secondAttribute="bottom" constant="16" id="oR8-Yl-nb9"/>
                 <constraint firstItem="J0K-Po-2AR" firstAttribute="top" secondItem="3m4-kn-7tN" secondAttribute="bottom" constant="32" id="pBU-6e-br4"/>
-                <constraint firstItem="jgU-hL-QJ9" firstAttribute="centerX" secondItem="xNt-ap-F2c" secondAttribute="centerX" id="rxU-wW-98J"/>
                 <constraint firstItem="9dH-Ju-Lc8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="seB-gr-j5f"/>
-                <constraint firstItem="Hp2-xW-iZj" firstAttribute="top" secondItem="jgU-hL-QJ9" secondAttribute="bottom" constant="16" id="vxr-Xl-PeT"/>
                 <constraint firstItem="3m4-kn-7tN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wYi-3F-rJC"/>
                 <constraint firstItem="J0K-Po-2AR" firstAttribute="centerX" secondItem="3m4-kn-7tN" secondAttribute="centerX" id="yue-sk-Ofb"/>
+                <constraint firstItem="Hp2-xW-iZj" firstAttribute="centerX" secondItem="xNt-ap-F2c" secondAttribute="centerX" id="zgw-oy-WtQ"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">

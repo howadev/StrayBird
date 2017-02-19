@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <LEO/LEODataDelegate.h>
 #import "CHBTypes.h"
 #import "bluetoothHandler.h"
 @import WatchConnectivity;
@@ -16,7 +15,7 @@
 - (void)deviceType:(CHBDeviceType)type didReceiveValue:(CGFloat)value;
 @end
 
-@interface CHBDeviceHelpers : NSObject <LEODataDelegate, bluetoothHandlerDelegate, WCSessionDelegate>
+@interface CHBDeviceHelpers : NSObject <bluetoothHandlerDelegate, WCSessionDelegate>
 @property (nonatomic, weak) id <CHBDeviceHelpersDelegate> delegate;
 @property (nonatomic, assign) CHBDeviceType deviceType;
 @property (nonatomic, assign) BOOL connected;

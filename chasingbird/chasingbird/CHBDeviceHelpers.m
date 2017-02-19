@@ -55,18 +55,6 @@
     }
 }
 
-#pragma mark - LEODataDelegate
-
-- (void)LEO:(LEOBluetooth *)LEO didSendRepetition:(LEORepetition *)repetition {
-    [self.delegate deviceType:self.deviceType didReceiveValue:repetition.cadence];
-    NSLog(@"Did receive cadence: %tu", repetition.cadence);
-    NSLog(@"Difference from previous cadence: %tu", repetition.cadence - repetition.previousRepetition.cadence);
-}
-
-- (void)LEO:(LEOBluetooth *)LEO didUpdateActivity:(LEOActivity)activity {
-    //NSLog(@"didUpdateActivity");
-}
-
 #pragma mark - bluetoothHandlerDelegate
 
 - (void)deviceReady:(BOOL)ready peripheral:(CBPeripheral *)peripheral {

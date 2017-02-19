@@ -94,9 +94,6 @@
         case CHBDeviceTypeAppleWatch:
             self.performance.birdSpeed = value * 4.5 / 1000;
             break;
-        case CHBDeviceTypeLEO:
-            self.performance.birdSpeed = value * 0.048 / 3.6;
-            break;
         case CHBDeviceTypeSensorTag:
             self.performance.birdSpeed = sqrt(value * 2.88 / 3.6);
             break;

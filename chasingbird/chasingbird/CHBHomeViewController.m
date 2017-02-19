@@ -12,14 +12,12 @@
 #import "CHBGameKitHelper.h"
 #import "CHBDeviceHelpers.h"
 #import "CHBSensorTagViewController.h"
-#import "CHBLEOViewController.h"
 
 @interface CHBHomeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *singlePlayerView;
 @property (weak, nonatomic) IBOutlet UIImageView *multiPlayerView;
 
 @property (weak, nonatomic) IBOutlet UIButton *appleWatchButton;
-@property (weak, nonatomic) IBOutlet UIButton *LEOButton;
 @property (weak, nonatomic) IBOutlet UIButton *sensorTagButton;
 @property (weak, nonatomic) IBOutlet UIButton *fingerButton;
 
@@ -55,7 +53,6 @@
     self.singlePlayerView.hidden = !connected;
     self.multiPlayerView.hidden = !connected;
     self.appleWatchButton.hidden = connected;
-    self.LEOButton.hidden = connected;
     self.sensorTagButton.hidden = connected;
     self.fingerButton.hidden = connected;
     [self.navigationController setNavigationBarHidden:connected animated:NO];
@@ -75,12 +72,6 @@
         [alertController addAction:cancelAction];
         [self presentViewController:alertController animated:YES completion:nil];
     }
-}
-
-- (IBAction)didSelectLEO:(id)sender {
-    [CHBDeviceHelpers sharedInstance].deviceType = CHBDeviceTypeLEO;
-    CHBLEOViewController *vc = [CHBLEOViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)didSelectSensorTag:(id)sender {

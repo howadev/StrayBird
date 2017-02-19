@@ -21,7 +21,6 @@ static NSString *deviceConnectedNotification = @"DeviceConnected";
 
 typedef NS_ENUM(NSInteger, CHBDeviceType) {
     CHBDeviceTypeAppleWatch = 0,
-    CHBDeviceTypeLEO,
     CHBDeviceTypeSensorTag,
 };
 
