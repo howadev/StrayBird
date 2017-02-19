@@ -573,7 +573,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    self.performance.birdSpeed += 10;
+    self.performance.birdSpeed += 3;
 
     if (testNet) {
         testNetCount++;

@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *appleWatchButton;
 @property (weak, nonatomic) IBOutlet UIButton *LEOButton;
 @property (weak, nonatomic) IBOutlet UIButton *sensorTagButton;
+@property (weak, nonatomic) IBOutlet UIButton *fingerButton;
+
 @end
 
 @implementation CHBHomeViewController
@@ -55,6 +57,7 @@
     self.appleWatchButton.hidden = connected;
     self.LEOButton.hidden = connected;
     self.sensorTagButton.hidden = connected;
+    self.fingerButton.hidden = connected;
     [self.navigationController setNavigationBarHidden:connected animated:NO];
 }
 
@@ -85,6 +88,11 @@
     CHBSensorTagViewController *vc = [CHBSensorTagViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (IBAction)didSelectFinger:(id)sender {
+    [self refreshMenu:YES];
+}
+
 
 - (void)singlePlayerViewDidTap:(id)sender {
     CHBMapViewController *vc = [CHBMapViewController new];
