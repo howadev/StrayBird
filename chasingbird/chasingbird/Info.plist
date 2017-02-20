@@ -15,13 +15,19 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.6</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>6</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need Bluetooth access to connect SensorTag</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We need Health Share Usage access to read data of your workout.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We need Health Update Usage access to record data of your workout.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>cn_bold.ttf</string>

@@ -57,6 +57,7 @@
 		7FC8770F1C39BFD1005DA6D2 /* music_bg_level2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FC8770C1C39BFD1005DA6D2 /* music_bg_level2.mp3 */; };
 		7FC877101C39BFD1005DA6D2 /* music_bg_level3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FC8770D1C39BFD1005DA6D2 /* music_bg_level3.mp3 */; };
 		7FC877131C39C7DE005DA6D2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC877121C39C7DE005DA6D2 /* AVFoundation.framework */; };
+		7FCFE13B1E5A61B90057B068 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFE13A1E5A61B90057B068 /* HealthKit.framework */; };
 		7FE3DB1B1C3608D900E270B4 /* CHBDeviceHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */; };
 		7FFE95031C36B080004925F6 /* DeviceSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95021C36B080004925F6 /* DeviceSelectTableViewController.m */; };
 		7FFE95061C36B0AB004925F6 /* CHBSensorTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE95051C36B0AB004925F6 /* CHBSensorTagViewController.m */; };
@@ -216,6 +217,7 @@
 		7FC8770C1C39BFD1005DA6D2 /* music_bg_level2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_bg_level2.mp3; sourceTree = "<group>"; };
 		7FC8770D1C39BFD1005DA6D2 /* music_bg_level3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_bg_level3.mp3; sourceTree = "<group>"; };
 		7FC877121C39C7DE005DA6D2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7FCFE13A1E5A61B90057B068 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7FE3DB191C3608D900E270B4 /* CHBDeviceHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBDeviceHelpers.h; sourceTree = "<group>"; };
 		7FE3DB1A1C3608D900E270B4 /* CHBDeviceHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBDeviceHelpers.m; sourceTree = "<group>"; };
 		7FFE95011C36B080004925F6 /* DeviceSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSelectTableViewController.h; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FCFE13B1E5A61B90057B068 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +488,14 @@
 			name = Music;
 			sourceTree = "<group>";
 		};
+		7FCFE1391E5A61B90057B068 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FCFE13A1E5A61B90057B068 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7FE3DB0A1C35FC8B00E270B4 /* DeviceView */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +591,7 @@
 				642578491BC065C8006B430D /* chasingBirdWatch */,
 				642578581BC065C8006B430D /* chasingBirdWatch Extension */,
 				891736351B7676A0003E082F /* Products */,
+				7FCFE1391E5A61B90057B068 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
