@@ -47,7 +47,7 @@
 
 #pragma mark - WCSessionDelegate
 
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message replyHandler:(void(^)(NSDictionary<NSString *, id> *replyMessage))replyHandler {
     NSString *activeEnergy = message[@"ActiveEnergy"];
     if (activeEnergy) {
         CGFloat calories = activeEnergy.floatValue;
